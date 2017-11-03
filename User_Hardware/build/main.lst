@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccNAMykE.s 			page 1
+ARM GAS  /tmp/cc90zfZ3.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
   30:Src/main.c    ****   * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
   31:Src/main.c    ****   * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
   32:Src/main.c    ****   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-ARM GAS  /tmp/ccNAMykE.s 			page 2
+ARM GAS  /tmp/cc90zfZ3.s 			page 2
 
 
   33:Src/main.c    ****   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
   87:Src/main.c    ****   HAL_Init();
   88:Src/main.c    **** 
   89:Src/main.c    ****   /* USER CODE BEGIN Init */
-ARM GAS  /tmp/ccNAMykE.s 			page 3
+ARM GAS  /tmp/cc90zfZ3.s 			page 3
 
 
   90:Src/main.c    **** 
@@ -140,14 +140,14 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  106:Src/main.c    ****   /*##-1- Check if the system has resumed from IWDG reset ######################*/
  107:Src/main.c    ****   if (__HAL_RCC_GET_FLAG(RCC_FLAG_IWDGRST) != RESET)
  108:Src/main.c    ****   {
- 109:Src/main.c    ****     HAL_GPIO_WritePin(GPIOD, LED_Blue_Pin, GPIO_PIN_SET);
+ 109:Src/main.c    ****     HAL_GPIO_WritePin(LED_Blue_GPIO_Port, LED_Blue_Pin, GPIO_PIN_SET);
  110:Src/main.c    **** 
  111:Src/main.c    ****     /* clear reset flags */
  112:Src/main.c    ****     __HAL_RCC_CLEAR_RESET_FLAGS();
  113:Src/main.c    ****   }
  114:Src/main.c    ****   else
  115:Src/main.c    ****   {
- 116:Src/main.c    ****     HAL_GPIO_WritePin(GPIOD, LED_Blue_Pin, GPIO_PIN_RESET);
+ 116:Src/main.c    ****     HAL_GPIO_WritePin(LED_Blue_GPIO_Port, LED_Blue_Pin, GPIO_PIN_RESET);
  117:Src/main.c    ****   }
  118:Src/main.c    **** 
  119:Src/main.c    ****   /* Get the LSI frequency; TIM5 is used to measure the LSI frequency */
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  144:Src/main.c    **** 
  145:Src/main.c    ****     
  146:Src/main.c    ****   /* USER CODE BEGIN 3 */
-ARM GAS  /tmp/ccNAMykE.s 			page 4
+ARM GAS  /tmp/cc90zfZ3.s 			page 4
 
 
  147:Src/main.c    ****   /* Infinite loop */
@@ -188,7 +188,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  151:Src/main.c    ****   /* USER CODE END WHILE */
  152:Src/main.c    **** 
  153:Src/main.c    ****     /* Toggle LED GREEN */
- 154:Src/main.c    ****     HAL_GPIO_TogglePin(GPIOD, LED_Green_Pin);
+ 154:Src/main.c    ****     HAL_GPIO_TogglePin(LED_Yellow_GPIO_Port, LED_Green_Pin);
  155:Src/main.c    **** 
  156:Src/main.c    ****     /* Insert 240ms delay */
  157:Src/main.c    ****     HAL_Delay(240);
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  201:Src/main.c    ****   pclk1 = HAL_RCC_GetPCLK1Freq();
  202:Src/main.c    **** 
  203:Src/main.c    ****   /* PCLK1 prescaler equal to 1 => TIMCLK = PCLK1 */
-ARM GAS  /tmp/ccNAMykE.s 			page 5
+ARM GAS  /tmp/cc90zfZ3.s 			page 5
 
 
  204:Src/main.c    ****   return (pclk1/uwPeriodValue);
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  258:Src/main.c    **** /* IWDG init function */
  259:Src/main.c    **** /* static void MX_IWDG_Init(void)
  260:Src/main.c    **** {
-ARM GAS  /tmp/ccNAMykE.s 			page 6
+ARM GAS  /tmp/cc90zfZ3.s 			page 6
 
 
  261:Src/main.c    **** 
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  315:Src/main.c    **** 
  316:Src/main.c    ****   if (HAL_TIMEx_RemapConfig(&htim5, TIM_TIM5_LSI) != HAL_OK)
  317:Src/main.c    ****   {
-ARM GAS  /tmp/ccNAMykE.s 			page 7
+ARM GAS  /tmp/cc90zfZ3.s 			page 7
 
 
  318:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
@@ -393,32 +393,32 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  333:Src/main.c    ****   GPIO_InitTypeDef GPIO_InitStruct;
  334:Src/main.c    **** 
  335:Src/main.c    ****   /* GPIO Ports Clock Enable */
- 336:Src/main.c    ****   __HAL_RCC_GPIOD_CLK_ENABLE();
+ 336:Src/main.c    ****   __HAL_RCC_GPIOF_CLK_ENABLE();
   41              		.loc 1 336 0
   42 0004 0024     		movs	r4, #0
   43 0006 0094     		str	r4, [sp]
   44 0008 1A4B     		ldr	r3, .L3
   45 000a 1A6B     		ldr	r2, [r3, #48]
-  46 000c 42F00802 		orr	r2, r2, #8
+  46 000c 42F02002 		orr	r2, r2, #32
   47 0010 1A63     		str	r2, [r3, #48]
   48 0012 1B6B     		ldr	r3, [r3, #48]
-  49 0014 03F00803 		and	r3, r3, #8
+  49 0014 03F02003 		and	r3, r3, #32
   50 0018 0093     		str	r3, [sp]
   51 001a 009B     		ldr	r3, [sp]
   52              	.LBE2:
  337:Src/main.c    **** 
  338:Src/main.c    ****   /*Configure GPIO pin Output Level */
- 339:Src/main.c    ****   HAL_GPIO_WritePin(GPIOD, LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin, GPIO_PIN_RESET);
+ 339:Src/main.c    ****   HAL_GPIO_WritePin(GPIOF, LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin, GPIO_PIN_RESET);
   53              		.loc 1 339 0
   54 001c 164D     		ldr	r5, .L3+4
   55 001e 2246     		mov	r2, r4
-  56 0020 7821     		movs	r1, #120
+  56 0020 3C21     		movs	r1, #60
   57 0022 2846     		mov	r0, r5
   58 0024 FFF7FEFF 		bl	HAL_GPIO_WritePin
   59              	.LVL0:
  340:Src/main.c    **** 
  341:Src/main.c    ****   /*Configure GPIO pins : User_Button_1_Pin User_Button_2_Pin */
-ARM GAS  /tmp/ccNAMykE.s 			page 8
+ARM GAS  /tmp/cc90zfZ3.s 			page 8
 
 
  342:Src/main.c    ****   GPIO_InitStruct.Pin = User_Button_1_Pin|User_Button_2_Pin;
@@ -432,7 +432,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  344:Src/main.c    ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
   66              		.loc 1 344 0
   67 0030 0394     		str	r4, [sp, #12]
- 345:Src/main.c    ****   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+ 345:Src/main.c    ****   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
   68              		.loc 1 345 0
   69 0032 01A9     		add	r1, sp, #4
   70 0034 2846     		mov	r0, r5
@@ -442,7 +442,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  347:Src/main.c    ****   /*Configure GPIO pins : LED_Green_Pin LED_Blue_Pin LED_Yellow_Pin LED_Red_Pin */
  348:Src/main.c    ****   GPIO_InitStruct.Pin = LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin;
   73              		.loc 1 348 0
-  74 003a 7823     		movs	r3, #120
+  74 003a 3C23     		movs	r3, #60
   75 003c 0193     		str	r3, [sp, #4]
  349:Src/main.c    ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   76              		.loc 1 349 0
@@ -454,7 +454,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  351:Src/main.c    ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   81              		.loc 1 351 0
   82 0044 0494     		str	r4, [sp, #16]
- 352:Src/main.c    ****   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+ 352:Src/main.c    ****   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
   83              		.loc 1 352 0
   84 0046 01A9     		add	r1, sp, #4
   85 0048 2846     		mov	r0, r5
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  358:Src/main.c    ****   HAL_NVIC_SetPriority(EXTI1_IRQn, 0, 0);
   98              		.loc 1 358 0
   99 005e 2246     		mov	r2, r4
-ARM GAS  /tmp/ccNAMykE.s 			page 9
+ARM GAS  /tmp/cc90zfZ3.s 			page 9
 
 
  100 0060 2146     		mov	r1, r4
@@ -502,7 +502,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  115 0072 00BF     		.align	2
  116              	.L3:
  117 0074 00380240 		.word	1073887232
- 118 0078 000C0240 		.word	1073875968
+ 118 0078 00140240 		.word	1073878016
  119 007c 00001110 		.word	269549568
  120              		.cfi_endproc
  121              	.LFE127:
@@ -538,16 +538,16 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  141              		.cfi_def_cfa_offset 8
  142              		.cfi_offset 3, -8
  143              		.cfi_offset 14, -4
-ARM GAS  /tmp/ccNAMykE.s 			page 10
+ARM GAS  /tmp/cc90zfZ3.s 			page 10
 
 
  374:Src/main.c    ****   /* USER CODE BEGIN Error_Handler_Debug */
  375:Src/main.c    **** 
  376:Src/main.c    ****   /* Turn LED_Red_Pin on */
- 377:Src/main.c    ****   HAL_GPIO_WritePin(GPIOD, LED_Red_Pin, GPIO_PIN_SET);
+ 377:Src/main.c    ****   HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
  144              		.loc 1 377 0
  145 0002 0122     		movs	r2, #1
- 146 0004 4021     		movs	r1, #64
+ 146 0004 2021     		movs	r1, #32
  147              	.LVL8:
  148 0006 0248     		ldr	r0, .L8
  149              	.LVL9:
@@ -558,7 +558,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  154              	.L9:
  155 000e 00BF     		.align	2
  156              	.L8:
- 157 0010 000C0240 		.word	1073875968
+ 157 0010 00140240 		.word	1073878016
  158              		.cfi_endproc
  159              	.LFE128:
  161              		.section	.text.MX_TIM5_Init,"ax",%progbits
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  191 0010 4FF6FF72 		movw	r2, #65535
  192 0014 C260     		str	r2, [r0, #12]
  283:Src/main.c    ****   if (HAL_TIM_Base_Init(&htim5) != HAL_OK)
-ARM GAS  /tmp/ccNAMykE.s 			page 11
+ARM GAS  /tmp/cc90zfZ3.s 			page 11
 
 
  193              		.loc 1 283 0
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  235 0054 0C22     		movs	r2, #12
  236 0056 6946     		mov	r1, sp
  237 0058 1448     		ldr	r0, .L24
-ARM GAS  /tmp/ccNAMykE.s 			page 12
+ARM GAS  /tmp/cc90zfZ3.s 			page 12
 
 
  238 005a FFF7FEFF 		bl	HAL_TIM_IC_ConfigChannel
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  285              	.LVL21:
  286              	.L23:
  318:Src/main.c    ****   }
-ARM GAS  /tmp/ccNAMykE.s 			page 13
+ARM GAS  /tmp/cc90zfZ3.s 			page 13
 
 
  287              		.loc 1 318 0
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  195:Src/main.c    **** 
  338              		.loc 1 195 0
  339 001e 0848     		ldr	r0, .L30+12
-ARM GAS  /tmp/ccNAMykE.s 			page 14
+ARM GAS  /tmp/cc90zfZ3.s 			page 14
 
 
  340 0020 FFF7FEFF 		bl	HAL_TIM_IC_DeInit
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  391 0010 1164     		str	r1, [r2, #64]
  392 0012 126C     		ldr	r2, [r2, #64]
  393 0014 02F08052 		and	r2, r2, #268435456
-ARM GAS  /tmp/ccNAMykE.s 			page 15
+ARM GAS  /tmp/cc90zfZ3.s 			page 15
 
 
  394 0018 0192     		str	r2, [sp, #4]
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  239:Src/main.c    **** 
  437              		.loc 1 239 0
  438 0056 0791     		str	r1, [sp, #28]
-ARM GAS  /tmp/ccNAMykE.s 			page 16
+ARM GAS  /tmp/cc90zfZ3.s 			page 16
 
 
  241:Src/main.c    ****   {
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  486 0098 00380240 		.word	1073887232
  487 009c 00700040 		.word	1073770496
  488 00a0 D34D6210 		.word	274877907
-ARM GAS  /tmp/ccNAMykE.s 			page 17
+ARM GAS  /tmp/cc90zfZ3.s 			page 17
 
 
  489 00a4 00000000 		.word	.LC0
@@ -1005,7 +1005,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  109:Src/main.c    **** 
  527              		.loc 1 109 0
  528 0018 0122     		movs	r2, #1
- 529 001a 1021     		movs	r1, #16
+ 529 001a 0821     		movs	r1, #8
  530 001c 1948     		ldr	r0, .L46+4
  531 001e FFF7FEFF 		bl	HAL_GPIO_WritePin
  532              	.LVL38:
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  538              	.L42:
  120:Src/main.c    **** 
  539              		.loc 1 120 0
-ARM GAS  /tmp/ccNAMykE.s 			page 18
+ARM GAS  /tmp/cc90zfZ3.s 			page 18
 
 
  540 002c FFF7FEFF 		bl	GetLSIFrequency
@@ -1047,7 +1047,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  559              	.L43:
  154:Src/main.c    **** 
  560              		.loc 1 154 0
- 561 004a 0821     		movs	r1, #8
+ 561 004a 0421     		movs	r1, #4
  562 004c 0D48     		ldr	r0, .L46+4
  563 004e FFF7FEFF 		bl	HAL_GPIO_TogglePin
  564              	.LVL41:
@@ -1073,12 +1073,12 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  116:Src/main.c    ****   }
  581              		.loc 1 116 0
  582 006a 0022     		movs	r2, #0
- 583 006c 1021     		movs	r1, #16
+ 583 006c 0821     		movs	r1, #8
  584 006e 0548     		ldr	r0, .L46+4
  585 0070 FFF7FEFF 		bl	HAL_GPIO_WritePin
  586              	.LVL45:
  587 0074 DAE7     		b	.L42
-ARM GAS  /tmp/ccNAMykE.s 			page 19
+ARM GAS  /tmp/cc90zfZ3.s 			page 19
 
 
  588              	.L45:
@@ -1092,7 +1092,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  595 007e 00BF     		.align	2
  596              	.L46:
  597 0080 00380240 		.word	1073887232
- 598 0084 000C0240 		.word	1073875968
+ 598 0084 00140240 		.word	1073878016
  599 0088 00000000 		.word	.LANCHOR3
  600 008c 00000000 		.word	hiwdg
  601 0090 00300040 		.word	1073754112
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  624              	.LFE129:
  626              		.global	uwMeasurementDone
  627              		.global	uwPeriodValue
-ARM GAS  /tmp/ccNAMykE.s 			page 20
+ARM GAS  /tmp/cc90zfZ3.s 			page 20
 
 
  628              		.global	uwCaptureNumber
@@ -1192,42 +1192,42 @@ ARM GAS  /tmp/ccNAMykE.s 			page 1
  682              		.file 19 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h"
  683              		.file 20 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
  684              		.file 21 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-ARM GAS  /tmp/ccNAMykE.s 			page 21
+ARM GAS  /tmp/cc90zfZ3.s 			page 21
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 main.c
-     /tmp/ccNAMykE.s:18     .text.MX_GPIO_Init:0000000000000000 $t
-     /tmp/ccNAMykE.s:24     .text.MX_GPIO_Init:0000000000000000 MX_GPIO_Init
-     /tmp/ccNAMykE.s:117    .text.MX_GPIO_Init:0000000000000074 $d
-     /tmp/ccNAMykE.s:124    .text._Error_Handler:0000000000000000 $t
-     /tmp/ccNAMykE.s:131    .text._Error_Handler:0000000000000000 _Error_Handler
-     /tmp/ccNAMykE.s:157    .text._Error_Handler:0000000000000010 $d
-     /tmp/ccNAMykE.s:162    .text.MX_TIM5_Init:0000000000000000 $t
-     /tmp/ccNAMykE.s:168    .text.MX_TIM5_Init:0000000000000000 MX_TIM5_Init
-     /tmp/ccNAMykE.s:295    .text.MX_TIM5_Init:00000000000000ac $d
+     /tmp/cc90zfZ3.s:18     .text.MX_GPIO_Init:0000000000000000 $t
+     /tmp/cc90zfZ3.s:24     .text.MX_GPIO_Init:0000000000000000 MX_GPIO_Init
+     /tmp/cc90zfZ3.s:117    .text.MX_GPIO_Init:0000000000000074 $d
+     /tmp/cc90zfZ3.s:124    .text._Error_Handler:0000000000000000 $t
+     /tmp/cc90zfZ3.s:131    .text._Error_Handler:0000000000000000 _Error_Handler
+     /tmp/cc90zfZ3.s:157    .text._Error_Handler:0000000000000010 $d
+     /tmp/cc90zfZ3.s:162    .text.MX_TIM5_Init:0000000000000000 $t
+     /tmp/cc90zfZ3.s:168    .text.MX_TIM5_Init:0000000000000000 MX_TIM5_Init
+     /tmp/cc90zfZ3.s:295    .text.MX_TIM5_Init:00000000000000ac $d
                             *COM*:000000000000003c htim5
-     /tmp/ccNAMykE.s:302    .text.GetLSIFrequency:0000000000000000 $t
-     /tmp/ccNAMykE.s:308    .text.GetLSIFrequency:0000000000000000 GetLSIFrequency
-     /tmp/ccNAMykE.s:355    .text.GetLSIFrequency:0000000000000034 $d
-     /tmp/ccNAMykE.s:364    .text.SystemClock_Config:0000000000000000 $t
-     /tmp/ccNAMykE.s:371    .text.SystemClock_Config:0000000000000000 SystemClock_Config
-     /tmp/ccNAMykE.s:486    .text.SystemClock_Config:0000000000000098 $d
-     /tmp/ccNAMykE.s:494    .text.main:0000000000000000 $t
-     /tmp/ccNAMykE.s:501    .text.main:0000000000000000 main
-     /tmp/ccNAMykE.s:597    .text.main:0000000000000080 $d
+     /tmp/cc90zfZ3.s:302    .text.GetLSIFrequency:0000000000000000 $t
+     /tmp/cc90zfZ3.s:308    .text.GetLSIFrequency:0000000000000000 GetLSIFrequency
+     /tmp/cc90zfZ3.s:355    .text.GetLSIFrequency:0000000000000034 $d
+     /tmp/cc90zfZ3.s:364    .text.SystemClock_Config:0000000000000000 $t
+     /tmp/cc90zfZ3.s:371    .text.SystemClock_Config:0000000000000000 SystemClock_Config
+     /tmp/cc90zfZ3.s:486    .text.SystemClock_Config:0000000000000098 $d
+     /tmp/cc90zfZ3.s:494    .text.main:0000000000000000 $t
+     /tmp/cc90zfZ3.s:501    .text.main:0000000000000000 main
+     /tmp/cc90zfZ3.s:597    .text.main:0000000000000080 $d
                             *COM*:000000000000000c hiwdg
-     /tmp/ccNAMykE.s:607    .text.assert_failed:0000000000000000 $t
-     /tmp/ccNAMykE.s:614    .text.assert_failed:0000000000000000 assert_failed
-     /tmp/ccNAMykE.s:650    .bss.uwMeasurementDone:0000000000000000 uwMeasurementDone
-     /tmp/ccNAMykE.s:657    .bss.uwPeriodValue:0000000000000000 uwPeriodValue
-     /tmp/ccNAMykE.s:636    .bss.uwCaptureNumber:0000000000000000 uwCaptureNumber
-     /tmp/ccNAMykE.s:632    .bss.uwCaptureNumber:0000000000000000 $d
-     /tmp/ccNAMykE.s:639    .bss.uwLsiFreq:0000000000000000 $d
-     /tmp/ccNAMykE.s:643    .bss.uwLsiFreq:0000000000000000 uwLsiFreq
-     /tmp/ccNAMykE.s:646    .bss.uwMeasurementDone:0000000000000000 $d
-     /tmp/ccNAMykE.s:653    .bss.uwPeriodValue:0000000000000000 $d
-     /tmp/ccNAMykE.s:660    .rodata.MX_TIM5_Init.str1.4:0000000000000000 $d
+     /tmp/cc90zfZ3.s:607    .text.assert_failed:0000000000000000 $t
+     /tmp/cc90zfZ3.s:614    .text.assert_failed:0000000000000000 assert_failed
+     /tmp/cc90zfZ3.s:650    .bss.uwMeasurementDone:0000000000000000 uwMeasurementDone
+     /tmp/cc90zfZ3.s:657    .bss.uwPeriodValue:0000000000000000 uwPeriodValue
+     /tmp/cc90zfZ3.s:636    .bss.uwCaptureNumber:0000000000000000 uwCaptureNumber
+     /tmp/cc90zfZ3.s:632    .bss.uwCaptureNumber:0000000000000000 $d
+     /tmp/cc90zfZ3.s:639    .bss.uwLsiFreq:0000000000000000 $d
+     /tmp/cc90zfZ3.s:643    .bss.uwLsiFreq:0000000000000000 uwLsiFreq
+     /tmp/cc90zfZ3.s:646    .bss.uwMeasurementDone:0000000000000000 $d
+     /tmp/cc90zfZ3.s:653    .bss.uwPeriodValue:0000000000000000 $d
+     /tmp/cc90zfZ3.s:660    .rodata.MX_TIM5_Init.str1.4:0000000000000000 $d
                      .debug_frame:0000000000000010 $d
 
 UNDEFINED SYMBOLS
@@ -1252,7 +1252,7 @@ HAL_Init
 HAL_IWDG_Init
 HAL_GPIO_TogglePin
 HAL_Delay
-ARM GAS  /tmp/ccNAMykE.s 			page 22
+ARM GAS  /tmp/cc90zfZ3.s 			page 22
 
 
 HAL_IWDG_Refresh
