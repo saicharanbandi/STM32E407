@@ -47,19 +47,19 @@
 /* Private define ------------------------------------------------------------*/
 
 #define User_Button_1_Pin GPIO_PIN_0
-#define User_Button_1_GPIO_Port GPIOD
+#define User_Button_1_GPIO_Port GPIOF
 #define User_Button_1_EXTI_IRQn EXTI0_IRQn
 #define User_Button_2_Pin GPIO_PIN_1
-#define User_Button_2_GPIO_Port GPIOD
+#define User_Button_2_GPIO_Port GPIOF
 #define User_Button_2_EXTI_IRQn EXTI1_IRQn
-#define LED_Green_Pin GPIO_PIN_3
-#define LED_Green_GPIO_Port GPIOD
-#define LED_Blue_Pin GPIO_PIN_4
-#define LED_Blue_GPIO_Port GPIOD
-#define LED_Yellow_Pin GPIO_PIN_5
-#define LED_Yellow_GPIO_Port GPIOD
-#define LED_Red_Pin GPIO_PIN_6
-#define LED_Red_GPIO_Port GPIOD
+#define LED_Green_Pin GPIO_PIN_2
+#define LED_Green_GPIO_Port GPIOF
+#define LED_Blue_Pin GPIO_PIN_3
+#define LED_Blue_GPIO_Port GPIOF
+#define LED_Yellow_Pin GPIO_PIN_4
+#define LED_Yellow_GPIO_Port GPIOF
+#define LED_Red_Pin GPIO_PIN_5
+#define LED_Red_GPIO_Port GPIOF
 
 /* USER CODE BEGIN Private defines */
 
