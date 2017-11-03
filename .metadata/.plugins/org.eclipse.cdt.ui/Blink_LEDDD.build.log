@@ -1,0 +1,6 @@
+12:07:16 **** Incremental Build of configuration Default for project Blink_LEDDD ****
+make all 
+make: *** No rule to make target 'all'.  Stop.
+
+12:07:16 Build Finished (took 94ms)
+

@@ -106,13 +106,14 @@ int main(void)
   /*##-1- Check if the system has resumed from IWDG reset ######################*/
   if (__HAL_RCC_GET_FLAG(RCC_FLAG_IWDGRST) != RESET)
   {
-    HAL_GPIO_WritePin(LED_Blue_GPIO_Port, LED_Blue_Pin, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(GPIOD, LED_Blue_Pin, GPIO_PIN_SET);
+
     /* clear reset flags */
     __HAL_RCC_CLEAR_RESET_FLAGS();
   }
   else
   {
-    HAL_GPIO_WritePin(LED_Blue_GPIO_Port, LED_Blue_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(GPIOD, LED_Blue_Pin, GPIO_PIN_RESET);
   }
 
   /* Get the LSI frequency; TIM5 is used to measure the LSI frequency */
@@ -150,7 +151,7 @@ int main(void)
   /* USER CODE END WHILE */
 
     /* Toggle LED GREEN */
-    HAL_GPIO_TogglePin(LED_Green_GPIO_Port, LED_Green_Pin);
+    HAL_GPIO_TogglePin(GPIOD, LED_Green_Pin);
 
     /* Insert 240ms delay */
     HAL_Delay(240);
@@ -332,22 +333,23 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct;
 
   /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOF_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOD, LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : User_Button_1_Pin User_Button_2_Pin */
   GPIO_InitStruct.Pin = User_Button_1_Pin|User_Button_2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(User_Button_1_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
   /*Configure GPIO pins : LED_Green_Pin LED_Blue_Pin LED_Yellow_Pin LED_Red_Pin */
   GPIO_InitStruct.Pin = LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LED_Green_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI0_IRQn, 0, 0);
@@ -372,7 +374,7 @@ void _Error_Handler(char * file, int line)
   /* USER CODE BEGIN Error_Handler_Debug */
 
   /* Turn LED_Red_Pin on */
-  HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOD, LED_Red_Pin, GPIO_PIN_SET);
 
   /* User can add his own implementation to report the HAL error return state */
   while(1) 
