@@ -1,6 +1,6 @@
 Configuration	DMA_FLASH_To_RAM
-STM32CubeMX 	4.22.1
-Date	11/06/2017
+STM32CubeMX 	4.23.0
+Date	11/07/2017
 MCU	STM32F407ZGTx
 
 
@@ -22,9 +22,9 @@ SOFTWARE PROJECT
 
 Project Settings : 
 Project Name : DMA_FLASH_To_RAM
-Project Folder : /home/saicharan/Dropbox/arbeit/light_control_project/DALI_programming/STM32E407/trial_code/STM32E407/DMA_FLASH_To_RAM
+Project Folder : /home/saicharan/Dropbox/arbeit/lichtsteuer-modul/DALI_programming/STM32E407/trial_code/STM32E407/DMA_FLASH_To_RAM
 Toolchain / IDE : Makefile
-Firmware Package Name and Version : STM32Cube FW_F4 V1.16.0
+Firmware Package Name and Version : STM32Cube FW_F4 V1.17.0
 
 
 Code Generation Settings : 

@@ -35,6 +35,7 @@
   *
   ******************************************************************************
   */
+
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f4xx_hal.h"
@@ -48,6 +49,20 @@ DMA_HandleTypeDef hdma_memtomem_dma2_stream0;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
+/* DMA Handle declaration */
+DMA_HandleTypeDef     DmaHandle;
+
+static const uint32_t aSRC_Const_Buffer[BUFFER_SIZE]= {
+                                    0x01020304,0x05060708,0x090A0B0C,0x0D0E0F10,
+                                    0x11121314,0x15161718,0x191A1B1C,0x1D1E1F20,
+                                    0x21222324,0x25262728,0x292A2B2C,0x2D2E2F30,
+                                    0x31323334,0x35363738,0x393A3B3C,0x3D3E3F40,
+                                    0x41424344,0x45464748,0x494A4B4C,0x4D4E4F50,
+                                    0x51525354,0x55565758,0x595A5B5C,0x5D5E5F60,
+                                    0x61626364,0x65666768,0x696A6B6C,0x6D6E6F70,
+                                    0x71727374,0x75767778,0x797A7B7C,0x7D7E7F80};
+static uint32_t aDST_Buffer[BUFFER_SIZE];
+
 
 /* USER CODE END PV */
 
@@ -58,7 +73,8 @@ static void MX_DMA_Init(void);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
-
+static void TransferComplete(DMA_HandleTypeDef *hdma_memtomem_dma2_stream0);
+static void TransferError(DMA_HandleTypeDef *hdma_memtomem_dma2_stream0);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
@@ -160,36 +176,41 @@ void SystemClock_Config(void)
   HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
 }
 
-/** 
-  * Enable DMA controller clock
-  * Configure DMA for memory to memory transfers
-  *   hdma_memtomem_dma2_stream0
-  */
-static void MX_DMA_Init(void) 
-{
-  /* DMA controller clock enable */
-  __HAL_RCC_DMA2_CLK_ENABLE();
+/* /\**  */
+/*   * Enable DMA controller clock */
+/*   * Configure DMA for memory to memory transfers */
+/*   *   hdma_memtomem_dma2_stream0 */
+/*   *\/ */
+/* static void MX_DMA_Init(void)  */
+/* { */
+/*   /\* DMA controller clock enable *\/ */
+/*   __HAL_RCC_DMA2_CLK_ENABLE(); */
 
-  /* Configure DMA request hdma_memtomem_dma2_stream0 on DMA2_Stream0 */
-  hdma_memtomem_dma2_stream0.Instance = DMA2_Stream0;
-  hdma_memtomem_dma2_stream0.Init.Channel = DMA_CHANNEL_0;
-  hdma_memtomem_dma2_stream0.Init.Direction = DMA_MEMORY_TO_MEMORY;
-  hdma_memtomem_dma2_stream0.Init.PeriphInc = DMA_PINC_ENABLE;
-  hdma_memtomem_dma2_stream0.Init.MemInc = DMA_MINC_ENABLE;
-  hdma_memtomem_dma2_stream0.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
-  hdma_memtomem_dma2_stream0.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
-  hdma_memtomem_dma2_stream0.Init.Mode = DMA_NORMAL;
-  hdma_memtomem_dma2_stream0.Init.Priority = DMA_PRIORITY_HIGH;
-  hdma_memtomem_dma2_stream0.Init.FIFOMode = DMA_FIFOMODE_ENABLE;
-  hdma_memtomem_dma2_stream0.Init.FIFOThreshold = DMA_FIFO_THRESHOLD_FULL;
-  hdma_memtomem_dma2_stream0.Init.MemBurst = DMA_MBURST_SINGLE;
-  hdma_memtomem_dma2_stream0.Init.PeriphBurst = DMA_PBURST_SINGLE;
-  if (HAL_DMA_Init(&hdma_memtomem_dma2_stream0) != HAL_OK)
-  {
-    _Error_Handler(__FILE__, __LINE__);
-  }
+/*   /\* Configure DMA request hdma_memtomem_dma2_stream0 on DMA2_Stream0 *\/ */
+/*   hdma_memtomem_dma2_stream0.Instance = DMA2_Stream0; */
+/*   hdma_memtomem_dma2_stream0.Init.Channel = DMA_CHANNEL_0; */
+/*   hdma_memtomem_dma2_stream0.Init.Direction = DMA_MEMORY_TO_MEMORY; */
+/*   hdma_memtomem_dma2_stream0.Init.PeriphInc = DMA_PINC_ENABLE; */
+/*   hdma_memtomem_dma2_stream0.Init.MemInc = DMA_MINC_ENABLE; */
+/*   hdma_memtomem_dma2_stream0.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD; */
+/*   hdma_memtomem_dma2_stream0.Init.MemDataAlignment = DMA_MDATAALIGN_WORD; */
+/*   hdma_memtomem_dma2_stream0.Init.Mode = DMA_NORMAL; */
+/*   hdma_memtomem_dma2_stream0.Init.Priority = DMA_PRIORITY_HIGH; */
+/*   hdma_memtomem_dma2_stream0.Init.FIFOMode = DMA_FIFOMODE_ENABLE; */
+/*   hdma_memtomem_dma2_stream0.Init.FIFOThreshold = DMA_FIFO_THRESHOLD_FULL; */
+/*   hdma_memtomem_dma2_stream0.Init.MemBurst = DMA_MBURST_SINGLE; */
+/*   hdma_memtomem_dma2_stream0.Init.PeriphBurst = DMA_PBURST_SINGLE; */
+/*   if (HAL_DMA_Init(&hdma_memtomem_dma2_stream0) != HAL_OK) */
+/*   { */
+/*     _Error_Handler(__FILE__, __LINE__); */
+/*   } */
 
-}
+/*   /\* DMA interrupt init *\/ */
+/*   /\* DMA2_Stream0_IRQn interrupt configuration *\/ */
+/*   HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 0, 0); */
+/*   HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn); */
+
+/* } */
 
 /** Configure pins as 
         * Analog 
@@ -219,6 +240,82 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+/**
+  * Enable DMA controller clock
+  * Configure DMA for memory to memory transfers
+  *   hdma_memtomem_dma2_stream0
+  */
+static void MX_DMA_Init(void)
+{
+  /*## -1-  DMA controller clock enable ##############################################*/
+  __HAL_RCC_DMA2_CLK_ENABLE();
+
+  /* Configure DMA request hdma_memtomem_dma2_stream0 on DMA2_Stream0 ################*/
+  hdma_memtomem_dma2_stream0.Instance = DMA2_Stream0;
+  hdma_memtomem_dma2_stream0.Init.Channel = DMA_CHANNEL_0;
+  hdma_memtomem_dma2_stream0.Init.Direction = DMA_MEMORY_TO_MEMORY;
+  hdma_memtomem_dma2_stream0.Init.PeriphInc = DMA_PINC_ENABLE;
+  hdma_memtomem_dma2_stream0.Init.MemInc = DMA_MINC_ENABLE;
+  hdma_memtomem_dma2_stream0.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
+  hdma_memtomem_dma2_stream0.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
+  hdma_memtomem_dma2_stream0.Init.Mode = DMA_NORMAL;
+  hdma_memtomem_dma2_stream0.Init.Priority = DMA_PRIORITY_HIGH;
+  hdma_memtomem_dma2_stream0.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
+  hdma_memtomem_dma2_stream0.Init.FIFOThreshold = DMA_FIFO_THRESHOLD_FULL;
+  hdma_memtomem_dma2_stream0.Init.MemBurst = DMA_MBURST_SINGLE;
+  hdma_memtomem_dma2_stream0.Init.PeriphBurst = DMA_PBURST_SINGLE;
+
+  /*## -4- Select Callback functions called after Transfer complete and Transfer error*/
+  hdma_memtomem_dma2_stream0.XferCpltCallback = TransferComplete;
+  hdma_memtomem_dma2_stream0.XferErrorCallback = TransferError;
+
+  /*## -5- Initialize the DMA stream #################################################*/
+  if (HAL_DMA_Init(&hdma_memtomem_dma2_stream0) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  /*## -6- Configure NVIC for DMA transfer complete/error interrupts ################*/
+  /* Set Interrupt Group Priority */
+  HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 0, 0);
+
+  /* Enable the DMA STREAM global Interrupt */
+  HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
+
+  /*## -7- Start the DMA transfer using the interrupt mode #########################*/
+  /* Configure the source, destination and buffer size DMA fields and Start DMA Stream transfer */
+  /* Enable All the DMA interrupts */
+  if(HAL_DMA_Start_IT(&hdma_memtomem_dma2_stream0, (uint32_t)&aSRC_Const_Buffer, (uint32_t)&aDST_Buffer, BUFFER_SIZE) != HAL_OK)
+  {
+    _Error_Handler(__FILE__,__LINE__);
+  }
+
+}
+
+/**
+  * @brief  DMA conversion complete callback
+  * @note   This function is executed when the transfer complete interrupt 
+  *         is generated
+  * @retval None
+  */
+static void TransferComplete(DMA_HandleTypeDef *hdma_memtomem_dma2_stream0)
+{
+  /* Turn LED_Green on: Transfer correct */
+  HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
+}
+
+/**
+  * @brief  DMA conversion error callback
+  * @note   This function is executed when the transfer error interrupt 
+  *         is generated during DMA transfer
+  * @retval None
+  */
+static void TransferError(DMA_HandleTypeDef *hdma_memtomem_dma2_stream0)
+{
+  /* Turn LED_Red on: Transfer Error */
+  HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
+}
+
 
 /* USER CODE END 4 */
 

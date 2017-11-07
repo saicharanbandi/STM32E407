@@ -1,0 +1,1057 @@
+ARM GAS  /tmp/cc0MdE6i.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.TransferError,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu fpv4-sp-d16
+  24              	TransferError:
+  25              	.LFB128:
+  26              		.file 1 "Src/main.c"
+   1:Src/main.c    **** /**
+   2:Src/main.c    ****   ******************************************************************************
+   3:Src/main.c    ****   * File Name          : main.c
+   4:Src/main.c    ****   * Description        : Main program body
+   5:Src/main.c    ****   ******************************************************************************
+   6:Src/main.c    ****   ** This notice applies to any and all portions of this file
+   7:Src/main.c    ****   * that are not between comment pairs USER CODE BEGIN and
+   8:Src/main.c    ****   * USER CODE END. Other portions of this file, whether 
+   9:Src/main.c    ****   * inserted by the user or by software development tools
+  10:Src/main.c    ****   * are owned by their respective copyright owners.
+  11:Src/main.c    ****   *
+  12:Src/main.c    ****   * COPYRIGHT(c) 2017 STMicroelectronics
+  13:Src/main.c    ****   *
+  14:Src/main.c    ****   * Redistribution and use in source and binary forms, with or without modification,
+  15:Src/main.c    ****   * are permitted provided that the following conditions are met:
+  16:Src/main.c    ****   *   1. Redistributions of source code must retain the above copyright notice,
+  17:Src/main.c    ****   *      this list of conditions and the following disclaimer.
+  18:Src/main.c    ****   *   2. Redistributions in binary form must reproduce the above copyright notice,
+  19:Src/main.c    ****   *      this list of conditions and the following disclaimer in the documentation
+  20:Src/main.c    ****   *      and/or other materials provided with the distribution.
+  21:Src/main.c    ****   *   3. Neither the name of STMicroelectronics nor the names of its contributors
+  22:Src/main.c    ****   *      may be used to endorse or promote products derived from this software
+  23:Src/main.c    ****   *      without specific prior written permission.
+  24:Src/main.c    ****   *
+  25:Src/main.c    ****   * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  26:Src/main.c    ****   * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  27:Src/main.c    ****   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  28:Src/main.c    ****   * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  29:Src/main.c    ****   * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  30:Src/main.c    ****   * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  31:Src/main.c    ****   * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  32:Src/main.c    ****   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ARM GAS  /tmp/cc0MdE6i.s 			page 2
+
+
+  33:Src/main.c    ****   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  34:Src/main.c    ****   * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  35:Src/main.c    ****   *
+  36:Src/main.c    ****   ******************************************************************************
+  37:Src/main.c    ****   */
+  38:Src/main.c    **** 
+  39:Src/main.c    **** /* Includes ------------------------------------------------------------------*/
+  40:Src/main.c    **** #include "main.h"
+  41:Src/main.c    **** #include "stm32f4xx_hal.h"
+  42:Src/main.c    **** 
+  43:Src/main.c    **** /* USER CODE BEGIN Includes */
+  44:Src/main.c    **** 
+  45:Src/main.c    **** /* USER CODE END Includes */
+  46:Src/main.c    **** 
+  47:Src/main.c    **** /* Private variables ---------------------------------------------------------*/
+  48:Src/main.c    **** DMA_HandleTypeDef hdma_memtomem_dma2_stream0;
+  49:Src/main.c    **** 
+  50:Src/main.c    **** /* USER CODE BEGIN PV */
+  51:Src/main.c    **** /* Private variables ---------------------------------------------------------*/
+  52:Src/main.c    **** /* DMA Handle declaration */
+  53:Src/main.c    **** DMA_HandleTypeDef     DmaHandle;
+  54:Src/main.c    **** 
+  55:Src/main.c    **** static const uint32_t aSRC_Const_Buffer[BUFFER_SIZE]= {
+  56:Src/main.c    ****                                     0x01020304,0x05060708,0x090A0B0C,0x0D0E0F10,
+  57:Src/main.c    ****                                     0x11121314,0x15161718,0x191A1B1C,0x1D1E1F20,
+  58:Src/main.c    ****                                     0x21222324,0x25262728,0x292A2B2C,0x2D2E2F30,
+  59:Src/main.c    ****                                     0x31323334,0x35363738,0x393A3B3C,0x3D3E3F40,
+  60:Src/main.c    ****                                     0x41424344,0x45464748,0x494A4B4C,0x4D4E4F50,
+  61:Src/main.c    ****                                     0x51525354,0x55565758,0x595A5B5C,0x5D5E5F60,
+  62:Src/main.c    ****                                     0x61626364,0x65666768,0x696A6B6C,0x6D6E6F70,
+  63:Src/main.c    ****                                     0x71727374,0x75767778,0x797A7B7C,0x7D7E7F80};
+  64:Src/main.c    **** static uint32_t aDST_Buffer[BUFFER_SIZE];
+  65:Src/main.c    **** 
+  66:Src/main.c    **** 
+  67:Src/main.c    **** /* USER CODE END PV */
+  68:Src/main.c    **** 
+  69:Src/main.c    **** /* Private function prototypes -----------------------------------------------*/
+  70:Src/main.c    **** void SystemClock_Config(void);
+  71:Src/main.c    **** static void MX_GPIO_Init(void);
+  72:Src/main.c    **** static void MX_DMA_Init(void);
+  73:Src/main.c    **** 
+  74:Src/main.c    **** /* USER CODE BEGIN PFP */
+  75:Src/main.c    **** /* Private function prototypes -----------------------------------------------*/
+  76:Src/main.c    **** static void TransferComplete(DMA_HandleTypeDef *hdma_memtomem_dma2_stream0);
+  77:Src/main.c    **** static void TransferError(DMA_HandleTypeDef *hdma_memtomem_dma2_stream0);
+  78:Src/main.c    **** /* USER CODE END PFP */
+  79:Src/main.c    **** 
+  80:Src/main.c    **** /* USER CODE BEGIN 0 */
+  81:Src/main.c    **** 
+  82:Src/main.c    **** /* USER CODE END 0 */
+  83:Src/main.c    **** 
+  84:Src/main.c    **** int main(void)
+  85:Src/main.c    **** {
+  86:Src/main.c    **** 
+  87:Src/main.c    ****   /* USER CODE BEGIN 1 */
+  88:Src/main.c    **** 
+  89:Src/main.c    ****   /* USER CODE END 1 */
+ARM GAS  /tmp/cc0MdE6i.s 			page 3
+
+
+  90:Src/main.c    **** 
+  91:Src/main.c    ****   /* MCU Configuration----------------------------------------------------------*/
+  92:Src/main.c    **** 
+  93:Src/main.c    ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  94:Src/main.c    ****   HAL_Init();
+  95:Src/main.c    **** 
+  96:Src/main.c    ****   /* USER CODE BEGIN Init */
+  97:Src/main.c    **** 
+  98:Src/main.c    ****   /* USER CODE END Init */
+  99:Src/main.c    **** 
+ 100:Src/main.c    ****   /* Configure the system clock */
+ 101:Src/main.c    ****   SystemClock_Config();
+ 102:Src/main.c    **** 
+ 103:Src/main.c    ****   /* USER CODE BEGIN SysInit */
+ 104:Src/main.c    **** 
+ 105:Src/main.c    ****   /* USER CODE END SysInit */
+ 106:Src/main.c    **** 
+ 107:Src/main.c    ****   /* Initialize all configured peripherals */
+ 108:Src/main.c    ****   MX_GPIO_Init();
+ 109:Src/main.c    ****   MX_DMA_Init();
+ 110:Src/main.c    **** 
+ 111:Src/main.c    ****   /* USER CODE BEGIN 2 */
+ 112:Src/main.c    **** 
+ 113:Src/main.c    ****   /* USER CODE END 2 */
+ 114:Src/main.c    **** 
+ 115:Src/main.c    ****   /* Infinite loop */
+ 116:Src/main.c    ****   /* USER CODE BEGIN WHILE */
+ 117:Src/main.c    ****   while (1)
+ 118:Src/main.c    ****   {
+ 119:Src/main.c    ****   /* USER CODE END WHILE */
+ 120:Src/main.c    **** 
+ 121:Src/main.c    ****   /* USER CODE BEGIN 3 */
+ 122:Src/main.c    **** 
+ 123:Src/main.c    ****   }
+ 124:Src/main.c    ****   /* USER CODE END 3 */
+ 125:Src/main.c    **** 
+ 126:Src/main.c    **** }
+ 127:Src/main.c    **** 
+ 128:Src/main.c    **** /** System Clock Configuration
+ 129:Src/main.c    **** */
+ 130:Src/main.c    **** void SystemClock_Config(void)
+ 131:Src/main.c    **** {
+ 132:Src/main.c    **** 
+ 133:Src/main.c    ****   RCC_OscInitTypeDef RCC_OscInitStruct;
+ 134:Src/main.c    ****   RCC_ClkInitTypeDef RCC_ClkInitStruct;
+ 135:Src/main.c    **** 
+ 136:Src/main.c    ****     /**Configure the main internal regulator output voltage 
+ 137:Src/main.c    ****     */
+ 138:Src/main.c    ****   __HAL_RCC_PWR_CLK_ENABLE();
+ 139:Src/main.c    **** 
+ 140:Src/main.c    ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+ 141:Src/main.c    **** 
+ 142:Src/main.c    ****     /**Initializes the CPU, AHB and APB busses clocks 
+ 143:Src/main.c    ****     */
+ 144:Src/main.c    ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+ 145:Src/main.c    ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 146:Src/main.c    ****   RCC_OscInitStruct.HSICalibrationValue = 16;
+ARM GAS  /tmp/cc0MdE6i.s 			page 4
+
+
+ 147:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+ 148:Src/main.c    ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 149:Src/main.c    ****   {
+ 150:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
+ 151:Src/main.c    ****   }
+ 152:Src/main.c    **** 
+ 153:Src/main.c    ****     /**Initializes the CPU, AHB and APB busses clocks 
+ 154:Src/main.c    ****     */
+ 155:Src/main.c    ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+ 156:Src/main.c    ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 157:Src/main.c    ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
+ 158:Src/main.c    ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 159:Src/main.c    ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+ 160:Src/main.c    ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 161:Src/main.c    **** 
+ 162:Src/main.c    ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
+ 163:Src/main.c    ****   {
+ 164:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
+ 165:Src/main.c    ****   }
+ 166:Src/main.c    **** 
+ 167:Src/main.c    ****     /**Configure the Systick interrupt time 
+ 168:Src/main.c    ****     */
+ 169:Src/main.c    ****   HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
+ 170:Src/main.c    **** 
+ 171:Src/main.c    ****     /**Configure the Systick 
+ 172:Src/main.c    ****     */
+ 173:Src/main.c    ****   HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);
+ 174:Src/main.c    **** 
+ 175:Src/main.c    ****   /* SysTick_IRQn interrupt configuration */
+ 176:Src/main.c    ****   HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
+ 177:Src/main.c    **** }
+ 178:Src/main.c    **** 
+ 179:Src/main.c    **** /* /\**  */
+ 180:Src/main.c    **** /*   * Enable DMA controller clock */
+ 181:Src/main.c    **** /*   * Configure DMA for memory to memory transfers */
+ 182:Src/main.c    **** /*   *   hdma_memtomem_dma2_stream0 */
+ 183:Src/main.c    **** /*   *\/ */
+ 184:Src/main.c    **** /* static void MX_DMA_Init(void)  */
+ 185:Src/main.c    **** /* { */
+ 186:Src/main.c    **** /*   /\* DMA controller clock enable *\/ */
+ 187:Src/main.c    **** /*   __HAL_RCC_DMA2_CLK_ENABLE(); */
+ 188:Src/main.c    **** 
+ 189:Src/main.c    **** /*   /\* Configure DMA request hdma_memtomem_dma2_stream0 on DMA2_Stream0 *\/ */
+ 190:Src/main.c    **** /*   hdma_memtomem_dma2_stream0.Instance = DMA2_Stream0; */
+ 191:Src/main.c    **** /*   hdma_memtomem_dma2_stream0.Init.Channel = DMA_CHANNEL_0; */
+ 192:Src/main.c    **** /*   hdma_memtomem_dma2_stream0.Init.Direction = DMA_MEMORY_TO_MEMORY; */
+ 193:Src/main.c    **** /*   hdma_memtomem_dma2_stream0.Init.PeriphInc = DMA_PINC_ENABLE; */
+ 194:Src/main.c    **** /*   hdma_memtomem_dma2_stream0.Init.MemInc = DMA_MINC_ENABLE; */
+ 195:Src/main.c    **** /*   hdma_memtomem_dma2_stream0.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD; */
+ 196:Src/main.c    **** /*   hdma_memtomem_dma2_stream0.Init.MemDataAlignment = DMA_MDATAALIGN_WORD; */
+ 197:Src/main.c    **** /*   hdma_memtomem_dma2_stream0.Init.Mode = DMA_NORMAL; */
+ 198:Src/main.c    **** /*   hdma_memtomem_dma2_stream0.Init.Priority = DMA_PRIORITY_HIGH; */
+ 199:Src/main.c    **** /*   hdma_memtomem_dma2_stream0.Init.FIFOMode = DMA_FIFOMODE_ENABLE; */
+ 200:Src/main.c    **** /*   hdma_memtomem_dma2_stream0.Init.FIFOThreshold = DMA_FIFO_THRESHOLD_FULL; */
+ 201:Src/main.c    **** /*   hdma_memtomem_dma2_stream0.Init.MemBurst = DMA_MBURST_SINGLE; */
+ 202:Src/main.c    **** /*   hdma_memtomem_dma2_stream0.Init.PeriphBurst = DMA_PBURST_SINGLE; */
+ 203:Src/main.c    **** /*   if (HAL_DMA_Init(&hdma_memtomem_dma2_stream0) != HAL_OK) */
+ARM GAS  /tmp/cc0MdE6i.s 			page 5
+
+
+ 204:Src/main.c    **** /*   { */
+ 205:Src/main.c    **** /*     _Error_Handler(__FILE__, __LINE__); */
+ 206:Src/main.c    **** /*   } */
+ 207:Src/main.c    **** 
+ 208:Src/main.c    **** /*   /\* DMA interrupt init *\/ */
+ 209:Src/main.c    **** /*   /\* DMA2_Stream0_IRQn interrupt configuration *\/ */
+ 210:Src/main.c    **** /*   HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 0, 0); */
+ 211:Src/main.c    **** /*   HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn); */
+ 212:Src/main.c    **** 
+ 213:Src/main.c    **** /* } */
+ 214:Src/main.c    **** 
+ 215:Src/main.c    **** /** Configure pins as 
+ 216:Src/main.c    ****         * Analog 
+ 217:Src/main.c    ****         * Input 
+ 218:Src/main.c    ****         * Output
+ 219:Src/main.c    ****         * EVENT_OUT
+ 220:Src/main.c    ****         * EXTI
+ 221:Src/main.c    **** */
+ 222:Src/main.c    **** static void MX_GPIO_Init(void)
+ 223:Src/main.c    **** {
+ 224:Src/main.c    **** 
+ 225:Src/main.c    ****   GPIO_InitTypeDef GPIO_InitStruct;
+ 226:Src/main.c    **** 
+ 227:Src/main.c    ****   /* GPIO Ports Clock Enable */
+ 228:Src/main.c    ****   __HAL_RCC_GPIOF_CLK_ENABLE();
+ 229:Src/main.c    **** 
+ 230:Src/main.c    ****   /*Configure GPIO pin Output Level */
+ 231:Src/main.c    ****   HAL_GPIO_WritePin(GPIOF, LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin, GPIO_PIN_RESET);
+ 232:Src/main.c    **** 
+ 233:Src/main.c    ****   /*Configure GPIO pins : LED_Green_Pin LED_Blue_Pin LED_Yellow_Pin LED_Red_Pin */
+ 234:Src/main.c    ****   GPIO_InitStruct.Pin = LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin;
+ 235:Src/main.c    ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ 236:Src/main.c    ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 237:Src/main.c    ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 238:Src/main.c    ****   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+ 239:Src/main.c    **** 
+ 240:Src/main.c    **** }
+ 241:Src/main.c    **** 
+ 242:Src/main.c    **** /* USER CODE BEGIN 4 */
+ 243:Src/main.c    **** /**
+ 244:Src/main.c    ****   * Enable DMA controller clock
+ 245:Src/main.c    ****   * Configure DMA for memory to memory transfers
+ 246:Src/main.c    ****   *   hdma_memtomem_dma2_stream0
+ 247:Src/main.c    ****   */
+ 248:Src/main.c    **** static void MX_DMA_Init(void)
+ 249:Src/main.c    **** {
+ 250:Src/main.c    ****   /*## -1-  DMA controller clock enable ##############################################*/
+ 251:Src/main.c    ****   __HAL_RCC_DMA2_CLK_ENABLE();
+ 252:Src/main.c    **** 
+ 253:Src/main.c    ****   /* Configure DMA request hdma_memtomem_dma2_stream0 on DMA2_Stream0 ################*/
+ 254:Src/main.c    ****   hdma_memtomem_dma2_stream0.Instance = DMA2_Stream0;
+ 255:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.Channel = DMA_CHANNEL_0;
+ 256:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.Direction = DMA_MEMORY_TO_MEMORY;
+ 257:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.PeriphInc = DMA_PINC_ENABLE;
+ 258:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.MemInc = DMA_MINC_ENABLE;
+ 259:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
+ 260:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
+ARM GAS  /tmp/cc0MdE6i.s 			page 6
+
+
+ 261:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.Mode = DMA_NORMAL;
+ 262:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.Priority = DMA_PRIORITY_HIGH;
+ 263:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
+ 264:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.FIFOThreshold = DMA_FIFO_THRESHOLD_FULL;
+ 265:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.MemBurst = DMA_MBURST_SINGLE;
+ 266:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.PeriphBurst = DMA_PBURST_SINGLE;
+ 267:Src/main.c    **** 
+ 268:Src/main.c    ****   /*## -4- Select Callback functions called after Transfer complete and Transfer error*/
+ 269:Src/main.c    ****   hdma_memtomem_dma2_stream0.XferCpltCallback = TransferComplete;
+ 270:Src/main.c    ****   hdma_memtomem_dma2_stream0.XferErrorCallback = TransferError;
+ 271:Src/main.c    **** 
+ 272:Src/main.c    ****   /*## -5- Initialize the DMA stream #################################################*/
+ 273:Src/main.c    ****   if (HAL_DMA_Init(&hdma_memtomem_dma2_stream0) != HAL_OK)
+ 274:Src/main.c    ****   {
+ 275:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
+ 276:Src/main.c    ****   }
+ 277:Src/main.c    **** 
+ 278:Src/main.c    ****   /*## -6- Configure NVIC for DMA transfer complete/error interrupts ################*/
+ 279:Src/main.c    ****   /* Set Interrupt Group Priority */
+ 280:Src/main.c    ****   HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 0, 0);
+ 281:Src/main.c    **** 
+ 282:Src/main.c    ****   /* Enable the DMA STREAM global Interrupt */
+ 283:Src/main.c    ****   HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
+ 284:Src/main.c    **** 
+ 285:Src/main.c    ****   /*## -7- Start the DMA transfer using the interrupt mode #########################*/
+ 286:Src/main.c    ****   /* Configure the source, destination and buffer size DMA fields and Start DMA Stream transfer */
+ 287:Src/main.c    ****   /* Enable All the DMA interrupts */
+ 288:Src/main.c    ****   if(HAL_DMA_Start_IT(&hdma_memtomem_dma2_stream0, (uint32_t)&aSRC_Const_Buffer, (uint32_t)&aDST_Bu
+ 289:Src/main.c    ****   {
+ 290:Src/main.c    ****     _Error_Handler(__FILE__,__LINE__);
+ 291:Src/main.c    ****   }
+ 292:Src/main.c    **** 
+ 293:Src/main.c    **** }
+ 294:Src/main.c    **** 
+ 295:Src/main.c    **** /**
+ 296:Src/main.c    ****   * @brief  DMA conversion complete callback
+ 297:Src/main.c    ****   * @note   This function is executed when the transfer complete interrupt 
+ 298:Src/main.c    ****   *         is generated
+ 299:Src/main.c    ****   * @retval None
+ 300:Src/main.c    ****   */
+ 301:Src/main.c    **** static void TransferComplete(DMA_HandleTypeDef *hdma_memtomem_dma2_stream0)
+ 302:Src/main.c    **** {
+ 303:Src/main.c    ****   /* Turn LED_Green on: Transfer correct */
+ 304:Src/main.c    ****   HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
+ 305:Src/main.c    **** }
+ 306:Src/main.c    **** 
+ 307:Src/main.c    **** /**
+ 308:Src/main.c    ****   * @brief  DMA conversion error callback
+ 309:Src/main.c    ****   * @note   This function is executed when the transfer error interrupt 
+ 310:Src/main.c    ****   *         is generated during DMA transfer
+ 311:Src/main.c    ****   * @retval None
+ 312:Src/main.c    ****   */
+ 313:Src/main.c    **** static void TransferError(DMA_HandleTypeDef *hdma_memtomem_dma2_stream0)
+ 314:Src/main.c    **** {
+  27              		.loc 1 314 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /tmp/cc0MdE6i.s 			page 7
+
+
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              	.LVL0:
+  32 0000 08B5     		push	{r3, lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 3, -8
+  36              		.cfi_offset 14, -4
+ 315:Src/main.c    ****   /* Turn LED_Red on: Transfer Error */
+ 316:Src/main.c    ****   HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
+  37              		.loc 1 316 0
+  38 0002 0122     		movs	r2, #1
+  39 0004 2021     		movs	r1, #32
+  40 0006 0248     		ldr	r0, .L3
+  41              	.LVL1:
+  42 0008 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  43              	.LVL2:
+  44 000c 08BD     		pop	{r3, pc}
+  45              	.L4:
+  46 000e 00BF     		.align	2
+  47              	.L3:
+  48 0010 00140240 		.word	1073878016
+  49              		.cfi_endproc
+  50              	.LFE128:
+  52              		.section	.text.TransferComplete,"ax",%progbits
+  53              		.align	1
+  54              		.syntax unified
+  55              		.thumb
+  56              		.thumb_func
+  57              		.fpu fpv4-sp-d16
+  59              	TransferComplete:
+  60              	.LFB127:
+ 302:Src/main.c    ****   /* Turn LED_Green on: Transfer correct */
+  61              		.loc 1 302 0
+  62              		.cfi_startproc
+  63              		@ args = 0, pretend = 0, frame = 0
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+  65              	.LVL3:
+  66 0000 08B5     		push	{r3, lr}
+  67              	.LCFI1:
+  68              		.cfi_def_cfa_offset 8
+  69              		.cfi_offset 3, -8
+  70              		.cfi_offset 14, -4
+ 304:Src/main.c    **** }
+  71              		.loc 1 304 0
+  72 0002 0122     		movs	r2, #1
+  73 0004 0421     		movs	r1, #4
+  74 0006 0248     		ldr	r0, .L7
+  75              	.LVL4:
+  76 0008 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  77              	.LVL5:
+  78 000c 08BD     		pop	{r3, pc}
+  79              	.L8:
+  80 000e 00BF     		.align	2
+  81              	.L7:
+  82 0010 00140240 		.word	1073878016
+  83              		.cfi_endproc
+  84              	.LFE127:
+ARM GAS  /tmp/cc0MdE6i.s 			page 8
+
+
+  86              		.section	.text.MX_GPIO_Init,"ax",%progbits
+  87              		.align	1
+  88              		.syntax unified
+  89              		.thumb
+  90              		.thumb_func
+  91              		.fpu fpv4-sp-d16
+  93              	MX_GPIO_Init:
+  94              	.LFB125:
+ 223:Src/main.c    **** 
+  95              		.loc 1 223 0
+  96              		.cfi_startproc
+  97              		@ args = 0, pretend = 0, frame = 24
+  98              		@ frame_needed = 0, uses_anonymous_args = 0
+  99 0000 30B5     		push	{r4, r5, lr}
+ 100              	.LCFI2:
+ 101              		.cfi_def_cfa_offset 12
+ 102              		.cfi_offset 4, -12
+ 103              		.cfi_offset 5, -8
+ 104              		.cfi_offset 14, -4
+ 105 0002 87B0     		sub	sp, sp, #28
+ 106              	.LCFI3:
+ 107              		.cfi_def_cfa_offset 40
+ 108              	.LBB2:
+ 228:Src/main.c    **** 
+ 109              		.loc 1 228 0
+ 110 0004 0024     		movs	r4, #0
+ 111 0006 0094     		str	r4, [sp]
+ 112 0008 0D4B     		ldr	r3, .L11
+ 113 000a 1A6B     		ldr	r2, [r3, #48]
+ 114 000c 42F02002 		orr	r2, r2, #32
+ 115 0010 1A63     		str	r2, [r3, #48]
+ 116 0012 1B6B     		ldr	r3, [r3, #48]
+ 117 0014 03F02003 		and	r3, r3, #32
+ 118 0018 0093     		str	r3, [sp]
+ 119 001a 009B     		ldr	r3, [sp]
+ 120              	.LBE2:
+ 231:Src/main.c    **** 
+ 121              		.loc 1 231 0
+ 122 001c 094D     		ldr	r5, .L11+4
+ 123 001e 2246     		mov	r2, r4
+ 124 0020 3C21     		movs	r1, #60
+ 125 0022 2846     		mov	r0, r5
+ 126 0024 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 127              	.LVL6:
+ 234:Src/main.c    ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ 128              		.loc 1 234 0
+ 129 0028 3C23     		movs	r3, #60
+ 130 002a 0193     		str	r3, [sp, #4]
+ 235:Src/main.c    ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 131              		.loc 1 235 0
+ 132 002c 0123     		movs	r3, #1
+ 133 002e 0293     		str	r3, [sp, #8]
+ 236:Src/main.c    ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 134              		.loc 1 236 0
+ 135 0030 0394     		str	r4, [sp, #12]
+ 237:Src/main.c    ****   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+ 136              		.loc 1 237 0
+ARM GAS  /tmp/cc0MdE6i.s 			page 9
+
+
+ 137 0032 0494     		str	r4, [sp, #16]
+ 238:Src/main.c    **** 
+ 138              		.loc 1 238 0
+ 139 0034 01A9     		add	r1, sp, #4
+ 140 0036 2846     		mov	r0, r5
+ 141 0038 FFF7FEFF 		bl	HAL_GPIO_Init
+ 142              	.LVL7:
+ 240:Src/main.c    **** 
+ 143              		.loc 1 240 0
+ 144 003c 07B0     		add	sp, sp, #28
+ 145              	.LCFI4:
+ 146              		.cfi_def_cfa_offset 12
+ 147              		@ sp needed
+ 148 003e 30BD     		pop	{r4, r5, pc}
+ 149              	.L12:
+ 150              		.align	2
+ 151              	.L11:
+ 152 0040 00380240 		.word	1073887232
+ 153 0044 00140240 		.word	1073878016
+ 154              		.cfi_endproc
+ 155              	.LFE125:
+ 157              		.section	.text._Error_Handler,"ax",%progbits
+ 158              		.align	1
+ 159              		.global	_Error_Handler
+ 160              		.syntax unified
+ 161              		.thumb
+ 162              		.thumb_func
+ 163              		.fpu fpv4-sp-d16
+ 165              	_Error_Handler:
+ 166              	.LFB129:
+ 317:Src/main.c    **** }
+ 318:Src/main.c    **** 
+ 319:Src/main.c    **** 
+ 320:Src/main.c    **** /* USER CODE END 4 */
+ 321:Src/main.c    **** 
+ 322:Src/main.c    **** /**
+ 323:Src/main.c    ****   * @brief  This function is executed in case of error occurrence.
+ 324:Src/main.c    ****   * @param  None
+ 325:Src/main.c    ****   * @retval None
+ 326:Src/main.c    ****   */
+ 327:Src/main.c    **** void _Error_Handler(char * file, int line)
+ 328:Src/main.c    **** {
+ 167              		.loc 1 328 0
+ 168              		.cfi_startproc
+ 169              		@ Volatile: function does not return.
+ 170              		@ args = 0, pretend = 0, frame = 0
+ 171              		@ frame_needed = 0, uses_anonymous_args = 0
+ 172              		@ link register save eliminated.
+ 173              	.LVL8:
+ 174              	.L14:
+ 175 0000 FEE7     		b	.L14
+ 176              		.cfi_endproc
+ 177              	.LFE129:
+ 179              		.section	.text.MX_DMA_Init,"ax",%progbits
+ 180              		.align	1
+ 181              		.syntax unified
+ 182              		.thumb
+ARM GAS  /tmp/cc0MdE6i.s 			page 10
+
+
+ 183              		.thumb_func
+ 184              		.fpu fpv4-sp-d16
+ 186              	MX_DMA_Init:
+ 187              	.LFB126:
+ 249:Src/main.c    ****   /*## -1-  DMA controller clock enable ##############################################*/
+ 188              		.loc 1 249 0
+ 189              		.cfi_startproc
+ 190              		@ args = 0, pretend = 0, frame = 8
+ 191              		@ frame_needed = 0, uses_anonymous_args = 0
+ 249:Src/main.c    ****   /*## -1-  DMA controller clock enable ##############################################*/
+ 192              		.loc 1 249 0
+ 193 0000 00B5     		push	{lr}
+ 194              	.LCFI5:
+ 195              		.cfi_def_cfa_offset 4
+ 196              		.cfi_offset 14, -4
+ 197 0002 83B0     		sub	sp, sp, #12
+ 198              	.LCFI6:
+ 199              		.cfi_def_cfa_offset 16
+ 200              	.LBB3:
+ 251:Src/main.c    **** 
+ 201              		.loc 1 251 0
+ 202 0004 0023     		movs	r3, #0
+ 203 0006 0193     		str	r3, [sp, #4]
+ 204 0008 234A     		ldr	r2, .L21
+ 205 000a 116B     		ldr	r1, [r2, #48]
+ 206 000c 41F48001 		orr	r1, r1, #4194304
+ 207 0010 1163     		str	r1, [r2, #48]
+ 208 0012 126B     		ldr	r2, [r2, #48]
+ 209 0014 02F48002 		and	r2, r2, #4194304
+ 210 0018 0192     		str	r2, [sp, #4]
+ 211 001a 019A     		ldr	r2, [sp, #4]
+ 212              	.LBE3:
+ 254:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.Channel = DMA_CHANNEL_0;
+ 213              		.loc 1 254 0
+ 214 001c 1F48     		ldr	r0, .L21+4
+ 215 001e 204A     		ldr	r2, .L21+8
+ 216 0020 0260     		str	r2, [r0]
+ 255:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.Direction = DMA_MEMORY_TO_MEMORY;
+ 217              		.loc 1 255 0
+ 218 0022 4360     		str	r3, [r0, #4]
+ 256:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.PeriphInc = DMA_PINC_ENABLE;
+ 219              		.loc 1 256 0
+ 220 0024 8022     		movs	r2, #128
+ 221 0026 8260     		str	r2, [r0, #8]
+ 257:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.MemInc = DMA_MINC_ENABLE;
+ 222              		.loc 1 257 0
+ 223 0028 4FF40072 		mov	r2, #512
+ 224 002c C260     		str	r2, [r0, #12]
+ 258:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
+ 225              		.loc 1 258 0
+ 226 002e 4FF48062 		mov	r2, #1024
+ 227 0032 0261     		str	r2, [r0, #16]
+ 259:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
+ 228              		.loc 1 259 0
+ 229 0034 4FF48052 		mov	r2, #4096
+ 230 0038 4261     		str	r2, [r0, #20]
+ 260:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.Mode = DMA_NORMAL;
+ARM GAS  /tmp/cc0MdE6i.s 			page 11
+
+
+ 231              		.loc 1 260 0
+ 232 003a 4FF48042 		mov	r2, #16384
+ 233 003e 8261     		str	r2, [r0, #24]
+ 261:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.Priority = DMA_PRIORITY_HIGH;
+ 234              		.loc 1 261 0
+ 235 0040 C361     		str	r3, [r0, #28]
+ 262:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
+ 236              		.loc 1 262 0
+ 237 0042 4FF40032 		mov	r2, #131072
+ 238 0046 0262     		str	r2, [r0, #32]
+ 263:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.FIFOThreshold = DMA_FIFO_THRESHOLD_FULL;
+ 239              		.loc 1 263 0
+ 240 0048 4362     		str	r3, [r0, #36]
+ 264:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.MemBurst = DMA_MBURST_SINGLE;
+ 241              		.loc 1 264 0
+ 242 004a 0322     		movs	r2, #3
+ 243 004c 8262     		str	r2, [r0, #40]
+ 265:Src/main.c    ****   hdma_memtomem_dma2_stream0.Init.PeriphBurst = DMA_PBURST_SINGLE;
+ 244              		.loc 1 265 0
+ 245 004e C362     		str	r3, [r0, #44]
+ 266:Src/main.c    **** 
+ 246              		.loc 1 266 0
+ 247 0050 0363     		str	r3, [r0, #48]
+ 269:Src/main.c    ****   hdma_memtomem_dma2_stream0.XferErrorCallback = TransferError;
+ 248              		.loc 1 269 0
+ 249 0052 144B     		ldr	r3, .L21+12
+ 250 0054 C363     		str	r3, [r0, #60]
+ 270:Src/main.c    **** 
+ 251              		.loc 1 270 0
+ 252 0056 144B     		ldr	r3, .L21+16
+ 253 0058 C364     		str	r3, [r0, #76]
+ 273:Src/main.c    ****   {
+ 254              		.loc 1 273 0
+ 255 005a FFF7FEFF 		bl	HAL_DMA_Init
+ 256              	.LVL9:
+ 257 005e 88B9     		cbnz	r0, .L19
+ 280:Src/main.c    **** 
+ 258              		.loc 1 280 0
+ 259 0060 0022     		movs	r2, #0
+ 260 0062 1146     		mov	r1, r2
+ 261 0064 3820     		movs	r0, #56
+ 262 0066 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 263              	.LVL10:
+ 283:Src/main.c    **** 
+ 264              		.loc 1 283 0
+ 265 006a 3820     		movs	r0, #56
+ 266 006c FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 267              	.LVL11:
+ 288:Src/main.c    ****   {
+ 268              		.loc 1 288 0
+ 269 0070 2023     		movs	r3, #32
+ 270 0072 0E4A     		ldr	r2, .L21+20
+ 271 0074 0E49     		ldr	r1, .L21+24
+ 272 0076 0948     		ldr	r0, .L21+4
+ 273 0078 FFF7FEFF 		bl	HAL_DMA_Start_IT
+ 274              	.LVL12:
+ 275 007c 38B9     		cbnz	r0, .L20
+ARM GAS  /tmp/cc0MdE6i.s 			page 12
+
+
+ 293:Src/main.c    **** 
+ 276              		.loc 1 293 0
+ 277 007e 03B0     		add	sp, sp, #12
+ 278              	.LCFI7:
+ 279              		.cfi_remember_state
+ 280              		.cfi_def_cfa_offset 4
+ 281              		@ sp needed
+ 282 0080 5DF804FB 		ldr	pc, [sp], #4
+ 283              	.L19:
+ 284              	.LCFI8:
+ 285              		.cfi_restore_state
+ 275:Src/main.c    ****   }
+ 286              		.loc 1 275 0
+ 287 0084 40F21311 		movw	r1, #275
+ 288 0088 0A48     		ldr	r0, .L21+28
+ 289 008a FFF7FEFF 		bl	_Error_Handler
+ 290              	.LVL13:
+ 291              	.L20:
+ 290:Src/main.c    ****   }
+ 292              		.loc 1 290 0
+ 293 008e 4FF49171 		mov	r1, #290
+ 294 0092 0848     		ldr	r0, .L21+28
+ 295 0094 FFF7FEFF 		bl	_Error_Handler
+ 296              	.LVL14:
+ 297              	.L22:
+ 298              		.align	2
+ 299              	.L21:
+ 300 0098 00380240 		.word	1073887232
+ 301 009c 00000000 		.word	hdma_memtomem_dma2_stream0
+ 302 00a0 10640240 		.word	1073898512
+ 303 00a4 00000000 		.word	TransferComplete
+ 304 00a8 00000000 		.word	TransferError
+ 305 00ac 00000000 		.word	.LANCHOR0
+ 306 00b0 00000000 		.word	.LANCHOR1
+ 307 00b4 00000000 		.word	.LC0
+ 308              		.cfi_endproc
+ 309              	.LFE126:
+ 311              		.section	.text.SystemClock_Config,"ax",%progbits
+ 312              		.align	1
+ 313              		.global	SystemClock_Config
+ 314              		.syntax unified
+ 315              		.thumb
+ 316              		.thumb_func
+ 317              		.fpu fpv4-sp-d16
+ 319              	SystemClock_Config:
+ 320              	.LFB124:
+ 131:Src/main.c    **** 
+ 321              		.loc 1 131 0
+ 322              		.cfi_startproc
+ 323              		@ args = 0, pretend = 0, frame = 80
+ 324              		@ frame_needed = 0, uses_anonymous_args = 0
+ 325 0000 00B5     		push	{lr}
+ 326              	.LCFI9:
+ 327              		.cfi_def_cfa_offset 4
+ 328              		.cfi_offset 14, -4
+ 329 0002 95B0     		sub	sp, sp, #84
+ 330              	.LCFI10:
+ARM GAS  /tmp/cc0MdE6i.s 			page 13
+
+
+ 331              		.cfi_def_cfa_offset 88
+ 332              	.LBB4:
+ 138:Src/main.c    **** 
+ 333              		.loc 1 138 0
+ 334 0004 0023     		movs	r3, #0
+ 335 0006 0193     		str	r3, [sp, #4]
+ 336 0008 234A     		ldr	r2, .L29
+ 337 000a 116C     		ldr	r1, [r2, #64]
+ 338 000c 41F08051 		orr	r1, r1, #268435456
+ 339 0010 1164     		str	r1, [r2, #64]
+ 340 0012 126C     		ldr	r2, [r2, #64]
+ 341 0014 02F08052 		and	r2, r2, #268435456
+ 342 0018 0192     		str	r2, [sp, #4]
+ 343 001a 019A     		ldr	r2, [sp, #4]
+ 344              	.LBE4:
+ 345              	.LBB5:
+ 140:Src/main.c    **** 
+ 346              		.loc 1 140 0
+ 347 001c 0293     		str	r3, [sp, #8]
+ 348 001e 1F4A     		ldr	r2, .L29+4
+ 349 0020 1168     		ldr	r1, [r2]
+ 350 0022 41F48041 		orr	r1, r1, #16384
+ 351 0026 1160     		str	r1, [r2]
+ 352 0028 1268     		ldr	r2, [r2]
+ 353 002a 02F48042 		and	r2, r2, #16384
+ 354 002e 0292     		str	r2, [sp, #8]
+ 355 0030 029A     		ldr	r2, [sp, #8]
+ 356              	.LBE5:
+ 144:Src/main.c    ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 357              		.loc 1 144 0
+ 358 0032 0222     		movs	r2, #2
+ 359 0034 0892     		str	r2, [sp, #32]
+ 145:Src/main.c    ****   RCC_OscInitStruct.HSICalibrationValue = 16;
+ 360              		.loc 1 145 0
+ 361 0036 0122     		movs	r2, #1
+ 362 0038 0B92     		str	r2, [sp, #44]
+ 146:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+ 363              		.loc 1 146 0
+ 364 003a 1022     		movs	r2, #16
+ 365 003c 0C92     		str	r2, [sp, #48]
+ 147:Src/main.c    ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 366              		.loc 1 147 0
+ 367 003e 0E93     		str	r3, [sp, #56]
+ 148:Src/main.c    ****   {
+ 368              		.loc 1 148 0
+ 369 0040 08A8     		add	r0, sp, #32
+ 370 0042 FFF7FEFF 		bl	HAL_RCC_OscConfig
+ 371              	.LVL15:
+ 372 0046 F0B9     		cbnz	r0, .L27
+ 155:Src/main.c    ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 373              		.loc 1 155 0
+ 374 0048 0F23     		movs	r3, #15
+ 375 004a 0393     		str	r3, [sp, #12]
+ 157:Src/main.c    ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 376              		.loc 1 157 0
+ 377 004c 0021     		movs	r1, #0
+ 378 004e 0491     		str	r1, [sp, #16]
+ARM GAS  /tmp/cc0MdE6i.s 			page 14
+
+
+ 158:Src/main.c    ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+ 379              		.loc 1 158 0
+ 380 0050 0591     		str	r1, [sp, #20]
+ 159:Src/main.c    ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 381              		.loc 1 159 0
+ 382 0052 0691     		str	r1, [sp, #24]
+ 160:Src/main.c    **** 
+ 383              		.loc 1 160 0
+ 384 0054 0791     		str	r1, [sp, #28]
+ 162:Src/main.c    ****   {
+ 385              		.loc 1 162 0
+ 386 0056 03A8     		add	r0, sp, #12
+ 387 0058 FFF7FEFF 		bl	HAL_RCC_ClockConfig
+ 388              	.LVL16:
+ 389 005c B8B9     		cbnz	r0, .L28
+ 169:Src/main.c    **** 
+ 390              		.loc 1 169 0
+ 391 005e FFF7FEFF 		bl	HAL_RCC_GetHCLKFreq
+ 392              	.LVL17:
+ 393 0062 0F4B     		ldr	r3, .L29+8
+ 394 0064 A3FB0030 		umull	r3, r0, r3, r0
+ 395 0068 8009     		lsrs	r0, r0, #6
+ 396 006a FFF7FEFF 		bl	HAL_SYSTICK_Config
+ 397              	.LVL18:
+ 173:Src/main.c    **** 
+ 398              		.loc 1 173 0
+ 399 006e 0420     		movs	r0, #4
+ 400 0070 FFF7FEFF 		bl	HAL_SYSTICK_CLKSourceConfig
+ 401              	.LVL19:
+ 176:Src/main.c    **** }
+ 402              		.loc 1 176 0
+ 403 0074 0022     		movs	r2, #0
+ 404 0076 1146     		mov	r1, r2
+ 405 0078 4FF0FF30 		mov	r0, #-1
+ 406 007c FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 407              	.LVL20:
+ 177:Src/main.c    **** 
+ 408              		.loc 1 177 0
+ 409 0080 15B0     		add	sp, sp, #84
+ 410              	.LCFI11:
+ 411              		.cfi_remember_state
+ 412              		.cfi_def_cfa_offset 4
+ 413              		@ sp needed
+ 414 0082 5DF804FB 		ldr	pc, [sp], #4
+ 415              	.L27:
+ 416              	.LCFI12:
+ 417              		.cfi_restore_state
+ 150:Src/main.c    ****   }
+ 418              		.loc 1 150 0
+ 419 0086 9621     		movs	r1, #150
+ 420 0088 0648     		ldr	r0, .L29+12
+ 421 008a FFF7FEFF 		bl	_Error_Handler
+ 422              	.LVL21:
+ 423              	.L28:
+ 164:Src/main.c    ****   }
+ 424              		.loc 1 164 0
+ 425 008e A421     		movs	r1, #164
+ARM GAS  /tmp/cc0MdE6i.s 			page 15
+
+
+ 426 0090 0448     		ldr	r0, .L29+12
+ 427 0092 FFF7FEFF 		bl	_Error_Handler
+ 428              	.LVL22:
+ 429              	.L30:
+ 430 0096 00BF     		.align	2
+ 431              	.L29:
+ 432 0098 00380240 		.word	1073887232
+ 433 009c 00700040 		.word	1073770496
+ 434 00a0 D34D6210 		.word	274877907
+ 435 00a4 00000000 		.word	.LC0
+ 436              		.cfi_endproc
+ 437              	.LFE124:
+ 439              		.section	.text.main,"ax",%progbits
+ 440              		.align	1
+ 441              		.global	main
+ 442              		.syntax unified
+ 443              		.thumb
+ 444              		.thumb_func
+ 445              		.fpu fpv4-sp-d16
+ 447              	main:
+ 448              	.LFB123:
+  85:Src/main.c    **** 
+ 449              		.loc 1 85 0
+ 450              		.cfi_startproc
+ 451              		@ Volatile: function does not return.
+ 452              		@ args = 0, pretend = 0, frame = 0
+ 453              		@ frame_needed = 0, uses_anonymous_args = 0
+ 454 0000 08B5     		push	{r3, lr}
+ 455              	.LCFI13:
+ 456              		.cfi_def_cfa_offset 8
+ 457              		.cfi_offset 3, -8
+ 458              		.cfi_offset 14, -4
+  94:Src/main.c    **** 
+ 459              		.loc 1 94 0
+ 460 0002 FFF7FEFF 		bl	HAL_Init
+ 461              	.LVL23:
+ 101:Src/main.c    **** 
+ 462              		.loc 1 101 0
+ 463 0006 FFF7FEFF 		bl	SystemClock_Config
+ 464              	.LVL24:
+ 108:Src/main.c    ****   MX_DMA_Init();
+ 465              		.loc 1 108 0
+ 466 000a FFF7FEFF 		bl	MX_GPIO_Init
+ 467              	.LVL25:
+ 109:Src/main.c    **** 
+ 468              		.loc 1 109 0
+ 469 000e FFF7FEFF 		bl	MX_DMA_Init
+ 470              	.LVL26:
+ 471              	.L32:
+ 472 0012 FEE7     		b	.L32
+ 473              		.cfi_endproc
+ 474              	.LFE123:
+ 476              		.section	.text.assert_failed,"ax",%progbits
+ 477              		.align	1
+ 478              		.global	assert_failed
+ 479              		.syntax unified
+ 480              		.thumb
+ARM GAS  /tmp/cc0MdE6i.s 			page 16
+
+
+ 481              		.thumb_func
+ 482              		.fpu fpv4-sp-d16
+ 484              	assert_failed:
+ 485              	.LFB130:
+ 329:Src/main.c    ****   /* USER CODE BEGIN Error_Handler_Debug */
+ 330:Src/main.c    ****   /* User can add his own implementation to report the HAL error return state */
+ 331:Src/main.c    ****   while(1) 
+ 332:Src/main.c    ****   {
+ 333:Src/main.c    ****   }
+ 334:Src/main.c    ****   /* USER CODE END Error_Handler_Debug */ 
+ 335:Src/main.c    **** }
+ 336:Src/main.c    **** 
+ 337:Src/main.c    **** #ifdef USE_FULL_ASSERT
+ 338:Src/main.c    **** 
+ 339:Src/main.c    **** /**
+ 340:Src/main.c    ****    * @brief Reports the name of the source file and the source line number
+ 341:Src/main.c    ****    * where the assert_param error has occurred.
+ 342:Src/main.c    ****    * @param file: pointer to the source file name
+ 343:Src/main.c    ****    * @param line: assert_param error line source number
+ 344:Src/main.c    ****    * @retval None
+ 345:Src/main.c    ****    */
+ 346:Src/main.c    **** void assert_failed(uint8_t* file, uint32_t line)
+ 347:Src/main.c    **** {
+ 486              		.loc 1 347 0
+ 487              		.cfi_startproc
+ 488              		@ args = 0, pretend = 0, frame = 0
+ 489              		@ frame_needed = 0, uses_anonymous_args = 0
+ 490              		@ link register save eliminated.
+ 491              	.LVL27:
+ 492 0000 7047     		bx	lr
+ 493              		.cfi_endproc
+ 494              	.LFE130:
+ 496              		.comm	DmaHandle,96,4
+ 497              		.comm	hdma_memtomem_dma2_stream0,96,4
+ 498              		.section	.bss.aDST_Buffer,"aw",%nobits
+ 499              		.align	2
+ 500              		.set	.LANCHOR0,. + 0
+ 503              	aDST_Buffer:
+ 504 0000 00000000 		.space	128
+ 504      00000000 
+ 504      00000000 
+ 504      00000000 
+ 504      00000000 
+ 505              		.section	.rodata.MX_DMA_Init.str1.4,"aMS",%progbits,1
+ 506              		.align	2
+ 507              	.LC0:
+ 508 0000 5372632F 		.ascii	"Src/main.c\000"
+ 508      6D61696E 
+ 508      2E6300
+ 509              		.section	.rodata.aSRC_Const_Buffer,"a",%progbits
+ 510              		.align	2
+ 511              		.set	.LANCHOR1,. + 0
+ 514              	aSRC_Const_Buffer:
+ 515 0000 04030201 		.word	16909060
+ 516 0004 08070605 		.word	84281096
+ 517 0008 0C0B0A09 		.word	151653132
+ 518 000c 100F0E0D 		.word	219025168
+ARM GAS  /tmp/cc0MdE6i.s 			page 17
+
+
+ 519 0010 14131211 		.word	286397204
+ 520 0014 18171615 		.word	353769240
+ 521 0018 1C1B1A19 		.word	421141276
+ 522 001c 201F1E1D 		.word	488513312
+ 523 0020 24232221 		.word	555885348
+ 524 0024 28272625 		.word	623257384
+ 525 0028 2C2B2A29 		.word	690629420
+ 526 002c 302F2E2D 		.word	758001456
+ 527 0030 34333231 		.word	825373492
+ 528 0034 38373635 		.word	892745528
+ 529 0038 3C3B3A39 		.word	960117564
+ 530 003c 403F3E3D 		.word	1027489600
+ 531 0040 44434241 		.word	1094861636
+ 532 0044 48474645 		.word	1162233672
+ 533 0048 4C4B4A49 		.word	1229605708
+ 534 004c 504F4E4D 		.word	1296977744
+ 535 0050 54535251 		.word	1364349780
+ 536 0054 58575655 		.word	1431721816
+ 537 0058 5C5B5A59 		.word	1499093852
+ 538 005c 605F5E5D 		.word	1566465888
+ 539 0060 64636261 		.word	1633837924
+ 540 0064 68676665 		.word	1701209960
+ 541 0068 6C6B6A69 		.word	1768581996
+ 542 006c 706F6E6D 		.word	1835954032
+ 543 0070 74737271 		.word	1903326068
+ 544 0074 78777675 		.word	1970698104
+ 545 0078 7C7B7A79 		.word	2038070140
+ 546 007c 807F7E7D 		.word	2105442176
+ 547              		.text
+ 548              	.Letext0:
+ 549              		.file 2 "/home/saicharan/arm/arm-none-eabi/include/machine/_default_types.h"
+ 550              		.file 3 "/home/saicharan/arm/arm-none-eabi/include/stdint.h"
+ 551              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 552              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 553              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 554              		.file 7 "/home/saicharan/arm/arm-none-eabi/include/sys/lock.h"
+ 555              		.file 8 "/home/saicharan/arm/arm-none-eabi/include/sys/_types.h"
+ 556              		.file 9 "/home/saicharan/arm/lib/gcc/arm-none-eabi/6.3.0/include/stddef.h"
+ 557              		.file 10 "/home/saicharan/arm/arm-none-eabi/include/sys/reent.h"
+ 558              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 559              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
+ 560              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
+ 561              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 562              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 563              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
+ 564              		.file 17 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ARM GAS  /tmp/cc0MdE6i.s 			page 18
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.c
+     /tmp/cc0MdE6i.s:18     .text.TransferError:0000000000000000 $t
+     /tmp/cc0MdE6i.s:24     .text.TransferError:0000000000000000 TransferError
+     /tmp/cc0MdE6i.s:48     .text.TransferError:0000000000000010 $d
+     /tmp/cc0MdE6i.s:53     .text.TransferComplete:0000000000000000 $t
+     /tmp/cc0MdE6i.s:59     .text.TransferComplete:0000000000000000 TransferComplete
+     /tmp/cc0MdE6i.s:82     .text.TransferComplete:0000000000000010 $d
+     /tmp/cc0MdE6i.s:87     .text.MX_GPIO_Init:0000000000000000 $t
+     /tmp/cc0MdE6i.s:93     .text.MX_GPIO_Init:0000000000000000 MX_GPIO_Init
+     /tmp/cc0MdE6i.s:152    .text.MX_GPIO_Init:0000000000000040 $d
+     /tmp/cc0MdE6i.s:158    .text._Error_Handler:0000000000000000 $t
+     /tmp/cc0MdE6i.s:165    .text._Error_Handler:0000000000000000 _Error_Handler
+     /tmp/cc0MdE6i.s:180    .text.MX_DMA_Init:0000000000000000 $t
+     /tmp/cc0MdE6i.s:186    .text.MX_DMA_Init:0000000000000000 MX_DMA_Init
+     /tmp/cc0MdE6i.s:300    .text.MX_DMA_Init:0000000000000098 $d
+                            *COM*:0000000000000060 hdma_memtomem_dma2_stream0
+     /tmp/cc0MdE6i.s:312    .text.SystemClock_Config:0000000000000000 $t
+     /tmp/cc0MdE6i.s:319    .text.SystemClock_Config:0000000000000000 SystemClock_Config
+     /tmp/cc0MdE6i.s:432    .text.SystemClock_Config:0000000000000098 $d
+     /tmp/cc0MdE6i.s:440    .text.main:0000000000000000 $t
+     /tmp/cc0MdE6i.s:447    .text.main:0000000000000000 main
+     /tmp/cc0MdE6i.s:477    .text.assert_failed:0000000000000000 $t
+     /tmp/cc0MdE6i.s:484    .text.assert_failed:0000000000000000 assert_failed
+                            *COM*:0000000000000060 DmaHandle
+     /tmp/cc0MdE6i.s:499    .bss.aDST_Buffer:0000000000000000 $d
+     /tmp/cc0MdE6i.s:503    .bss.aDST_Buffer:0000000000000000 aDST_Buffer
+     /tmp/cc0MdE6i.s:506    .rodata.MX_DMA_Init.str1.4:0000000000000000 $d
+     /tmp/cc0MdE6i.s:510    .rodata.aSRC_Const_Buffer:0000000000000000 $d
+     /tmp/cc0MdE6i.s:514    .rodata.aSRC_Const_Buffer:0000000000000000 aSRC_Const_Buffer
+                     .debug_frame:0000000000000010 $d
+
+UNDEFINED SYMBOLS
+HAL_GPIO_WritePin
+HAL_GPIO_Init
+HAL_DMA_Init
+HAL_NVIC_SetPriority
+HAL_NVIC_EnableIRQ
+HAL_DMA_Start_IT
+HAL_RCC_OscConfig
+HAL_RCC_ClockConfig
+HAL_RCC_GetHCLKFreq
+HAL_SYSTICK_Config
+HAL_SYSTICK_CLKSourceConfig
+HAL_Init
