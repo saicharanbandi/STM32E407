@@ -151,7 +151,7 @@ int main(void)
   /* USER CODE END WHILE */
 
     /* Toggle LED GREEN */
-    HAL_GPIO_TogglePin(LED_Yellow_GPIO_Port, LED_Green_Pin);
+    HAL_GPIO_TogglePin(LED_Green_GPIO_Port, LED_Green_Pin);
 
     /* Insert 240ms delay */
     HAL_Delay(240);

@@ -1,0 +1,45 @@
+Configuration	DMA_FLASH_To_RAM
+STM32CubeMX 	4.22.1
+Date	11/06/2017
+MCU	STM32F407ZGTx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+12	PF2	GPIO_Output	LED_Green
+13	PF3	GPIO_Output	LED_Blue
+14	PF4	GPIO_Output	LED_Yellow
+15	PF5	GPIO_Output	LED_Red
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : DMA_FLASH_To_RAM
+Project Folder : /home/saicharan/Dropbox/arbeit/light_control_project/DALI_programming/STM32E407/trial_code/STM32E407/DMA_FLASH_To_RAM
+Toolchain / IDE : Makefile
+Firmware Package Name and Version : STM32Cube FW_F4 V1.16.0
+
+
+Code Generation Settings : 
+STM32Cube Firmware Library Package : Copy all used libraries into the project folder
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : No
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : Balanced Size/Speed
+
+
+
+
+
+
