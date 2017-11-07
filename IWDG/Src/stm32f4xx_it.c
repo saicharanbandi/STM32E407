@@ -45,6 +45,9 @@ extern __IO uint32_t uwPeriodValue;
 extern __IO uint32_t uwCaptureNumber;
 extern __IO uint32_t uwMeasurementDone;
 uint16_t tmpCC4[2] = {0, 0};
+
+/* /\*External variables --------------------------------------------------------*\/ */
+/* extern TIM_HandleTypeDef htim5; */
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
@@ -193,57 +196,17 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-* @brief This function handles PVD interrupt through EXTI line 16.
-*/
-void PVD_IRQHandler(void)
-{
-  /* USER CODE BEGIN PVD_IRQn 0 */
-
-  /* USER CODE END PVD_IRQn 0 */
-  HAL_PWR_PVD_IRQHandler();
-  /* USER CODE BEGIN PVD_IRQn 1 */
-
-  /* USER CODE END PVD_IRQn 1 */
-}
-
-/**
-* @brief This function handles Flash global interrupt.
-*/
-void FLASH_IRQHandler(void)
-{
-  /* USER CODE BEGIN FLASH_IRQn 0 */
-
-  /* USER CODE END FLASH_IRQn 0 */
-  HAL_FLASH_IRQHandler();
-  /* USER CODE BEGIN FLASH_IRQn 1 */
-
-  /* USER CODE END FLASH_IRQn 1 */
-}
-
-/**
-* @brief This function handles RCC global interrupt.
-*/
-void RCC_IRQHandler(void)
-{
-  /* USER CODE BEGIN RCC_IRQn 0 */
-
-  /* USER CODE END RCC_IRQn 0 */
-  /* USER CODE BEGIN RCC_IRQn 1 */
-
-  /* USER CODE END RCC_IRQn 1 */
-}
-
-/**
 * @brief This function handles EXTI line0 interrupt.
 */
 void EXTI0_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI0_IRQn 0 */
-
+  
   /* USER CODE END EXTI0_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
   /* USER CODE BEGIN EXTI0_IRQn 1 */
-
+  *(__IO uint32_t *) 0xA0001000 = 0xFF;
+  
   /* USER CODE END EXTI0_IRQn 1 */
 }
 
@@ -260,20 +223,175 @@ void TIM5_IRQHandler(void)
   {
     /* Get the Input Capture value */
     tmpCC4[uwCaptureNumber++] = HAL_TIM_ReadCapturedValue(&htim5, TIM_CHANNEL_4);
-
+    
     if (uwCaptureNumber >= 2)
     {
       /* Compute the period length */
-      uwPeriodValue = (uint16_t)(0xFFFF - tmpCC4[0] + tmpCC4[1] +1);
+      uwPeriodValue = (uint16_t)(0xFFFF - tmpCC4[0] + tmpCC4[1] + 1);
       uwMeasurementDone = 1;
       uwCaptureNumber = 0;
-    }  
-
+    }
   }
   /* USER CODE END TIM5_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */
+/* /\** */
+/*   * @brief  This function handles NMI exception. */
+/*   * @param  None */
+/*   * @retval None */
+/*   *\/ */
+/* void NMI_Handler(void) */
+/* { */
+/* } */
+
+/* /\** */
+/*   * @brief  This function handles Hard Fault exception. */
+/*   * @param  None */
+/*   * @retval None */
+/*   *\/ */
+/* void HardFault_Handler(void) */
+/* { */
+/*   /\* Go to infinite loop when Hard Fault exception occurs *\/ */
+/*   while (1) */
+/*   { */
+/*   } */
+/* } */
+
+/* /\** */
+/*   * @brief  This function handles Memory Manage exception. */
+/*   * @param  None */
+/*   * @retval None */
+/*   *\/ */
+/* void MemManage_Handler(void) */
+/* { */
+/*   /\* Go to infinite loop when Memory Manage exception occurs *\/ */
+/*   while (1) */
+/*   { */
+/*   } */
+/* } */
+
+/* /\** */
+/*   * @brief  This function handles Bus Fault exception. */
+/*   * @param  None */
+/*   * @retval None */
+/*   *\/ */
+/* void BusFault_Handler(void) */
+/* { */
+/*   /\* Go to infinite loop when Bus Fault exception occurs *\/ */
+/*   while (1) */
+/*   { */
+/*   } */
+/* } */
+
+/* /\** */
+/*   * @brief  This function handles Usage Fault exception. */
+/*   * @param  None */
+/*   * @retval None */
+/*   *\/ */
+/* void UsageFault_Handler(void) */
+/* { */
+/*   /\* Go to infinite loop when Usage Fault exception occurs *\/ */
+/*   while (1) */
+/*   { */
+/*   } */
+/* } */
+
+/* /\** */
+/*   * @brief  This function handles SVCall exception. */
+/*   * @param  None */
+/*   * @retval None */
+/*   *\/ */
+/* void SVC_Handler(void) */
+/* { */
+/* } */
+
+/* /\** */
+/*   * @brief  This function handles Debug Monitor exception. */
+/*   * @param  None */
+/*   * @retval None */
+/*   *\/ */
+/* void DebugMon_Handler(void) */
+/* { */
+/* } */
+
+/* /\** */
+/*   * @brief  This function handles PendSVC exception. */
+/*   * @param  None */
+/*   * @retval None */
+/*   *\/ */
+/* void PendSV_Handler(void) */
+/* { */
+/* } */
+
+/* /\** */
+/*   * @brief  This function handles SysTick Handler. */
+/*   * @param  None */
+/*   * @retval None */
+/*   *\/ */
+/* void SysTick_Handler(void) */
+/* { */
+/*   HAL_IncTick(); */
+/* } */
+
+/* /\******************************************************************************\/ */
+/* /\*                 STM32F4xx Peripherals Interrupt Handlers                   *\/ */
+/* /\*  Add here the Interrupt Handler for the used peripheral(s) (PPP), for the  *\/ */
+/* /\*  available peripheral interrupt handler's name please refer to the startup *\/ */
+/* /\*  file (startup_stm32f4xx.s).                                               *\/ */
+/* /\******************************************************************************\/ */
+
+/* /\** */
+/*   * @brief  This function handles External line 15 to 10 interrupt request. */
+/*   * @param  None */
+/*   * @retval None */
+/*   *\/ */
+/* void EXTI0_IRQHandler(void) */
+/* { */
+/*   /\* As the following address is invalid (not mapped), a Hardfault exception */
+/*   will be generated with an infinite loop and when the WWDG counter falls to 63 */
+/*   the WWDG reset occurs *\/ */
+/*   *(__IO uint32_t *) 0xA0001000 = 0xFF; */
+/* } */
+
+/* /\** */
+/*   * @brief  This function handles TIM5 global interrupt request. */
+/*   * @param  None */
+/*   * @retval None */
+/*   *\/ */
+/* void TIM5_IRQHandler(void) */
+/* {  */
+/*   HAL_TIM_IRQHandler(&htim5); */
+/*   {     */
+/*     /\* Get the Input Capture value *\/ */
+/*     tmpCC4[uwCaptureNumber++] = HAL_TIM_ReadCapturedValue(&htim5, TIM_CHANNEL_4); */
+    
+/*     if (uwCaptureNumber >= 2) */
+/*     { */
+/*       /\* Compute the period length *\/ */
+/*       uwPeriodValue = (uint16_t)(0xFFFF - tmpCC4[0] + tmpCC4[1] + 1); */
+/*       uwMeasurementDone = 1; */
+/*       uwCaptureNumber = 0; */
+/*     } */
+/*   } */
+/* } */
+
+/* /\** */
+/*   * @brief  This function handles PPP interrupt request. */
+/*   * @param  None */
+/*   * @retval None */
+/*   *\/ */
+/* /\*void PPP_IRQHandler(void) */
+/* { */
+/* }*\/ */
+
+/* /\** */
+/*   * @} */
+/*   *\/  */
+
+/* /\** */
+/*   * @} */
+/*   *\/  */
 
 /* USER CODE END 1 */
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

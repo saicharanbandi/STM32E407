@@ -70,17 +70,6 @@ void HAL_MspInit(void)
   /* SysTick_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
 
-  /* Peripheral interrupt init */
-  /* PVD_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(PVD_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(PVD_IRQn);
-  /* FLASH_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(FLASH_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(FLASH_IRQn);
-  /* RCC_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(RCC_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(RCC_IRQn);
-
   /* USER CODE BEGIN MspInit 1 */
 
   /* USER CODE END MspInit 1 */
@@ -127,7 +116,24 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* htim_base)
 }
 
 /* USER CODE BEGIN 1 */
+/* /\** */
+/*   * @brief TIM MSP Initialization  */
+/*   *        This function configures the hardware resouces used in this example: */
+/*   *           - Peripheral's clock enable */
+/*   * @param htim: TIM handle pointer */
+/*   * @retval None */
+/*   *\/ */
+/* void HAL_TIM_IC_MspInit(TIM_HandleTypeDef* htim) */
+/* { */
+/*   /\* TIM5 Peripheral clock enable *\/ */
+/*   __TIM5_CLK_ENABLE(); */
 
+/*   /\* Configure the NVIC for TIM5 *\/ */
+/*   HAL_NVIC_SetPriority(TIM5_IRQn, 0, 0); */
+
+/*   /\* Enable the TIM5 global interrupt *\/ */
+/*   HAL_NVIC_EnableIRQ(TIM5_IRQn); */
+/* } */
 /* USER CODE END 1 */
 
 /**

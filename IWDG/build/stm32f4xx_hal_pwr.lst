@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccwfwPVF.s 			page 1
+ARM GAS  /tmp/cchAifzv.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
   29:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
   30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
   31:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-ARM GAS  /tmp/ccwfwPVF.s 			page 2
+ARM GAS  /tmp/cchAifzv.s 			page 2
 
 
   32:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
   86:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /** @defgroup PWR_Exported_Functions_Group1 Initialization and de-initialization functions 
   87:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *  @brief    Initialization and de-initialization functions
   88:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *
-ARM GAS  /tmp/ccwfwPVF.s 			page 3
+ARM GAS  /tmp/cchAifzv.s 			page 3
 
 
   89:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** @verbatim
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
   59              	.LFB124:
  114:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** }
  115:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
-ARM GAS  /tmp/ccwfwPVF.s 			page 4
+ARM GAS  /tmp/cchAifzv.s 			page 4
 
 
  116:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
   37:Drivers/CMSIS/Include/cmsis_gcc.h **** 
   38:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ignore some GCC warnings */
   39:Drivers/CMSIS/Include/cmsis_gcc.h **** #if defined ( __GNUC__ )
-ARM GAS  /tmp/ccwfwPVF.s 			page 5
+ARM GAS  /tmp/cchAifzv.s 			page 5
 
 
   40:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic push
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
   94:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __set_CONTROL(uint32_t control)
   95:Drivers/CMSIS/Include/cmsis_gcc.h **** {
   96:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR control, %0" : : "r" (control) : "memory");
-ARM GAS  /tmp/ccwfwPVF.s 			page 6
+ARM GAS  /tmp/cchAifzv.s 			page 6
 
 
   97:Drivers/CMSIS/Include/cmsis_gcc.h **** }
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  151:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  152:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, psp\n"  : "=r" (result) );
  153:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
-ARM GAS  /tmp/ccwfwPVF.s 			page 7
+ARM GAS  /tmp/cchAifzv.s 			page 7
 
 
  154:Drivers/CMSIS/Include/cmsis_gcc.h **** }
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  208:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  209:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Priority Mask
  210:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the Priority Mask Register.
-ARM GAS  /tmp/ccwfwPVF.s 			page 8
+ARM GAS  /tmp/cchAifzv.s 			page 8
 
 
  211:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    priMask  Priority Mask
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  265:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  266:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  267:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  /tmp/ccwfwPVF.s 			page 9
+ARM GAS  /tmp/cchAifzv.s 			page 9
 
 
  268:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  322:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("");
  323:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
  324:Drivers/CMSIS/Include/cmsis_gcc.h **** #else
-ARM GAS  /tmp/ccwfwPVF.s 			page 10
+ARM GAS  /tmp/cchAifzv.s 			page 10
 
 
  325:Drivers/CMSIS/Include/cmsis_gcc.h ****    return(0);
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  379:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  380:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Wait For Interrupt
  381:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Wait For Interrupt is a hint instruction that suspends execution until one of a number o
-ARM GAS  /tmp/ccwfwPVF.s 			page 11
+ARM GAS  /tmp/cchAifzv.s 			page 11
 
 
  382:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  436:Drivers/CMSIS/Include/cmsis_gcc.h ****            and after the instruction, without ensuring their completion.
  437:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  438:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__((always_inline)) __STATIC_INLINE void __DMB(void)
-ARM GAS  /tmp/ccwfwPVF.s 			page 12
+ARM GAS  /tmp/cchAifzv.s 			page 12
 
 
  439:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  493:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  494:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  495:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  /tmp/ccwfwPVF.s 			page 13
+ARM GAS  /tmp/cchAifzv.s 			page 13
 
 
  496:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
   86 0018 1A60     		str	r2, [r3]
   87 001a 7047     		bx	lr
   88              		.cfi_endproc
-ARM GAS  /tmp/ccwfwPVF.s 			page 14
+ARM GAS  /tmp/cchAifzv.s 			page 14
 
 
   89              	.LFE124:
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  134              		.syntax unified
  135              		.thumb
  136              		.thumb_func
-ARM GAS  /tmp/ccwfwPVF.s 			page 15
+ARM GAS  /tmp/cchAifzv.s 			page 15
 
 
  137              		.fpu fpv4-sp-d16
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  189:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****           (++) PWR_SLEEPENTRY_WFE: enter SLEEP mode with WFE instruction
  190:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****       
  191:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****       -@@- The Regulator parameter is not used for the STM32F4 family 
-ARM GAS  /tmp/ccwfwPVF.s 			page 16
+ARM GAS  /tmp/cchAifzv.s 			page 16
 
 
  192:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****               and is kept as parameter just to maintain compatibility with the 
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  246:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****        
  247:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****         (++) To wake up from the Stop mode with an RTC alarm event, it is necessary to 
  248:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****               configure the RTC to generate the RTC alarm using the HAL_RTC_SetAlarm_IT() function.
-ARM GAS  /tmp/ccwfwPVF.s 			page 17
+ARM GAS  /tmp/cchAifzv.s 			page 17
 
 
  249:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  170              		.loc 1 273 0 discriminator 6
  171 001c C02B     		cmp	r3, #192
  172 001e 06D0     		beq	.L7
-ARM GAS  /tmp/ccwfwPVF.s 			page 18
+ARM GAS  /tmp/cchAifzv.s 			page 18
 
 
  173              		.loc 1 273 0 discriminator 7
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  282:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   __HAL_PWR_PVD_EXTI_DISABLE_RISING_EDGE();
  219              		.loc 1 282 0
  220 006e 9A68     		ldr	r2, [r3, #8]
-ARM GAS  /tmp/ccwfwPVF.s 			page 19
+ARM GAS  /tmp/cchAifzv.s 			page 19
 
 
  221 0070 22F48032 		bic	r2, r2, #65536
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  301:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   }
  302:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   
  303:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   if((sConfigPVD->Mode & PVD_FALLING_EDGE) == PVD_FALLING_EDGE)
-ARM GAS  /tmp/ccwfwPVF.s 			page 20
+ARM GAS  /tmp/cchAifzv.s 			page 20
 
 
  257              		.loc 1 303 0
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  301              	.LVL9:
  302              	.LBB32:
  303              	.LBB33:
-ARM GAS  /tmp/ccwfwPVF.s 			page 21
+ARM GAS  /tmp/cchAifzv.s 			page 21
 
 
  304              		.loc 2 531 0
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  351              		.thumb
  352              		.syntax unified
  353              	.LBE35:
-ARM GAS  /tmp/ccwfwPVF.s 			page 22
+ARM GAS  /tmp/cchAifzv.s 			page 22
 
 
  354              	.LBE34:
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  394 0010 FFF7FEFF 		bl	assert_failed
  395              	.LVL15:
  396              	.L20:
-ARM GAS  /tmp/ccwfwPVF.s 			page 23
+ARM GAS  /tmp/cchAifzv.s 			page 23
 
 
  340:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  435 0008 04D0     		beq	.L25
  436              		.loc 1 357 0 is_stmt 0 discriminator 1
  437 000a 40F26511 		movw	r1, #357
-ARM GAS  /tmp/ccwfwPVF.s 			page 24
+ARM GAS  /tmp/cchAifzv.s 			page 24
 
 
  438 000e 0448     		ldr	r0, .L27
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  384:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** {
  468              		.loc 1 384 0
  469              		.cfi_startproc
-ARM GAS  /tmp/ccwfwPVF.s 			page 25
+ARM GAS  /tmp/cchAifzv.s 			page 25
 
 
  470              		@ args = 0, pretend = 0, frame = 0
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  514 0032 40BF     		sev
  515              	@ 0 "" 2
  516              		.thumb
-ARM GAS  /tmp/ccwfwPVF.s 			page 26
+ARM GAS  /tmp/cchAifzv.s 			page 26
 
 
  517              		.syntax unified
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  571              	HAL_PWR_EnterSTOPMode:
  572              	.LFB132:
  394:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   {   
-ARM GAS  /tmp/ccwfwPVF.s 			page 27
+ARM GAS  /tmp/cchAifzv.s 			page 27
 
 
  395:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****     /* Request Wait For Interrupt */
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  592              	.LVL27:
  593 000e 1248     		ldr	r0, .L45
  594              	.LVL28:
-ARM GAS  /tmp/ccwfwPVF.s 			page 28
+ARM GAS  /tmp/cchAifzv.s 			page 28
 
 
  595 0010 FFF7FEFF 		bl	assert_failed
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  637              		.loc 2 396 0
  638              		.syntax unified
  639              	@ 396 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
-ARM GAS  /tmp/ccwfwPVF.s 			page 29
+ARM GAS  /tmp/cchAifzv.s 			page 29
 
 
  640 0042 20BF     		wfe
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  680              	.LBE51:
  681              	.LBE50:
  682              		.cfi_endproc
-ARM GAS  /tmp/ccwfwPVF.s 			page 30
+ARM GAS  /tmp/cchAifzv.s 			page 30
 
 
  683              	.LFE132:
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  719 0016 7047     		bx	lr
  720              	.L49:
  721              		.align	2
-ARM GAS  /tmp/ccwfwPVF.s 			page 31
+ARM GAS  /tmp/cchAifzv.s 			page 31
 
 
  722              	.L48:
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  745 0000 7047     		bx	lr
  746              		.cfi_endproc
  747              	.LFE135:
-ARM GAS  /tmp/ccwfwPVF.s 			page 32
+ARM GAS  /tmp/cchAifzv.s 			page 32
 
 
  749              		.section	.text.HAL_PWR_PVD_IRQHandler,"ax",%progbits
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  799              		.fpu fpv4-sp-d16
  801              	HAL_PWR_EnableSleepOnExit:
  802              	.LFB136:
-ARM GAS  /tmp/ccwfwPVF.s 			page 33
+ARM GAS  /tmp/cchAifzv.s 			page 33
 
 
  505:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   /* NOTE : This function Should not be modified, when the callback is needed,
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  832              		.cfi_startproc
  833              		@ args = 0, pretend = 0, frame = 0
  834              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccwfwPVF.s 			page 34
+ARM GAS  /tmp/cchAifzv.s 			page 34
 
 
  835              		@ link register save eliminated.
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  878              		.align	1
  879              		.global	HAL_PWR_DisableSEVOnPend
  880              		.syntax unified
-ARM GAS  /tmp/ccwfwPVF.s 			page 35
+ARM GAS  /tmp/cchAifzv.s 			page 35
 
 
  881              		.thumb
@@ -2098,61 +2098,61 @@ ARM GAS  /tmp/ccwfwPVF.s 			page 1
  921              		.file 12 "/home/saicharan/arm/arm-none-eabi/include/sys/reent.h"
  922              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h"
  923              		.file 14 "Inc/stm32f4xx_hal_conf.h"
-ARM GAS  /tmp/ccwfwPVF.s 			page 36
+ARM GAS  /tmp/cchAifzv.s 			page 36
 
 
-ARM GAS  /tmp/ccwfwPVF.s 			page 37
+ARM GAS  /tmp/cchAifzv.s 			page 37
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f4xx_hal_pwr.c
-     /tmp/ccwfwPVF.s:18     .text.HAL_PWR_DeInit:0000000000000000 $t
-     /tmp/ccwfwPVF.s:25     .text.HAL_PWR_DeInit:0000000000000000 HAL_PWR_DeInit
-     /tmp/ccwfwPVF.s:46     .text.HAL_PWR_DeInit:0000000000000014 $d
-     /tmp/ccwfwPVF.s:51     .text.HAL_PWR_EnableBkUpAccess:0000000000000000 $t
-     /tmp/ccwfwPVF.s:58     .text.HAL_PWR_EnableBkUpAccess:0000000000000000 HAL_PWR_EnableBkUpAccess
-     /tmp/ccwfwPVF.s:92     .text.HAL_PWR_DisableBkUpAccess:0000000000000000 $t
-     /tmp/ccwfwPVF.s:99     .text.HAL_PWR_DisableBkUpAccess:0000000000000000 HAL_PWR_DisableBkUpAccess
-     /tmp/ccwfwPVF.s:132    .text.HAL_PWR_ConfigPVD:0000000000000000 $t
-     /tmp/ccwfwPVF.s:139    .text.HAL_PWR_ConfigPVD:0000000000000000 HAL_PWR_ConfigPVD
-     /tmp/ccwfwPVF.s:279    .text.HAL_PWR_ConfigPVD:00000000000000d4 $d
-     /tmp/ccwfwPVF.s:287    .text.HAL_PWR_EnablePVD:0000000000000000 $t
-     /tmp/ccwfwPVF.s:294    .text.HAL_PWR_EnablePVD:0000000000000000 HAL_PWR_EnablePVD
-     /tmp/ccwfwPVF.s:327    .text.HAL_PWR_DisablePVD:0000000000000000 $t
-     /tmp/ccwfwPVF.s:334    .text.HAL_PWR_DisablePVD:0000000000000000 HAL_PWR_DisablePVD
-     /tmp/ccwfwPVF.s:367    .text.HAL_PWR_EnableWakeUpPin:0000000000000000 $t
-     /tmp/ccwfwPVF.s:374    .text.HAL_PWR_EnableWakeUpPin:0000000000000000 HAL_PWR_EnableWakeUpPin
-     /tmp/ccwfwPVF.s:407    .text.HAL_PWR_EnableWakeUpPin:0000000000000020 $d
-     /tmp/ccwfwPVF.s:413    .text.HAL_PWR_DisableWakeUpPin:0000000000000000 $t
-     /tmp/ccwfwPVF.s:420    .text.HAL_PWR_DisableWakeUpPin:0000000000000000 HAL_PWR_DisableWakeUpPin
-     /tmp/ccwfwPVF.s:453    .text.HAL_PWR_DisableWakeUpPin:0000000000000020 $d
-     /tmp/ccwfwPVF.s:459    .text.HAL_PWR_EnterSLEEPMode:0000000000000000 $t
-     /tmp/ccwfwPVF.s:466    .text.HAL_PWR_EnterSLEEPMode:0000000000000000 HAL_PWR_EnterSLEEPMode
-     /tmp/ccwfwPVF.s:556    .text.HAL_PWR_EnterSLEEPMode:0000000000000040 $d
-     /tmp/ccwfwPVF.s:564    .text.HAL_PWR_EnterSTOPMode:0000000000000000 $t
-     /tmp/ccwfwPVF.s:571    .text.HAL_PWR_EnterSTOPMode:0000000000000000 HAL_PWR_EnterSTOPMode
-     /tmp/ccwfwPVF.s:677    .text.HAL_PWR_EnterSTOPMode:0000000000000058 $d
-     /tmp/ccwfwPVF.s:686    .text.HAL_PWR_EnterSTANDBYMode:0000000000000000 $t
-     /tmp/ccwfwPVF.s:693    .text.HAL_PWR_EnterSTANDBYMode:0000000000000000 HAL_PWR_EnterSTANDBYMode
-     /tmp/ccwfwPVF.s:723    .text.HAL_PWR_EnterSTANDBYMode:0000000000000018 $d
-     /tmp/ccwfwPVF.s:731    .text.HAL_PWR_PVDCallback:0000000000000000 $t
-     /tmp/ccwfwPVF.s:738    .text.HAL_PWR_PVDCallback:0000000000000000 HAL_PWR_PVDCallback
-     /tmp/ccwfwPVF.s:750    .text.HAL_PWR_PVD_IRQHandler:0000000000000000 $t
-     /tmp/ccwfwPVF.s:757    .text.HAL_PWR_PVD_IRQHandler:0000000000000000 HAL_PWR_PVD_IRQHandler
-     /tmp/ccwfwPVF.s:789    .text.HAL_PWR_PVD_IRQHandler:000000000000001c $d
-     /tmp/ccwfwPVF.s:794    .text.HAL_PWR_EnableSleepOnExit:0000000000000000 $t
-     /tmp/ccwfwPVF.s:801    .text.HAL_PWR_EnableSleepOnExit:0000000000000000 HAL_PWR_EnableSleepOnExit
-     /tmp/ccwfwPVF.s:817    .text.HAL_PWR_EnableSleepOnExit:000000000000000c $d
-     /tmp/ccwfwPVF.s:822    .text.HAL_PWR_DisableSleepOnExit:0000000000000000 $t
-     /tmp/ccwfwPVF.s:829    .text.HAL_PWR_DisableSleepOnExit:0000000000000000 HAL_PWR_DisableSleepOnExit
-     /tmp/ccwfwPVF.s:845    .text.HAL_PWR_DisableSleepOnExit:000000000000000c $d
-     /tmp/ccwfwPVF.s:850    .text.HAL_PWR_EnableSEVOnPend:0000000000000000 $t
-     /tmp/ccwfwPVF.s:857    .text.HAL_PWR_EnableSEVOnPend:0000000000000000 HAL_PWR_EnableSEVOnPend
-     /tmp/ccwfwPVF.s:873    .text.HAL_PWR_EnableSEVOnPend:000000000000000c $d
-     /tmp/ccwfwPVF.s:878    .text.HAL_PWR_DisableSEVOnPend:0000000000000000 $t
-     /tmp/ccwfwPVF.s:885    .text.HAL_PWR_DisableSEVOnPend:0000000000000000 HAL_PWR_DisableSEVOnPend
-     /tmp/ccwfwPVF.s:901    .text.HAL_PWR_DisableSEVOnPend:000000000000000c $d
-     /tmp/ccwfwPVF.s:906    .rodata.HAL_PWR_ConfigPVD.str1.4:0000000000000000 $d
+     /tmp/cchAifzv.s:18     .text.HAL_PWR_DeInit:0000000000000000 $t
+     /tmp/cchAifzv.s:25     .text.HAL_PWR_DeInit:0000000000000000 HAL_PWR_DeInit
+     /tmp/cchAifzv.s:46     .text.HAL_PWR_DeInit:0000000000000014 $d
+     /tmp/cchAifzv.s:51     .text.HAL_PWR_EnableBkUpAccess:0000000000000000 $t
+     /tmp/cchAifzv.s:58     .text.HAL_PWR_EnableBkUpAccess:0000000000000000 HAL_PWR_EnableBkUpAccess
+     /tmp/cchAifzv.s:92     .text.HAL_PWR_DisableBkUpAccess:0000000000000000 $t
+     /tmp/cchAifzv.s:99     .text.HAL_PWR_DisableBkUpAccess:0000000000000000 HAL_PWR_DisableBkUpAccess
+     /tmp/cchAifzv.s:132    .text.HAL_PWR_ConfigPVD:0000000000000000 $t
+     /tmp/cchAifzv.s:139    .text.HAL_PWR_ConfigPVD:0000000000000000 HAL_PWR_ConfigPVD
+     /tmp/cchAifzv.s:279    .text.HAL_PWR_ConfigPVD:00000000000000d4 $d
+     /tmp/cchAifzv.s:287    .text.HAL_PWR_EnablePVD:0000000000000000 $t
+     /tmp/cchAifzv.s:294    .text.HAL_PWR_EnablePVD:0000000000000000 HAL_PWR_EnablePVD
+     /tmp/cchAifzv.s:327    .text.HAL_PWR_DisablePVD:0000000000000000 $t
+     /tmp/cchAifzv.s:334    .text.HAL_PWR_DisablePVD:0000000000000000 HAL_PWR_DisablePVD
+     /tmp/cchAifzv.s:367    .text.HAL_PWR_EnableWakeUpPin:0000000000000000 $t
+     /tmp/cchAifzv.s:374    .text.HAL_PWR_EnableWakeUpPin:0000000000000000 HAL_PWR_EnableWakeUpPin
+     /tmp/cchAifzv.s:407    .text.HAL_PWR_EnableWakeUpPin:0000000000000020 $d
+     /tmp/cchAifzv.s:413    .text.HAL_PWR_DisableWakeUpPin:0000000000000000 $t
+     /tmp/cchAifzv.s:420    .text.HAL_PWR_DisableWakeUpPin:0000000000000000 HAL_PWR_DisableWakeUpPin
+     /tmp/cchAifzv.s:453    .text.HAL_PWR_DisableWakeUpPin:0000000000000020 $d
+     /tmp/cchAifzv.s:459    .text.HAL_PWR_EnterSLEEPMode:0000000000000000 $t
+     /tmp/cchAifzv.s:466    .text.HAL_PWR_EnterSLEEPMode:0000000000000000 HAL_PWR_EnterSLEEPMode
+     /tmp/cchAifzv.s:556    .text.HAL_PWR_EnterSLEEPMode:0000000000000040 $d
+     /tmp/cchAifzv.s:564    .text.HAL_PWR_EnterSTOPMode:0000000000000000 $t
+     /tmp/cchAifzv.s:571    .text.HAL_PWR_EnterSTOPMode:0000000000000000 HAL_PWR_EnterSTOPMode
+     /tmp/cchAifzv.s:677    .text.HAL_PWR_EnterSTOPMode:0000000000000058 $d
+     /tmp/cchAifzv.s:686    .text.HAL_PWR_EnterSTANDBYMode:0000000000000000 $t
+     /tmp/cchAifzv.s:693    .text.HAL_PWR_EnterSTANDBYMode:0000000000000000 HAL_PWR_EnterSTANDBYMode
+     /tmp/cchAifzv.s:723    .text.HAL_PWR_EnterSTANDBYMode:0000000000000018 $d
+     /tmp/cchAifzv.s:731    .text.HAL_PWR_PVDCallback:0000000000000000 $t
+     /tmp/cchAifzv.s:738    .text.HAL_PWR_PVDCallback:0000000000000000 HAL_PWR_PVDCallback
+     /tmp/cchAifzv.s:750    .text.HAL_PWR_PVD_IRQHandler:0000000000000000 $t
+     /tmp/cchAifzv.s:757    .text.HAL_PWR_PVD_IRQHandler:0000000000000000 HAL_PWR_PVD_IRQHandler
+     /tmp/cchAifzv.s:789    .text.HAL_PWR_PVD_IRQHandler:000000000000001c $d
+     /tmp/cchAifzv.s:794    .text.HAL_PWR_EnableSleepOnExit:0000000000000000 $t
+     /tmp/cchAifzv.s:801    .text.HAL_PWR_EnableSleepOnExit:0000000000000000 HAL_PWR_EnableSleepOnExit
+     /tmp/cchAifzv.s:817    .text.HAL_PWR_EnableSleepOnExit:000000000000000c $d
+     /tmp/cchAifzv.s:822    .text.HAL_PWR_DisableSleepOnExit:0000000000000000 $t
+     /tmp/cchAifzv.s:829    .text.HAL_PWR_DisableSleepOnExit:0000000000000000 HAL_PWR_DisableSleepOnExit
+     /tmp/cchAifzv.s:845    .text.HAL_PWR_DisableSleepOnExit:000000000000000c $d
+     /tmp/cchAifzv.s:850    .text.HAL_PWR_EnableSEVOnPend:0000000000000000 $t
+     /tmp/cchAifzv.s:857    .text.HAL_PWR_EnableSEVOnPend:0000000000000000 HAL_PWR_EnableSEVOnPend
+     /tmp/cchAifzv.s:873    .text.HAL_PWR_EnableSEVOnPend:000000000000000c $d
+     /tmp/cchAifzv.s:878    .text.HAL_PWR_DisableSEVOnPend:0000000000000000 $t
+     /tmp/cchAifzv.s:885    .text.HAL_PWR_DisableSEVOnPend:0000000000000000 HAL_PWR_DisableSEVOnPend
+     /tmp/cchAifzv.s:901    .text.HAL_PWR_DisableSEVOnPend:000000000000000c $d
+     /tmp/cchAifzv.s:906    .rodata.HAL_PWR_ConfigPVD.str1.4:0000000000000000 $d
                      .debug_frame:0000000000000010 $d
 
 UNDEFINED SYMBOLS

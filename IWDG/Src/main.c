@@ -101,8 +101,8 @@ int main(void)
 
   /* USER CODE BEGIN 2 */
 
-  /*##-1- Check if the system has resumed from IWDG reset ######################*/
-  if(__HAL_RCC_GET_FLAG(RCC_FLAG_IWDGRST) == RESET)
+  /* ##-1- Check if the system has resumed from IWDG reset ###################### */
+  if(__HAL_RCC_GET_FLAG(RCC_FLAG_IWDGRST) != RESET)
   {
     /* IWDGRST flag set: Turn LED_Blue on */
     HAL_GPIO_WritePin(LED_Blue_GPIO_Port, LED_Blue_Pin, GPIO_PIN_SET);
@@ -116,7 +116,7 @@ int main(void)
     HAL_GPIO_WritePin(LED_Blue_GPIO_Port, LED_Blue_Pin, GPIO_PIN_RESET);
   }
 
-  /*##-2- Get the LSI frequency: TIM5 is used to measure the LSI frequency ###*/
+  /* /\*##-2- Get the LSI frequency: TIM5 is used to measure the LSI frequency ###*\/ */
   uwLsiFreq = GetLSIFrequency();
 
   /*##-3- Configure the IWDG peripheral #####################################*/
@@ -124,14 +124,14 @@ int main(void)
      IWDG counter clock frequency = LsiFreq / 32
      Counter Reload Value = 250ms / IWDG counter clock period
                           = 0.25s / (32/LsiFreq)
-			  = LsiFreq / 128 */
+  			  = LsiFreq / 128 */
   hiwdg.Instance = IWDG;
   hiwdg.Init.Prescaler = IWDG_PRESCALER_32;
   hiwdg.Init.Reload = uwLsiFreq/128;
-  if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
-  {
-    _Error_Handler(__FILE__, __LINE__);
-  }
+  /* if (HAL_IWDG_Init(&hiwdg) != HAL_OK) */
+  /* { */
+  /*   _Error_Handler(__FILE__, __LINE__); */
+  /* } */
   
   /* USER CODE END 2 */
 
@@ -150,6 +150,8 @@ int main(void)
     {
       _Error_Handler(__FILE__, __LINE__);
     }
+
+    
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
@@ -310,7 +312,7 @@ static void MX_GPIO_Init(void)
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI0_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+  /* HAL_NVIC_EnableIRQ(EXTI0_IRQn); */
 
 }
 
@@ -395,13 +397,13 @@ static uint32_t GetLSIFrequency(void)
   if(HAL_TIM_IC_Start_IT(&htim5, TIM_CHANNEL_4) != HAL_OK)
   {
     _Error_Handler(__FILE__,__LINE__);
-  }  
+  }
 
   /* Wait until the TIM5 get 2 LSI edges (refer to TIM5_IRQHandler()
      in stm32f4xx_it.c file) */
   while(uwMeasurementDone == 0)
   {
-  }  
+  }
   uwCaptureNumber = 0;
 
   /* Deinitialize the TIM5 peripheral registers to their default reset
@@ -412,7 +414,7 @@ static uint32_t GetLSIFrequency(void)
      frequency (PCLK1) */
   return (pclk1 / uwPeriodValue);
 
-}  
+}
 
 
 /* USER CODE END 4 */
@@ -425,6 +427,9 @@ static uint32_t GetLSIFrequency(void)
 void _Error_Handler(char * file, int line)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
+  HAL_GPIO_TogglePin(LED_Red_GPIO_Port, LED_Red_Pin);
+  HAL_Delay(250);
+    
   /* User can add his own implementation to report the HAL error return state */
   while(1) 
   {
