@@ -7,7 +7,7 @@ Essentially I want to divide the prep work for the DALI_Programing into three pa
        These are the basic concepts that I want to implement to get myself comfirtable with the STM32E407 board.
        
        a. Blink_LED      COMPLETED (WORKING)
-       b. IWDG           COMPLETED (CHECKING)
+       b. IWDG           COMPLETED (WORKING)
        c. Flash Program  COMPLETED (WORKING)
     2. Manchester Encoding and Decoding
        Here essentially I want to use the different GPIO pins of the STM32E407 board to simulate the manchester encoding/decoding data transmission.
