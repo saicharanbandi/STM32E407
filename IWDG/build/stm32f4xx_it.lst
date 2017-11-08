@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccQSr1U9.s 			page 1
+ARM GAS  /tmp/ccuhssWO.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccQSr1U9.s 			page 1
   29:Src/stm32f4xx_it.c ****   * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   30:Src/stm32f4xx_it.c ****   *
   31:Src/stm32f4xx_it.c ****   ******************************************************************************
-ARM GAS  /tmp/ccQSr1U9.s 			page 2
+ARM GAS  /tmp/ccuhssWO.s 			page 2
 
 
   32:Src/stm32f4xx_it.c ****   */
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccQSr1U9.s 			page 1
   69:Src/stm32f4xx_it.c **** 
   70:Src/stm32f4xx_it.c ****   /* USER CODE END NonMaskableInt_IRQn 1 */
   71:Src/stm32f4xx_it.c **** }
-ARM GAS  /tmp/ccQSr1U9.s 			page 3
+ARM GAS  /tmp/ccuhssWO.s 			page 3
 
 
   72:Src/stm32f4xx_it.c **** 
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccQSr1U9.s 			page 1
   82              		.syntax unified
   83              		.thumb
   84              		.thumb_func
-ARM GAS  /tmp/ccQSr1U9.s 			page 4
+ARM GAS  /tmp/ccuhssWO.s 			page 4
 
 
   85              		.fpu fpv4-sp-d16
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccQSr1U9.s 			page 1
  110              		.loc 1 125 0
  111              		.cfi_startproc
  112              		@ Volatile: function does not return.
-ARM GAS  /tmp/ccQSr1U9.s 			page 5
+ARM GAS  /tmp/ccuhssWO.s 			page 5
 
 
  113              		@ args = 0, pretend = 0, frame = 0
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccQSr1U9.s 			page 1
  147:Src/stm32f4xx_it.c ****   /* USER CODE END SVCall_IRQn 1 */
  148:Src/stm32f4xx_it.c **** }
  149:Src/stm32f4xx_it.c **** 
-ARM GAS  /tmp/ccQSr1U9.s 			page 6
+ARM GAS  /tmp/ccuhssWO.s 			page 6
 
 
  150:Src/stm32f4xx_it.c **** /**
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccQSr1U9.s 			page 1
  170:Src/stm32f4xx_it.c ****   /* USER CODE END PendSV_IRQn 0 */
  171:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN PendSV_IRQn 1 */
  172:Src/stm32f4xx_it.c **** 
-ARM GAS  /tmp/ccQSr1U9.s 			page 7
+ARM GAS  /tmp/ccuhssWO.s 			page 7
 
 
  173:Src/stm32f4xx_it.c ****   /* USER CODE END PendSV_IRQn 1 */
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccQSr1U9.s 			page 1
  199:Src/stm32f4xx_it.c **** * @brief This function handles EXTI line0 interrupt.
  200:Src/stm32f4xx_it.c **** */
  201:Src/stm32f4xx_it.c **** void EXTI0_IRQHandler(void)
-ARM GAS  /tmp/ccQSr1U9.s 			page 8
+ARM GAS  /tmp/ccuhssWO.s 			page 8
 
 
  202:Src/stm32f4xx_it.c **** {
@@ -432,177 +432,185 @@ ARM GAS  /tmp/ccQSr1U9.s 			page 1
  225              		.cfi_offset 3, -8
  226              		.cfi_offset 14, -4
  203:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI0_IRQn 0 */
- 204:Src/stm32f4xx_it.c ****   
- 205:Src/stm32f4xx_it.c ****   /* USER CODE END EXTI0_IRQn 0 */
- 206:Src/stm32f4xx_it.c ****   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
- 227              		.loc 1 206 0
- 228 0002 0120     		movs	r0, #1
- 229 0004 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
- 230              	.LVL2:
- 207:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI0_IRQn 1 */
- 208:Src/stm32f4xx_it.c ****   *(__IO uint32_t *) 0xA0001000 = 0xFF;
- 231              		.loc 1 208 0
- 232 0008 FF22     		movs	r2, #255
- 233 000a 014B     		ldr	r3, .L17
- 234 000c 1A60     		str	r2, [r3]
- 235 000e 08BD     		pop	{r3, pc}
- 236              	.L18:
- 237              		.align	2
- 238              	.L17:
- 239 0010 001000A0 		.word	-1610608640
- 240              		.cfi_endproc
- 241              	.LFE132:
- 243              		.section	.text.TIM5_IRQHandler,"ax",%progbits
- 244              		.align	1
- 245              		.global	TIM5_IRQHandler
- 246              		.syntax unified
- 247              		.thumb
- 248              		.thumb_func
- 249              		.fpu fpv4-sp-d16
- 251              	TIM5_IRQHandler:
- 252              	.LFB133:
- 209:Src/stm32f4xx_it.c ****   
- 210:Src/stm32f4xx_it.c ****   /* USER CODE END EXTI0_IRQn 1 */
- 211:Src/stm32f4xx_it.c **** }
- 212:Src/stm32f4xx_it.c **** 
- 213:Src/stm32f4xx_it.c **** /**
- 214:Src/stm32f4xx_it.c **** * @brief This function handles TIM5 global interrupt.
- 215:Src/stm32f4xx_it.c **** */
- 216:Src/stm32f4xx_it.c **** void TIM5_IRQHandler(void)
- 217:Src/stm32f4xx_it.c **** {
- 253              		.loc 1 217 0
- 254              		.cfi_startproc
- 255              		@ args = 0, pretend = 0, frame = 0
- 256              		@ frame_needed = 0, uses_anonymous_args = 0
- 257 0000 70B5     		push	{r4, r5, r6, lr}
- 258              	.LCFI2:
- 259              		.cfi_def_cfa_offset 16
- 260              		.cfi_offset 4, -16
-ARM GAS  /tmp/ccQSr1U9.s 			page 9
+ 204:Src/stm32f4xx_it.c ****   if (__HAL_GPIO_EXTI_GET_FLAG(GPIO_PIN_0))
+ 227              		.loc 1 204 0
+ 228 0002 064B     		ldr	r3, .L18
+ 229 0004 5B69     		ldr	r3, [r3, #20]
+ 230 0006 13F0010F 		tst	r3, #1
+ 231 000a 02D0     		beq	.L16
+ 205:Src/stm32f4xx_it.c ****   {
+ 206:Src/stm32f4xx_it.c ****     *(__IO uint32_t *) 0xA0001000 = 0xFF;
+ 232              		.loc 1 206 0
+ 233 000c FF22     		movs	r2, #255
+ 234 000e 044B     		ldr	r3, .L18+4
+ 235 0010 1A60     		str	r2, [r3]
+ 236              	.L16:
+ 207:Src/stm32f4xx_it.c ****   }
+ 208:Src/stm32f4xx_it.c ****   /* USER CODE END EXTI0_IRQn 0 */
+ 209:Src/stm32f4xx_it.c ****   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
+ 237              		.loc 1 209 0
+ 238 0012 0120     		movs	r0, #1
+ 239 0014 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
+ 240              	.LVL2:
+ 241 0018 08BD     		pop	{r3, pc}
+ 242              	.L19:
+ 243 001a 00BF     		.align	2
+ 244              	.L18:
+ 245 001c 003C0140 		.word	1073822720
+ 246 0020 001000A0 		.word	-1610608640
+ 247              		.cfi_endproc
+ 248              	.LFE132:
+ 250              		.section	.text.TIM5_IRQHandler,"ax",%progbits
+ 251              		.align	1
+ 252              		.global	TIM5_IRQHandler
+ 253              		.syntax unified
+ 254              		.thumb
+ 255              		.thumb_func
+ 256              		.fpu fpv4-sp-d16
+ 258              	TIM5_IRQHandler:
+ 259              	.LFB133:
+ 210:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI0_IRQn 1 */
+ 211:Src/stm32f4xx_it.c ****   /* USER CODE END EXTI0_IRQn 1 */
+ 212:Src/stm32f4xx_it.c **** }
+ 213:Src/stm32f4xx_it.c **** 
+ 214:Src/stm32f4xx_it.c **** /**
+ 215:Src/stm32f4xx_it.c **** * @brief This function handles TIM5 global interrupt.
+ 216:Src/stm32f4xx_it.c **** */
+ 217:Src/stm32f4xx_it.c **** void TIM5_IRQHandler(void)
+ 218:Src/stm32f4xx_it.c **** {
+ARM GAS  /tmp/ccuhssWO.s 			page 9
 
 
- 261              		.cfi_offset 5, -12
- 262              		.cfi_offset 6, -8
- 263              		.cfi_offset 14, -4
- 218:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN TIM5_IRQn 0 */
- 219:Src/stm32f4xx_it.c **** 
- 220:Src/stm32f4xx_it.c ****   /* USER CODE END TIM5_IRQn 0 */
- 221:Src/stm32f4xx_it.c ****   HAL_TIM_IRQHandler(&htim5);
- 264              		.loc 1 221 0
- 265 0002 0F4E     		ldr	r6, .L22
- 266 0004 3046     		mov	r0, r6
- 267 0006 FFF7FEFF 		bl	HAL_TIM_IRQHandler
- 268              	.LVL3:
- 222:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN TIM5_IRQn 1 */
- 223:Src/stm32f4xx_it.c ****   {
- 224:Src/stm32f4xx_it.c ****     /* Get the Input Capture value */
- 225:Src/stm32f4xx_it.c ****     tmpCC4[uwCaptureNumber++] = HAL_TIM_ReadCapturedValue(&htim5, TIM_CHANNEL_4);
- 269              		.loc 1 225 0
- 270 000a 0E4C     		ldr	r4, .L22+4
- 271 000c 2568     		ldr	r5, [r4]
- 272 000e 6B1C     		adds	r3, r5, #1
- 273 0010 2360     		str	r3, [r4]
- 274 0012 0C21     		movs	r1, #12
- 275 0014 3046     		mov	r0, r6
- 276 0016 FFF7FEFF 		bl	HAL_TIM_ReadCapturedValue
- 277              	.LVL4:
- 278 001a 0B4B     		ldr	r3, .L22+8
- 279 001c 23F81500 		strh	r0, [r3, r5, lsl #1]	@ movhi
- 226:Src/stm32f4xx_it.c ****     
- 227:Src/stm32f4xx_it.c ****     if (uwCaptureNumber >= 2)
- 280              		.loc 1 227 0
- 281 0020 2368     		ldr	r3, [r4]
- 282 0022 012B     		cmp	r3, #1
- 283 0024 0BD9     		bls	.L19
- 228:Src/stm32f4xx_it.c ****     {
- 229:Src/stm32f4xx_it.c ****       /* Compute the period length */
- 230:Src/stm32f4xx_it.c ****       uwPeriodValue = (uint16_t)(0xFFFF - tmpCC4[0] + tmpCC4[1] + 1);
- 284              		.loc 1 230 0
- 285 0026 084A     		ldr	r2, .L22+8
- 286 0028 5388     		ldrh	r3, [r2, #2]
- 287 002a 1288     		ldrh	r2, [r2]
- 288 002c 9B1A     		subs	r3, r3, r2
- 289 002e 9BB2     		uxth	r3, r3
- 290 0030 064A     		ldr	r2, .L22+12
- 291 0032 1360     		str	r3, [r2]
- 231:Src/stm32f4xx_it.c ****       uwMeasurementDone = 1;
- 292              		.loc 1 231 0
- 293 0034 0122     		movs	r2, #1
- 294 0036 064B     		ldr	r3, .L22+16
- 295 0038 1A60     		str	r2, [r3]
- 232:Src/stm32f4xx_it.c ****       uwCaptureNumber = 0;
- 296              		.loc 1 232 0
- 297 003a 0022     		movs	r2, #0
- 298 003c 2260     		str	r2, [r4]
- 299              	.L19:
- 300 003e 70BD     		pop	{r4, r5, r6, pc}
- 301              	.L23:
- 302              		.align	2
-ARM GAS  /tmp/ccQSr1U9.s 			page 10
+ 260              		.loc 1 218 0
+ 261              		.cfi_startproc
+ 262              		@ args = 0, pretend = 0, frame = 0
+ 263              		@ frame_needed = 0, uses_anonymous_args = 0
+ 264 0000 70B5     		push	{r4, r5, r6, lr}
+ 265              	.LCFI2:
+ 266              		.cfi_def_cfa_offset 16
+ 267              		.cfi_offset 4, -16
+ 268              		.cfi_offset 5, -12
+ 269              		.cfi_offset 6, -8
+ 270              		.cfi_offset 14, -4
+ 219:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN TIM5_IRQn 0 */
+ 220:Src/stm32f4xx_it.c **** 
+ 221:Src/stm32f4xx_it.c ****   /* USER CODE END TIM5_IRQn 0 */
+ 222:Src/stm32f4xx_it.c ****   HAL_TIM_IRQHandler(&htim5);
+ 271              		.loc 1 222 0
+ 272 0002 0F4E     		ldr	r6, .L23
+ 273 0004 3046     		mov	r0, r6
+ 274 0006 FFF7FEFF 		bl	HAL_TIM_IRQHandler
+ 275              	.LVL3:
+ 223:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN TIM5_IRQn 1 */
+ 224:Src/stm32f4xx_it.c ****   {
+ 225:Src/stm32f4xx_it.c ****     /* Get the Input Capture value */
+ 226:Src/stm32f4xx_it.c ****     tmpCC4[uwCaptureNumber++] = HAL_TIM_ReadCapturedValue(&htim5, TIM_CHANNEL_4);
+ 276              		.loc 1 226 0
+ 277 000a 0E4C     		ldr	r4, .L23+4
+ 278 000c 2568     		ldr	r5, [r4]
+ 279 000e 6B1C     		adds	r3, r5, #1
+ 280 0010 2360     		str	r3, [r4]
+ 281 0012 0C21     		movs	r1, #12
+ 282 0014 3046     		mov	r0, r6
+ 283 0016 FFF7FEFF 		bl	HAL_TIM_ReadCapturedValue
+ 284              	.LVL4:
+ 285 001a 0B4B     		ldr	r3, .L23+8
+ 286 001c 23F81500 		strh	r0, [r3, r5, lsl #1]	@ movhi
+ 227:Src/stm32f4xx_it.c ****     
+ 228:Src/stm32f4xx_it.c ****     if (uwCaptureNumber >= 2)
+ 287              		.loc 1 228 0
+ 288 0020 2368     		ldr	r3, [r4]
+ 289 0022 012B     		cmp	r3, #1
+ 290 0024 0BD9     		bls	.L20
+ 229:Src/stm32f4xx_it.c ****     {
+ 230:Src/stm32f4xx_it.c ****       /* Compute the period length */
+ 231:Src/stm32f4xx_it.c ****       uwPeriodValue = (uint16_t)(0xFFFF - tmpCC4[0] + tmpCC4[1] + 1);
+ 291              		.loc 1 231 0
+ 292 0026 084A     		ldr	r2, .L23+8
+ 293 0028 5388     		ldrh	r3, [r2, #2]
+ 294 002a 1288     		ldrh	r2, [r2]
+ 295 002c 9B1A     		subs	r3, r3, r2
+ 296 002e 9BB2     		uxth	r3, r3
+ 297 0030 064A     		ldr	r2, .L23+12
+ 298 0032 1360     		str	r3, [r2]
+ 232:Src/stm32f4xx_it.c ****       uwMeasurementDone = 1;
+ 299              		.loc 1 232 0
+ 300 0034 0122     		movs	r2, #1
+ 301 0036 064B     		ldr	r3, .L23+16
+ 302 0038 1A60     		str	r2, [r3]
+ARM GAS  /tmp/ccuhssWO.s 			page 10
 
 
- 303              	.L22:
- 304 0040 00000000 		.word	htim5
- 305 0044 00000000 		.word	uwCaptureNumber
- 306 0048 00000000 		.word	.LANCHOR0
- 307 004c 00000000 		.word	uwPeriodValue
- 308 0050 00000000 		.word	uwMeasurementDone
- 309              		.cfi_endproc
- 310              	.LFE133:
- 312              		.global	tmpCC4
- 313              		.section	.bss.tmpCC4,"aw",%nobits
- 314              		.align	2
- 315              		.set	.LANCHOR0,. + 0
- 318              	tmpCC4:
- 319 0000 00000000 		.space	4
- 320              		.text
- 321              	.Letext0:
- 322              		.file 2 "/home/saicharan/arm/arm-none-eabi/include/machine/_default_types.h"
- 323              		.file 3 "/home/saicharan/arm/arm-none-eabi/include/stdint.h"
- 324              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 325              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 326              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 327              		.file 7 "/home/saicharan/arm/arm-none-eabi/include/sys/lock.h"
- 328              		.file 8 "/home/saicharan/arm/arm-none-eabi/include/sys/_types.h"
- 329              		.file 9 "/home/saicharan/arm/lib/gcc/arm-none-eabi/6.3.0/include/stddef.h"
- 330              		.file 10 "/home/saicharan/arm/arm-none-eabi/include/sys/reent.h"
- 331              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 332              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 333              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
- 334              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
- 335              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 336              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
-ARM GAS  /tmp/ccQSr1U9.s 			page 11
+ 233:Src/stm32f4xx_it.c ****       uwCaptureNumber = 0;
+ 303              		.loc 1 233 0
+ 304 003a 0022     		movs	r2, #0
+ 305 003c 2260     		str	r2, [r4]
+ 306              	.L20:
+ 307 003e 70BD     		pop	{r4, r5, r6, pc}
+ 308              	.L24:
+ 309              		.align	2
+ 310              	.L23:
+ 311 0040 00000000 		.word	htim5
+ 312 0044 00000000 		.word	uwCaptureNumber
+ 313 0048 00000000 		.word	.LANCHOR0
+ 314 004c 00000000 		.word	uwPeriodValue
+ 315 0050 00000000 		.word	uwMeasurementDone
+ 316              		.cfi_endproc
+ 317              	.LFE133:
+ 319              		.global	tmpCC4
+ 320              		.section	.bss.tmpCC4,"aw",%nobits
+ 321              		.align	2
+ 322              		.set	.LANCHOR0,. + 0
+ 325              	tmpCC4:
+ 326 0000 00000000 		.space	4
+ 327              		.text
+ 328              	.Letext0:
+ 329              		.file 2 "/home/saicharan/arm/arm-none-eabi/include/machine/_default_types.h"
+ 330              		.file 3 "/home/saicharan/arm/arm-none-eabi/include/stdint.h"
+ 331              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 332              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 333              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 334              		.file 7 "/home/saicharan/arm/arm-none-eabi/include/sys/lock.h"
+ 335              		.file 8 "/home/saicharan/arm/arm-none-eabi/include/sys/_types.h"
+ 336              		.file 9 "/home/saicharan/arm/lib/gcc/arm-none-eabi/6.3.0/include/stddef.h"
+ 337              		.file 10 "/home/saicharan/arm/arm-none-eabi/include/sys/reent.h"
+ 338              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 339              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 340              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 341              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 342              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 343              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
+ARM GAS  /tmp/ccuhssWO.s 			page 11
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f4xx_it.c
-     /tmp/ccQSr1U9.s:18     .text.NMI_Handler:0000000000000000 $t
-     /tmp/ccQSr1U9.s:25     .text.NMI_Handler:0000000000000000 NMI_Handler
-     /tmp/ccQSr1U9.s:38     .text.HardFault_Handler:0000000000000000 $t
-     /tmp/ccQSr1U9.s:45     .text.HardFault_Handler:0000000000000000 HardFault_Handler
-     /tmp/ccQSr1U9.s:59     .text.MemManage_Handler:0000000000000000 $t
-     /tmp/ccQSr1U9.s:66     .text.MemManage_Handler:0000000000000000 MemManage_Handler
-     /tmp/ccQSr1U9.s:80     .text.BusFault_Handler:0000000000000000 $t
-     /tmp/ccQSr1U9.s:87     .text.BusFault_Handler:0000000000000000 BusFault_Handler
-     /tmp/ccQSr1U9.s:101    .text.UsageFault_Handler:0000000000000000 $t
-     /tmp/ccQSr1U9.s:108    .text.UsageFault_Handler:0000000000000000 UsageFault_Handler
-     /tmp/ccQSr1U9.s:122    .text.SVC_Handler:0000000000000000 $t
-     /tmp/ccQSr1U9.s:129    .text.SVC_Handler:0000000000000000 SVC_Handler
-     /tmp/ccQSr1U9.s:141    .text.DebugMon_Handler:0000000000000000 $t
-     /tmp/ccQSr1U9.s:148    .text.DebugMon_Handler:0000000000000000 DebugMon_Handler
-     /tmp/ccQSr1U9.s:160    .text.PendSV_Handler:0000000000000000 $t
-     /tmp/ccQSr1U9.s:167    .text.PendSV_Handler:0000000000000000 PendSV_Handler
-     /tmp/ccQSr1U9.s:179    .text.SysTick_Handler:0000000000000000 $t
-     /tmp/ccQSr1U9.s:186    .text.SysTick_Handler:0000000000000000 SysTick_Handler
-     /tmp/ccQSr1U9.s:209    .text.EXTI0_IRQHandler:0000000000000000 $t
-     /tmp/ccQSr1U9.s:216    .text.EXTI0_IRQHandler:0000000000000000 EXTI0_IRQHandler
-     /tmp/ccQSr1U9.s:239    .text.EXTI0_IRQHandler:0000000000000010 $d
-     /tmp/ccQSr1U9.s:244    .text.TIM5_IRQHandler:0000000000000000 $t
-     /tmp/ccQSr1U9.s:251    .text.TIM5_IRQHandler:0000000000000000 TIM5_IRQHandler
-     /tmp/ccQSr1U9.s:304    .text.TIM5_IRQHandler:0000000000000040 $d
-     /tmp/ccQSr1U9.s:318    .bss.tmpCC4:0000000000000000 tmpCC4
-     /tmp/ccQSr1U9.s:314    .bss.tmpCC4:0000000000000000 $d
+     /tmp/ccuhssWO.s:18     .text.NMI_Handler:0000000000000000 $t
+     /tmp/ccuhssWO.s:25     .text.NMI_Handler:0000000000000000 NMI_Handler
+     /tmp/ccuhssWO.s:38     .text.HardFault_Handler:0000000000000000 $t
+     /tmp/ccuhssWO.s:45     .text.HardFault_Handler:0000000000000000 HardFault_Handler
+     /tmp/ccuhssWO.s:59     .text.MemManage_Handler:0000000000000000 $t
+     /tmp/ccuhssWO.s:66     .text.MemManage_Handler:0000000000000000 MemManage_Handler
+     /tmp/ccuhssWO.s:80     .text.BusFault_Handler:0000000000000000 $t
+     /tmp/ccuhssWO.s:87     .text.BusFault_Handler:0000000000000000 BusFault_Handler
+     /tmp/ccuhssWO.s:101    .text.UsageFault_Handler:0000000000000000 $t
+     /tmp/ccuhssWO.s:108    .text.UsageFault_Handler:0000000000000000 UsageFault_Handler
+     /tmp/ccuhssWO.s:122    .text.SVC_Handler:0000000000000000 $t
+     /tmp/ccuhssWO.s:129    .text.SVC_Handler:0000000000000000 SVC_Handler
+     /tmp/ccuhssWO.s:141    .text.DebugMon_Handler:0000000000000000 $t
+     /tmp/ccuhssWO.s:148    .text.DebugMon_Handler:0000000000000000 DebugMon_Handler
+     /tmp/ccuhssWO.s:160    .text.PendSV_Handler:0000000000000000 $t
+     /tmp/ccuhssWO.s:167    .text.PendSV_Handler:0000000000000000 PendSV_Handler
+     /tmp/ccuhssWO.s:179    .text.SysTick_Handler:0000000000000000 $t
+     /tmp/ccuhssWO.s:186    .text.SysTick_Handler:0000000000000000 SysTick_Handler
+     /tmp/ccuhssWO.s:209    .text.EXTI0_IRQHandler:0000000000000000 $t
+     /tmp/ccuhssWO.s:216    .text.EXTI0_IRQHandler:0000000000000000 EXTI0_IRQHandler
+     /tmp/ccuhssWO.s:245    .text.EXTI0_IRQHandler:000000000000001c $d
+     /tmp/ccuhssWO.s:251    .text.TIM5_IRQHandler:0000000000000000 $t
+     /tmp/ccuhssWO.s:258    .text.TIM5_IRQHandler:0000000000000000 TIM5_IRQHandler
+     /tmp/ccuhssWO.s:311    .text.TIM5_IRQHandler:0000000000000040 $d
+     /tmp/ccuhssWO.s:325    .bss.tmpCC4:0000000000000000 tmpCC4
+     /tmp/ccuhssWO.s:321    .bss.tmpCC4:0000000000000000 $d
                      .debug_frame:0000000000000010 $d
 
 UNDEFINED SYMBOLS

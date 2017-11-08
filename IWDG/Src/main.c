@@ -311,8 +311,8 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI0_IRQn, 0, 0);
-  /* HAL_NVIC_EnableIRQ(EXTI0_IRQn); */
+  HAL_NVIC_SetPriority(EXTI0_IRQn, 3, 3);
+  HAL_NVIC_EnableIRQ(EXTI0_IRQn);
 
 }
 
@@ -401,7 +401,7 @@ static uint32_t GetLSIFrequency(void)
 
   /* Wait until the TIM5 get 2 LSI edges (refer to TIM5_IRQHandler()
      in stm32f4xx_it.c file) */
-  while(uwMeasurementDone == 0)
+  while(uwMeasurementDone == 1)
   {
   }
   uwCaptureNumber = 0;
@@ -427,8 +427,8 @@ static uint32_t GetLSIFrequency(void)
 void _Error_Handler(char * file, int line)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  HAL_GPIO_TogglePin(LED_Red_GPIO_Port, LED_Red_Pin);
-  HAL_Delay(250);
+  HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
+  
     
   /* User can add his own implementation to report the HAL error return state */
   while(1) 
