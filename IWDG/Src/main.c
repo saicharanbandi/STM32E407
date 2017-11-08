@@ -35,6 +35,7 @@
   *
   ******************************************************************************
   */
+
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f4xx_hal.h"
@@ -59,8 +60,8 @@ __IO uint32_t uwMeasurementDone = 0;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_IWDG_Init(void);
-static void MX_TIM5_Init(void);
+/* static void MX_IWDG_Init(void); */
+/* static void MX_TIM5_Init(void); */
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
@@ -96,8 +97,8 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_IWDG_Init();
-  MX_TIM5_Init();
+  /* MX_IWDG_Init(); */
+  /* MX_TIM5_Init(); */
 
   /* USER CODE BEGIN 2 */
 
@@ -128,10 +129,10 @@ int main(void)
   hiwdg.Instance = IWDG;
   hiwdg.Init.Prescaler = IWDG_PRESCALER_32;
   hiwdg.Init.Reload = uwLsiFreq/128;
-  /* if (HAL_IWDG_Init(&hiwdg) != HAL_OK) */
-  /* { */
-  /*   _Error_Handler(__FILE__, __LINE__); */
-  /* } */
+  if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
   
   /* USER CODE END 2 */
 
@@ -151,7 +152,6 @@ int main(void)
       _Error_Handler(__FILE__, __LINE__);
     }
 
-    
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
@@ -213,71 +213,71 @@ void SystemClock_Config(void)
   HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
 }
 
-/* IWDG init function */
-static void MX_IWDG_Init(void)
-{
+/* /\* IWDG init function *\/ */
+/* static void MX_IWDG_Init(void) */
+/* { */
 
-  hiwdg.Instance = IWDG;
-  hiwdg.Init.Prescaler = IWDG_PRESCALER_4;
-  hiwdg.Init.Reload = 4095;
-  if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
-  {
-    _Error_Handler(__FILE__, __LINE__);
-  }
+/*   hiwdg.Instance = IWDG; */
+/*   hiwdg.Init.Prescaler = IWDG_PRESCALER_4; */
+/*   hiwdg.Init.Reload = 4095; */
+/*   if (HAL_IWDG_Init(&hiwdg) != HAL_OK) */
+/*   { */
+/*     _Error_Handler(__FILE__, __LINE__); */
+/*   } */
 
-}
+/* } */
 
-/* TIM5 init function */
-static void MX_TIM5_Init(void)
-{
+/* /\* TIM5 init function *\/ */
+/* static void MX_TIM5_Init(void) */
+/* { */
 
-  TIM_ClockConfigTypeDef sClockSourceConfig;
-  TIM_MasterConfigTypeDef sMasterConfig;
-  TIM_IC_InitTypeDef sConfigIC;
+/*   TIM_ClockConfigTypeDef sClockSourceConfig; */
+/*   TIM_MasterConfigTypeDef sMasterConfig; */
+/*   TIM_IC_InitTypeDef sConfigIC; */
 
-  htim5.Instance = TIM5;
-  htim5.Init.Prescaler = 0;
-  htim5.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim5.Init.Period = 0xFFFF;
-  htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  if (HAL_TIM_Base_Init(&htim5) != HAL_OK)
-  {
-    _Error_Handler(__FILE__, __LINE__);
-  }
+/*   htim5.Instance = TIM5; */
+/*   htim5.Init.Prescaler = 0; */
+/*   htim5.Init.CounterMode = TIM_COUNTERMODE_UP; */
+/*   htim5.Init.Period = 0xFFFF; */
+/*   htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1; */
+/*   if (HAL_TIM_Base_Init(&htim5) != HAL_OK) */
+/*   { */
+/*     _Error_Handler(__FILE__, __LINE__); */
+/*   } */
 
-  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
-  if (HAL_TIM_ConfigClockSource(&htim5, &sClockSourceConfig) != HAL_OK)
-  {
-    _Error_Handler(__FILE__, __LINE__);
-  }
+/*   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL; */
+/*   if (HAL_TIM_ConfigClockSource(&htim5, &sClockSourceConfig) != HAL_OK) */
+/*   { */
+/*     _Error_Handler(__FILE__, __LINE__); */
+/*   } */
 
-  if (HAL_TIM_IC_Init(&htim5) != HAL_OK)
-  {
-    _Error_Handler(__FILE__, __LINE__);
-  }
+/*   if (HAL_TIM_IC_Init(&htim5) != HAL_OK) */
+/*   { */
+/*     _Error_Handler(__FILE__, __LINE__); */
+/*   } */
 
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
-  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim5, &sMasterConfig) != HAL_OK)
-  {
-    _Error_Handler(__FILE__, __LINE__);
-  }
+/*   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET; */
+/*   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE; */
+/*   if (HAL_TIMEx_MasterConfigSynchronization(&htim5, &sMasterConfig) != HAL_OK) */
+/*   { */
+/*     _Error_Handler(__FILE__, __LINE__); */
+/*   } */
 
-  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
-  sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
-  sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
-  sConfigIC.ICFilter = 0;
-  if (HAL_TIM_IC_ConfigChannel(&htim5, &sConfigIC, TIM_CHANNEL_4) != HAL_OK)
-  {
-    _Error_Handler(__FILE__, __LINE__);
-  }
+/*   sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING; */
+/*   sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI; */
+/*   sConfigIC.ICPrescaler = TIM_ICPSC_DIV1; */
+/*   sConfigIC.ICFilter = 0; */
+/*   if (HAL_TIM_IC_ConfigChannel(&htim5, &sConfigIC, TIM_CHANNEL_4) != HAL_OK) */
+/*   { */
+/*     _Error_Handler(__FILE__, __LINE__); */
+/*   } */
 
-  if (HAL_TIMEx_RemapConfig(&htim5, TIM_TIM5_LSI) != HAL_OK)
-  {
-    _Error_Handler(__FILE__, __LINE__);
-  }
+/*   if (HAL_TIMEx_RemapConfig(&htim5, TIM_TIM5_LSI) != HAL_OK) */
+/*   { */
+/*     _Error_Handler(__FILE__, __LINE__); */
+/*   } */
 
-}
+/* } */
 
 /** Configure pins as 
         * Analog 
@@ -293,15 +293,10 @@ static void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOF_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOF, LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin : PUSH_BUTTON_1_Pin */
-  GPIO_InitStruct.Pin = PUSH_BUTTON_1_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(PUSH_BUTTON_1_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : LED_Green_Pin LED_Blue_Pin LED_Yellow_Pin LED_Red_Pin */
   GPIO_InitStruct.Pin = LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin;
@@ -310,8 +305,14 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : WKUP_BUTTON_Pin */
+  GPIO_InitStruct.Pin = WKUP_BUTTON_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(WKUP_BUTTON_GPIO_Port, &GPIO_InitStruct);
+
   /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI0_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(EXTI0_IRQn, 1, 1);
   HAL_NVIC_EnableIRQ(EXTI0_IRQn);
 
 }
@@ -401,7 +402,7 @@ static uint32_t GetLSIFrequency(void)
 
   /* Wait until the TIM5 get 2 LSI edges (refer to TIM5_IRQHandler()
      in stm32f4xx_it.c file) */
-  while(uwMeasurementDone == 1)
+  while(uwMeasurementDone == 0)
   {
   }
   uwCaptureNumber = 0;
@@ -412,6 +413,7 @@ static uint32_t GetLSIFrequency(void)
 
   /* Compute the LSI frequency, depending on TIM5 input clock
      frequency (PCLK1) */
+  pclk1 = HAL_RCC_GetPCLK1Freq();
   return (pclk1 / uwPeriodValue);
 
 }
@@ -427,7 +429,7 @@ static uint32_t GetLSIFrequency(void)
 void _Error_Handler(char * file, int line)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(LED_Yellow_GPIO_Port, LED_Yellow_Pin, GPIO_PIN_SET);
   
     
   /* User can add his own implementation to report the HAL error return state */

@@ -15,18 +15,12 @@ static void MX_GPIO_Init(void)
 #tGPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
 #tGPIO_InitStruct.Pull = GPIO_NOPULL;
 #tHAL_GPIO_Init(PUSH_BUTTON_GPIO_Port, &GPIO_InitStruct);
-#n#t/*Configure GPIO pin : LED_Green_Pin */
-#tGPIO_InitStruct.Pin = LED_Green_Pin;
+#n#t/*Configure GPIO pins : LED_Green_Pin LED_Red_Pin */
+#tGPIO_InitStruct.Pin = LED_Green_Pin|LED_Red_Pin;
 #tGPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
 #tGPIO_InitStruct.Pull = GPIO_NOPULL;
 #tGPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-#tHAL_GPIO_Init(LED_Green_GPIO_Port, &GPIO_InitStruct);
-#n#t/*Configure GPIO pin : LED_Red_Pin */
-#tGPIO_InitStruct.Pin = LED_Red_Pin;
-#tGPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-#tGPIO_InitStruct.Pull = GPIO_PULLDOWN;
-#tGPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-#tHAL_GPIO_Init(LED_Red_GPIO_Port, &GPIO_InitStruct);
+#tHAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
 #n#t/*Configure GPIO pin : WKUP_BUTTON_Pin */
 #tGPIO_InitStruct.Pin = WKUP_BUTTON_Pin;
 #tGPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;

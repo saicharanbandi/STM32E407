@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc5vCX7X.s 			page 1
+ARM GAS  /tmp/ccgaFwV8.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -31,174 +31,172 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
    2:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   ******************************************************************************
    3:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @file    stm32f4xx_hal_cortex.c
    4:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @author  MCD Application Team
-   5:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @version V1.7.1
-   6:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @date    14-April-2017
-   7:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief   CORTEX HAL module driver.
-   8:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *          This file provides firmware functions to manage the following 
-   9:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *          functionalities of the CORTEX:
-  10:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *           + Initialization and de-initialization functions
-  11:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *           + Peripheral Control functions 
-  12:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *
-  13:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   @verbatim  
+   5:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief   CORTEX HAL module driver.
+   6:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *          This file provides firmware functions to manage the following 
+   7:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *          functionalities of the CORTEX:
+   8:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *           + Initialization and de-initialization functions
+   9:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *           + Peripheral Control functions 
+  10:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *
+  11:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   @verbatim  
+  12:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   ==============================================================================
+  13:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                         ##### How to use this driver #####
   14:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   ==============================================================================
-  15:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                         ##### How to use this driver #####
-  16:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   ==============================================================================
-  17:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
-  18:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     [..]  
-  19:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     *** How to configure Interrupts using CORTEX HAL driver ***
-  20:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     ===========================================================
-  21:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     [..]     
-  22:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     This section provides functions allowing to configure the NVIC interrupts (IRQ).
-  23:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     The Cortex-M4 exceptions are managed by CMSIS functions.
-  24:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****    
-  25:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     (#) Configure the NVIC Priority Grouping using HAL_NVIC_SetPriorityGrouping()
-  26:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****         function according to the following table.
-  27:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     (#) Configure the priority of the selected IRQ Channels using HAL_NVIC_SetPriority(). 
-  28:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     (#) Enable the selected IRQ Channels using HAL_NVIC_EnableIRQ().
-  29:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     (#) please refer to programming manual for details in how to configure priority. 
-  30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****       
-  31:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****      -@- When the NVIC_PRIORITYGROUP_0 is selected, IRQ preemption is no more possible. 
-ARM GAS  /tmp/cc5vCX7X.s 			page 2
+  15:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+  16:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     [..]  
+  17:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     *** How to configure Interrupts using CORTEX HAL driver ***
+  18:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     ===========================================================
+  19:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     [..]     
+  20:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     This section provides functions allowing to configure the NVIC interrupts (IRQ).
+  21:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     The Cortex-M4 exceptions are managed by CMSIS functions.
+  22:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****    
+  23:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     (#) Configure the NVIC Priority Grouping using HAL_NVIC_SetPriorityGrouping()
+  24:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****         function according to the following table.
+  25:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     (#) Configure the priority of the selected IRQ Channels using HAL_NVIC_SetPriority(). 
+  26:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     (#) Enable the selected IRQ Channels using HAL_NVIC_EnableIRQ().
+  27:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     (#) please refer to programming manual for details in how to configure priority. 
+  28:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****       
+  29:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****      -@- When the NVIC_PRIORITYGROUP_0 is selected, IRQ preemption is no more possible. 
+  30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****          The pending IRQ priority will be managed only by the sub priority.
+  31:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****    
+ARM GAS  /tmp/ccgaFwV8.s 			page 2
 
 
-  32:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****          The pending IRQ priority will be managed only by the sub priority.
-  33:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****    
-  34:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****      -@- IRQ priority order (sorted by highest to lowest priority):
-  35:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****         (+@) Lowest preemption priority
-  36:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****         (+@) Lowest sub priority
-  37:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****         (+@) Lowest hardware priority (IRQ number)
-  38:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****  
-  39:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     [..]  
-  40:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     *** How to configure Systick using CORTEX HAL driver ***
-  41:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     ========================================================
-  42:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     [..]
-  43:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     Setup SysTick Timer for time base.
-  44:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****            
-  45:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****    (+) The HAL_SYSTICK_Config() function calls the SysTick_Config() function which
-  46:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****        is a CMSIS function that:
-  47:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****         (++) Configures the SysTick Reload register with value passed as function parameter.
-  48:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****         (++) Configures the SysTick IRQ priority to the lowest value 0x0F.
-  49:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****         (++) Resets the SysTick Counter register.
-  50:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****         (++) Configures the SysTick Counter clock source to be Core Clock Source (HCLK).
-  51:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****         (++) Enables the SysTick Interrupt.
-  52:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****         (++) Starts the SysTick Counter.
-  53:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     
-  54:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****    (+) You can change the SysTick Clock source to be HCLK_Div8 by calling the macro
-  55:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****        __HAL_CORTEX_SYSTICKCLK_CONFIG(SYSTICK_CLKSOURCE_HCLK_DIV8) just after the
-  56:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****        HAL_SYSTICK_Config() function call. The __HAL_CORTEX_SYSTICKCLK_CONFIG() macro is defined
-  57:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****        inside the stm32f4xx_hal_cortex.h file.
-  58:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
-  59:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****    (+) You can change the SysTick IRQ priority by calling the
-  60:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****        HAL_NVIC_SetPriority(SysTick_IRQn,...) function just after the HAL_SYSTICK_Config() function
-  61:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****        call. The HAL_NVIC_SetPriority() call the NVIC_SetPriority() function which is a CMSIS funct
-  62:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
-  63:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****    (+) To adjust the SysTick time base, use the following formula:
-  64:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                             
-  65:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****        Reload Value = SysTick Counter Clock (Hz) x  Desired Time base (s)
-  66:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****        (++) Reload Value is the parameter to be passed for HAL_SYSTICK_Config() function
-  67:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****        (++) Reload Value should not exceed 0xFFFFFF
-  68:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****    
-  69:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   @endverbatim
-  70:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   ******************************************************************************
-  71:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @attention
+  32:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****      -@- IRQ priority order (sorted by highest to lowest priority):
+  33:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****         (+@) Lowest preemption priority
+  34:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****         (+@) Lowest sub priority
+  35:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****         (+@) Lowest hardware priority (IRQ number)
+  36:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****  
+  37:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     [..]  
+  38:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     *** How to configure Systick using CORTEX HAL driver ***
+  39:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     ========================================================
+  40:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     [..]
+  41:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     Setup SysTick Timer for time base.
+  42:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****            
+  43:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****    (+) The HAL_SYSTICK_Config() function calls the SysTick_Config() function which
+  44:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****        is a CMSIS function that:
+  45:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****         (++) Configures the SysTick Reload register with value passed as function parameter.
+  46:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****         (++) Configures the SysTick IRQ priority to the lowest value 0x0F.
+  47:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****         (++) Resets the SysTick Counter register.
+  48:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****         (++) Configures the SysTick Counter clock source to be Core Clock Source (HCLK).
+  49:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****         (++) Enables the SysTick Interrupt.
+  50:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****         (++) Starts the SysTick Counter.
+  51:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     
+  52:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****    (+) You can change the SysTick Clock source to be HCLK_Div8 by calling the macro
+  53:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****        __HAL_CORTEX_SYSTICKCLK_CONFIG(SYSTICK_CLKSOURCE_HCLK_DIV8) just after the
+  54:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****        HAL_SYSTICK_Config() function call. The __HAL_CORTEX_SYSTICKCLK_CONFIG() macro is defined
+  55:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****        inside the stm32f4xx_hal_cortex.h file.
+  56:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+  57:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****    (+) You can change the SysTick IRQ priority by calling the
+  58:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****        HAL_NVIC_SetPriority(SysTick_IRQn,...) function just after the HAL_SYSTICK_Config() function
+  59:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****        call. The HAL_NVIC_SetPriority() call the NVIC_SetPriority() function which is a CMSIS funct
+  60:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+  61:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****    (+) To adjust the SysTick time base, use the following formula:
+  62:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                             
+  63:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****        Reload Value = SysTick Counter Clock (Hz) x  Desired Time base (s)
+  64:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****        (++) Reload Value is the parameter to be passed for HAL_SYSTICK_Config() function
+  65:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****        (++) Reload Value should not exceed 0xFFFFFF
+  66:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****    
+  67:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   @endverbatim
+  68:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   ******************************************************************************
+  69:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @attention
+  70:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *
+  71:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * <h2><center>&copy; COPYRIGHT(c) 2017 STMicroelectronics</center></h2>
   72:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *
-  73:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * <h2><center>&copy; COPYRIGHT(c) 2017 STMicroelectronics</center></h2>
-  74:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *
-  75:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * Redistribution and use in source and binary forms, with or without modification,
-  76:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * are permitted provided that the following conditions are met:
-  77:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *   1. Redistributions of source code must retain the above copyright notice,
-  78:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *      this list of conditions and the following disclaimer.
-  79:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *   2. Redistributions in binary form must reproduce the above copyright notice,
-  80:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *      this list of conditions and the following disclaimer in the documentation
-  81:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *      and/or other materials provided with the distribution.
-  82:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *   3. Neither the name of STMicroelectronics nor the names of its contributors
-  83:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *      may be used to endorse or promote products derived from this software
-  84:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *      without specific prior written permission.
-  85:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *
-  86:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  87:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  88:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-ARM GAS  /tmp/cc5vCX7X.s 			page 3
+  73:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * Redistribution and use in source and binary forms, with or without modification,
+  74:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * are permitted provided that the following conditions are met:
+  75:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *   1. Redistributions of source code must retain the above copyright notice,
+  76:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *      this list of conditions and the following disclaimer.
+  77:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *   2. Redistributions in binary form must reproduce the above copyright notice,
+  78:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *      this list of conditions and the following disclaimer in the documentation
+  79:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *      and/or other materials provided with the distribution.
+  80:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *   3. Neither the name of STMicroelectronics nor the names of its contributors
+  81:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *      may be used to endorse or promote products derived from this software
+  82:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *      without specific prior written permission.
+  83:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *
+  84:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  85:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  86:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  87:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  88:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ARM GAS  /tmp/ccgaFwV8.s 			page 3
 
 
-  89:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-  90:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-  91:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-  92:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-  93:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-  94:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  95:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  96:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *
-  97:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   ******************************************************************************
-  98:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
-  99:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 100:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /* Includes ------------------------------------------------------------------*/
- 101:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** #include "stm32f4xx_hal.h"
- 102:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 103:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /** @addtogroup STM32F4xx_HAL_Driver
- 104:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @{
- 105:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 106:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 107:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /** @defgroup CORTEX CORTEX
- 108:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief CORTEX HAL module driver
- 109:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @{
- 110:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+  89:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  90:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  91:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  92:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  93:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  94:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *
+  95:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   ******************************************************************************
+  96:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+  97:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+  98:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /* Includes ------------------------------------------------------------------*/
+  99:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** #include "stm32f4xx_hal.h"
+ 100:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 101:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /** @addtogroup STM32F4xx_HAL_Driver
+ 102:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @{
+ 103:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 104:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 105:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /** @defgroup CORTEX CORTEX
+ 106:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief CORTEX HAL module driver
+ 107:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @{
+ 108:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 109:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 110:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** #ifdef HAL_CORTEX_MODULE_ENABLED
  111:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 112:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** #ifdef HAL_CORTEX_MODULE_ENABLED
- 113:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 114:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /* Private types -------------------------------------------------------------*/
- 115:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /* Private variables ---------------------------------------------------------*/
- 116:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /* Private constants ---------------------------------------------------------*/
- 117:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /* Private macros ------------------------------------------------------------*/
- 118:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /* Private functions ---------------------------------------------------------*/
- 119:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /* Exported functions --------------------------------------------------------*/
- 120:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 121:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /** @defgroup CORTEX_Exported_Functions CORTEX Exported Functions
- 122:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @{
- 123:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 124:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 125:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 126:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /** @defgroup CORTEX_Exported_Functions_Group1 Initialization and de-initialization functions
- 127:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****  *  @brief    Initialization and Configuration functions 
- 128:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****  *
- 129:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** @verbatim    
+ 112:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /* Private types -------------------------------------------------------------*/
+ 113:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /* Private variables ---------------------------------------------------------*/
+ 114:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /* Private constants ---------------------------------------------------------*/
+ 115:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /* Private macros ------------------------------------------------------------*/
+ 116:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /* Private functions ---------------------------------------------------------*/
+ 117:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /* Exported functions --------------------------------------------------------*/
+ 118:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 119:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /** @defgroup CORTEX_Exported_Functions CORTEX Exported Functions
+ 120:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @{
+ 121:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 122:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 123:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 124:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /** @defgroup CORTEX_Exported_Functions_Group1 Initialization and de-initialization functions
+ 125:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****  *  @brief    Initialization and Configuration functions 
+ 126:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****  *
+ 127:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** @verbatim    
+ 128:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   ==============================================================================
+ 129:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****               ##### Initialization and de-initialization functions #####
  130:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   ==============================================================================
- 131:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****               ##### Initialization and de-initialization functions #####
- 132:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   ==============================================================================
- 133:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     [..]
- 134:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****       This section provides the CORTEX HAL driver functions allowing to configure Interrupts
- 135:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****       Systick functionalities 
- 136:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 137:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** @endverbatim
- 138:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @{
- 139:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 140:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 141:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 142:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
- 143:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Sets the priority grouping field (preemption priority and subpriority)
- 144:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         using the required unlock sequence.
- 145:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  PriorityGroup: The priority grouping bits length. 
-ARM GAS  /tmp/cc5vCX7X.s 			page 4
+ 131:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     [..]
+ 132:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****       This section provides the CORTEX HAL driver functions allowing to configure Interrupts
+ 133:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****       Systick functionalities 
+ 134:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 135:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** @endverbatim
+ 136:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @{
+ 137:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 138:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 139:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 140:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
+ 141:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Sets the priority grouping field (preemption priority and subpriority)
+ 142:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         using the required unlock sequence.
+ 143:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  PriorityGroup The priority grouping bits length. 
+ 144:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be one of the following values:
+ 145:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         @arg NVIC_PRIORITYGROUP_0: 0 bits for preemption priority
+ARM GAS  /tmp/ccgaFwV8.s 			page 4
 
 
- 146:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be one of the following values:
- 147:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         @arg NVIC_PRIORITYGROUP_0: 0 bits for preemption priority
- 148:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                                    4 bits for subpriority
- 149:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         @arg NVIC_PRIORITYGROUP_1: 1 bits for preemption priority
- 150:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                                    3 bits for subpriority
- 151:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         @arg NVIC_PRIORITYGROUP_2: 2 bits for preemption priority
- 152:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                                    2 bits for subpriority
- 153:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         @arg NVIC_PRIORITYGROUP_3: 3 bits for preemption priority
- 154:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                                    1 bits for subpriority
- 155:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         @arg NVIC_PRIORITYGROUP_4: 4 bits for preemption priority
- 156:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                                    0 bits for subpriority
- 157:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @note   When the NVIC_PriorityGroup_0 is selected, IRQ preemption is no more possible. 
- 158:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         The pending IRQ priority will be managed only by the subpriority. 
- 159:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
- 160:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 161:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_NVIC_SetPriorityGrouping(uint32_t PriorityGroup)
- 162:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
-  28              		.loc 1 162 0
+ 146:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                                    4 bits for subpriority
+ 147:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         @arg NVIC_PRIORITYGROUP_1: 1 bits for preemption priority
+ 148:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                                    3 bits for subpriority
+ 149:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         @arg NVIC_PRIORITYGROUP_2: 2 bits for preemption priority
+ 150:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                                    2 bits for subpriority
+ 151:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         @arg NVIC_PRIORITYGROUP_3: 3 bits for preemption priority
+ 152:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                                    1 bits for subpriority
+ 153:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         @arg NVIC_PRIORITYGROUP_4: 4 bits for preemption priority
+ 154:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                                    0 bits for subpriority
+ 155:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @note   When the NVIC_PriorityGroup_0 is selected, IRQ preemption is no more possible. 
+ 156:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         The pending IRQ priority will be managed only by the subpriority. 
+ 157:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
+ 158:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 159:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_NVIC_SetPriorityGrouping(uint32_t PriorityGroup)
+ 160:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
+  28              		.loc 1 160 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -209,9 +207,9 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
   36              		.cfi_offset 4, -8
   37              		.cfi_offset 14, -4
   38 0002 0446     		mov	r4, r0
- 163:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
- 164:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_PRIORITY_GROUP(PriorityGroup));
-  39              		.loc 1 164 0
+ 161:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
+ 162:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_PRIORITY_GROUP(PriorityGroup));
+  39              		.loc 1 162 0
   40 0004 C31E     		subs	r3, r0, #3
   41 0006 042B     		cmp	r3, #4
   42 0008 0FD8     		bhi	.L4
@@ -238,11 +236,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
   16:Drivers/CMSIS/Include/core_cm4.h ****      documentation and/or other materials provided with the distribution.
   17:Drivers/CMSIS/Include/core_cm4.h ****    - Neither the name of ARM nor the names of its contributors may be used
   18:Drivers/CMSIS/Include/core_cm4.h ****      to endorse or promote products derived from this software without
-ARM GAS  /tmp/cc5vCX7X.s 			page 5
-
-
   19:Drivers/CMSIS/Include/core_cm4.h ****      specific prior written permission.
   20:Drivers/CMSIS/Include/core_cm4.h ****    *
+ARM GAS  /tmp/ccgaFwV8.s 			page 5
+
+
   21:Drivers/CMSIS/Include/core_cm4.h ****    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
   22:Drivers/CMSIS/Include/core_cm4.h ****    AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
   23:Drivers/CMSIS/Include/core_cm4.h ****    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -298,11 +296,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
   73:Drivers/CMSIS/Include/core_cm4.h **** /*  CMSIS CM4 definitions */
   74:Drivers/CMSIS/Include/core_cm4.h **** #define __CM4_CMSIS_VERSION_MAIN  (0x04U)                                      /*!< [31:16] CMSIS H
   75:Drivers/CMSIS/Include/core_cm4.h **** #define __CM4_CMSIS_VERSION_SUB   (0x1EU)                                      /*!< [15:0]  CMSIS H
-ARM GAS  /tmp/cc5vCX7X.s 			page 6
-
-
   76:Drivers/CMSIS/Include/core_cm4.h **** #define __CM4_CMSIS_VERSION       ((__CM4_CMSIS_VERSION_MAIN << 16U) | \
   77:Drivers/CMSIS/Include/core_cm4.h ****                                     __CM4_CMSIS_VERSION_SUB           )        /*!< CMSIS HAL versi
+ARM GAS  /tmp/ccgaFwV8.s 			page 6
+
+
   78:Drivers/CMSIS/Include/core_cm4.h **** 
   79:Drivers/CMSIS/Include/core_cm4.h **** #define __CORTEX_M                (0x04U)                                      /*!< Cortex-M Core *
   80:Drivers/CMSIS/Include/core_cm4.h **** 
@@ -358,11 +356,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  130:Drivers/CMSIS/Include/core_cm4.h ****       #define __FPU_USED       0U
  131:Drivers/CMSIS/Include/core_cm4.h ****     #endif
  132:Drivers/CMSIS/Include/core_cm4.h ****   #else
-ARM GAS  /tmp/cc5vCX7X.s 			page 7
-
-
  133:Drivers/CMSIS/Include/core_cm4.h ****     #define __FPU_USED         0U
  134:Drivers/CMSIS/Include/core_cm4.h ****   #endif
+ARM GAS  /tmp/ccgaFwV8.s 			page 7
+
+
  135:Drivers/CMSIS/Include/core_cm4.h **** 
  136:Drivers/CMSIS/Include/core_cm4.h **** #elif defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
  137:Drivers/CMSIS/Include/core_cm4.h ****   #if defined __ARM_PCS_VFP
@@ -418,11 +416,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  187:Drivers/CMSIS/Include/core_cm4.h ****       #define __FPU_USED       1U
  188:Drivers/CMSIS/Include/core_cm4.h ****     #else
  189:Drivers/CMSIS/Include/core_cm4.h ****       #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)
-ARM GAS  /tmp/cc5vCX7X.s 			page 8
-
-
  190:Drivers/CMSIS/Include/core_cm4.h ****       #define __FPU_USED       0U
  191:Drivers/CMSIS/Include/core_cm4.h ****     #endif
+ARM GAS  /tmp/ccgaFwV8.s 			page 8
+
+
  192:Drivers/CMSIS/Include/core_cm4.h ****   #else
  193:Drivers/CMSIS/Include/core_cm4.h ****     #define __FPU_USED         0U
  194:Drivers/CMSIS/Include/core_cm4.h ****   #endif
@@ -478,11 +476,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  244:Drivers/CMSIS/Include/core_cm4.h ****   #endif
  245:Drivers/CMSIS/Include/core_cm4.h **** 
  246:Drivers/CMSIS/Include/core_cm4.h ****   #ifndef __NVIC_PRIO_BITS
-ARM GAS  /tmp/cc5vCX7X.s 			page 9
-
-
  247:Drivers/CMSIS/Include/core_cm4.h ****     #define __NVIC_PRIO_BITS          4U
  248:Drivers/CMSIS/Include/core_cm4.h ****     #warning "__NVIC_PRIO_BITS not defined in device header file; using default!"
+ARM GAS  /tmp/ccgaFwV8.s 			page 9
+
+
  249:Drivers/CMSIS/Include/core_cm4.h ****   #endif
  250:Drivers/CMSIS/Include/core_cm4.h **** 
  251:Drivers/CMSIS/Include/core_cm4.h ****   #ifndef __Vendor_SysTickConfig
@@ -538,11 +536,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  301:Drivers/CMSIS/Include/core_cm4.h ****   \brief      Core Register type definitions.
  302:Drivers/CMSIS/Include/core_cm4.h ****   @{
  303:Drivers/CMSIS/Include/core_cm4.h ****  */
-ARM GAS  /tmp/cc5vCX7X.s 			page 10
-
-
  304:Drivers/CMSIS/Include/core_cm4.h **** 
  305:Drivers/CMSIS/Include/core_cm4.h **** /**
+ARM GAS  /tmp/ccgaFwV8.s 			page 10
+
+
  306:Drivers/CMSIS/Include/core_cm4.h ****   \brief  Union type to access the Application Program Status Register (APSR).
  307:Drivers/CMSIS/Include/core_cm4.h ****  */
  308:Drivers/CMSIS/Include/core_cm4.h **** typedef union
@@ -598,11 +596,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  358:Drivers/CMSIS/Include/core_cm4.h **** #define IPSR_ISR_Pos                        0U                                            /*!< IPSR
  359:Drivers/CMSIS/Include/core_cm4.h **** #define IPSR_ISR_Msk                       (0x1FFUL /*<< IPSR_ISR_Pos*/)                  /*!< IPSR
  360:Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  /tmp/cc5vCX7X.s 			page 11
-
-
  361:Drivers/CMSIS/Include/core_cm4.h **** 
  362:Drivers/CMSIS/Include/core_cm4.h **** /**
+ARM GAS  /tmp/ccgaFwV8.s 			page 11
+
+
  363:Drivers/CMSIS/Include/core_cm4.h ****   \brief  Union type to access the Special-Purpose Program Status Registers (xPSR).
  364:Drivers/CMSIS/Include/core_cm4.h ****  */
  365:Drivers/CMSIS/Include/core_cm4.h **** typedef union
@@ -658,11 +656,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  415:Drivers/CMSIS/Include/core_cm4.h ****  */
  416:Drivers/CMSIS/Include/core_cm4.h **** typedef union
  417:Drivers/CMSIS/Include/core_cm4.h **** {
-ARM GAS  /tmp/cc5vCX7X.s 			page 12
-
-
  418:Drivers/CMSIS/Include/core_cm4.h ****   struct
  419:Drivers/CMSIS/Include/core_cm4.h ****   {
+ARM GAS  /tmp/ccgaFwV8.s 			page 12
+
+
  420:Drivers/CMSIS/Include/core_cm4.h ****     uint32_t nPRIV:1;                    /*!< bit:      0  Execution privilege in Thread mode */
  421:Drivers/CMSIS/Include/core_cm4.h ****     uint32_t SPSEL:1;                    /*!< bit:      1  Stack to be used */
  422:Drivers/CMSIS/Include/core_cm4.h ****     uint32_t FPCA:1;                     /*!< bit:      2  FP extension active flag */
@@ -718,11 +716,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  472:Drivers/CMSIS/Include/core_cm4.h **** /*@} end of group CMSIS_NVIC */
  473:Drivers/CMSIS/Include/core_cm4.h **** 
  474:Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  /tmp/cc5vCX7X.s 			page 13
-
-
  475:Drivers/CMSIS/Include/core_cm4.h **** /**
  476:Drivers/CMSIS/Include/core_cm4.h ****   \ingroup  CMSIS_core_register
+ARM GAS  /tmp/ccgaFwV8.s 			page 13
+
+
  477:Drivers/CMSIS/Include/core_cm4.h ****   \defgroup CMSIS_SCB     System Control Block (SCB)
  478:Drivers/CMSIS/Include/core_cm4.h ****   \brief    Type definitions for the System Control Block Registers
  479:Drivers/CMSIS/Include/core_cm4.h ****   @{
@@ -778,11 +776,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  529:Drivers/CMSIS/Include/core_cm4.h **** 
  530:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_ICSR_PENDSVSET_Pos             28U                                            /*!< SCB 
  531:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_ICSR_PENDSVSET_Msk             (1UL << SCB_ICSR_PENDSVSET_Pos)                /*!< SCB 
-ARM GAS  /tmp/cc5vCX7X.s 			page 14
-
-
  532:Drivers/CMSIS/Include/core_cm4.h **** 
  533:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_ICSR_PENDSVCLR_Pos             27U                                            /*!< SCB 
+ARM GAS  /tmp/ccgaFwV8.s 			page 14
+
+
  534:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_ICSR_PENDSVCLR_Msk             (1UL << SCB_ICSR_PENDSVCLR_Pos)                /*!< SCB 
  535:Drivers/CMSIS/Include/core_cm4.h **** 
  536:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_ICSR_PENDSTSET_Pos             26U                                            /*!< SCB 
@@ -838,11 +836,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  586:Drivers/CMSIS/Include/core_cm4.h **** 
  587:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_SCR_SLEEPDEEP_Pos               2U                                            /*!< SCB 
  588:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_SCR_SLEEPDEEP_Msk              (1UL << SCB_SCR_SLEEPDEEP_Pos)                 /*!< SCB 
-ARM GAS  /tmp/cc5vCX7X.s 			page 15
-
-
  589:Drivers/CMSIS/Include/core_cm4.h **** 
  590:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_SCR_SLEEPONEXIT_Pos             1U                                            /*!< SCB 
+ARM GAS  /tmp/ccgaFwV8.s 			page 15
+
+
  591:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_SCR_SLEEPONEXIT_Msk            (1UL << SCB_SCR_SLEEPONEXIT_Pos)               /*!< SCB 
  592:Drivers/CMSIS/Include/core_cm4.h **** 
  593:Drivers/CMSIS/Include/core_cm4.h **** /* SCB Configuration Control Register Definitions */
@@ -898,11 +896,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  643:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_SHCSR_SVCALLACT_Pos             7U                                            /*!< SCB 
  644:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_SHCSR_SVCALLACT_Msk            (1UL << SCB_SHCSR_SVCALLACT_Pos)               /*!< SCB 
  645:Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  /tmp/cc5vCX7X.s 			page 16
-
-
  646:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_SHCSR_USGFAULTACT_Pos           3U                                            /*!< SCB 
  647:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_SHCSR_USGFAULTACT_Msk          (1UL << SCB_SHCSR_USGFAULTACT_Pos)             /*!< SCB 
+ARM GAS  /tmp/ccgaFwV8.s 			page 16
+
+
  648:Drivers/CMSIS/Include/core_cm4.h **** 
  649:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_SHCSR_BUSFAULTACT_Pos           1U                                            /*!< SCB 
  650:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_SHCSR_BUSFAULTACT_Msk          (1UL << SCB_SHCSR_BUSFAULTACT_Pos)             /*!< SCB 
@@ -958,11 +956,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  700:Drivers/CMSIS/Include/core_cm4.h **** 
  701:Drivers/CMSIS/Include/core_cm4.h **** /**
  702:Drivers/CMSIS/Include/core_cm4.h ****   \brief  Structure type to access the System Control and ID Register not in the SCB.
-ARM GAS  /tmp/cc5vCX7X.s 			page 17
-
-
  703:Drivers/CMSIS/Include/core_cm4.h ****  */
  704:Drivers/CMSIS/Include/core_cm4.h **** typedef struct
+ARM GAS  /tmp/ccgaFwV8.s 			page 17
+
+
  705:Drivers/CMSIS/Include/core_cm4.h **** {
  706:Drivers/CMSIS/Include/core_cm4.h ****         uint32_t RESERVED0[1U];
  707:Drivers/CMSIS/Include/core_cm4.h ****   __IM  uint32_t ICTR;                   /*!< Offset: 0x004 (R/ )  Interrupt Controller Type Regist
@@ -1018,11 +1016,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  757:Drivers/CMSIS/Include/core_cm4.h **** #define SysTick_CTRL_CLKSOURCE_Msk         (1UL << SysTick_CTRL_CLKSOURCE_Pos)            /*!< SysT
  758:Drivers/CMSIS/Include/core_cm4.h **** 
  759:Drivers/CMSIS/Include/core_cm4.h **** #define SysTick_CTRL_TICKINT_Pos            1U                                            /*!< SysT
-ARM GAS  /tmp/cc5vCX7X.s 			page 18
-
-
  760:Drivers/CMSIS/Include/core_cm4.h **** #define SysTick_CTRL_TICKINT_Msk           (1UL << SysTick_CTRL_TICKINT_Pos)              /*!< SysT
  761:Drivers/CMSIS/Include/core_cm4.h **** 
+ARM GAS  /tmp/ccgaFwV8.s 			page 18
+
+
  762:Drivers/CMSIS/Include/core_cm4.h **** #define SysTick_CTRL_ENABLE_Pos             0U                                            /*!< SysT
  763:Drivers/CMSIS/Include/core_cm4.h **** #define SysTick_CTRL_ENABLE_Msk            (1UL /*<< SysTick_CTRL_ENABLE_Pos*/)           /*!< SysT
  764:Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1078,11 +1076,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  814:Drivers/CMSIS/Include/core_cm4.h ****         uint32_t RESERVED4[43U];
  815:Drivers/CMSIS/Include/core_cm4.h ****   __OM  uint32_t LAR;                    /*!< Offset: 0xFB0 ( /W)  ITM Lock Access Register */
  816:Drivers/CMSIS/Include/core_cm4.h ****   __IM  uint32_t LSR;                    /*!< Offset: 0xFB4 (R/ )  ITM Lock Status Register */
-ARM GAS  /tmp/cc5vCX7X.s 			page 19
-
-
  817:Drivers/CMSIS/Include/core_cm4.h ****         uint32_t RESERVED5[6U];
  818:Drivers/CMSIS/Include/core_cm4.h ****   __IM  uint32_t PID4;                   /*!< Offset: 0xFD0 (R/ )  ITM Peripheral Identification Re
+ARM GAS  /tmp/ccgaFwV8.s 			page 19
+
+
  819:Drivers/CMSIS/Include/core_cm4.h ****   __IM  uint32_t PID5;                   /*!< Offset: 0xFD4 (R/ )  ITM Peripheral Identification Re
  820:Drivers/CMSIS/Include/core_cm4.h ****   __IM  uint32_t PID6;                   /*!< Offset: 0xFD8 (R/ )  ITM Peripheral Identification Re
  821:Drivers/CMSIS/Include/core_cm4.h ****   __IM  uint32_t PID7;                   /*!< Offset: 0xFDC (R/ )  ITM Peripheral Identification Re
@@ -1138,11 +1136,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  871:Drivers/CMSIS/Include/core_cm4.h **** 
  872:Drivers/CMSIS/Include/core_cm4.h **** /* ITM Integration Mode Control Register Definitions */
  873:Drivers/CMSIS/Include/core_cm4.h **** #define ITM_IMCR_INTEGRATION_Pos            0U                                            /*!< ITM 
-ARM GAS  /tmp/cc5vCX7X.s 			page 20
-
-
  874:Drivers/CMSIS/Include/core_cm4.h **** #define ITM_IMCR_INTEGRATION_Msk           (1UL /*<< ITM_IMCR_INTEGRATION_Pos*/)          /*!< ITM 
  875:Drivers/CMSIS/Include/core_cm4.h **** 
+ARM GAS  /tmp/ccgaFwV8.s 			page 20
+
+
  876:Drivers/CMSIS/Include/core_cm4.h **** /* ITM Lock Status Register Definitions */
  877:Drivers/CMSIS/Include/core_cm4.h **** #define ITM_LSR_ByteAcc_Pos                 2U                                            /*!< ITM 
  878:Drivers/CMSIS/Include/core_cm4.h **** #define ITM_LSR_ByteAcc_Msk                (1UL << ITM_LSR_ByteAcc_Pos)                   /*!< ITM 
@@ -1198,11 +1196,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  928:Drivers/CMSIS/Include/core_cm4.h **** #define DWT_CTRL_NUMCOMP_Msk               (0xFUL << DWT_CTRL_NUMCOMP_Pos)             /*!< DWT CTR
  929:Drivers/CMSIS/Include/core_cm4.h **** 
  930:Drivers/CMSIS/Include/core_cm4.h **** #define DWT_CTRL_NOTRCPKT_Pos              27U                                         /*!< DWT CTR
-ARM GAS  /tmp/cc5vCX7X.s 			page 21
-
-
  931:Drivers/CMSIS/Include/core_cm4.h **** #define DWT_CTRL_NOTRCPKT_Msk              (0x1UL << DWT_CTRL_NOTRCPKT_Pos)            /*!< DWT CTR
  932:Drivers/CMSIS/Include/core_cm4.h **** 
+ARM GAS  /tmp/ccgaFwV8.s 			page 21
+
+
  933:Drivers/CMSIS/Include/core_cm4.h **** #define DWT_CTRL_NOEXTTRIG_Pos             26U                                         /*!< DWT CTR
  934:Drivers/CMSIS/Include/core_cm4.h **** #define DWT_CTRL_NOEXTTRIG_Msk             (0x1UL << DWT_CTRL_NOEXTTRIG_Pos)           /*!< DWT CTR
  935:Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1258,11 +1256,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  985:Drivers/CMSIS/Include/core_cm4.h **** /* DWT Exception Overhead Count Register Definitions */
  986:Drivers/CMSIS/Include/core_cm4.h **** #define DWT_EXCCNT_EXCCNT_Pos               0U                                         /*!< DWT EXC
  987:Drivers/CMSIS/Include/core_cm4.h **** #define DWT_EXCCNT_EXCCNT_Msk              (0xFFUL /*<< DWT_EXCCNT_EXCCNT_Pos*/)       /*!< DWT EXC
-ARM GAS  /tmp/cc5vCX7X.s 			page 22
-
-
  988:Drivers/CMSIS/Include/core_cm4.h **** 
  989:Drivers/CMSIS/Include/core_cm4.h **** /* DWT Sleep Count Register Definitions */
+ARM GAS  /tmp/ccgaFwV8.s 			page 22
+
+
  990:Drivers/CMSIS/Include/core_cm4.h **** #define DWT_SLEEPCNT_SLEEPCNT_Pos           0U                                         /*!< DWT SLE
  991:Drivers/CMSIS/Include/core_cm4.h **** #define DWT_SLEEPCNT_SLEEPCNT_Msk          (0xFFUL /*<< DWT_SLEEPCNT_SLEEPCNT_Pos*/)   /*!< DWT SLE
  992:Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1318,11 +1316,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
 1042:Drivers/CMSIS/Include/core_cm4.h **** 
 1043:Drivers/CMSIS/Include/core_cm4.h **** /**
 1044:Drivers/CMSIS/Include/core_cm4.h ****   \brief  Structure type to access the Trace Port Interface Register (TPI).
-ARM GAS  /tmp/cc5vCX7X.s 			page 23
-
-
 1045:Drivers/CMSIS/Include/core_cm4.h ****  */
 1046:Drivers/CMSIS/Include/core_cm4.h **** typedef struct
+ARM GAS  /tmp/ccgaFwV8.s 			page 23
+
+
 1047:Drivers/CMSIS/Include/core_cm4.h **** {
 1048:Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t SSPSR;                  /*!< Offset: 0x000 (R/ )  Supported Parallel Port Size Reg
 1049:Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t CSPSR;                  /*!< Offset: 0x004 (R/W)  Current Parallel Port Size Regis
@@ -1378,11 +1376,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
 1099:Drivers/CMSIS/Include/core_cm4.h **** #define TPI_FFCR_EnFCont_Pos                1U                                         /*!< TPI FFC
 1100:Drivers/CMSIS/Include/core_cm4.h **** #define TPI_FFCR_EnFCont_Msk               (0x1UL << TPI_FFCR_EnFCont_Pos)             /*!< TPI FFC
 1101:Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  /tmp/cc5vCX7X.s 			page 24
-
-
 1102:Drivers/CMSIS/Include/core_cm4.h **** /* TPI TRIGGER Register Definitions */
 1103:Drivers/CMSIS/Include/core_cm4.h **** #define TPI_TRIGGER_TRIGGER_Pos             0U                                         /*!< TPI TRI
+ARM GAS  /tmp/ccgaFwV8.s 			page 24
+
+
 1104:Drivers/CMSIS/Include/core_cm4.h **** #define TPI_TRIGGER_TRIGGER_Msk            (0x1UL /*<< TPI_TRIGGER_TRIGGER_Pos*/)      /*!< TPI TRI
 1105:Drivers/CMSIS/Include/core_cm4.h **** 
 1106:Drivers/CMSIS/Include/core_cm4.h **** /* TPI Integration ETM Data Register Definitions (FIFO0) */
@@ -1438,11 +1436,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
 1156:Drivers/CMSIS/Include/core_cm4.h **** #define TPI_ITATBCTR0_ATREADY_Msk          (0x1UL /*<< TPI_ITATBCTR0_ATREADY_Pos*/)    /*!< TPI ITA
 1157:Drivers/CMSIS/Include/core_cm4.h **** 
 1158:Drivers/CMSIS/Include/core_cm4.h **** /* TPI Integration Mode Control Register Definitions */
-ARM GAS  /tmp/cc5vCX7X.s 			page 25
-
-
 1159:Drivers/CMSIS/Include/core_cm4.h **** #define TPI_ITCTRL_Mode_Pos                 0U                                         /*!< TPI ITC
 1160:Drivers/CMSIS/Include/core_cm4.h **** #define TPI_ITCTRL_Mode_Msk                (0x1UL /*<< TPI_ITCTRL_Mode_Pos*/)          /*!< TPI ITC
+ARM GAS  /tmp/ccgaFwV8.s 			page 25
+
+
 1161:Drivers/CMSIS/Include/core_cm4.h **** 
 1162:Drivers/CMSIS/Include/core_cm4.h **** /* TPI DEVID Register Definitions */
 1163:Drivers/CMSIS/Include/core_cm4.h **** #define TPI_DEVID_NRZVALID_Pos             11U                                         /*!< TPI DEV
@@ -1498,11 +1496,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
 1213:Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t RBAR_A3;                /*!< Offset: 0x024 (R/W)  MPU Alias 3 Region Base Address 
 1214:Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t RASR_A3;                /*!< Offset: 0x028 (R/W)  MPU Alias 3 Region Attribute and
 1215:Drivers/CMSIS/Include/core_cm4.h **** } MPU_Type;
-ARM GAS  /tmp/cc5vCX7X.s 			page 26
-
-
 1216:Drivers/CMSIS/Include/core_cm4.h **** 
 1217:Drivers/CMSIS/Include/core_cm4.h **** /* MPU Type Register Definitions */
+ARM GAS  /tmp/ccgaFwV8.s 			page 26
+
+
 1218:Drivers/CMSIS/Include/core_cm4.h **** #define MPU_TYPE_IREGION_Pos               16U                                            /*!< MPU 
 1219:Drivers/CMSIS/Include/core_cm4.h **** #define MPU_TYPE_IREGION_Msk               (0xFFUL << MPU_TYPE_IREGION_Pos)               /*!< MPU 
 1220:Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1558,11 +1556,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
 1270:Drivers/CMSIS/Include/core_cm4.h **** #define MPU_RASR_B_Pos                     16U                                            /*!< MPU 
 1271:Drivers/CMSIS/Include/core_cm4.h **** #define MPU_RASR_B_Msk                     (1UL << MPU_RASR_B_Pos)                        /*!< MPU 
 1272:Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  /tmp/cc5vCX7X.s 			page 27
-
-
 1273:Drivers/CMSIS/Include/core_cm4.h **** #define MPU_RASR_SRD_Pos                    8U                                            /*!< MPU 
 1274:Drivers/CMSIS/Include/core_cm4.h **** #define MPU_RASR_SRD_Msk                   (0xFFUL << MPU_RASR_SRD_Pos)                   /*!< MPU 
+ARM GAS  /tmp/ccgaFwV8.s 			page 27
+
+
 1275:Drivers/CMSIS/Include/core_cm4.h **** 
 1276:Drivers/CMSIS/Include/core_cm4.h **** #define MPU_RASR_SIZE_Pos                   1U                                            /*!< MPU 
 1277:Drivers/CMSIS/Include/core_cm4.h **** #define MPU_RASR_SIZE_Msk                  (0x1FUL << MPU_RASR_SIZE_Pos)                  /*!< MPU 
@@ -1618,11 +1616,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
 1327:Drivers/CMSIS/Include/core_cm4.h **** #define FPU_FPCCR_THREAD_Msk               (1UL << FPU_FPCCR_THREAD_Pos)                  /*!< FPCC
 1328:Drivers/CMSIS/Include/core_cm4.h **** 
 1329:Drivers/CMSIS/Include/core_cm4.h **** #define FPU_FPCCR_USER_Pos                  1U                                            /*!< FPCC
-ARM GAS  /tmp/cc5vCX7X.s 			page 28
-
-
 1330:Drivers/CMSIS/Include/core_cm4.h **** #define FPU_FPCCR_USER_Msk                 (1UL << FPU_FPCCR_USER_Pos)                    /*!< FPCC
 1331:Drivers/CMSIS/Include/core_cm4.h **** 
+ARM GAS  /tmp/ccgaFwV8.s 			page 28
+
+
 1332:Drivers/CMSIS/Include/core_cm4.h **** #define FPU_FPCCR_LSPACT_Pos                0U                                            /*!< FPCC
 1333:Drivers/CMSIS/Include/core_cm4.h **** #define FPU_FPCCR_LSPACT_Msk               (1UL /*<< FPU_FPCCR_LSPACT_Pos*/)              /*!< FPCC
 1334:Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1678,11 +1676,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
 1384:Drivers/CMSIS/Include/core_cm4.h **** #define FPU_MVFR1_D_NaN_mode_Pos            4U                                            /*!< MVFR
 1385:Drivers/CMSIS/Include/core_cm4.h **** #define FPU_MVFR1_D_NaN_mode_Msk           (0xFUL << FPU_MVFR1_D_NaN_mode_Pos)            /*!< MVFR
 1386:Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  /tmp/cc5vCX7X.s 			page 29
-
-
 1387:Drivers/CMSIS/Include/core_cm4.h **** #define FPU_MVFR1_FtZ_mode_Pos              0U                                            /*!< MVFR
 1388:Drivers/CMSIS/Include/core_cm4.h **** #define FPU_MVFR1_FtZ_mode_Msk             (0xFUL /*<< FPU_MVFR1_FtZ_mode_Pos*/)          /*!< MVFR
+ARM GAS  /tmp/ccgaFwV8.s 			page 29
+
+
 1389:Drivers/CMSIS/Include/core_cm4.h **** 
 1390:Drivers/CMSIS/Include/core_cm4.h **** /*@} end of group CMSIS_FPU */
 1391:Drivers/CMSIS/Include/core_cm4.h **** #endif
@@ -1738,11 +1736,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
 1441:Drivers/CMSIS/Include/core_cm4.h **** #define CoreDebug_DHCSR_C_STEP_Msk         (1UL << CoreDebug_DHCSR_C_STEP_Pos)            /*!< Core
 1442:Drivers/CMSIS/Include/core_cm4.h **** 
 1443:Drivers/CMSIS/Include/core_cm4.h **** #define CoreDebug_DHCSR_C_HALT_Pos          1U                                            /*!< Core
-ARM GAS  /tmp/cc5vCX7X.s 			page 30
-
-
 1444:Drivers/CMSIS/Include/core_cm4.h **** #define CoreDebug_DHCSR_C_HALT_Msk         (1UL << CoreDebug_DHCSR_C_HALT_Pos)            /*!< Core
 1445:Drivers/CMSIS/Include/core_cm4.h **** 
+ARM GAS  /tmp/ccgaFwV8.s 			page 30
+
+
 1446:Drivers/CMSIS/Include/core_cm4.h **** #define CoreDebug_DHCSR_C_DEBUGEN_Pos       0U                                            /*!< Core
 1447:Drivers/CMSIS/Include/core_cm4.h **** #define CoreDebug_DHCSR_C_DEBUGEN_Msk      (1UL /*<< CoreDebug_DHCSR_C_DEBUGEN_Pos*/)     /*!< Core
 1448:Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1798,11 +1796,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
 1498:Drivers/CMSIS/Include/core_cm4.h **** 
 1499:Drivers/CMSIS/Include/core_cm4.h **** /**
 1500:Drivers/CMSIS/Include/core_cm4.h ****   \ingroup    CMSIS_core_register
-ARM GAS  /tmp/cc5vCX7X.s 			page 31
-
-
 1501:Drivers/CMSIS/Include/core_cm4.h ****   \defgroup   CMSIS_core_bitfield     Core register bit field macros
 1502:Drivers/CMSIS/Include/core_cm4.h ****   \brief      Macros for use with bit field definitions (xxx_Pos, xxx_Msk).
+ARM GAS  /tmp/ccgaFwV8.s 			page 31
+
+
 1503:Drivers/CMSIS/Include/core_cm4.h ****   @{
 1504:Drivers/CMSIS/Include/core_cm4.h ****  */
 1505:Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1858,11 +1856,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
 1555:Drivers/CMSIS/Include/core_cm4.h **** 
 1556:Drivers/CMSIS/Include/core_cm4.h **** #if (__FPU_PRESENT == 1U)
 1557:Drivers/CMSIS/Include/core_cm4.h ****   #define FPU_BASE          (SCS_BASE +  0x0F30UL)                    /*!< Floating Point Unit */
-ARM GAS  /tmp/cc5vCX7X.s 			page 32
-
-
 1558:Drivers/CMSIS/Include/core_cm4.h ****   #define FPU               ((FPU_Type       *)     FPU_BASE      )   /*!< Floating Point Unit */
 1559:Drivers/CMSIS/Include/core_cm4.h **** #endif
+ARM GAS  /tmp/ccgaFwV8.s 			page 32
+
+
 1560:Drivers/CMSIS/Include/core_cm4.h **** 
 1561:Drivers/CMSIS/Include/core_cm4.h **** /*@} */
 1562:Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1918,11 +1916,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
   57              	.LVL4:
 1603:Drivers/CMSIS/Include/core_cm4.h ****   reg_value  =  (reg_value                                   |
 1604:Drivers/CMSIS/Include/core_cm4.h ****                 ((uint32_t)0x5FAUL << SCB_AIRCR_VECTKEY_Pos) |
-ARM GAS  /tmp/cc5vCX7X.s 			page 33
-
-
 1605:Drivers/CMSIS/Include/core_cm4.h ****                 (PriorityGroupTmp << 8U)                      );              /* Insert write key a
   58              		.loc 2 1605 0
+ARM GAS  /tmp/ccgaFwV8.s 			page 33
+
+
   59 0016 2402     		lsls	r4, r4, #8
   60              	.LVL5:
   61 0018 04F4E064 		and	r4, r4, #1792
@@ -1944,8 +1942,8 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
   74              	.L4:
   75              	.LBE47:
   76              	.LBE46:
-  77              		.loc 1 164 0 discriminator 1
-  78 002a A421     		movs	r1, #164
+  77              		.loc 1 162 0 discriminator 1
+  78 002a A221     		movs	r1, #162
   79 002c 0248     		ldr	r0, .L5+4
   80              	.LVL10:
   81 002e FFF7FEFF 		bl	assert_failed
@@ -1967,30 +1965,30 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
   98              		.fpu fpv4-sp-d16
  100              	HAL_NVIC_SetPriority:
  101              	.LFB124:
- 165:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
- 166:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Set the PRIGROUP[10:8] bits according to the PriorityGroup parameter value */
- 167:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   NVIC_SetPriorityGrouping(PriorityGroup);
- 168:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
- 169:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 170:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
- 171:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Sets the priority of an interrupt.
- 172:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  IRQn: External interrupt number.
- 173:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
- 174:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
- 175:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  PreemptPriority: The preemption priority for the IRQn channel.
-ARM GAS  /tmp/cc5vCX7X.s 			page 34
+ 163:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
+ 164:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Set the PRIGROUP[10:8] bits according to the PriorityGroup parameter value */
+ 165:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   NVIC_SetPriorityGrouping(PriorityGroup);
+ 166:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
+ 167:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 168:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
+ 169:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Sets the priority of an interrupt.
+ 170:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  IRQn External interrupt number.
+ 171:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
+ 172:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
+ 173:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  PreemptPriority The preemption priority for the IRQn channel.
+ 174:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be a value between 0 and 15
+ 175:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         A lower priority value indicates a higher priority 
+ARM GAS  /tmp/ccgaFwV8.s 			page 34
 
 
- 176:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be a value between 0 and 15
- 177:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         A lower priority value indicates a higher priority 
- 178:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  SubPriority: the subpriority level for the IRQ channel.
- 179:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be a value between 0 and 15
- 180:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         A lower priority value indicates a higher priority.          
- 181:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
- 182:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 183:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_NVIC_SetPriority(IRQn_Type IRQn, uint32_t PreemptPriority, uint32_t SubPriority)
- 184:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** { 
- 102              		.loc 1 184 0
+ 176:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  SubPriority the subpriority level for the IRQ channel.
+ 177:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be a value between 0 and 15
+ 178:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         A lower priority value indicates a higher priority.          
+ 179:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
+ 180:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 181:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_NVIC_SetPriority(IRQn_Type IRQn, uint32_t PreemptPriority, uint32_t SubPriority)
+ 182:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** { 
+ 102              		.loc 1 182 0
  103              		.cfi_startproc
  104              		@ args = 0, pretend = 0, frame = 0
  105              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2006,17 +2004,17 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  115 0004 0C46     		mov	r4, r1
  116 0006 1646     		mov	r6, r2
  117              	.LVL13:
- 185:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   uint32_t prioritygroup = 0x00U;
- 186:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
- 187:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
- 188:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_SUB_PRIORITY(SubPriority));
- 118              		.loc 1 188 0
+ 183:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   uint32_t prioritygroup = 0x00U;
+ 184:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
+ 185:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
+ 186:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_SUB_PRIORITY(SubPriority));
+ 118              		.loc 1 186 0
  119 0008 0F2A     		cmp	r2, #15
  120 000a 24D8     		bhi	.L15
  121              	.LVL14:
  122              	.L8:
- 189:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_PREEMPTION_PRIORITY(PreemptPriority));
- 123              		.loc 1 189 0
+ 187:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_PREEMPTION_PRIORITY(PreemptPriority));
+ 123              		.loc 1 187 0
  124 000c 0F2C     		cmp	r4, #15
  125 000e 27D8     		bhi	.L16
  126              	.L9:
@@ -2038,11 +2036,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  131 0012 DB68     		ldr	r3, [r3, #12]
  132 0014 C3F30223 		ubfx	r3, r3, #8, #3
  133              	.LVL15:
-ARM GAS  /tmp/cc5vCX7X.s 			page 35
-
-
  134              	.LBE49:
  135              	.LBE48:
+ARM GAS  /tmp/ccgaFwV8.s 			page 35
+
+
  136              	.LBB50:
  137              	.LBB51:
 1618:Drivers/CMSIS/Include/core_cm4.h **** }
@@ -2098,11 +2096,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
 1668:Drivers/CMSIS/Include/core_cm4.h ****   \brief   Clear Pending Interrupt
 1669:Drivers/CMSIS/Include/core_cm4.h ****   \details Clears the pending bit of an external interrupt.
 1670:Drivers/CMSIS/Include/core_cm4.h ****   \param [in]      IRQn  External interrupt number. Value cannot be negative.
-ARM GAS  /tmp/cc5vCX7X.s 			page 36
-
-
 1671:Drivers/CMSIS/Include/core_cm4.h ****  */
 1672:Drivers/CMSIS/Include/core_cm4.h **** __STATIC_INLINE void NVIC_ClearPendingIRQ(IRQn_Type IRQn)
+ARM GAS  /tmp/ccgaFwV8.s 			page 36
+
+
 1673:Drivers/CMSIS/Include/core_cm4.h **** {
 1674:Drivers/CMSIS/Include/core_cm4.h ****   NVIC->ICPR[(((uint32_t)(int32_t)IRQn) >> 5UL)] = (uint32_t)(1UL << (((uint32_t)(int32_t)IRQn) & 0
 1675:Drivers/CMSIS/Include/core_cm4.h **** }
@@ -2158,11 +2156,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
 1725:Drivers/CMSIS/Include/core_cm4.h ****     return(((uint32_t)SCB->SHP[(((uint32_t)(int32_t)IRQn) & 0xFUL)-4UL] >> (8U - __NVIC_PRIO_BITS))
 1726:Drivers/CMSIS/Include/core_cm4.h ****   }
 1727:Drivers/CMSIS/Include/core_cm4.h ****   else
-ARM GAS  /tmp/cc5vCX7X.s 			page 37
-
-
 1728:Drivers/CMSIS/Include/core_cm4.h ****   {
 1729:Drivers/CMSIS/Include/core_cm4.h ****     return(((uint32_t)NVIC->IP[((uint32_t)(int32_t)IRQn)]               >> (8U - __NVIC_PRIO_BITS))
+ARM GAS  /tmp/ccgaFwV8.s 			page 37
+
+
 1730:Drivers/CMSIS/Include/core_cm4.h ****   }
 1731:Drivers/CMSIS/Include/core_cm4.h **** }
 1732:Drivers/CMSIS/Include/core_cm4.h **** 
@@ -2218,11 +2216,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  163 003a 013B     		subs	r3, r3, #1
  164 003c 3340     		ands	r3, r3, r6
 1755:Drivers/CMSIS/Include/core_cm4.h ****            ((SubPriority     & (uint32_t)((1UL << (SubPriorityBits    )) - 1UL)))
-ARM GAS  /tmp/cc5vCX7X.s 			page 38
-
-
  165              		.loc 2 1755 0
  166 003e 1C43     		orrs	r4, r4, r3
+ARM GAS  /tmp/ccgaFwV8.s 			page 38
+
+
  167              	.LVL22:
  168              	.LBE51:
  169              	.LBE50:
@@ -2245,9 +2243,9 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  184              	.L15:
  185              	.LBE54:
  186              	.LBE53:
- 188:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_PREEMPTION_PRIORITY(PreemptPriority));
- 187              		.loc 1 188 0 discriminator 1
- 188 0056 BC21     		movs	r1, #188
+ 186:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_PREEMPTION_PRIORITY(PreemptPriority));
+ 187              		.loc 1 186 0 discriminator 1
+ 188 0056 BA21     		movs	r1, #186
  189              	.LVL25:
  190 0058 0948     		ldr	r0, .L18+4
  191              	.LVL26:
@@ -2255,8 +2253,8 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  193              	.LVL27:
  194 005e D5E7     		b	.L8
  195              	.L16:
- 196              		.loc 1 189 0 discriminator 1
- 197 0060 BD21     		movs	r1, #189
+ 196              		.loc 1 187 0 discriminator 1
+ 197 0060 BB21     		movs	r1, #187
  198 0062 0748     		ldr	r0, .L18+4
  199 0064 FFF7FEFF 		bl	assert_failed
  200              	.LVL28:
@@ -2278,11 +2276,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  215              	.LBB55:
 1702:Drivers/CMSIS/Include/core_cm4.h ****   }
  216              		.loc 2 1702 0
-ARM GAS  /tmp/cc5vCX7X.s 			page 39
-
-
  217 006e 05F00F05 		and	r5, r5, #15
  218              	.LVL32:
+ARM GAS  /tmp/ccgaFwV8.s 			page 39
+
+
  219 0072 2401     		lsls	r4, r4, #4
  220 0074 E4B2     		uxtb	r4, r4
  221 0076 034B     		ldr	r3, .L18+8
@@ -2308,24 +2306,24 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  242              		.fpu fpv4-sp-d16
  244              	HAL_NVIC_EnableIRQ:
  245              	.LFB125:
+ 188:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
+ 189:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   prioritygroup = NVIC_GetPriorityGrouping();
  190:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
- 191:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   prioritygroup = NVIC_GetPriorityGrouping();
- 192:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
- 193:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   NVIC_SetPriority(IRQn, NVIC_EncodePriority(prioritygroup, PreemptPriority, SubPriority));
- 194:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
- 195:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 196:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
- 197:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Enables a device specific interrupt in the NVIC interrupt controller.
- 198:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @note   To configure interrupts priority correctly, the NVIC_PriorityGroupConfig()
- 199:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         function should be called before. 
- 200:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  IRQn External interrupt number.
- 201:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
- 202:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
- 203:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
- 204:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 205:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_NVIC_EnableIRQ(IRQn_Type IRQn)
- 206:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
- 246              		.loc 1 206 0
+ 191:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   NVIC_SetPriority(IRQn, NVIC_EncodePriority(prioritygroup, PreemptPriority, SubPriority));
+ 192:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
+ 193:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 194:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
+ 195:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Enables a device specific interrupt in the NVIC interrupt controller.
+ 196:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @note   To configure interrupts priority correctly, the NVIC_PriorityGroupConfig()
+ 197:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         function should be called before. 
+ 198:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  IRQn External interrupt number.
+ 199:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
+ 200:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
+ 201:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
+ 202:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 203:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_NVIC_EnableIRQ(IRQn_Type IRQn)
+ 204:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
+ 246              		.loc 1 204 0
  247              		.cfi_startproc
  248              		@ args = 0, pretend = 0, frame = 0
  249              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2335,14 +2333,14 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  253              		.cfi_def_cfa_offset 8
  254              		.cfi_offset 4, -8
  255              		.cfi_offset 14, -4
- 207:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
- 208:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_DEVICE_IRQ(IRQn));
- 256              		.loc 1 208 0
-ARM GAS  /tmp/cc5vCX7X.s 			page 40
-
-
+ 205:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
+ 206:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_DEVICE_IRQ(IRQn));
+ 256              		.loc 1 206 0
  257 0002 041E     		subs	r4, r0, #0
  258 0004 09DB     		blt	.L23
+ARM GAS  /tmp/ccgaFwV8.s 			page 40
+
+
  259              	.LVL35:
  260              	.L21:
  261              	.LBB58:
@@ -2361,8 +2359,8 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  273              	.L23:
  274              	.LBE59:
  275              	.LBE58:
- 276              		.loc 1 208 0 discriminator 1
- 277 001a D021     		movs	r1, #208
+ 276              		.loc 1 206 0 discriminator 1
+ 277 001a CE21     		movs	r1, #206
  278 001c 0248     		ldr	r0, .L24+4
  279              	.LVL38:
  280 001e FFF7FEFF 		bl	assert_failed
@@ -2384,25 +2382,25 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  297              		.fpu fpv4-sp-d16
  299              	HAL_NVIC_DisableIRQ:
  300              	.LFB126:
- 209:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
- 210:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Enable interrupt */
- 211:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   NVIC_EnableIRQ(IRQn);
- 212:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
- 213:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 214:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
- 215:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Disables a device specific interrupt in the NVIC interrupt controller.
- 216:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  IRQn External interrupt number.
- 217:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
- 218:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
- 219:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
- 220:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 221:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_NVIC_DisableIRQ(IRQn_Type IRQn)
- 222:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
-ARM GAS  /tmp/cc5vCX7X.s 			page 41
-
-
- 301              		.loc 1 222 0
+ 207:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
+ 208:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Enable interrupt */
+ 209:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   NVIC_EnableIRQ(IRQn);
+ 210:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
+ 211:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 212:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
+ 213:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Disables a device specific interrupt in the NVIC interrupt controller.
+ 214:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  IRQn External interrupt number.
+ 215:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
+ 216:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
+ 217:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
+ 218:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 219:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_NVIC_DisableIRQ(IRQn_Type IRQn)
+ 220:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
+ 301              		.loc 1 220 0
  302              		.cfi_startproc
+ARM GAS  /tmp/ccgaFwV8.s 			page 41
+
+
  303              		@ args = 0, pretend = 0, frame = 0
  304              		@ frame_needed = 0, uses_anonymous_args = 0
  305              	.LVL40:
@@ -2411,9 +2409,9 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  308              		.cfi_def_cfa_offset 8
  309              		.cfi_offset 4, -8
  310              		.cfi_offset 14, -4
- 223:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
- 224:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_DEVICE_IRQ(IRQn));
- 311              		.loc 1 224 0
+ 221:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
+ 222:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_DEVICE_IRQ(IRQn));
+ 311              		.loc 1 222 0
  312 0002 041E     		subs	r4, r0, #0
  313 0004 0ADB     		blt	.L29
  314              	.LVL41:
@@ -2435,8 +2433,8 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  329              	.L29:
  330              	.LBE61:
  331              	.LBE60:
- 332              		.loc 1 224 0 discriminator 1
- 333 001c E021     		movs	r1, #224
+ 332              		.loc 1 222 0 discriminator 1
+ 333 001c DE21     		movs	r1, #222
  334 001e 0348     		ldr	r0, .L30+4
  335              	.LVL44:
  336 0020 FFF7FEFF 		bl	assert_failed
@@ -2458,21 +2456,21 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  353              		.fpu fpv4-sp-d16
  355              	HAL_NVIC_SystemReset:
  356              	.LFB127:
-ARM GAS  /tmp/cc5vCX7X.s 			page 42
+ 223:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
+ 224:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Disable interrupt */
+ARM GAS  /tmp/ccgaFwV8.s 			page 42
 
 
- 225:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
- 226:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Disable interrupt */
- 227:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   NVIC_DisableIRQ(IRQn);
- 228:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
- 229:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 230:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
- 231:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Initiates a system reset request to reset the MCU.
- 232:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
- 233:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 234:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_NVIC_SystemReset(void)
- 235:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
- 357              		.loc 1 235 0
+ 225:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   NVIC_DisableIRQ(IRQn);
+ 226:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
+ 227:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 228:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
+ 229:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Initiates a system reset request to reset the MCU.
+ 230:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
+ 231:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 232:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_NVIC_SystemReset(void)
+ 233:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
+ 357              		.loc 1 233 0
  358              		.cfi_startproc
  359              		@ Volatile: function does not return.
  360              		@ args = 0, pretend = 0, frame = 0
@@ -2518,11 +2516,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
   33:Drivers/CMSIS/Include/cmsis_gcc.h **** 
   34:Drivers/CMSIS/Include/cmsis_gcc.h **** 
   35:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __CMSIS_GCC_H
-ARM GAS  /tmp/cc5vCX7X.s 			page 43
-
-
   36:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_H
   37:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  /tmp/ccgaFwV8.s 			page 43
+
+
   38:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ignore some GCC warnings */
   39:Drivers/CMSIS/Include/cmsis_gcc.h **** #if defined ( __GNUC__ )
   40:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic push
@@ -2578,11 +2576,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
   90:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Control Register
   91:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Writes the given value to the Control Register.
   92:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    control  Control Register value to set
-ARM GAS  /tmp/cc5vCX7X.s 			page 44
-
-
   93:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
   94:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __set_CONTROL(uint32_t control)
+ARM GAS  /tmp/ccgaFwV8.s 			page 44
+
+
   95:Drivers/CMSIS/Include/cmsis_gcc.h **** {
   96:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR control, %0" : : "r" (control) : "memory");
   97:Drivers/CMSIS/Include/cmsis_gcc.h **** }
@@ -2638,11 +2636,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  147:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  148:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_PSP(void)
  149:Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  /tmp/cc5vCX7X.s 			page 45
-
-
  150:Drivers/CMSIS/Include/cmsis_gcc.h ****   register uint32_t result;
  151:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  /tmp/ccgaFwV8.s 			page 45
+
+
  152:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, psp\n"  : "=r" (result) );
  153:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
  154:Drivers/CMSIS/Include/cmsis_gcc.h **** }
@@ -2698,11 +2696,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  204:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
  205:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  206:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  /tmp/cc5vCX7X.s 			page 46
-
-
  207:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  208:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ARM GAS  /tmp/ccgaFwV8.s 			page 46
+
+
  209:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Priority Mask
  210:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the Priority Mask Register.
  211:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    priMask  Priority Mask
@@ -2758,11 +2756,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  261:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  262:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __set_BASEPRI(uint32_t value)
  263:Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  /tmp/cc5vCX7X.s 			page 47
-
-
  264:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR basepri, %0" : : "r" (value) : "memory");
  265:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ARM GAS  /tmp/ccgaFwV8.s 			page 47
+
+
  266:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  267:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  268:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -2818,11 +2816,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  318:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  319:Drivers/CMSIS/Include/cmsis_gcc.h ****   /* Empty asm statement works as a scheduling barrier */
  320:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("");
-ARM GAS  /tmp/cc5vCX7X.s 			page 48
-
-
  321:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("VMRS %0, fpscr" : "=r" (result) );
  322:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("");
+ARM GAS  /tmp/ccgaFwV8.s 			page 48
+
+
  323:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
  324:Drivers/CMSIS/Include/cmsis_gcc.h **** #else
  325:Drivers/CMSIS/Include/cmsis_gcc.h ****    return(0);
@@ -2878,11 +2876,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  375:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("nop");
  376:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  377:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  /tmp/cc5vCX7X.s 			page 49
-
-
  378:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  379:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ARM GAS  /tmp/ccgaFwV8.s 			page 49
+
+
  380:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Wait For Interrupt
  381:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Wait For Interrupt is a hint instruction that suspends execution until one of a number o
  382:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
@@ -2938,11 +2936,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  370              	@ 429 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
  371 0000 BFF34F8F 		dsb 0xF
  372              	@ 0 "" 2
-ARM GAS  /tmp/cc5vCX7X.s 			page 50
-
-
  373              		.thumb
  374              		.syntax unified
+ARM GAS  /tmp/ccgaFwV8.s 			page 50
+
+
  375              	.LBE73:
  376              	.LBE72:
 1757:Drivers/CMSIS/Include/core_cm4.h ****          );
@@ -2998,11 +2996,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  387              		.loc 3 429 0
  388              		.syntax unified
  389              	@ 429 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
-ARM GAS  /tmp/cc5vCX7X.s 			page 51
-
-
  390 0012 BFF34F8F 		dsb 0xF
  391              	@ 0 "" 2
+ARM GAS  /tmp/ccgaFwV8.s 			page 51
+
+
  392              		.thumb
  393              		.syntax unified
  394              	.L33:
@@ -3039,30 +3037,30 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  425              		.fpu fpv4-sp-d16
  427              	HAL_SYSTICK_Config:
  428              	.LFB128:
- 236:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* System Reset */
- 237:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   NVIC_SystemReset();
- 238:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
- 239:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 240:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
- 241:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Initializes the System Timer and its interrupt, and starts the System Tick Timer.
- 242:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         Counter is in free running mode to generate periodic interrupts.
- 243:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  TicksNumb: Specifies the ticks Number of ticks between two interrupts.
- 244:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval status:  - 0  Function succeeded.
- 245:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                  - 1  Function failed.
- 246:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 247:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** uint32_t HAL_SYSTICK_Config(uint32_t TicksNumb)
- 248:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
- 429              		.loc 1 248 0
+ 234:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* System Reset */
+ 235:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   NVIC_SystemReset();
+ 236:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
+ 237:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 238:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
+ 239:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Initializes the System Timer and its interrupt, and starts the System Tick Timer.
+ 240:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         Counter is in free running mode to generate periodic interrupts.
+ 241:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  TicksNumb Specifies the ticks Number of ticks between two interrupts.
+ 242:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval status:  - 0  Function succeeded.
+ 243:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                  - 1  Function failed.
+ 244:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 245:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** uint32_t HAL_SYSTICK_Config(uint32_t TicksNumb)
+ 246:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
+ 429              		.loc 1 246 0
  430              		.cfi_startproc
  431              		@ args = 0, pretend = 0, frame = 0
  432              		@ frame_needed = 0, uses_anonymous_args = 0
  433              		@ link register save eliminated.
  434              	.LVL46:
-ARM GAS  /tmp/cc5vCX7X.s 			page 52
-
-
  435              	.LBB78:
  436              	.LBB79:
+ARM GAS  /tmp/ccgaFwV8.s 			page 52
+
+
 1796:Drivers/CMSIS/Include/core_cm4.h ****                             SCB_AIRCR_SYSRESETREQ_Msk    );         /* Keep priority group unchange
 1797:Drivers/CMSIS/Include/core_cm4.h ****   __DSB();                                                          /* Ensure completion of memory 
 1798:Drivers/CMSIS/Include/core_cm4.h **** 
@@ -3118,11 +3116,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  447              	.LBB81:
 1702:Drivers/CMSIS/Include/core_cm4.h ****   }
  448              		.loc 2 1702 0
-ARM GAS  /tmp/cc5vCX7X.s 			page 53
-
-
  449 000c F021     		movs	r1, #240
  450 000e 064A     		ldr	r2, .L39+4
+ARM GAS  /tmp/ccgaFwV8.s 			page 53
+
+
  451 0010 82F82310 		strb	r1, [r2, #35]
  452              	.LVL49:
  453              	.LBE81:
@@ -3145,9 +3143,9 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  466              	.LVL51:
  467              	.LBE79:
  468              	.LBE78:
- 249:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****    return SysTick_Config(TicksNumb);
- 250:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
- 469              		.loc 1 250 0
+ 247:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****    return SysTick_Config(TicksNumb);
+ 248:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
+ 469              		.loc 1 248 0
  470 0020 7047     		bx	lr
  471              	.L40:
  472 0022 00BF     		.align	2
@@ -3165,37 +3163,37 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  485              		.fpu fpv4-sp-d16
  487              	HAL_MPU_Disable:
  488              	.LFB129:
- 251:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
- 252:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @}
- 253:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 254:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 255:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /** @defgroup CORTEX_Exported_Functions_Group2 Peripheral Control functions
- 256:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****  *  @brief   Cortex control functions 
- 257:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****  *
- 258:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** @verbatim   
- 259:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   ==============================================================================
- 260:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                       ##### Peripheral Control functions #####
- 261:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   ==============================================================================  
- 262:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     [..]
- 263:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****       This subsection provides a set of functions allowing to control the CORTEX
-ARM GAS  /tmp/cc5vCX7X.s 			page 54
+ 249:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
+ 250:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @}
+ 251:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 252:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 253:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /** @defgroup CORTEX_Exported_Functions_Group2 Peripheral Control functions
+ 254:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****  *  @brief   Cortex control functions 
+ 255:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****  *
+ 256:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** @verbatim   
+ 257:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   ==============================================================================
+ 258:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                       ##### Peripheral Control functions #####
+ 259:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   ==============================================================================  
+ 260:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     [..]
+ 261:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****       This subsection provides a set of functions allowing to control the CORTEX
+ 262:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****       (NVIC, SYSTICK, MPU) functionalities. 
+ 263:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****  
+ARM GAS  /tmp/ccgaFwV8.s 			page 54
 
 
- 264:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****       (NVIC, SYSTICK, MPU) functionalities. 
- 265:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****  
- 266:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****       
- 267:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** @endverbatim
- 268:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @{
- 269:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 270:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 271:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** #if (__MPU_PRESENT == 1U)
- 272:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
- 273:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Disables the MPU
- 274:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
- 275:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 276:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_MPU_Disable(void)
- 277:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
- 489              		.loc 1 277 0
+ 264:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****       
+ 265:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** @endverbatim
+ 266:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @{
+ 267:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 268:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 269:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** #if (__MPU_PRESENT == 1U)
+ 270:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
+ 271:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Disables the MPU
+ 272:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
+ 273:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 274:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_MPU_Disable(void)
+ 275:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
+ 489              		.loc 1 275 0
  490              		.cfi_startproc
  491              		@ args = 0, pretend = 0, frame = 0
  492              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -3222,27 +3220,27 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  502              		.syntax unified
  503              	.LBE83:
  504              	.LBE82:
- 278:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Make sure outstanding transfers are done */
- 279:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   __DMB();
- 280:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 281:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Disable fault exceptions */
- 282:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   SCB->SHCSR &= ~SCB_SHCSR_MEMFAULTENA_Msk;
- 505              		.loc 1 282 0
+ 276:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Make sure outstanding transfers are done */
+ 277:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   __DMB();
+ 278:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 279:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Disable fault exceptions */
+ 280:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   SCB->SHCSR &= ~SCB_SHCSR_MEMFAULTENA_Msk;
+ 505              		.loc 1 280 0
  506 0004 044A     		ldr	r2, .L42
  507 0006 536A     		ldr	r3, [r2, #36]
  508 0008 23F48033 		bic	r3, r3, #65536
  509 000c 5362     		str	r3, [r2, #36]
- 283:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
- 284:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Disable the MPU and clear the control register*/
- 285:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   MPU->CTRL = 0U;
- 510              		.loc 1 285 0
+ 281:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
+ 282:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Disable the MPU and clear the control register*/
+ 283:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   MPU->CTRL = 0U;
+ 510              		.loc 1 283 0
  511 000e 0022     		movs	r2, #0
  512 0010 024B     		ldr	r3, .L42+4
-ARM GAS  /tmp/cc5vCX7X.s 			page 55
-
-
  513 0012 5A60     		str	r2, [r3, #4]
  514 0014 7047     		bx	lr
+ARM GAS  /tmp/ccgaFwV8.s 			page 55
+
+
  515              	.L43:
  516 0016 00BF     		.align	2
  517              	.L42:
@@ -3259,38 +3257,38 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  529              		.fpu fpv4-sp-d16
  531              	HAL_MPU_Enable:
  532              	.LFB130:
- 286:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
- 287:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 288:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
- 289:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Enable the MPU.
- 290:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  MPU_Control: Specifies the control mode of the MPU during hard fault, 
- 291:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *          NMI, FAULTMASK and privileged access to the default memory 
- 292:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *          This parameter can be one of the following values:
- 293:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *            @arg MPU_HFNMI_PRIVDEF_NONE
- 294:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *            @arg MPU_HARDFAULT_NMI
- 295:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *            @arg MPU_PRIVILEGED_DEFAULT
- 296:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *            @arg MPU_HFNMI_PRIVDEF
- 297:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
- 298:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 299:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_MPU_Enable(uint32_t MPU_Control)
- 300:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
- 533              		.loc 1 300 0
+ 284:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
+ 285:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 286:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
+ 287:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Enable the MPU.
+ 288:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  MPU_Control Specifies the control mode of the MPU during hard fault, 
+ 289:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *          NMI, FAULTMASK and privileged access to the default memory 
+ 290:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *          This parameter can be one of the following values:
+ 291:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *            @arg MPU_HFNMI_PRIVDEF_NONE
+ 292:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *            @arg MPU_HARDFAULT_NMI
+ 293:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *            @arg MPU_PRIVILEGED_DEFAULT
+ 294:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *            @arg MPU_HFNMI_PRIVDEF
+ 295:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
+ 296:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 297:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_MPU_Enable(uint32_t MPU_Control)
+ 298:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
+ 533              		.loc 1 298 0
  534              		.cfi_startproc
  535              		@ args = 0, pretend = 0, frame = 0
  536              		@ frame_needed = 0, uses_anonymous_args = 0
  537              		@ link register save eliminated.
  538              	.LVL52:
- 301:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Enable the MPU */
- 302:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   MPU->CTRL = MPU_Control | MPU_CTRL_ENABLE_Msk;
- 539              		.loc 1 302 0
+ 299:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Enable the MPU */
+ 300:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   MPU->CTRL = MPU_Control | MPU_CTRL_ENABLE_Msk;
+ 539              		.loc 1 300 0
  540 0000 40F00100 		orr	r0, r0, #1
  541              	.LVL53:
  542 0004 054B     		ldr	r3, .L45
  543 0006 5860     		str	r0, [r3, #4]
- 303:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
- 304:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Enable fault exceptions */
- 305:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   SCB->SHCSR |= SCB_SHCSR_MEMFAULTENA_Msk;
- 544              		.loc 1 305 0
+ 301:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
+ 302:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Enable fault exceptions */
+ 303:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   SCB->SHCSR |= SCB_SHCSR_MEMFAULTENA_Msk;
+ 544              		.loc 1 303 0
  545 0008 054A     		ldr	r2, .L45+4
  546 000a 536A     		ldr	r3, [r2, #36]
  547 000c 43F48033 		orr	r3, r3, #65536
@@ -3298,11 +3296,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  549              	.LBB84:
  550              	.LBB85:
  429:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  /tmp/cc5vCX7X.s 			page 56
-
-
  551              		.loc 3 429 0
  552              		.syntax unified
+ARM GAS  /tmp/ccgaFwV8.s 			page 56
+
+
  553              	@ 429 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
  554 0012 BFF34F8F 		dsb 0xF
  555              	@ 0 "" 2
@@ -3339,270 +3337,270 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  586              		.fpu fpv4-sp-d16
  588              	HAL_MPU_ConfigRegion:
  589              	.LFB131:
- 306:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
- 307:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Ensure MPU setting take effects */
- 308:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   __DSB();
- 309:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   __ISB();
- 310:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
- 311:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 312:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
- 313:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Initializes and configures the Region and the memory to be protected.
- 314:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  MPU_Init: Pointer to a MPU_Region_InitTypeDef structure that contains
- 315:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                the initialization and configuration information.
- 316:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
- 317:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 318:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_MPU_ConfigRegion(MPU_Region_InitTypeDef *MPU_Init)
- 319:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
- 590              		.loc 1 319 0
+ 304:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
+ 305:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Ensure MPU setting take effects */
+ 306:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   __DSB();
+ 307:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   __ISB();
+ 308:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
+ 309:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 310:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
+ 311:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Initializes and configures the Region and the memory to be protected.
+ 312:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  MPU_Init Pointer to a MPU_Region_InitTypeDef structure that contains
+ 313:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                the initialization and configuration information.
+ 314:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
+ 315:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 316:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_MPU_ConfigRegion(MPU_Region_InitTypeDef *MPU_Init)
+ 317:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
+ 590              		.loc 1 317 0
  591              		.cfi_startproc
  592              		@ args = 0, pretend = 0, frame = 0
  593              		@ frame_needed = 0, uses_anonymous_args = 0
  594              	.LVL54:
-ARM GAS  /tmp/cc5vCX7X.s 			page 57
-
-
  595 0000 10B5     		push	{r4, lr}
  596              	.LCFI4:
+ARM GAS  /tmp/ccgaFwV8.s 			page 57
+
+
  597              		.cfi_def_cfa_offset 8
  598              		.cfi_offset 4, -8
  599              		.cfi_offset 14, -4
  600 0002 0446     		mov	r4, r0
- 320:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
- 321:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_MPU_REGION_NUMBER(MPU_Init->Number));
- 601              		.loc 1 321 0
+ 318:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
+ 319:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_MPU_REGION_NUMBER(MPU_Init->Number));
+ 601              		.loc 1 319 0
  602 0004 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
  603 0006 072B     		cmp	r3, #7
  604 0008 62D8     		bhi	.L61
  605              	.LVL55:
  606              	.L48:
- 322:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_MPU_REGION_ENABLE(MPU_Init->Enable));
- 607              		.loc 1 322 0
+ 320:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_MPU_REGION_ENABLE(MPU_Init->Enable));
+ 607              		.loc 1 320 0
  608 000a 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
  609 000c 012B     		cmp	r3, #1
  610 000e 04D9     		bls	.L49
- 611              		.loc 1 322 0 is_stmt 0 discriminator 1
- 612 0010 4FF4A171 		mov	r1, #322
+ 611              		.loc 1 320 0 is_stmt 0 discriminator 1
+ 612 0010 4FF4A071 		mov	r1, #320
  613 0014 3D48     		ldr	r0, .L65
  614 0016 FFF7FEFF 		bl	assert_failed
  615              	.LVL56:
  616              	.L49:
- 323:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 324:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Set the Region number */
- 325:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   MPU->RNR = MPU_Init->Number;
- 617              		.loc 1 325 0 is_stmt 1
+ 321:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 322:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Set the Region number */
+ 323:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   MPU->RNR = MPU_Init->Number;
+ 617              		.loc 1 323 0 is_stmt 1
  618 001a 6278     		ldrb	r2, [r4, #1]	@ zero_extendqisi2
  619 001c 3C4B     		ldr	r3, .L65+4
  620 001e 9A60     		str	r2, [r3, #8]
- 326:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 327:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   if ((MPU_Init->Enable) != RESET)
- 621              		.loc 1 327 0
+ 324:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 325:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   if ((MPU_Init->Enable) != RESET)
+ 621              		.loc 1 325 0
  622 0020 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
  623 0022 002B     		cmp	r3, #0
  624 0024 6CD0     		beq	.L50
- 328:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   {
- 329:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     /* Check the parameters */
- 330:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     assert_param(IS_MPU_INSTRUCTION_ACCESS(MPU_Init->DisableExec));
- 625              		.loc 1 330 0
+ 326:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   {
+ 327:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     /* Check the parameters */
+ 328:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     assert_param(IS_MPU_INSTRUCTION_ACCESS(MPU_Init->DisableExec));
+ 625              		.loc 1 328 0
  626 0026 237B     		ldrb	r3, [r4, #12]	@ zero_extendqisi2
  627 0028 012B     		cmp	r3, #1
  628 002a 04D9     		bls	.L51
- 629              		.loc 1 330 0 is_stmt 0 discriminator 1
- 630 002c 4FF4A571 		mov	r1, #330
+ 629              		.loc 1 328 0 is_stmt 0 discriminator 1
+ 630 002c 4FF4A471 		mov	r1, #328
  631 0030 3648     		ldr	r0, .L65
  632 0032 FFF7FEFF 		bl	assert_failed
  633              	.LVL57:
  634              	.L51:
- 331:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     assert_param(IS_MPU_REGION_PERMISSION_ATTRIBUTE(MPU_Init->AccessPermission));
- 635              		.loc 1 331 0 is_stmt 1
+ 329:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     assert_param(IS_MPU_REGION_PERMISSION_ATTRIBUTE(MPU_Init->AccessPermission));
+ 635              		.loc 1 329 0 is_stmt 1
  636 0036 E37A     		ldrb	r3, [r4, #11]	@ zero_extendqisi2
  637 0038 032B     		cmp	r3, #3
  638 003a 08D9     		bls	.L52
- 639              		.loc 1 331 0 is_stmt 0 discriminator 1
-ARM GAS  /tmp/cc5vCX7X.s 			page 58
-
-
+ 639              		.loc 1 329 0 is_stmt 0 discriminator 1
  640 003c 052B     		cmp	r3, #5
  641 003e 06D0     		beq	.L52
- 642              		.loc 1 331 0 discriminator 2
+ARM GAS  /tmp/ccgaFwV8.s 			page 58
+
+
+ 642              		.loc 1 329 0 discriminator 2
  643 0040 062B     		cmp	r3, #6
  644 0042 04D0     		beq	.L52
- 645              		.loc 1 331 0 discriminator 3
- 646 0044 40F24B11 		movw	r1, #331
+ 645              		.loc 1 329 0 discriminator 3
+ 646 0044 40F24911 		movw	r1, #329
  647 0048 3048     		ldr	r0, .L65
  648 004a FFF7FEFF 		bl	assert_failed
  649              	.LVL58:
  650              	.L52:
- 332:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     assert_param(IS_MPU_TEX_LEVEL(MPU_Init->TypeExtField));
- 651              		.loc 1 332 0 is_stmt 1
+ 330:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     assert_param(IS_MPU_TEX_LEVEL(MPU_Init->TypeExtField));
+ 651              		.loc 1 330 0 is_stmt 1
  652 004e A37A     		ldrb	r3, [r4, #10]	@ zero_extendqisi2
  653 0050 022B     		cmp	r3, #2
  654 0052 43D8     		bhi	.L62
  655              	.L53:
- 333:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     assert_param(IS_MPU_ACCESS_SHAREABLE(MPU_Init->IsShareable));
- 656              		.loc 1 333 0
+ 331:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     assert_param(IS_MPU_ACCESS_SHAREABLE(MPU_Init->IsShareable));
+ 656              		.loc 1 331 0
  657 0054 637B     		ldrb	r3, [r4, #13]	@ zero_extendqisi2
  658 0056 012B     		cmp	r3, #1
  659 0058 04D9     		bls	.L54
- 660              		.loc 1 333 0 is_stmt 0 discriminator 1
- 661 005a 40F24D11 		movw	r1, #333
+ 660              		.loc 1 331 0 is_stmt 0 discriminator 1
+ 661 005a 40F24B11 		movw	r1, #331
  662 005e 2B48     		ldr	r0, .L65
  663 0060 FFF7FEFF 		bl	assert_failed
  664              	.LVL59:
  665              	.L54:
- 334:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     assert_param(IS_MPU_ACCESS_CACHEABLE(MPU_Init->IsCacheable));
- 666              		.loc 1 334 0 is_stmt 1
+ 332:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     assert_param(IS_MPU_ACCESS_CACHEABLE(MPU_Init->IsCacheable));
+ 666              		.loc 1 332 0 is_stmt 1
  667 0064 A37B     		ldrb	r3, [r4, #14]	@ zero_extendqisi2
  668 0066 012B     		cmp	r3, #1
  669 0068 04D9     		bls	.L55
- 670              		.loc 1 334 0 is_stmt 0 discriminator 1
- 671 006a 4FF4A771 		mov	r1, #334
+ 670              		.loc 1 332 0 is_stmt 0 discriminator 1
+ 671 006a 4FF4A671 		mov	r1, #332
  672 006e 2748     		ldr	r0, .L65
  673 0070 FFF7FEFF 		bl	assert_failed
  674              	.LVL60:
  675              	.L55:
- 335:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     assert_param(IS_MPU_ACCESS_BUFFERABLE(MPU_Init->IsBufferable));
- 676              		.loc 1 335 0 is_stmt 1
+ 333:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     assert_param(IS_MPU_ACCESS_BUFFERABLE(MPU_Init->IsBufferable));
+ 676              		.loc 1 333 0 is_stmt 1
  677 0074 E37B     		ldrb	r3, [r4, #15]	@ zero_extendqisi2
  678 0076 012B     		cmp	r3, #1
  679 0078 04D9     		bls	.L56
- 680              		.loc 1 335 0 is_stmt 0 discriminator 1
- 681 007a 40F24F11 		movw	r1, #335
+ 680              		.loc 1 333 0 is_stmt 0 discriminator 1
+ 681 007a 40F24D11 		movw	r1, #333
  682 007e 2348     		ldr	r0, .L65
  683 0080 FFF7FEFF 		bl	assert_failed
  684              	.LVL61:
  685              	.L56:
- 336:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     assert_param(IS_MPU_SUB_REGION_DISABLE(MPU_Init->SubRegionDisable));
- 686              		.loc 1 336 0 is_stmt 1
+ 334:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     assert_param(IS_MPU_SUB_REGION_DISABLE(MPU_Init->SubRegionDisable));
+ 686              		.loc 1 334 0 is_stmt 1
  687 0084 637A     		ldrb	r3, [r4, #9]	@ zero_extendqisi2
  688 0086 FF2B     		cmp	r3, #255
  689 0088 2ED0     		beq	.L63
  690              	.L57:
- 337:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     assert_param(IS_MPU_REGION_SIZE(MPU_Init->Size));
-ARM GAS  /tmp/cc5vCX7X.s 			page 59
-
-
- 691              		.loc 1 337 0
+ 335:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     assert_param(IS_MPU_REGION_SIZE(MPU_Init->Size));
+ 691              		.loc 1 335 0
  692 008a 237A     		ldrb	r3, [r4, #8]	@ zero_extendqisi2
+ARM GAS  /tmp/ccgaFwV8.s 			page 59
+
+
  693 008c 043B     		subs	r3, r3, #4
  694 008e DBB2     		uxtb	r3, r3
  695 0090 1B2B     		cmp	r3, #27
  696 0092 2FD8     		bhi	.L64
  697              	.L58:
- 338:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     
- 339:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     MPU->RBAR = MPU_Init->BaseAddress;
- 698              		.loc 1 339 0
+ 336:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     
+ 337:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     MPU->RBAR = MPU_Init->BaseAddress;
+ 698              		.loc 1 337 0
  699 0094 6368     		ldr	r3, [r4, #4]
  700 0096 1E4A     		ldr	r2, .L65+4
  701 0098 D360     		str	r3, [r2, #12]
- 340:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     MPU->RASR = ((uint32_t)MPU_Init->DisableExec             << MPU_RASR_XN_Pos)   |
- 702              		.loc 1 340 0
+ 338:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     MPU->RASR = ((uint32_t)MPU_Init->DisableExec             << MPU_RASR_XN_Pos)   |
+ 702              		.loc 1 338 0
  703 009a 217B     		ldrb	r1, [r4, #12]	@ zero_extendqisi2
- 341:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->AccessPermission        << MPU_RASR_AP_Pos)   |
- 704              		.loc 1 341 0
+ 339:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->AccessPermission        << MPU_RASR_AP_Pos)   |
+ 704              		.loc 1 339 0
  705 009c E37A     		ldrb	r3, [r4, #11]	@ zero_extendqisi2
  706 009e 1B06     		lsls	r3, r3, #24
- 340:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     MPU->RASR = ((uint32_t)MPU_Init->DisableExec             << MPU_RASR_XN_Pos)   |
- 707              		.loc 1 340 0
+ 338:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     MPU->RASR = ((uint32_t)MPU_Init->DisableExec             << MPU_RASR_XN_Pos)   |
+ 707              		.loc 1 338 0
  708 00a0 43EA0173 		orr	r3, r3, r1, lsl #28
- 342:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->TypeExtField            << MPU_RASR_TEX_Pos)  |
- 709              		.loc 1 342 0
+ 340:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->TypeExtField            << MPU_RASR_TEX_Pos)  |
+ 709              		.loc 1 340 0
  710 00a4 A17A     		ldrb	r1, [r4, #10]	@ zero_extendqisi2
- 341:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->AccessPermission        << MPU_RASR_AP_Pos)   |
- 711              		.loc 1 341 0
+ 339:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->AccessPermission        << MPU_RASR_AP_Pos)   |
+ 711              		.loc 1 339 0
  712 00a6 43EAC143 		orr	r3, r3, r1, lsl #19
- 343:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->IsShareable             << MPU_RASR_S_Pos)    |
- 713              		.loc 1 343 0
+ 341:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->IsShareable             << MPU_RASR_S_Pos)    |
+ 713              		.loc 1 341 0
  714 00aa 617B     		ldrb	r1, [r4, #13]	@ zero_extendqisi2
- 342:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->TypeExtField            << MPU_RASR_TEX_Pos)  |
- 715              		.loc 1 342 0
+ 340:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->TypeExtField            << MPU_RASR_TEX_Pos)  |
+ 715              		.loc 1 340 0
  716 00ac 43EA8143 		orr	r3, r3, r1, lsl #18
- 344:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->IsCacheable             << MPU_RASR_C_Pos)    |
- 717              		.loc 1 344 0
+ 342:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->IsCacheable             << MPU_RASR_C_Pos)    |
+ 717              		.loc 1 342 0
  718 00b0 A17B     		ldrb	r1, [r4, #14]	@ zero_extendqisi2
- 343:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->IsShareable             << MPU_RASR_S_Pos)    |
- 719              		.loc 1 343 0
+ 341:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->IsShareable             << MPU_RASR_S_Pos)    |
+ 719              		.loc 1 341 0
  720 00b2 43EA4143 		orr	r3, r3, r1, lsl #17
- 345:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->IsBufferable            << MPU_RASR_B_Pos)    |
- 721              		.loc 1 345 0
+ 343:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->IsBufferable            << MPU_RASR_B_Pos)    |
+ 721              		.loc 1 343 0
  722 00b6 E17B     		ldrb	r1, [r4, #15]	@ zero_extendqisi2
- 344:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->IsCacheable             << MPU_RASR_C_Pos)    |
- 723              		.loc 1 344 0
+ 342:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->IsCacheable             << MPU_RASR_C_Pos)    |
+ 723              		.loc 1 342 0
  724 00b8 43EA0143 		orr	r3, r3, r1, lsl #16
- 346:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->SubRegionDisable        << MPU_RASR_SRD_Pos)  |
- 725              		.loc 1 346 0
+ 344:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->SubRegionDisable        << MPU_RASR_SRD_Pos)  |
+ 725              		.loc 1 344 0
  726 00bc 617A     		ldrb	r1, [r4, #9]	@ zero_extendqisi2
- 345:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->IsBufferable            << MPU_RASR_B_Pos)    |
- 727              		.loc 1 345 0
+ 343:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->IsBufferable            << MPU_RASR_B_Pos)    |
+ 727              		.loc 1 343 0
  728 00be 43EA0123 		orr	r3, r3, r1, lsl #8
- 347:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->Size                    << MPU_RASR_SIZE_Pos) |
- 729              		.loc 1 347 0
+ 345:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->Size                    << MPU_RASR_SIZE_Pos) |
+ 729              		.loc 1 345 0
  730 00c2 217A     		ldrb	r1, [r4, #8]	@ zero_extendqisi2
- 346:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->SubRegionDisable        << MPU_RASR_SRD_Pos)  |
-ARM GAS  /tmp/cc5vCX7X.s 			page 60
-
-
- 731              		.loc 1 346 0
+ 344:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->SubRegionDisable        << MPU_RASR_SRD_Pos)  |
+ 731              		.loc 1 344 0
  732 00c4 43EA4103 		orr	r3, r3, r1, lsl #1
- 348:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->Enable                  << MPU_RASR_ENABLE_Pos);
- 733              		.loc 1 348 0
+ARM GAS  /tmp/ccgaFwV8.s 			page 60
+
+
+ 346:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->Enable                  << MPU_RASR_ENABLE_Pos);
+ 733              		.loc 1 346 0
  734 00c8 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
- 347:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->Size                    << MPU_RASR_SIZE_Pos) |
- 735              		.loc 1 347 0
+ 345:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->Size                    << MPU_RASR_SIZE_Pos) |
+ 735              		.loc 1 345 0
  736 00ca 0B43     		orrs	r3, r3, r1
- 340:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->AccessPermission        << MPU_RASR_AP_Pos)   |
- 737              		.loc 1 340 0
+ 338:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****                 ((uint32_t)MPU_Init->AccessPermission        << MPU_RASR_AP_Pos)   |
+ 737              		.loc 1 338 0
  738 00cc 1361     		str	r3, [r2, #16]
  739 00ce 10BD     		pop	{r4, pc}
  740              	.LVL62:
  741              	.L61:
- 321:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_MPU_REGION_ENABLE(MPU_Init->Enable));
- 742              		.loc 1 321 0 discriminator 1
- 743 00d0 40F24111 		movw	r1, #321
+ 319:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_MPU_REGION_ENABLE(MPU_Init->Enable));
+ 742              		.loc 1 319 0 discriminator 1
+ 743 00d0 40F23F11 		movw	r1, #319
  744 00d4 0D48     		ldr	r0, .L65
  745              	.LVL63:
  746 00d6 FFF7FEFF 		bl	assert_failed
  747              	.LVL64:
  748 00da 96E7     		b	.L48
  749              	.L62:
- 332:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     assert_param(IS_MPU_ACCESS_SHAREABLE(MPU_Init->IsShareable));
- 750              		.loc 1 332 0 discriminator 1
- 751 00dc 4FF4A671 		mov	r1, #332
+ 330:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     assert_param(IS_MPU_ACCESS_SHAREABLE(MPU_Init->IsShareable));
+ 750              		.loc 1 330 0 discriminator 1
+ 751 00dc 4FF4A571 		mov	r1, #330
  752 00e0 0A48     		ldr	r0, .L65
  753 00e2 FFF7FEFF 		bl	assert_failed
  754              	.LVL65:
  755 00e6 B5E7     		b	.L53
  756              	.L63:
- 336:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     assert_param(IS_MPU_REGION_SIZE(MPU_Init->Size));
- 757              		.loc 1 336 0 discriminator 1
- 758 00e8 4FF4A871 		mov	r1, #336
+ 334:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     assert_param(IS_MPU_REGION_SIZE(MPU_Init->Size));
+ 757              		.loc 1 334 0 discriminator 1
+ 758 00e8 4FF4A771 		mov	r1, #334
  759 00ec 0748     		ldr	r0, .L65
  760 00ee FFF7FEFF 		bl	assert_failed
  761              	.LVL66:
  762 00f2 CAE7     		b	.L57
  763              	.L64:
- 337:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     
- 764              		.loc 1 337 0 discriminator 1
- 765 00f4 40F25111 		movw	r1, #337
+ 335:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     
+ 764              		.loc 1 335 0 discriminator 1
+ 765 00f4 40F24F11 		movw	r1, #335
  766 00f8 0448     		ldr	r0, .L65
  767 00fa FFF7FEFF 		bl	assert_failed
  768              	.LVL67:
  769 00fe C9E7     		b	.L58
  770              	.L50:
- 349:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   }
- 350:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   else
- 351:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   {
- 352:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     MPU->RBAR = 0x00U;
- 771              		.loc 1 352 0
+ 347:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   }
+ 348:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   else
+ 349:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   {
+ 350:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     MPU->RBAR = 0x00U;
+ 771              		.loc 1 350 0
  772 0100 034B     		ldr	r3, .L65+4
  773 0102 0022     		movs	r2, #0
  774 0104 DA60     		str	r2, [r3, #12]
- 353:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     MPU->RASR = 0x00U;
- 775              		.loc 1 353 0
-ARM GAS  /tmp/cc5vCX7X.s 			page 61
-
-
+ 351:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     MPU->RASR = 0x00U;
+ 775              		.loc 1 351 0
  776 0106 1A61     		str	r2, [r3, #16]
  777 0108 10BD     		pop	{r4, pc}
+ARM GAS  /tmp/ccgaFwV8.s 			page 61
+
+
  778              	.LVL68:
  779              	.L66:
  780 010a 00BF     		.align	2
@@ -3620,17 +3618,17 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  793              		.fpu fpv4-sp-d16
  795              	HAL_NVIC_GetPriorityGrouping:
  796              	.LFB132:
- 354:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   }
- 355:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
- 356:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** #endif /* __MPU_PRESENT */
- 357:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 358:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
- 359:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Gets the priority grouping field from the NVIC Interrupt Controller.
- 360:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval Priority grouping field (SCB->AIRCR [10:8] PRIGROUP field)
- 361:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 362:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** uint32_t HAL_NVIC_GetPriorityGrouping(void)
- 363:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
- 797              		.loc 1 363 0
+ 352:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   }
+ 353:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
+ 354:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** #endif /* __MPU_PRESENT */
+ 355:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 356:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
+ 357:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Gets the priority grouping field from the NVIC Interrupt Controller.
+ 358:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval Priority grouping field (SCB->AIRCR [10:8] PRIGROUP field)
+ 359:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 360:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** uint32_t HAL_NVIC_GetPriorityGrouping(void)
+ 361:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
+ 797              		.loc 1 361 0
  798              		.cfi_startproc
  799              		@ args = 0, pretend = 0, frame = 0
  800              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -3643,10 +3641,10 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  806 0002 D868     		ldr	r0, [r3, #12]
  807              	.LBE89:
  808              	.LBE88:
- 364:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Get the PRIGROUP[10:8] field value */
- 365:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   return NVIC_GetPriorityGrouping();
- 366:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
- 809              		.loc 1 366 0
+ 362:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Get the PRIGROUP[10:8] field value */
+ 363:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   return NVIC_GetPriorityGrouping();
+ 364:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
+ 809              		.loc 1 364 0
  810 0004 C0F30220 		ubfx	r0, r0, #8, #3
  811 0008 7047     		bx	lr
  812              	.L69:
@@ -3658,40 +3656,40 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  819              		.section	.text.HAL_NVIC_GetPriority,"ax",%progbits
  820              		.align	1
  821              		.global	HAL_NVIC_GetPriority
-ARM GAS  /tmp/cc5vCX7X.s 			page 62
-
-
  822              		.syntax unified
  823              		.thumb
+ARM GAS  /tmp/ccgaFwV8.s 			page 62
+
+
  824              		.thumb_func
  825              		.fpu fpv4-sp-d16
  827              	HAL_NVIC_GetPriority:
  828              	.LFB133:
- 367:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 368:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
- 369:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Gets the priority of an interrupt.
- 370:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  IRQn: External interrupt number.
- 371:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
- 372:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
- 373:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param   PriorityGroup: the priority grouping bits length.
- 374:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be one of the following values:
- 375:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *           @arg NVIC_PRIORITYGROUP_0: 0 bits for preemption priority
- 376:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                                      4 bits for subpriority
- 377:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *           @arg NVIC_PRIORITYGROUP_1: 1 bits for preemption priority
- 378:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                                      3 bits for subpriority
- 379:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *           @arg NVIC_PRIORITYGROUP_2: 2 bits for preemption priority
- 380:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                                      2 bits for subpriority
- 381:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *           @arg NVIC_PRIORITYGROUP_3: 3 bits for preemption priority
- 382:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                                      1 bits for subpriority
- 383:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *           @arg NVIC_PRIORITYGROUP_4: 4 bits for preemption priority
- 384:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                                      0 bits for subpriority
- 385:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  pPreemptPriority: Pointer on the Preemptive priority value (starting from 0).
- 386:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  pSubPriority: Pointer on the Subpriority value (starting from 0).
- 387:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
- 388:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 389:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_NVIC_GetPriority(IRQn_Type IRQn, uint32_t PriorityGroup, uint32_t *pPreemptPriority, uint3
- 390:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
- 829              		.loc 1 390 0
+ 365:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 366:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
+ 367:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Gets the priority of an interrupt.
+ 368:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  IRQn External interrupt number.
+ 369:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
+ 370:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
+ 371:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param   PriorityGroup the priority grouping bits length.
+ 372:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be one of the following values:
+ 373:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *           @arg NVIC_PRIORITYGROUP_0: 0 bits for preemption priority
+ 374:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                                      4 bits for subpriority
+ 375:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *           @arg NVIC_PRIORITYGROUP_1: 1 bits for preemption priority
+ 376:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                                      3 bits for subpriority
+ 377:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *           @arg NVIC_PRIORITYGROUP_2: 2 bits for preemption priority
+ 378:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                                      2 bits for subpriority
+ 379:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *           @arg NVIC_PRIORITYGROUP_3: 3 bits for preemption priority
+ 380:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                                      1 bits for subpriority
+ 381:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *           @arg NVIC_PRIORITYGROUP_4: 4 bits for preemption priority
+ 382:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                                      0 bits for subpriority
+ 383:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  pPreemptPriority Pointer on the Preemptive priority value (starting from 0).
+ 384:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  pSubPriority Pointer on the Subpriority value (starting from 0).
+ 385:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
+ 386:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 387:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_NVIC_GetPriority(IRQn_Type IRQn, uint32_t PriorityGroup, uint32_t *pPreemptPriority, uint3
+ 388:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
+ 829              		.loc 1 388 0
  830              		.cfi_startproc
  831              		@ args = 0, pretend = 0, frame = 0
  832              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -3709,20 +3707,20 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  844 0004 0C46     		mov	r4, r1
  845 0006 1646     		mov	r6, r2
  846 0008 1D46     		mov	r5, r3
- 391:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
- 392:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_PRIORITY_GROUP(PriorityGroup));
- 847              		.loc 1 392 0
+ 389:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
+ 390:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_PRIORITY_GROUP(PriorityGroup));
+ 847              		.loc 1 390 0
  848 000a CB1E     		subs	r3, r1, #3
  849              	.LVL70:
  850 000c 042B     		cmp	r3, #4
  851 000e 21D8     		bhi	.L77
  852              	.LVL71:
  853              	.L71:
-ARM GAS  /tmp/cc5vCX7X.s 			page 63
-
-
  854              	.LBB90:
  855              	.LBB91:
+ARM GAS  /tmp/ccgaFwV8.s 			page 63
+
+
 1723:Drivers/CMSIS/Include/core_cm4.h ****   {
  856              		.loc 2 1723 0
  857 0010 002F     		cmp	r7, #0
@@ -3778,16 +3776,16 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  901 004e 0140     		ands	r1, r1, r0
  902 0050 2960     		str	r1, [r5]
  903              	.LVL81:
-ARM GAS  /tmp/cc5vCX7X.s 			page 64
-
-
  904 0052 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
  905              	.LVL82:
+ARM GAS  /tmp/ccgaFwV8.s 			page 64
+
+
  906              	.L77:
  907              	.LBE94:
  908              	.LBE93:
- 909              		.loc 1 392 0 discriminator 1
- 910 0054 4FF4C471 		mov	r1, #392
+ 909              		.loc 1 390 0 discriminator 1
+ 910 0054 4FF4C371 		mov	r1, #390
  911              	.LVL83:
  912 0058 0548     		ldr	r0, .L79
  913              	.LVL84:
@@ -3835,23 +3833,23 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  954              		.fpu fpv4-sp-d16
  956              	HAL_NVIC_SetPendingIRQ:
  957              	.LFB134:
- 393:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****  /* Get priority for Cortex-M system or device specific interrupts */
- 394:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   NVIC_DecodePriority(NVIC_GetPriority(IRQn), PriorityGroup, pPreemptPriority, pSubPriority);
- 395:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
-ARM GAS  /tmp/cc5vCX7X.s 			page 65
+ 391:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****  /* Get priority for Cortex-M system or device specific interrupts */
+ 392:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   NVIC_DecodePriority(NVIC_GetPriority(IRQn), PriorityGroup, pPreemptPriority, pSubPriority);
+ 393:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
+ 394:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 395:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
+ARM GAS  /tmp/ccgaFwV8.s 			page 65
 
 
- 396:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 397:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
- 398:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Sets Pending bit of an external interrupt.
- 399:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  IRQn External interrupt number
- 400:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
- 401:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
- 402:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
- 403:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 404:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_NVIC_SetPendingIRQ(IRQn_Type IRQn)
- 405:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
- 958              		.loc 1 405 0
+ 396:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Sets Pending bit of an external interrupt.
+ 397:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  IRQn External interrupt number
+ 398:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
+ 399:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
+ 400:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
+ 401:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 402:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_NVIC_SetPendingIRQ(IRQn_Type IRQn)
+ 403:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
+ 958              		.loc 1 403 0
  959              		.cfi_startproc
  960              		@ args = 0, pretend = 0, frame = 0
  961              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -3861,9 +3859,9 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  965              		.cfi_def_cfa_offset 8
  966              		.cfi_offset 4, -8
  967              		.cfi_offset 14, -4
- 406:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
- 407:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_DEVICE_IRQ(IRQn));
- 968              		.loc 1 407 0
+ 404:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
+ 405:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_DEVICE_IRQ(IRQn));
+ 968              		.loc 1 405 0
  969 0002 041E     		subs	r4, r0, #0
  970 0004 0ADB     		blt	.L84
  971              	.LVL91:
@@ -3885,8 +3883,8 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  986              	.L84:
  987              	.LBE99:
  988              	.LBE98:
- 989              		.loc 1 407 0 discriminator 1
- 990 001c 40F29711 		movw	r1, #407
+ 989              		.loc 1 405 0 discriminator 1
+ 990 001c 40F29511 		movw	r1, #405
  991 0020 0248     		ldr	r0, .L85+4
  992              	.LVL94:
  993 0022 FFF7FEFF 		bl	assert_failed
@@ -3898,11 +3896,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  999 0028 00E100E0 		.word	-536813312
  1000 002c 00000000 		.word	.LC0
  1001              		.cfi_endproc
-ARM GAS  /tmp/cc5vCX7X.s 			page 66
-
-
  1002              	.LFE134:
  1004              		.section	.text.HAL_NVIC_GetPendingIRQ,"ax",%progbits
+ARM GAS  /tmp/ccgaFwV8.s 			page 66
+
+
  1005              		.align	1
  1006              		.global	HAL_NVIC_GetPendingIRQ
  1007              		.syntax unified
@@ -3911,23 +3909,23 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  1010              		.fpu fpv4-sp-d16
  1012              	HAL_NVIC_GetPendingIRQ:
  1013              	.LFB135:
- 408:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
- 409:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Set interrupt pending */
- 410:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   NVIC_SetPendingIRQ(IRQn);
- 411:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
- 412:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 413:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
- 414:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Gets Pending Interrupt (reads the pending register in the NVIC 
- 415:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         and returns the pending bit for the specified interrupt).
- 416:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  IRQn External interrupt number.
- 417:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *          This parameter can be an enumerator of IRQn_Type enumeration
- 418:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
- 419:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval status: - 0  Interrupt status is not pending.
- 420:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                 - 1  Interrupt status is pending.
- 421:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 422:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** uint32_t HAL_NVIC_GetPendingIRQ(IRQn_Type IRQn)
- 423:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
- 1014              		.loc 1 423 0
+ 406:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
+ 407:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Set interrupt pending */
+ 408:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   NVIC_SetPendingIRQ(IRQn);
+ 409:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
+ 410:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 411:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
+ 412:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Gets Pending Interrupt (reads the pending register in the NVIC 
+ 413:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         and returns the pending bit for the specified interrupt).
+ 414:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  IRQn External interrupt number.
+ 415:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *          This parameter can be an enumerator of IRQn_Type enumeration
+ 416:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
+ 417:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval status: - 0  Interrupt status is not pending.
+ 418:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                 - 1  Interrupt status is pending.
+ 419:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 420:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** uint32_t HAL_NVIC_GetPendingIRQ(IRQn_Type IRQn)
+ 421:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
+ 1014              		.loc 1 421 0
  1015              		.cfi_startproc
  1016              		@ args = 0, pretend = 0, frame = 0
  1017              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -3937,9 +3935,9 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  1021              		.cfi_def_cfa_offset 8
  1022              		.cfi_offset 4, -8
  1023              		.cfi_offset 14, -4
- 424:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
- 425:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_DEVICE_IRQ(IRQn));
- 1024              		.loc 1 425 0
+ 422:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
+ 423:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_DEVICE_IRQ(IRQn));
+ 1024              		.loc 1 423 0
  1025 0002 041E     		subs	r4, r0, #0
  1026 0004 0ADB     		blt	.L90
  1027              	.LVL97:
@@ -3957,21 +3955,21 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  1038 0014 E040     		lsrs	r0, r0, r4
  1039              	.LBE101:
  1040              	.LBE100:
- 426:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
-ARM GAS  /tmp/cc5vCX7X.s 			page 67
+ 424:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
+ 425:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Return 1 if pending else 0 */
+ 426:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   return NVIC_GetPendingIRQ(IRQn);
+ARM GAS  /tmp/ccgaFwV8.s 			page 67
 
 
- 427:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Return 1 if pending else 0 */
- 428:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   return NVIC_GetPendingIRQ(IRQn);
- 429:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
- 1041              		.loc 1 429 0
+ 427:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
+ 1041              		.loc 1 427 0
  1042 0016 00F00100 		and	r0, r0, #1
  1043 001a 10BD     		pop	{r4, pc}
  1044              	.LVL99:
  1045              	.L90:
- 425:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
- 1046              		.loc 1 425 0 discriminator 1
- 1047 001c 40F2A911 		movw	r1, #425
+ 423:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
+ 1046              		.loc 1 423 0 discriminator 1
+ 1047 001c 40F2A711 		movw	r1, #423
  1048 0020 0248     		ldr	r0, .L91+4
  1049              	.LVL100:
  1050 0022 FFF7FEFF 		bl	assert_failed
@@ -3993,17 +3991,17 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  1067              		.fpu fpv4-sp-d16
  1069              	HAL_NVIC_ClearPendingIRQ:
  1070              	.LFB136:
- 430:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 431:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
- 432:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Clears the pending bit of an external interrupt.
- 433:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  IRQn External interrupt number.
- 434:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
- 435:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
- 436:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
- 437:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 438:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_NVIC_ClearPendingIRQ(IRQn_Type IRQn)
- 439:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
- 1071              		.loc 1 439 0
+ 428:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 429:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
+ 430:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Clears the pending bit of an external interrupt.
+ 431:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  IRQn External interrupt number.
+ 432:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
+ 433:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
+ 434:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
+ 435:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 436:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_NVIC_ClearPendingIRQ(IRQn_Type IRQn)
+ 437:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
+ 1071              		.loc 1 437 0
  1072              		.cfi_startproc
  1073              		@ args = 0, pretend = 0, frame = 0
  1074              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -4013,16 +4011,16 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  1078              		.cfi_def_cfa_offset 8
  1079              		.cfi_offset 4, -8
  1080              		.cfi_offset 14, -4
- 440:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
- 441:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_DEVICE_IRQ(IRQn));
- 1081              		.loc 1 441 0
+ 438:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
+ 439:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_DEVICE_IRQ(IRQn));
+ 1081              		.loc 1 439 0
  1082 0002 041E     		subs	r4, r0, #0
  1083 0004 0ADB     		blt	.L96
-ARM GAS  /tmp/cc5vCX7X.s 			page 68
-
-
  1084              	.LVL103:
  1085              	.L94:
+ARM GAS  /tmp/ccgaFwV8.s 			page 68
+
+
  1086              	.LBB102:
  1087              	.LBB103:
 1674:Drivers/CMSIS/Include/core_cm4.h **** }
@@ -4040,8 +4038,8 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  1099              	.L96:
  1100              	.LBE103:
  1101              	.LBE102:
- 1102              		.loc 1 441 0 discriminator 1
- 1103 001c 40F2B911 		movw	r1, #441
+ 1102              		.loc 1 439 0 discriminator 1
+ 1103 001c 40F2B711 		movw	r1, #439
  1104 0020 0248     		ldr	r0, .L97+4
  1105              	.LVL106:
  1106 0022 FFF7FEFF 		bl	assert_failed
@@ -4063,26 +4061,26 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  1123              		.fpu fpv4-sp-d16
  1125              	HAL_NVIC_GetActive:
  1126              	.LFB137:
- 442:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
- 443:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Clear pending interrupt */
- 444:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   NVIC_ClearPendingIRQ(IRQn);
- 445:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
- 446:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 447:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
- 448:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief Gets active interrupt ( reads the active register in NVIC and returns the active bit).
- 449:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param IRQn External interrupt number
- 450:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
- 451:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
- 452:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval status: - 0  Interrupt status is not pending.
- 453:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                 - 1  Interrupt status is pending.
- 454:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 455:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** uint32_t HAL_NVIC_GetActive(IRQn_Type IRQn)
- 456:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
-ARM GAS  /tmp/cc5vCX7X.s 			page 69
-
-
- 1127              		.loc 1 456 0
+ 440:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
+ 441:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Clear pending interrupt */
+ 442:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   NVIC_ClearPendingIRQ(IRQn);
+ 443:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
+ 444:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 445:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
+ 446:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief Gets active interrupt ( reads the active register in NVIC and returns the active bit).
+ 447:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param IRQn External interrupt number
+ 448:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
+ 449:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
+ 450:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval status: - 0  Interrupt status is not pending.
+ 451:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *                 - 1  Interrupt status is pending.
+ 452:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 453:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** uint32_t HAL_NVIC_GetActive(IRQn_Type IRQn)
+ 454:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
+ 1127              		.loc 1 454 0
  1128              		.cfi_startproc
+ARM GAS  /tmp/ccgaFwV8.s 			page 69
+
+
  1129              		@ args = 0, pretend = 0, frame = 0
  1130              		@ frame_needed = 0, uses_anonymous_args = 0
  1131              	.LVL108:
@@ -4091,9 +4089,9 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  1134              		.cfi_def_cfa_offset 8
  1135              		.cfi_offset 4, -8
  1136              		.cfi_offset 14, -4
- 457:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
- 458:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_DEVICE_IRQ(IRQn));
- 1137              		.loc 1 458 0
+ 455:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
+ 456:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_NVIC_DEVICE_IRQ(IRQn));
+ 1137              		.loc 1 456 0
  1138 0002 041E     		subs	r4, r0, #0
  1139 0004 0ADB     		blt	.L102
  1140              	.LVL109:
@@ -4111,18 +4109,18 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  1151 0014 E040     		lsrs	r0, r0, r4
  1152              	.LBE105:
  1153              	.LBE104:
- 459:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
- 460:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Return 1 if active else 0 */
- 461:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   return NVIC_GetActive(IRQn);
- 462:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
- 1154              		.loc 1 462 0
+ 457:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
+ 458:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Return 1 if active else 0 */
+ 459:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   return NVIC_GetActive(IRQn);
+ 460:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
+ 1154              		.loc 1 460 0
  1155 0016 00F00100 		and	r0, r0, #1
  1156 001a 10BD     		pop	{r4, pc}
  1157              	.LVL111:
  1158              	.L102:
- 458:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
- 1159              		.loc 1 458 0 discriminator 1
- 1160 001c 4FF4E571 		mov	r1, #458
+ 456:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   
+ 1159              		.loc 1 456 0 discriminator 1
+ 1160 001c 4FF4E471 		mov	r1, #456
  1161 0020 0248     		ldr	r0, .L103+4
  1162              	.LVL112:
  1163 0022 FFF7FEFF 		bl	assert_failed
@@ -4138,27 +4136,27 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  1174              		.section	.text.HAL_SYSTICK_CLKSourceConfig,"ax",%progbits
  1175              		.align	1
  1176              		.global	HAL_SYSTICK_CLKSourceConfig
-ARM GAS  /tmp/cc5vCX7X.s 			page 70
-
-
  1177              		.syntax unified
  1178              		.thumb
+ARM GAS  /tmp/ccgaFwV8.s 			page 70
+
+
  1179              		.thumb_func
  1180              		.fpu fpv4-sp-d16
  1182              	HAL_SYSTICK_CLKSourceConfig:
  1183              	.LFB138:
- 463:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 464:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
- 465:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Configures the SysTick clock source.
- 466:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  CLKSource: specifies the SysTick clock source.
- 467:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *          This parameter can be one of the following values:
- 468:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *             @arg SYSTICK_CLKSOURCE_HCLK_DIV8: AHB clock divided by 8 selected as SysTick clock 
- 469:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *             @arg SYSTICK_CLKSOURCE_HCLK: AHB clock selected as SysTick clock source.
- 470:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
- 471:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 472:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_SYSTICK_CLKSourceConfig(uint32_t CLKSource)
- 473:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
- 1184              		.loc 1 473 0
+ 461:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 462:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
+ 463:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  Configures the SysTick clock source.
+ 464:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @param  CLKSource specifies the SysTick clock source.
+ 465:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *          This parameter can be one of the following values:
+ 466:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *             @arg SYSTICK_CLKSOURCE_HCLK_DIV8: AHB clock divided by 8 selected as SysTick clock 
+ 467:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   *             @arg SYSTICK_CLKSOURCE_HCLK: AHB clock selected as SysTick clock source.
+ 468:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
+ 469:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 470:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_SYSTICK_CLKSourceConfig(uint32_t CLKSource)
+ 471:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
+ 1184              		.loc 1 471 0
  1185              		.cfi_startproc
  1186              		@ args = 0, pretend = 0, frame = 0
  1187              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -4169,26 +4167,26 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  1192              		.cfi_offset 4, -8
  1193              		.cfi_offset 14, -4
  1194 0002 0446     		mov	r4, r0
- 474:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
- 475:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_SYSTICK_CLK_SOURCE(CLKSource));
- 1195              		.loc 1 475 0
+ 472:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   /* Check the parameters */
+ 473:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   assert_param(IS_SYSTICK_CLK_SOURCE(CLKSource));
+ 1195              		.loc 1 473 0
  1196 0004 0428     		cmp	r0, #4
  1197 0006 00D0     		beq	.L106
- 1198              		.loc 1 475 0 is_stmt 0 discriminator 1
+ 1198              		.loc 1 473 0 is_stmt 0 discriminator 1
  1199 0008 38B9     		cbnz	r0, .L110
  1200              	.LVL115:
  1201              	.L106:
- 476:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   if (CLKSource == SYSTICK_CLKSOURCE_HCLK)
- 1202              		.loc 1 476 0 is_stmt 1
+ 474:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   if (CLKSource == SYSTICK_CLKSOURCE_HCLK)
+ 1202              		.loc 1 474 0 is_stmt 1
  1203 000a 042C     		cmp	r4, #4
  1204 000c 0BD0     		beq	.L111
- 477:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   {
- 478:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     SysTick->CTRL |= SYSTICK_CLKSOURCE_HCLK;
- 479:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   }
- 480:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   else
- 481:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   {
- 482:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     SysTick->CTRL &= ~SYSTICK_CLKSOURCE_HCLK;
- 1205              		.loc 1 482 0
+ 475:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   {
+ 476:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     SysTick->CTRL |= SYSTICK_CLKSOURCE_HCLK;
+ 477:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   }
+ 478:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   else
+ 479:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   {
+ 480:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****     SysTick->CTRL &= ~SYSTICK_CLKSOURCE_HCLK;
+ 1205              		.loc 1 480 0
  1206 000e 094A     		ldr	r2, .L112
  1207 0010 1368     		ldr	r3, [r2]
  1208 0012 23F00403 		bic	r3, r3, #4
@@ -4196,20 +4194,20 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  1210 0018 10BD     		pop	{r4, pc}
  1211              	.LVL116:
  1212              	.L110:
- 475:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   if (CLKSource == SYSTICK_CLKSOURCE_HCLK)
- 1213              		.loc 1 475 0 discriminator 2
-ARM GAS  /tmp/cc5vCX7X.s 			page 71
-
-
- 1214 001a 40F2DB11 		movw	r1, #475
+ 473:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   if (CLKSource == SYSTICK_CLKSOURCE_HCLK)
+ 1213              		.loc 1 473 0 discriminator 2
+ 1214 001a 40F2D911 		movw	r1, #473
  1215 001e 0648     		ldr	r0, .L112+4
+ARM GAS  /tmp/ccgaFwV8.s 			page 71
+
+
  1216              	.LVL117:
  1217 0020 FFF7FEFF 		bl	assert_failed
  1218              	.LVL118:
  1219 0024 F1E7     		b	.L106
  1220              	.L111:
- 478:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   }
- 1221              		.loc 1 478 0
+ 476:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   }
+ 1221              		.loc 1 476 0
  1222 0026 034A     		ldr	r2, .L112
  1223 0028 1368     		ldr	r3, [r2]
  1224 002a 43F00403 		orr	r3, r3, #4
@@ -4232,25 +4230,25 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  1242              		.fpu fpv4-sp-d16
  1244              	HAL_SYSTICK_Callback:
  1245              	.LFB140:
- 483:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   }
- 484:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
- 485:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 486:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
- 487:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  This function handles SYSTICK interrupt request.
- 488:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
- 489:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 490:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_SYSTICK_IRQHandler(void)
- 491:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
- 492:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   HAL_SYSTICK_Callback();
- 493:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
- 494:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
- 495:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
- 496:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  SYSTICK callback.
- 497:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
- 498:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
- 499:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** __weak void HAL_SYSTICK_Callback(void)
- 500:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
- 1246              		.loc 1 500 0
+ 481:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   }
+ 482:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
+ 483:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 484:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
+ 485:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  This function handles SYSTICK interrupt request.
+ 486:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
+ 487:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 488:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** void HAL_SYSTICK_IRQHandler(void)
+ 489:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
+ 490:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   HAL_SYSTICK_Callback();
+ 491:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
+ 492:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** 
+ 493:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** /**
+ 494:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @brief  SYSTICK callback.
+ 495:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   * @retval None
+ 496:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   */
+ 497:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** __weak void HAL_SYSTICK_Callback(void)
+ 498:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** {
+ 1246              		.loc 1 498 0
  1247              		.cfi_startproc
  1248              		@ args = 0, pretend = 0, frame = 0
  1249              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -4258,11 +4256,11 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  1251 0000 7047     		bx	lr
  1252              		.cfi_endproc
  1253              	.LFE140:
-ARM GAS  /tmp/cc5vCX7X.s 			page 72
-
-
  1255              		.section	.text.HAL_SYSTICK_IRQHandler,"ax",%progbits
  1256              		.align	1
+ARM GAS  /tmp/ccgaFwV8.s 			page 72
+
+
  1257              		.global	HAL_SYSTICK_IRQHandler
  1258              		.syntax unified
  1259              		.thumb
@@ -4270,20 +4268,20 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  1261              		.fpu fpv4-sp-d16
  1263              	HAL_SYSTICK_IRQHandler:
  1264              	.LFB139:
- 491:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   HAL_SYSTICK_Callback();
- 1265              		.loc 1 491 0
+ 489:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   HAL_SYSTICK_Callback();
+ 1265              		.loc 1 489 0
  1266              		.cfi_startproc
  1267              		@ args = 0, pretend = 0, frame = 0
  1268              		@ frame_needed = 0, uses_anonymous_args = 0
- 491:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   HAL_SYSTICK_Callback();
- 1269              		.loc 1 491 0
+ 489:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c ****   HAL_SYSTICK_Callback();
+ 1269              		.loc 1 489 0
  1270 0000 08B5     		push	{r3, lr}
  1271              	.LCFI11:
  1272              		.cfi_def_cfa_offset 8
  1273              		.cfi_offset 3, -8
  1274              		.cfi_offset 14, -4
- 492:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
- 1275              		.loc 1 492 0
+ 490:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c **** }
+ 1275              		.loc 1 490 0
  1276 0002 FFF7FEFF 		bl	HAL_SYSTICK_Callback
  1277              	.LVL120:
  1278 0006 08BD     		pop	{r3, pc}
@@ -4312,67 +4310,67 @@ ARM GAS  /tmp/cc5vCX7X.s 			page 1
  1297              		.file 12 "/home/saicharan/arm/arm-none-eabi/include/sys/reent.h"
  1298              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
  1299              		.file 14 "Inc/stm32f4xx_hal_conf.h"
-ARM GAS  /tmp/cc5vCX7X.s 			page 73
+ARM GAS  /tmp/ccgaFwV8.s 			page 73
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f4xx_hal_cortex.c
-     /tmp/cc5vCX7X.s:18     .text.HAL_NVIC_SetPriorityGrouping:0000000000000000 $t
-     /tmp/cc5vCX7X.s:25     .text.HAL_NVIC_SetPriorityGrouping:0000000000000000 HAL_NVIC_SetPriorityGrouping
-     /tmp/cc5vCX7X.s:87     .text.HAL_NVIC_SetPriorityGrouping:0000000000000034 $d
-     /tmp/cc5vCX7X.s:93     .text.HAL_NVIC_SetPriority:0000000000000000 $t
-     /tmp/cc5vCX7X.s:100    .text.HAL_NVIC_SetPriority:0000000000000000 HAL_NVIC_SetPriority
-     /tmp/cc5vCX7X.s:228    .text.HAL_NVIC_SetPriority:000000000000007c $d
-     /tmp/cc5vCX7X.s:237    .text.HAL_NVIC_EnableIRQ:0000000000000000 $t
-     /tmp/cc5vCX7X.s:244    .text.HAL_NVIC_EnableIRQ:0000000000000000 HAL_NVIC_EnableIRQ
-     /tmp/cc5vCX7X.s:286    .text.HAL_NVIC_EnableIRQ:0000000000000024 $d
-     /tmp/cc5vCX7X.s:292    .text.HAL_NVIC_DisableIRQ:0000000000000000 $t
-     /tmp/cc5vCX7X.s:299    .text.HAL_NVIC_DisableIRQ:0000000000000000 HAL_NVIC_DisableIRQ
-     /tmp/cc5vCX7X.s:342    .text.HAL_NVIC_DisableIRQ:0000000000000028 $d
-     /tmp/cc5vCX7X.s:348    .text.HAL_NVIC_SystemReset:0000000000000000 $t
-     /tmp/cc5vCX7X.s:355    .text.HAL_NVIC_SystemReset:0000000000000000 HAL_NVIC_SystemReset
-     /tmp/cc5vCX7X.s:410    .text.HAL_NVIC_SystemReset:000000000000001c $d
-     /tmp/cc5vCX7X.s:420    .text.HAL_SYSTICK_Config:0000000000000000 $t
-     /tmp/cc5vCX7X.s:427    .text.HAL_SYSTICK_Config:0000000000000000 HAL_SYSTICK_Config
-     /tmp/cc5vCX7X.s:474    .text.HAL_SYSTICK_Config:0000000000000024 $d
-     /tmp/cc5vCX7X.s:480    .text.HAL_MPU_Disable:0000000000000000 $t
-     /tmp/cc5vCX7X.s:487    .text.HAL_MPU_Disable:0000000000000000 HAL_MPU_Disable
-     /tmp/cc5vCX7X.s:518    .text.HAL_MPU_Disable:0000000000000018 $d
-     /tmp/cc5vCX7X.s:524    .text.HAL_MPU_Enable:0000000000000000 $t
-     /tmp/cc5vCX7X.s:531    .text.HAL_MPU_Enable:0000000000000000 HAL_MPU_Enable
-     /tmp/cc5vCX7X.s:573    .text.HAL_MPU_Enable:000000000000001c $d
-     /tmp/cc5vCX7X.s:581    .text.HAL_MPU_ConfigRegion:0000000000000000 $t
-     /tmp/cc5vCX7X.s:588    .text.HAL_MPU_ConfigRegion:0000000000000000 HAL_MPU_ConfigRegion
-     /tmp/cc5vCX7X.s:782    .text.HAL_MPU_ConfigRegion:000000000000010c $d
-     /tmp/cc5vCX7X.s:788    .text.HAL_NVIC_GetPriorityGrouping:0000000000000000 $t
-     /tmp/cc5vCX7X.s:795    .text.HAL_NVIC_GetPriorityGrouping:0000000000000000 HAL_NVIC_GetPriorityGrouping
-     /tmp/cc5vCX7X.s:815    .text.HAL_NVIC_GetPriorityGrouping:000000000000000c $d
-     /tmp/cc5vCX7X.s:820    .text.HAL_NVIC_GetPriority:0000000000000000 $t
-     /tmp/cc5vCX7X.s:827    .text.HAL_NVIC_GetPriority:0000000000000000 HAL_NVIC_GetPriority
-     /tmp/cc5vCX7X.s:941    .text.HAL_NVIC_GetPriority:0000000000000070 $d
-     /tmp/cc5vCX7X.s:949    .text.HAL_NVIC_SetPendingIRQ:0000000000000000 $t
-     /tmp/cc5vCX7X.s:956    .text.HAL_NVIC_SetPendingIRQ:0000000000000000 HAL_NVIC_SetPendingIRQ
-     /tmp/cc5vCX7X.s:999    .text.HAL_NVIC_SetPendingIRQ:0000000000000028 $d
-     /tmp/cc5vCX7X.s:1005   .text.HAL_NVIC_GetPendingIRQ:0000000000000000 $t
-     /tmp/cc5vCX7X.s:1012   .text.HAL_NVIC_GetPendingIRQ:0000000000000000 HAL_NVIC_GetPendingIRQ
-     /tmp/cc5vCX7X.s:1056   .text.HAL_NVIC_GetPendingIRQ:0000000000000028 $d
-     /tmp/cc5vCX7X.s:1062   .text.HAL_NVIC_ClearPendingIRQ:0000000000000000 $t
-     /tmp/cc5vCX7X.s:1069   .text.HAL_NVIC_ClearPendingIRQ:0000000000000000 HAL_NVIC_ClearPendingIRQ
-     /tmp/cc5vCX7X.s:1112   .text.HAL_NVIC_ClearPendingIRQ:0000000000000028 $d
-     /tmp/cc5vCX7X.s:1118   .text.HAL_NVIC_GetActive:0000000000000000 $t
-     /tmp/cc5vCX7X.s:1125   .text.HAL_NVIC_GetActive:0000000000000000 HAL_NVIC_GetActive
-     /tmp/cc5vCX7X.s:1169   .text.HAL_NVIC_GetActive:0000000000000028 $d
-     /tmp/cc5vCX7X.s:1175   .text.HAL_SYSTICK_CLKSourceConfig:0000000000000000 $t
-     /tmp/cc5vCX7X.s:1182   .text.HAL_SYSTICK_CLKSourceConfig:0000000000000000 HAL_SYSTICK_CLKSourceConfig
-     /tmp/cc5vCX7X.s:1231   .text.HAL_SYSTICK_CLKSourceConfig:0000000000000034 $d
-     /tmp/cc5vCX7X.s:1237   .text.HAL_SYSTICK_Callback:0000000000000000 $t
-     /tmp/cc5vCX7X.s:1244   .text.HAL_SYSTICK_Callback:0000000000000000 HAL_SYSTICK_Callback
-     /tmp/cc5vCX7X.s:1256   .text.HAL_SYSTICK_IRQHandler:0000000000000000 $t
-     /tmp/cc5vCX7X.s:1263   .text.HAL_SYSTICK_IRQHandler:0000000000000000 HAL_SYSTICK_IRQHandler
-     /tmp/cc5vCX7X.s:1283   .rodata.HAL_NVIC_SetPriorityGrouping.str1.4:0000000000000000 $d
+     /tmp/ccgaFwV8.s:18     .text.HAL_NVIC_SetPriorityGrouping:0000000000000000 $t
+     /tmp/ccgaFwV8.s:25     .text.HAL_NVIC_SetPriorityGrouping:0000000000000000 HAL_NVIC_SetPriorityGrouping
+     /tmp/ccgaFwV8.s:87     .text.HAL_NVIC_SetPriorityGrouping:0000000000000034 $d
+     /tmp/ccgaFwV8.s:93     .text.HAL_NVIC_SetPriority:0000000000000000 $t
+     /tmp/ccgaFwV8.s:100    .text.HAL_NVIC_SetPriority:0000000000000000 HAL_NVIC_SetPriority
+     /tmp/ccgaFwV8.s:228    .text.HAL_NVIC_SetPriority:000000000000007c $d
+     /tmp/ccgaFwV8.s:237    .text.HAL_NVIC_EnableIRQ:0000000000000000 $t
+     /tmp/ccgaFwV8.s:244    .text.HAL_NVIC_EnableIRQ:0000000000000000 HAL_NVIC_EnableIRQ
+     /tmp/ccgaFwV8.s:286    .text.HAL_NVIC_EnableIRQ:0000000000000024 $d
+     /tmp/ccgaFwV8.s:292    .text.HAL_NVIC_DisableIRQ:0000000000000000 $t
+     /tmp/ccgaFwV8.s:299    .text.HAL_NVIC_DisableIRQ:0000000000000000 HAL_NVIC_DisableIRQ
+     /tmp/ccgaFwV8.s:342    .text.HAL_NVIC_DisableIRQ:0000000000000028 $d
+     /tmp/ccgaFwV8.s:348    .text.HAL_NVIC_SystemReset:0000000000000000 $t
+     /tmp/ccgaFwV8.s:355    .text.HAL_NVIC_SystemReset:0000000000000000 HAL_NVIC_SystemReset
+     /tmp/ccgaFwV8.s:410    .text.HAL_NVIC_SystemReset:000000000000001c $d
+     /tmp/ccgaFwV8.s:420    .text.HAL_SYSTICK_Config:0000000000000000 $t
+     /tmp/ccgaFwV8.s:427    .text.HAL_SYSTICK_Config:0000000000000000 HAL_SYSTICK_Config
+     /tmp/ccgaFwV8.s:474    .text.HAL_SYSTICK_Config:0000000000000024 $d
+     /tmp/ccgaFwV8.s:480    .text.HAL_MPU_Disable:0000000000000000 $t
+     /tmp/ccgaFwV8.s:487    .text.HAL_MPU_Disable:0000000000000000 HAL_MPU_Disable
+     /tmp/ccgaFwV8.s:518    .text.HAL_MPU_Disable:0000000000000018 $d
+     /tmp/ccgaFwV8.s:524    .text.HAL_MPU_Enable:0000000000000000 $t
+     /tmp/ccgaFwV8.s:531    .text.HAL_MPU_Enable:0000000000000000 HAL_MPU_Enable
+     /tmp/ccgaFwV8.s:573    .text.HAL_MPU_Enable:000000000000001c $d
+     /tmp/ccgaFwV8.s:581    .text.HAL_MPU_ConfigRegion:0000000000000000 $t
+     /tmp/ccgaFwV8.s:588    .text.HAL_MPU_ConfigRegion:0000000000000000 HAL_MPU_ConfigRegion
+     /tmp/ccgaFwV8.s:782    .text.HAL_MPU_ConfigRegion:000000000000010c $d
+     /tmp/ccgaFwV8.s:788    .text.HAL_NVIC_GetPriorityGrouping:0000000000000000 $t
+     /tmp/ccgaFwV8.s:795    .text.HAL_NVIC_GetPriorityGrouping:0000000000000000 HAL_NVIC_GetPriorityGrouping
+     /tmp/ccgaFwV8.s:815    .text.HAL_NVIC_GetPriorityGrouping:000000000000000c $d
+     /tmp/ccgaFwV8.s:820    .text.HAL_NVIC_GetPriority:0000000000000000 $t
+     /tmp/ccgaFwV8.s:827    .text.HAL_NVIC_GetPriority:0000000000000000 HAL_NVIC_GetPriority
+     /tmp/ccgaFwV8.s:941    .text.HAL_NVIC_GetPriority:0000000000000070 $d
+     /tmp/ccgaFwV8.s:949    .text.HAL_NVIC_SetPendingIRQ:0000000000000000 $t
+     /tmp/ccgaFwV8.s:956    .text.HAL_NVIC_SetPendingIRQ:0000000000000000 HAL_NVIC_SetPendingIRQ
+     /tmp/ccgaFwV8.s:999    .text.HAL_NVIC_SetPendingIRQ:0000000000000028 $d
+     /tmp/ccgaFwV8.s:1005   .text.HAL_NVIC_GetPendingIRQ:0000000000000000 $t
+     /tmp/ccgaFwV8.s:1012   .text.HAL_NVIC_GetPendingIRQ:0000000000000000 HAL_NVIC_GetPendingIRQ
+     /tmp/ccgaFwV8.s:1056   .text.HAL_NVIC_GetPendingIRQ:0000000000000028 $d
+     /tmp/ccgaFwV8.s:1062   .text.HAL_NVIC_ClearPendingIRQ:0000000000000000 $t
+     /tmp/ccgaFwV8.s:1069   .text.HAL_NVIC_ClearPendingIRQ:0000000000000000 HAL_NVIC_ClearPendingIRQ
+     /tmp/ccgaFwV8.s:1112   .text.HAL_NVIC_ClearPendingIRQ:0000000000000028 $d
+     /tmp/ccgaFwV8.s:1118   .text.HAL_NVIC_GetActive:0000000000000000 $t
+     /tmp/ccgaFwV8.s:1125   .text.HAL_NVIC_GetActive:0000000000000000 HAL_NVIC_GetActive
+     /tmp/ccgaFwV8.s:1169   .text.HAL_NVIC_GetActive:0000000000000028 $d
+     /tmp/ccgaFwV8.s:1175   .text.HAL_SYSTICK_CLKSourceConfig:0000000000000000 $t
+     /tmp/ccgaFwV8.s:1182   .text.HAL_SYSTICK_CLKSourceConfig:0000000000000000 HAL_SYSTICK_CLKSourceConfig
+     /tmp/ccgaFwV8.s:1231   .text.HAL_SYSTICK_CLKSourceConfig:0000000000000034 $d
+     /tmp/ccgaFwV8.s:1237   .text.HAL_SYSTICK_Callback:0000000000000000 $t
+     /tmp/ccgaFwV8.s:1244   .text.HAL_SYSTICK_Callback:0000000000000000 HAL_SYSTICK_Callback
+     /tmp/ccgaFwV8.s:1256   .text.HAL_SYSTICK_IRQHandler:0000000000000000 $t
+     /tmp/ccgaFwV8.s:1263   .text.HAL_SYSTICK_IRQHandler:0000000000000000 HAL_SYSTICK_IRQHandler
+     /tmp/ccgaFwV8.s:1283   .rodata.HAL_NVIC_SetPriorityGrouping.str1.4:0000000000000000 $d
                      .debug_frame:0000000000000010 $d
 
-ARM GAS  /tmp/cc5vCX7X.s 			page 74
+ARM GAS  /tmp/ccgaFwV8.s 			page 74
 
 
 UNDEFINED SYMBOLS

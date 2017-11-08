@@ -2,7 +2,7 @@
 <Project>
 <ProjectName>/home/saicharan/Dropbox/arbeit/lichtsteuer-modul/DALI_programming/STM32E407/trial_code/STM32E407/IWDG/\IWDG</ProjectName>
 <CMSIS>Drivers/CMSIS</CMSIS>
-<HAL_Driver>/home/saicharan/STM32Cube/Repository//STM32Cube_FW_F4_V1.16.0/Drivers/CMSIS</HAL_Driver>
+<HAL_Driver>/home/saicharan/STM32Cube/Repository//STM32Cube_FW_F4_V1.17.0/Drivers/CMSIS</HAL_Driver>
 
 <Toolchain>Makefile</Toolchain>
 <Version>0</Version>

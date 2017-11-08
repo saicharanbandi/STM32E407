@@ -1,6 +1,6 @@
 /**
   ******************************************************************************
-  * File Name          : main.h
+  * File Name          : main.hpp
   * Description        : This file contains the common defines of the application
   ******************************************************************************
   ** This notice applies to any and all portions of this file
@@ -40,15 +40,13 @@
 #define __MAIN_H
   /* Includes ------------------------------------------------------------------*/
 
+/* Includes ------------------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
 
 /* Private define ------------------------------------------------------------*/
 
-#define PUSH_BUTTON_1_Pin GPIO_PIN_0
-#define PUSH_BUTTON_1_GPIO_Port GPIOF
-#define PUSH_BUTTON_1_EXTI_IRQn EXTI0_IRQn
 #define LED_Green_Pin GPIO_PIN_2
 #define LED_Green_GPIO_Port GPIOF
 #define LED_Blue_Pin GPIO_PIN_3
@@ -57,14 +55,30 @@
 #define LED_Yellow_GPIO_Port GPIOF
 #define LED_Red_Pin GPIO_PIN_5
 #define LED_Red_GPIO_Port GPIOF
+#define WKUP_BUTTON_Pin GPIO_PIN_0
+#define WKUP_BUTTON_GPIO_Port GPIOA
+#define WKUP_BUTTON_EXTI_IRQn EXTI0_IRQn
+
+/* ########################## Assert Selection ############################## */
+/**
+  * @brief Uncomment the line below to expanse the "assert_param" macro in the 
+  *        HAL drivers code
+  */
+ #define USE_FULL_ASSERT    1U 
 
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
 
+#ifdef __cplusplus
+ extern "C" {
+#endif
 void _Error_Handler(char *, int);
 
 #define Error_Handler() _Error_Handler(__FILE__, __LINE__)
+#ifdef __cplusplus
+}
+#endif
 
 /**
   * @}

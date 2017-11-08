@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccUhBTIb.s 			page 1
+ARM GAS  /tmp/cc1ovdIk.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -24,7 +24,7 @@ ARM GAS  /tmp/ccUhBTIb.s 			page 1
   21              		.thumb_func
   22              		.fpu fpv4-sp-d16
   24              	MX_GPIO_Init:
-  25              	.LFB127:
+  25              	.LFB125:
   26              		.file 1 "Src/main.c"
    1:Src/main.c    **** /**
    2:Src/main.c    ****   ******************************************************************************
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccUhBTIb.s 			page 1
   30:Src/main.c    ****   * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
   31:Src/main.c    ****   * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
   32:Src/main.c    ****   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-ARM GAS  /tmp/ccUhBTIb.s 			page 2
+ARM GAS  /tmp/cc1ovdIk.s 			page 2
 
 
   33:Src/main.c    ****   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
@@ -66,129 +66,129 @@ ARM GAS  /tmp/ccUhBTIb.s 			page 1
   35:Src/main.c    ****   *
   36:Src/main.c    ****   ******************************************************************************
   37:Src/main.c    ****   */
-  38:Src/main.c    **** /* Includes ------------------------------------------------------------------*/
-  39:Src/main.c    **** #include "main.h"
-  40:Src/main.c    **** #include "stm32f4xx_hal.h"
-  41:Src/main.c    **** 
-  42:Src/main.c    **** /* USER CODE BEGIN Includes */
-  43:Src/main.c    **** 
-  44:Src/main.c    **** /* USER CODE END Includes */
-  45:Src/main.c    **** 
-  46:Src/main.c    **** /* Private variables ---------------------------------------------------------*/
-  47:Src/main.c    **** IWDG_HandleTypeDef hiwdg;
-  48:Src/main.c    **** 
-  49:Src/main.c    **** TIM_HandleTypeDef htim5;
-  50:Src/main.c    **** 
-  51:Src/main.c    **** /* USER CODE BEGIN PV */
-  52:Src/main.c    **** /* Private variables ---------------------------------------------------------*/
-  53:Src/main.c    **** static __IO uint32_t uwLsiFreq = 0;
-  54:Src/main.c    **** __IO uint32_t uwCaptureNumber = 0;
-  55:Src/main.c    **** __IO uint32_t uwPeriodValue = 0;
-  56:Src/main.c    **** __IO uint32_t uwMeasurementDone = 0;
-  57:Src/main.c    **** /* USER CODE END PV */
-  58:Src/main.c    **** 
-  59:Src/main.c    **** /* Private function prototypes -----------------------------------------------*/
-  60:Src/main.c    **** void SystemClock_Config(void);
-  61:Src/main.c    **** static void MX_GPIO_Init(void);
-  62:Src/main.c    **** static void MX_IWDG_Init(void);
-  63:Src/main.c    **** static void MX_TIM5_Init(void);
-  64:Src/main.c    **** 
-  65:Src/main.c    **** /* USER CODE BEGIN PFP */
-  66:Src/main.c    **** /* Private function prototypes -----------------------------------------------*/
-  67:Src/main.c    **** static uint32_t GetLSIFrequency(void);
-  68:Src/main.c    **** /* USER CODE END PFP */
-  69:Src/main.c    **** 
-  70:Src/main.c    **** /* USER CODE BEGIN 0 */
-  71:Src/main.c    **** 
-  72:Src/main.c    **** /* USER CODE END 0 */
-  73:Src/main.c    **** 
-  74:Src/main.c    **** int main(void)
-  75:Src/main.c    **** {
-  76:Src/main.c    **** 
-  77:Src/main.c    ****   /* USER CODE BEGIN 1 */
-  78:Src/main.c    **** 
-  79:Src/main.c    ****   /* USER CODE END 1 */
-  80:Src/main.c    **** 
-  81:Src/main.c    ****   /* MCU Configuration----------------------------------------------------------*/
-  82:Src/main.c    **** 
-  83:Src/main.c    ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  84:Src/main.c    ****   HAL_Init();
-  85:Src/main.c    **** 
-  86:Src/main.c    ****   /* USER CODE BEGIN Init */
-  87:Src/main.c    **** 
-  88:Src/main.c    ****   /* USER CODE END Init */
-  89:Src/main.c    **** 
-ARM GAS  /tmp/ccUhBTIb.s 			page 3
+  38:Src/main.c    **** 
+  39:Src/main.c    **** /* Includes ------------------------------------------------------------------*/
+  40:Src/main.c    **** #include "main.h"
+  41:Src/main.c    **** #include "stm32f4xx_hal.h"
+  42:Src/main.c    **** 
+  43:Src/main.c    **** /* USER CODE BEGIN Includes */
+  44:Src/main.c    **** 
+  45:Src/main.c    **** /* USER CODE END Includes */
+  46:Src/main.c    **** 
+  47:Src/main.c    **** /* Private variables ---------------------------------------------------------*/
+  48:Src/main.c    **** IWDG_HandleTypeDef hiwdg;
+  49:Src/main.c    **** 
+  50:Src/main.c    **** TIM_HandleTypeDef htim5;
+  51:Src/main.c    **** 
+  52:Src/main.c    **** /* USER CODE BEGIN PV */
+  53:Src/main.c    **** /* Private variables ---------------------------------------------------------*/
+  54:Src/main.c    **** static __IO uint32_t uwLsiFreq = 0;
+  55:Src/main.c    **** __IO uint32_t uwCaptureNumber = 0;
+  56:Src/main.c    **** __IO uint32_t uwPeriodValue = 0;
+  57:Src/main.c    **** __IO uint32_t uwMeasurementDone = 0;
+  58:Src/main.c    **** /* USER CODE END PV */
+  59:Src/main.c    **** 
+  60:Src/main.c    **** /* Private function prototypes -----------------------------------------------*/
+  61:Src/main.c    **** void SystemClock_Config(void);
+  62:Src/main.c    **** static void MX_GPIO_Init(void);
+  63:Src/main.c    **** /* static void MX_IWDG_Init(void); */
+  64:Src/main.c    **** /* static void MX_TIM5_Init(void); */
+  65:Src/main.c    **** 
+  66:Src/main.c    **** /* USER CODE BEGIN PFP */
+  67:Src/main.c    **** /* Private function prototypes -----------------------------------------------*/
+  68:Src/main.c    **** static uint32_t GetLSIFrequency(void);
+  69:Src/main.c    **** /* USER CODE END PFP */
+  70:Src/main.c    **** 
+  71:Src/main.c    **** /* USER CODE BEGIN 0 */
+  72:Src/main.c    **** 
+  73:Src/main.c    **** /* USER CODE END 0 */
+  74:Src/main.c    **** 
+  75:Src/main.c    **** int main(void)
+  76:Src/main.c    **** {
+  77:Src/main.c    **** 
+  78:Src/main.c    ****   /* USER CODE BEGIN 1 */
+  79:Src/main.c    **** 
+  80:Src/main.c    ****   /* USER CODE END 1 */
+  81:Src/main.c    **** 
+  82:Src/main.c    ****   /* MCU Configuration----------------------------------------------------------*/
+  83:Src/main.c    **** 
+  84:Src/main.c    ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  85:Src/main.c    ****   HAL_Init();
+  86:Src/main.c    **** 
+  87:Src/main.c    ****   /* USER CODE BEGIN Init */
+  88:Src/main.c    **** 
+  89:Src/main.c    ****   /* USER CODE END Init */
+ARM GAS  /tmp/cc1ovdIk.s 			page 3
 
 
-  90:Src/main.c    ****   /* Configure the system clock */
-  91:Src/main.c    ****   SystemClock_Config();
-  92:Src/main.c    **** 
-  93:Src/main.c    ****   /* USER CODE BEGIN SysInit */
-  94:Src/main.c    **** 
-  95:Src/main.c    ****   /* USER CODE END SysInit */
-  96:Src/main.c    **** 
-  97:Src/main.c    ****   /* Initialize all configured peripherals */
-  98:Src/main.c    ****   MX_GPIO_Init();
-  99:Src/main.c    ****   MX_IWDG_Init();
- 100:Src/main.c    ****   MX_TIM5_Init();
- 101:Src/main.c    **** 
- 102:Src/main.c    ****   /* USER CODE BEGIN 2 */
- 103:Src/main.c    **** 
- 104:Src/main.c    ****   /* ##-1- Check if the system has resumed from IWDG reset ###################### */
- 105:Src/main.c    ****   if(__HAL_RCC_GET_FLAG(RCC_FLAG_IWDGRST) != RESET)
- 106:Src/main.c    ****   {
- 107:Src/main.c    ****     /* IWDGRST flag set: Turn LED_Blue on */
- 108:Src/main.c    ****     HAL_GPIO_WritePin(LED_Blue_GPIO_Port, LED_Blue_Pin, GPIO_PIN_SET);
- 109:Src/main.c    **** 
- 110:Src/main.c    ****     /* Clear reset flags */
- 111:Src/main.c    ****     __HAL_RCC_CLEAR_RESET_FLAGS();
- 112:Src/main.c    ****   }
- 113:Src/main.c    ****   else
- 114:Src/main.c    ****   {
- 115:Src/main.c    ****     /* IWDGRST flag is not set: Turn LED_Blue off */
- 116:Src/main.c    ****     HAL_GPIO_WritePin(LED_Blue_GPIO_Port, LED_Blue_Pin, GPIO_PIN_RESET);
- 117:Src/main.c    ****   }
- 118:Src/main.c    **** 
- 119:Src/main.c    ****   /* /\*##-2- Get the LSI frequency: TIM5 is used to measure the LSI frequency ###*\/ */
- 120:Src/main.c    ****   uwLsiFreq = GetLSIFrequency();
- 121:Src/main.c    **** 
- 122:Src/main.c    ****   /*##-3- Configure the IWDG peripheral #####################################*/
- 123:Src/main.c    ****   /* Set counter reload value to obtain 250ms IWDG Timeout.
- 124:Src/main.c    ****      IWDG counter clock frequency = LsiFreq / 32
- 125:Src/main.c    ****      Counter Reload Value = 250ms / IWDG counter clock period
- 126:Src/main.c    ****                           = 0.25s / (32/LsiFreq)
- 127:Src/main.c    ****   			  = LsiFreq / 128 */
- 128:Src/main.c    ****   hiwdg.Instance = IWDG;
- 129:Src/main.c    ****   hiwdg.Init.Prescaler = IWDG_PRESCALER_32;
- 130:Src/main.c    ****   hiwdg.Init.Reload = uwLsiFreq/128;
- 131:Src/main.c    ****   /* if (HAL_IWDG_Init(&hiwdg) != HAL_OK) */
- 132:Src/main.c    ****   /* { */
- 133:Src/main.c    ****   /*   _Error_Handler(__FILE__, __LINE__); */
- 134:Src/main.c    ****   /* } */
- 135:Src/main.c    ****   
- 136:Src/main.c    ****   /* USER CODE END 2 */
- 137:Src/main.c    **** 
- 138:Src/main.c    ****   /* Infinite loop */
- 139:Src/main.c    ****   /* USER CODE BEGIN WHILE */
- 140:Src/main.c    ****   while (1)
- 141:Src/main.c    ****   {
- 142:Src/main.c    ****     /* Toggle LED_Green */
- 143:Src/main.c    ****     HAL_GPIO_TogglePin(LED_Green_GPIO_Port, LED_Green_Pin);
- 144:Src/main.c    **** 
- 145:Src/main.c    ****     /* Insert 240ms delay */
- 146:Src/main.c    ****     HAL_Delay(240);
-ARM GAS  /tmp/ccUhBTIb.s 			page 4
+  90:Src/main.c    **** 
+  91:Src/main.c    ****   /* Configure the system clock */
+  92:Src/main.c    ****   SystemClock_Config();
+  93:Src/main.c    **** 
+  94:Src/main.c    ****   /* USER CODE BEGIN SysInit */
+  95:Src/main.c    **** 
+  96:Src/main.c    ****   /* USER CODE END SysInit */
+  97:Src/main.c    **** 
+  98:Src/main.c    ****   /* Initialize all configured peripherals */
+  99:Src/main.c    ****   MX_GPIO_Init();
+ 100:Src/main.c    ****   /* MX_IWDG_Init(); */
+ 101:Src/main.c    ****   /* MX_TIM5_Init(); */
+ 102:Src/main.c    **** 
+ 103:Src/main.c    ****   /* USER CODE BEGIN 2 */
+ 104:Src/main.c    **** 
+ 105:Src/main.c    ****   /* ##-1- Check if the system has resumed from IWDG reset ###################### */
+ 106:Src/main.c    ****   if(__HAL_RCC_GET_FLAG(RCC_FLAG_IWDGRST) != RESET)
+ 107:Src/main.c    ****   {
+ 108:Src/main.c    ****     /* IWDGRST flag set: Turn LED_Blue on */
+ 109:Src/main.c    ****     HAL_GPIO_WritePin(LED_Blue_GPIO_Port, LED_Blue_Pin, GPIO_PIN_SET);
+ 110:Src/main.c    **** 
+ 111:Src/main.c    ****     /* Clear reset flags */
+ 112:Src/main.c    ****     __HAL_RCC_CLEAR_RESET_FLAGS();
+ 113:Src/main.c    ****   }
+ 114:Src/main.c    ****   else
+ 115:Src/main.c    ****   {
+ 116:Src/main.c    ****     /* IWDGRST flag is not set: Turn LED_Blue off */
+ 117:Src/main.c    ****     HAL_GPIO_WritePin(LED_Blue_GPIO_Port, LED_Blue_Pin, GPIO_PIN_RESET);
+ 118:Src/main.c    ****   }
+ 119:Src/main.c    **** 
+ 120:Src/main.c    ****   /* /\*##-2- Get the LSI frequency: TIM5 is used to measure the LSI frequency ###*\/ */
+ 121:Src/main.c    ****   uwLsiFreq = GetLSIFrequency();
+ 122:Src/main.c    **** 
+ 123:Src/main.c    ****   /*##-3- Configure the IWDG peripheral #####################################*/
+ 124:Src/main.c    ****   /* Set counter reload value to obtain 250ms IWDG Timeout.
+ 125:Src/main.c    ****      IWDG counter clock frequency = LsiFreq / 32
+ 126:Src/main.c    ****      Counter Reload Value = 250ms / IWDG counter clock period
+ 127:Src/main.c    ****                           = 0.25s / (32/LsiFreq)
+ 128:Src/main.c    ****   			  = LsiFreq / 128 */
+ 129:Src/main.c    ****   hiwdg.Instance = IWDG;
+ 130:Src/main.c    ****   hiwdg.Init.Prescaler = IWDG_PRESCALER_32;
+ 131:Src/main.c    ****   hiwdg.Init.Reload = uwLsiFreq/128;
+ 132:Src/main.c    ****   if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
+ 133:Src/main.c    ****   {
+ 134:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
+ 135:Src/main.c    ****   }
+ 136:Src/main.c    ****   
+ 137:Src/main.c    ****   /* USER CODE END 2 */
+ 138:Src/main.c    **** 
+ 139:Src/main.c    ****   /* Infinite loop */
+ 140:Src/main.c    ****   /* USER CODE BEGIN WHILE */
+ 141:Src/main.c    ****   while (1)
+ 142:Src/main.c    ****   {
+ 143:Src/main.c    ****     /* Toggle LED_Green */
+ 144:Src/main.c    ****     HAL_GPIO_TogglePin(LED_Green_GPIO_Port, LED_Green_Pin);
+ 145:Src/main.c    **** 
+ 146:Src/main.c    ****     /* Insert 240ms delay */
+ARM GAS  /tmp/cc1ovdIk.s 			page 4
 
 
- 147:Src/main.c    **** 
- 148:Src/main.c    ****     /* Refresh IWDG: reload counter */
- 149:Src/main.c    ****     if(HAL_IWDG_Refresh(&hiwdg) != HAL_OK)
- 150:Src/main.c    ****     {
- 151:Src/main.c    ****       _Error_Handler(__FILE__, __LINE__);
- 152:Src/main.c    ****     }
- 153:Src/main.c    **** 
- 154:Src/main.c    ****     
+ 147:Src/main.c    ****     HAL_Delay(240);
+ 148:Src/main.c    **** 
+ 149:Src/main.c    ****     /* Refresh IWDG: reload counter */
+ 150:Src/main.c    ****     if(HAL_IWDG_Refresh(&hiwdg) != HAL_OK)
+ 151:Src/main.c    ****     {
+ 152:Src/main.c    ****       _Error_Handler(__FILE__, __LINE__);
+ 153:Src/main.c    ****     }
+ 154:Src/main.c    **** 
  155:Src/main.c    ****   /* USER CODE END WHILE */
  156:Src/main.c    **** 
  157:Src/main.c    ****   /* USER CODE BEGIN 3 */
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccUhBTIb.s 			page 1
  201:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
  202:Src/main.c    ****   }
  203:Src/main.c    **** 
-ARM GAS  /tmp/ccUhBTIb.s 			page 5
+ARM GAS  /tmp/cc1ovdIk.s 			page 5
 
 
  204:Src/main.c    ****     /**Configure the Systick interrupt time 
@@ -253,74 +253,74 @@ ARM GAS  /tmp/ccUhBTIb.s 			page 1
  213:Src/main.c    ****   HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
  214:Src/main.c    **** }
  215:Src/main.c    **** 
- 216:Src/main.c    **** /* IWDG init function */
- 217:Src/main.c    **** static void MX_IWDG_Init(void)
- 218:Src/main.c    **** {
+ 216:Src/main.c    **** /* /\* IWDG init function *\/ */
+ 217:Src/main.c    **** /* static void MX_IWDG_Init(void) */
+ 218:Src/main.c    **** /* { */
  219:Src/main.c    **** 
- 220:Src/main.c    ****   hiwdg.Instance = IWDG;
- 221:Src/main.c    ****   hiwdg.Init.Prescaler = IWDG_PRESCALER_4;
- 222:Src/main.c    ****   hiwdg.Init.Reload = 4095;
- 223:Src/main.c    ****   if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
- 224:Src/main.c    ****   {
- 225:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
- 226:Src/main.c    ****   }
+ 220:Src/main.c    **** /*   hiwdg.Instance = IWDG; */
+ 221:Src/main.c    **** /*   hiwdg.Init.Prescaler = IWDG_PRESCALER_4; */
+ 222:Src/main.c    **** /*   hiwdg.Init.Reload = 4095; */
+ 223:Src/main.c    **** /*   if (HAL_IWDG_Init(&hiwdg) != HAL_OK) */
+ 224:Src/main.c    **** /*   { */
+ 225:Src/main.c    **** /*     _Error_Handler(__FILE__, __LINE__); */
+ 226:Src/main.c    **** /*   } */
  227:Src/main.c    **** 
- 228:Src/main.c    **** }
+ 228:Src/main.c    **** /* } */
  229:Src/main.c    **** 
- 230:Src/main.c    **** /* TIM5 init function */
- 231:Src/main.c    **** static void MX_TIM5_Init(void)
- 232:Src/main.c    **** {
+ 230:Src/main.c    **** /* /\* TIM5 init function *\/ */
+ 231:Src/main.c    **** /* static void MX_TIM5_Init(void) */
+ 232:Src/main.c    **** /* { */
  233:Src/main.c    **** 
- 234:Src/main.c    ****   TIM_ClockConfigTypeDef sClockSourceConfig;
- 235:Src/main.c    ****   TIM_MasterConfigTypeDef sMasterConfig;
- 236:Src/main.c    ****   TIM_IC_InitTypeDef sConfigIC;
+ 234:Src/main.c    **** /*   TIM_ClockConfigTypeDef sClockSourceConfig; */
+ 235:Src/main.c    **** /*   TIM_MasterConfigTypeDef sMasterConfig; */
+ 236:Src/main.c    **** /*   TIM_IC_InitTypeDef sConfigIC; */
  237:Src/main.c    **** 
- 238:Src/main.c    ****   htim5.Instance = TIM5;
- 239:Src/main.c    ****   htim5.Init.Prescaler = 0;
- 240:Src/main.c    ****   htim5.Init.CounterMode = TIM_COUNTERMODE_UP;
- 241:Src/main.c    ****   htim5.Init.Period = 0xFFFF;
- 242:Src/main.c    ****   htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
- 243:Src/main.c    ****   if (HAL_TIM_Base_Init(&htim5) != HAL_OK)
- 244:Src/main.c    ****   {
- 245:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
- 246:Src/main.c    ****   }
+ 238:Src/main.c    **** /*   htim5.Instance = TIM5; */
+ 239:Src/main.c    **** /*   htim5.Init.Prescaler = 0; */
+ 240:Src/main.c    **** /*   htim5.Init.CounterMode = TIM_COUNTERMODE_UP; */
+ 241:Src/main.c    **** /*   htim5.Init.Period = 0xFFFF; */
+ 242:Src/main.c    **** /*   htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1; */
+ 243:Src/main.c    **** /*   if (HAL_TIM_Base_Init(&htim5) != HAL_OK) */
+ 244:Src/main.c    **** /*   { */
+ 245:Src/main.c    **** /*     _Error_Handler(__FILE__, __LINE__); */
+ 246:Src/main.c    **** /*   } */
  247:Src/main.c    **** 
- 248:Src/main.c    ****   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
- 249:Src/main.c    ****   if (HAL_TIM_ConfigClockSource(&htim5, &sClockSourceConfig) != HAL_OK)
- 250:Src/main.c    ****   {
- 251:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
- 252:Src/main.c    ****   }
+ 248:Src/main.c    **** /*   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL; */
+ 249:Src/main.c    **** /*   if (HAL_TIM_ConfigClockSource(&htim5, &sClockSourceConfig) != HAL_OK) */
+ 250:Src/main.c    **** /*   { */
+ 251:Src/main.c    **** /*     _Error_Handler(__FILE__, __LINE__); */
+ 252:Src/main.c    **** /*   } */
  253:Src/main.c    **** 
- 254:Src/main.c    ****   if (HAL_TIM_IC_Init(&htim5) != HAL_OK)
- 255:Src/main.c    ****   {
- 256:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
- 257:Src/main.c    ****   }
+ 254:Src/main.c    **** /*   if (HAL_TIM_IC_Init(&htim5) != HAL_OK) */
+ 255:Src/main.c    **** /*   { */
+ 256:Src/main.c    **** /*     _Error_Handler(__FILE__, __LINE__); */
+ 257:Src/main.c    **** /*   } */
  258:Src/main.c    **** 
- 259:Src/main.c    ****   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
- 260:Src/main.c    ****   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-ARM GAS  /tmp/ccUhBTIb.s 			page 6
+ 259:Src/main.c    **** /*   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET; */
+ 260:Src/main.c    **** /*   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE; */
+ARM GAS  /tmp/cc1ovdIk.s 			page 6
 
 
- 261:Src/main.c    ****   if (HAL_TIMEx_MasterConfigSynchronization(&htim5, &sMasterConfig) != HAL_OK)
- 262:Src/main.c    ****   {
- 263:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
- 264:Src/main.c    ****   }
+ 261:Src/main.c    **** /*   if (HAL_TIMEx_MasterConfigSynchronization(&htim5, &sMasterConfig) != HAL_OK) */
+ 262:Src/main.c    **** /*   { */
+ 263:Src/main.c    **** /*     _Error_Handler(__FILE__, __LINE__); */
+ 264:Src/main.c    **** /*   } */
  265:Src/main.c    **** 
- 266:Src/main.c    ****   sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
- 267:Src/main.c    ****   sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
- 268:Src/main.c    ****   sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
- 269:Src/main.c    ****   sConfigIC.ICFilter = 0;
- 270:Src/main.c    ****   if (HAL_TIM_IC_ConfigChannel(&htim5, &sConfigIC, TIM_CHANNEL_4) != HAL_OK)
- 271:Src/main.c    ****   {
- 272:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
- 273:Src/main.c    ****   }
+ 266:Src/main.c    **** /*   sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING; */
+ 267:Src/main.c    **** /*   sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI; */
+ 268:Src/main.c    **** /*   sConfigIC.ICPrescaler = TIM_ICPSC_DIV1; */
+ 269:Src/main.c    **** /*   sConfigIC.ICFilter = 0; */
+ 270:Src/main.c    **** /*   if (HAL_TIM_IC_ConfigChannel(&htim5, &sConfigIC, TIM_CHANNEL_4) != HAL_OK) */
+ 271:Src/main.c    **** /*   { */
+ 272:Src/main.c    **** /*     _Error_Handler(__FILE__, __LINE__); */
+ 273:Src/main.c    **** /*   } */
  274:Src/main.c    **** 
- 275:Src/main.c    ****   if (HAL_TIMEx_RemapConfig(&htim5, TIM_TIM5_LSI) != HAL_OK)
- 276:Src/main.c    ****   {
- 277:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
- 278:Src/main.c    ****   }
+ 275:Src/main.c    **** /*   if (HAL_TIMEx_RemapConfig(&htim5, TIM_TIM5_LSI) != HAL_OK) */
+ 276:Src/main.c    **** /*   { */
+ 277:Src/main.c    **** /*     _Error_Handler(__FILE__, __LINE__); */
+ 278:Src/main.c    **** /*   } */
  279:Src/main.c    **** 
- 280:Src/main.c    **** }
+ 280:Src/main.c    **** /* } */
  281:Src/main.c    **** 
  282:Src/main.c    **** /** Configure pins as 
  283:Src/main.c    ****         * Analog 
@@ -333,7 +333,7 @@ ARM GAS  /tmp/ccUhBTIb.s 			page 1
  290:Src/main.c    **** {
   27              		.loc 1 290 0
   28              		.cfi_startproc
-  29              		@ args = 0, pretend = 0, frame = 24
+  29              		@ args = 0, pretend = 0, frame = 32
   30              		@ frame_needed = 0, uses_anonymous_args = 0
   31 0000 70B5     		push	{r4, r5, r6, lr}
   32              	.LCFI0:
@@ -342,9 +342,9 @@ ARM GAS  /tmp/ccUhBTIb.s 			page 1
   35              		.cfi_offset 5, -12
   36              		.cfi_offset 6, -8
   37              		.cfi_offset 14, -4
-  38 0002 86B0     		sub	sp, sp, #24
+  38 0002 88B0     		sub	sp, sp, #32
   39              	.LCFI1:
-  40              		.cfi_def_cfa_offset 40
+  40              		.cfi_def_cfa_offset 48
   41              	.LBB2:
  291:Src/main.c    **** 
  292:Src/main.c    ****   GPIO_InitTypeDef GPIO_InitStruct;
@@ -353,1152 +353,942 @@ ARM GAS  /tmp/ccUhBTIb.s 			page 1
  295:Src/main.c    ****   __HAL_RCC_GPIOF_CLK_ENABLE();
   42              		.loc 1 295 0
   43 0004 0024     		movs	r4, #0
-  44 0006 0094     		str	r4, [sp]
-  45 0008 154B     		ldr	r3, .L3
+  44 0006 0194     		str	r4, [sp, #4]
+  45 0008 1A4B     		ldr	r3, .L3
   46 000a 1A6B     		ldr	r2, [r3, #48]
   47 000c 42F02002 		orr	r2, r2, #32
   48 0010 1A63     		str	r2, [r3, #48]
-ARM GAS  /tmp/ccUhBTIb.s 			page 7
+ARM GAS  /tmp/cc1ovdIk.s 			page 7
 
 
-  49 0012 1B6B     		ldr	r3, [r3, #48]
-  50 0014 03F02003 		and	r3, r3, #32
-  51 0018 0093     		str	r3, [sp]
-  52 001a 009B     		ldr	r3, [sp]
+  49 0012 1A6B     		ldr	r2, [r3, #48]
+  50 0014 02F02002 		and	r2, r2, #32
+  51 0018 0192     		str	r2, [sp, #4]
+  52 001a 019A     		ldr	r2, [sp, #4]
   53              	.LBE2:
- 296:Src/main.c    **** 
- 297:Src/main.c    ****   /*Configure GPIO pin Output Level */
- 298:Src/main.c    ****   HAL_GPIO_WritePin(GPIOF, LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin, GPIO_PIN_RESET);
-  54              		.loc 1 298 0
-  55 001c 114D     		ldr	r5, .L3+4
-  56 001e 2246     		mov	r2, r4
-  57 0020 3C21     		movs	r1, #60
-  58 0022 2846     		mov	r0, r5
-  59 0024 FFF7FEFF 		bl	HAL_GPIO_WritePin
-  60              	.LVL0:
- 299:Src/main.c    **** 
- 300:Src/main.c    ****   /*Configure GPIO pin : PUSH_BUTTON_1_Pin */
- 301:Src/main.c    ****   GPIO_InitStruct.Pin = PUSH_BUTTON_1_Pin;
-  61              		.loc 1 301 0
-  62 0028 0126     		movs	r6, #1
-  63 002a 0196     		str	r6, [sp, #4]
- 302:Src/main.c    ****   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-  64              		.loc 1 302 0
-  65 002c 0E4B     		ldr	r3, .L3+8
-  66 002e 0293     		str	r3, [sp, #8]
- 303:Src/main.c    ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  67              		.loc 1 303 0
-  68 0030 0394     		str	r4, [sp, #12]
- 304:Src/main.c    ****   HAL_GPIO_Init(PUSH_BUTTON_1_GPIO_Port, &GPIO_InitStruct);
-  69              		.loc 1 304 0
-  70 0032 01A9     		add	r1, sp, #4
-  71 0034 2846     		mov	r0, r5
-  72 0036 FFF7FEFF 		bl	HAL_GPIO_Init
-  73              	.LVL1:
- 305:Src/main.c    **** 
- 306:Src/main.c    ****   /*Configure GPIO pins : LED_Green_Pin LED_Blue_Pin LED_Yellow_Pin LED_Red_Pin */
- 307:Src/main.c    ****   GPIO_InitStruct.Pin = LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin;
-  74              		.loc 1 307 0
-  75 003a 3C23     		movs	r3, #60
-  76 003c 0193     		str	r3, [sp, #4]
- 308:Src/main.c    ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  77              		.loc 1 308 0
-  78 003e 0296     		str	r6, [sp, #8]
- 309:Src/main.c    ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  79              		.loc 1 309 0
-  80 0040 0394     		str	r4, [sp, #12]
- 310:Src/main.c    ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  81              		.loc 1 310 0
-  82 0042 0494     		str	r4, [sp, #16]
- 311:Src/main.c    ****   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
-  83              		.loc 1 311 0
-  84 0044 01A9     		add	r1, sp, #4
-  85 0046 2846     		mov	r0, r5
-  86 0048 FFF7FEFF 		bl	HAL_GPIO_Init
-  87              	.LVL2:
- 312:Src/main.c    **** 
- 313:Src/main.c    ****   /* EXTI interrupt init*/
-ARM GAS  /tmp/ccUhBTIb.s 			page 8
+  54              	.LBB3:
+ 296:Src/main.c    ****   __HAL_RCC_GPIOA_CLK_ENABLE();
+  55              		.loc 1 296 0
+  56 001c 0294     		str	r4, [sp, #8]
+  57 001e 1A6B     		ldr	r2, [r3, #48]
+  58 0020 42F00102 		orr	r2, r2, #1
+  59 0024 1A63     		str	r2, [r3, #48]
+  60 0026 1B6B     		ldr	r3, [r3, #48]
+  61 0028 03F00103 		and	r3, r3, #1
+  62 002c 0293     		str	r3, [sp, #8]
+  63 002e 029B     		ldr	r3, [sp, #8]
+  64              	.LBE3:
+ 297:Src/main.c    **** 
+ 298:Src/main.c    ****   /*Configure GPIO pin Output Level */
+ 299:Src/main.c    ****   HAL_GPIO_WritePin(GPIOF, LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin, GPIO_PIN_RESET);
+  65              		.loc 1 299 0
+  66 0030 114E     		ldr	r6, .L3+4
+  67 0032 2246     		mov	r2, r4
+  68 0034 3C21     		movs	r1, #60
+  69 0036 3046     		mov	r0, r6
+  70 0038 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  71              	.LVL0:
+ 300:Src/main.c    **** 
+ 301:Src/main.c    ****   /*Configure GPIO pins : LED_Green_Pin LED_Blue_Pin LED_Yellow_Pin LED_Red_Pin */
+ 302:Src/main.c    ****   GPIO_InitStruct.Pin = LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin;
+  72              		.loc 1 302 0
+  73 003c 3C23     		movs	r3, #60
+  74 003e 0393     		str	r3, [sp, #12]
+ 303:Src/main.c    ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  75              		.loc 1 303 0
+  76 0040 0125     		movs	r5, #1
+  77 0042 0495     		str	r5, [sp, #16]
+ 304:Src/main.c    ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
+  78              		.loc 1 304 0
+  79 0044 0594     		str	r4, [sp, #20]
+ 305:Src/main.c    ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  80              		.loc 1 305 0
+  81 0046 0694     		str	r4, [sp, #24]
+ 306:Src/main.c    ****   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+  82              		.loc 1 306 0
+  83 0048 03A9     		add	r1, sp, #12
+  84 004a 3046     		mov	r0, r6
+  85 004c FFF7FEFF 		bl	HAL_GPIO_Init
+  86              	.LVL1:
+ 307:Src/main.c    **** 
+ 308:Src/main.c    ****   /*Configure GPIO pin : WKUP_BUTTON_Pin */
+ 309:Src/main.c    ****   GPIO_InitStruct.Pin = WKUP_BUTTON_Pin;
+  87              		.loc 1 309 0
+  88 0050 0395     		str	r5, [sp, #12]
+ 310:Src/main.c    ****   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  89              		.loc 1 310 0
+  90 0052 0A4B     		ldr	r3, .L3+8
+ARM GAS  /tmp/cc1ovdIk.s 			page 8
 
 
- 314:Src/main.c    ****   HAL_NVIC_SetPriority(EXTI0_IRQn, 0, 0);
-  88              		.loc 1 314 0
-  89 004c 2246     		mov	r2, r4
-  90 004e 2146     		mov	r1, r4
-  91 0050 0620     		movs	r0, #6
-  92 0052 FFF7FEFF 		bl	HAL_NVIC_SetPriority
-  93              	.LVL3:
- 315:Src/main.c    ****   HAL_NVIC_EnableIRQ(EXTI0_IRQn);
-  94              		.loc 1 315 0
-  95 0056 0620     		movs	r0, #6
-  96 0058 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
-  97              	.LVL4:
- 316:Src/main.c    **** 
- 317:Src/main.c    **** }
-  98              		.loc 1 317 0
-  99 005c 06B0     		add	sp, sp, #24
- 100              	.LCFI2:
- 101              		.cfi_def_cfa_offset 16
- 102              		@ sp needed
- 103 005e 70BD     		pop	{r4, r5, r6, pc}
- 104              	.L4:
- 105              		.align	2
- 106              	.L3:
- 107 0060 00380240 		.word	1073887232
- 108 0064 00140240 		.word	1073878016
- 109 0068 00001110 		.word	269549568
- 110              		.cfi_endproc
- 111              	.LFE127:
- 113              		.section	.text._Error_Handler,"ax",%progbits
- 114              		.align	1
- 115              		.global	_Error_Handler
- 116              		.syntax unified
- 117              		.thumb
- 118              		.thumb_func
- 119              		.fpu fpv4-sp-d16
- 121              	_Error_Handler:
- 122              	.LFB129:
- 318:Src/main.c    **** 
- 319:Src/main.c    **** /* USER CODE BEGIN 4 */
- 320:Src/main.c    **** /**
- 321:Src/main.c    ****   * @brief  Configures TIM5 to measure the LSI oscillator frequency.
- 322:Src/main.c    ****   * @param  None
- 323:Src/main.c    ****   * @retval LSI Frequency
- 324:Src/main.c    ****   */
- 325:Src/main.c    **** static uint32_t GetLSIFrequency(void)
- 326:Src/main.c    **** {
- 327:Src/main.c    ****   uint32_t pclk1 = 0;
- 328:Src/main.c    ****   TIM_ClockConfigTypeDef sClockSourceConfig;
- 329:Src/main.c    ****   TIM_IC_InitTypeDef sConfigIC;
- 330:Src/main.c    ****   TIM_MasterConfigTypeDef sMasterConfig;
- 331:Src/main.c    ****   
- 332:Src/main.c    **** 
- 333:Src/main.c    ****   /* Enable the LSI oscillator */
- 334:Src/main.c    ****   __HAL_RCC_LSI_ENABLE();
- 335:Src/main.c    **** 
- 336:Src/main.c    ****   /* Wait till LSI is ready */
- 337:Src/main.c    ****   while (__HAL_RCC_GET_FLAG(RCC_FLAG_LSIRDY) == RESET)
-ARM GAS  /tmp/ccUhBTIb.s 			page 9
+  91 0054 0493     		str	r3, [sp, #16]
+ 311:Src/main.c    ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
+  92              		.loc 1 311 0
+  93 0056 0594     		str	r4, [sp, #20]
+ 312:Src/main.c    ****   HAL_GPIO_Init(WKUP_BUTTON_GPIO_Port, &GPIO_InitStruct);
+  94              		.loc 1 312 0
+  95 0058 03A9     		add	r1, sp, #12
+  96 005a 0948     		ldr	r0, .L3+12
+  97 005c FFF7FEFF 		bl	HAL_GPIO_Init
+  98              	.LVL2:
+ 313:Src/main.c    **** 
+ 314:Src/main.c    ****   /* EXTI interrupt init*/
+ 315:Src/main.c    ****   HAL_NVIC_SetPriority(EXTI0_IRQn, 1, 1);
+  99              		.loc 1 315 0
+ 100 0060 2A46     		mov	r2, r5
+ 101 0062 2946     		mov	r1, r5
+ 102 0064 0620     		movs	r0, #6
+ 103 0066 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 104              	.LVL3:
+ 316:Src/main.c    ****   HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+ 105              		.loc 1 316 0
+ 106 006a 0620     		movs	r0, #6
+ 107 006c FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 108              	.LVL4:
+ 317:Src/main.c    **** 
+ 318:Src/main.c    **** }
+ 109              		.loc 1 318 0
+ 110 0070 08B0     		add	sp, sp, #32
+ 111              	.LCFI2:
+ 112              		.cfi_def_cfa_offset 16
+ 113              		@ sp needed
+ 114 0072 70BD     		pop	{r4, r5, r6, pc}
+ 115              	.L4:
+ 116              		.align	2
+ 117              	.L3:
+ 118 0074 00380240 		.word	1073887232
+ 119 0078 00140240 		.word	1073878016
+ 120 007c 00001110 		.word	269549568
+ 121 0080 00000240 		.word	1073872896
+ 122              		.cfi_endproc
+ 123              	.LFE125:
+ 125              		.section	.text._Error_Handler,"ax",%progbits
+ 126              		.align	1
+ 127              		.global	_Error_Handler
+ 128              		.syntax unified
+ 129              		.thumb
+ 130              		.thumb_func
+ 131              		.fpu fpv4-sp-d16
+ 133              	_Error_Handler:
+ 134              	.LFB127:
+ 319:Src/main.c    **** 
+ 320:Src/main.c    **** /* USER CODE BEGIN 4 */
+ 321:Src/main.c    **** /**
+ 322:Src/main.c    ****   * @brief  Configures TIM5 to measure the LSI oscillator frequency.
+ 323:Src/main.c    ****   * @param  None
+ 324:Src/main.c    ****   * @retval LSI Frequency
+ 325:Src/main.c    ****   */
+ARM GAS  /tmp/cc1ovdIk.s 			page 9
 
 
- 338:Src/main.c    ****   {
- 339:Src/main.c    ****   }
- 340:Src/main.c    **** 
- 341:Src/main.c    ****   /* Configure the TIM peripheral */
- 342:Src/main.c    ****   /* Set TIMx instance */
- 343:Src/main.c    ****   htim5.Instance = TIM5;
- 344:Src/main.c    **** 
- 345:Src/main.c    ****   /* TIM5 configuration: Input capture mode ---------------------------
- 346:Src/main.c    ****   The LSI oscillator is connected to TIM5 CH4.
- 347:Src/main.c    ****   The Rising edge is used as active edge.
- 348:Src/main.c    ****   The TIM5 CCR4 is used to compute the frequency value.
- 349:Src/main.c    ****   -------------------------------------------------------------------*/
- 350:Src/main.c    ****   htim5.Init.Prescaler         = 0;
- 351:Src/main.c    ****   htim5.Init.CounterMode       = TIM_COUNTERMODE_UP;
- 352:Src/main.c    ****   htim5.Init.Period            = 0xFFFF;
- 353:Src/main.c    ****   htim5.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
- 354:Src/main.c    ****   if (HAL_TIM_Base_Init(&htim5) != HAL_OK)
- 355:Src/main.c    ****   {
- 356:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
- 357:Src/main.c    ****   }
- 358:Src/main.c    **** 
- 359:Src/main.c    ****   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
- 360:Src/main.c    ****   if (HAL_TIM_ConfigClockSource(&htim5, &sClockSourceConfig) != HAL_OK)
- 361:Src/main.c    ****   {
- 362:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
- 363:Src/main.c    ****   }
- 364:Src/main.c    **** 
- 365:Src/main.c    ****   if (HAL_TIM_IC_Init(&htim5) != HAL_OK)
- 366:Src/main.c    ****   {
- 367:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
- 368:Src/main.c    ****   }
- 369:Src/main.c    **** 
- 370:Src/main.c    ****   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
- 371:Src/main.c    ****   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
- 372:Src/main.c    ****   if (HAL_TIMEx_MasterConfigSynchronization(&htim5, &sMasterConfig) != HAL_OK)
- 373:Src/main.c    ****   {
- 374:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
- 375:Src/main.c    ****   }
- 376:Src/main.c    **** 
- 377:Src/main.c    ****   /* Configure the Input Capture of channel 4 */
- 378:Src/main.c    ****   sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
- 379:Src/main.c    ****   sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
- 380:Src/main.c    ****   sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
- 381:Src/main.c    ****   sConfigIC.ICFilter = 0;
- 382:Src/main.c    ****   if (HAL_TIM_IC_ConfigChannel(&htim5, &sConfigIC, TIM_CHANNEL_4) != HAL_OK)
- 383:Src/main.c    ****   {
- 384:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
- 385:Src/main.c    ****   }
- 386:Src/main.c    **** 
- 387:Src/main.c    ****   /* Connect internally the TIM5_CH4 Input Capture to the LSI clock output */
- 388:Src/main.c    ****   if (HAL_TIMEx_RemapConfig(&htim5, TIM_TIM5_LSI) != HAL_OK)
- 389:Src/main.c    ****   {
- 390:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
- 391:Src/main.c    ****   }
- 392:Src/main.c    **** 
- 393:Src/main.c    ****   /* Reset the flags */
- 394:Src/main.c    ****   htim5.Instance->SR = 0;
-ARM GAS  /tmp/ccUhBTIb.s 			page 10
+ 326:Src/main.c    **** static uint32_t GetLSIFrequency(void)
+ 327:Src/main.c    **** {
+ 328:Src/main.c    ****   uint32_t pclk1 = 0;
+ 329:Src/main.c    ****   TIM_ClockConfigTypeDef sClockSourceConfig;
+ 330:Src/main.c    ****   TIM_IC_InitTypeDef sConfigIC;
+ 331:Src/main.c    ****   TIM_MasterConfigTypeDef sMasterConfig;
+ 332:Src/main.c    ****   
+ 333:Src/main.c    **** 
+ 334:Src/main.c    ****   /* Enable the LSI oscillator */
+ 335:Src/main.c    ****   __HAL_RCC_LSI_ENABLE();
+ 336:Src/main.c    **** 
+ 337:Src/main.c    ****   /* Wait till LSI is ready */
+ 338:Src/main.c    ****   while (__HAL_RCC_GET_FLAG(RCC_FLAG_LSIRDY) == RESET)
+ 339:Src/main.c    ****   {
+ 340:Src/main.c    ****   }
+ 341:Src/main.c    **** 
+ 342:Src/main.c    ****   /* Configure the TIM peripheral */
+ 343:Src/main.c    ****   /* Set TIMx instance */
+ 344:Src/main.c    ****   htim5.Instance = TIM5;
+ 345:Src/main.c    **** 
+ 346:Src/main.c    ****   /* TIM5 configuration: Input capture mode ---------------------------
+ 347:Src/main.c    ****   The LSI oscillator is connected to TIM5 CH4.
+ 348:Src/main.c    ****   The Rising edge is used as active edge.
+ 349:Src/main.c    ****   The TIM5 CCR4 is used to compute the frequency value.
+ 350:Src/main.c    ****   -------------------------------------------------------------------*/
+ 351:Src/main.c    ****   htim5.Init.Prescaler         = 0;
+ 352:Src/main.c    ****   htim5.Init.CounterMode       = TIM_COUNTERMODE_UP;
+ 353:Src/main.c    ****   htim5.Init.Period            = 0xFFFF;
+ 354:Src/main.c    ****   htim5.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
+ 355:Src/main.c    ****   if (HAL_TIM_Base_Init(&htim5) != HAL_OK)
+ 356:Src/main.c    ****   {
+ 357:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
+ 358:Src/main.c    ****   }
+ 359:Src/main.c    **** 
+ 360:Src/main.c    ****   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+ 361:Src/main.c    ****   if (HAL_TIM_ConfigClockSource(&htim5, &sClockSourceConfig) != HAL_OK)
+ 362:Src/main.c    ****   {
+ 363:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
+ 364:Src/main.c    ****   }
+ 365:Src/main.c    **** 
+ 366:Src/main.c    ****   if (HAL_TIM_IC_Init(&htim5) != HAL_OK)
+ 367:Src/main.c    ****   {
+ 368:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
+ 369:Src/main.c    ****   }
+ 370:Src/main.c    **** 
+ 371:Src/main.c    ****   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+ 372:Src/main.c    ****   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+ 373:Src/main.c    ****   if (HAL_TIMEx_MasterConfigSynchronization(&htim5, &sMasterConfig) != HAL_OK)
+ 374:Src/main.c    ****   {
+ 375:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
+ 376:Src/main.c    ****   }
+ 377:Src/main.c    **** 
+ 378:Src/main.c    ****   /* Configure the Input Capture of channel 4 */
+ 379:Src/main.c    ****   sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
+ 380:Src/main.c    ****   sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
+ 381:Src/main.c    ****   sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
+ 382:Src/main.c    ****   sConfigIC.ICFilter = 0;
+ARM GAS  /tmp/cc1ovdIk.s 			page 10
 
 
- 395:Src/main.c    **** 
- 396:Src/main.c    ****   /* Start the TIM Input Capture Measurement in interrupt mode */
- 397:Src/main.c    ****   if(HAL_TIM_IC_Start_IT(&htim5, TIM_CHANNEL_4) != HAL_OK)
- 398:Src/main.c    ****   {
- 399:Src/main.c    ****     _Error_Handler(__FILE__,__LINE__);
- 400:Src/main.c    ****   }
- 401:Src/main.c    **** 
- 402:Src/main.c    ****   /* Wait until the TIM5 get 2 LSI edges (refer to TIM5_IRQHandler()
- 403:Src/main.c    ****      in stm32f4xx_it.c file) */
- 404:Src/main.c    ****   while(uwMeasurementDone == 1)
- 405:Src/main.c    ****   {
- 406:Src/main.c    ****   }
- 407:Src/main.c    ****   uwCaptureNumber = 0;
- 408:Src/main.c    **** 
- 409:Src/main.c    ****   /* Deinitialize the TIM5 peripheral registers to their default reset
- 410:Src/main.c    ****      values */
- 411:Src/main.c    ****   HAL_TIM_IC_DeInit(&htim5);
- 412:Src/main.c    **** 
- 413:Src/main.c    ****   /* Compute the LSI frequency, depending on TIM5 input clock
- 414:Src/main.c    ****      frequency (PCLK1) */
- 415:Src/main.c    ****   return (pclk1 / uwPeriodValue);
- 416:Src/main.c    **** 
- 417:Src/main.c    **** }
+ 383:Src/main.c    ****   if (HAL_TIM_IC_ConfigChannel(&htim5, &sConfigIC, TIM_CHANNEL_4) != HAL_OK)
+ 384:Src/main.c    ****   {
+ 385:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
+ 386:Src/main.c    ****   }
+ 387:Src/main.c    **** 
+ 388:Src/main.c    ****   /* Connect internally the TIM5_CH4 Input Capture to the LSI clock output */
+ 389:Src/main.c    ****   if (HAL_TIMEx_RemapConfig(&htim5, TIM_TIM5_LSI) != HAL_OK)
+ 390:Src/main.c    ****   {
+ 391:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
+ 392:Src/main.c    ****   }
+ 393:Src/main.c    **** 
+ 394:Src/main.c    ****   /* Reset the flags */
+ 395:Src/main.c    ****   htim5.Instance->SR = 0;
+ 396:Src/main.c    **** 
+ 397:Src/main.c    ****   /* Start the TIM Input Capture Measurement in interrupt mode */
+ 398:Src/main.c    ****   if(HAL_TIM_IC_Start_IT(&htim5, TIM_CHANNEL_4) != HAL_OK)
+ 399:Src/main.c    ****   {
+ 400:Src/main.c    ****     _Error_Handler(__FILE__,__LINE__);
+ 401:Src/main.c    ****   }
+ 402:Src/main.c    **** 
+ 403:Src/main.c    ****   /* Wait until the TIM5 get 2 LSI edges (refer to TIM5_IRQHandler()
+ 404:Src/main.c    ****      in stm32f4xx_it.c file) */
+ 405:Src/main.c    ****   while(uwMeasurementDone == 0)
+ 406:Src/main.c    ****   {
+ 407:Src/main.c    ****   }
+ 408:Src/main.c    ****   uwCaptureNumber = 0;
+ 409:Src/main.c    **** 
+ 410:Src/main.c    ****   /* Deinitialize the TIM5 peripheral registers to their default reset
+ 411:Src/main.c    ****      values */
+ 412:Src/main.c    ****   HAL_TIM_IC_DeInit(&htim5);
+ 413:Src/main.c    **** 
+ 414:Src/main.c    ****   /* Compute the LSI frequency, depending on TIM5 input clock
+ 415:Src/main.c    ****      frequency (PCLK1) */
+ 416:Src/main.c    ****   pclk1 = HAL_RCC_GetPCLK1Freq();
+ 417:Src/main.c    ****   return (pclk1 / uwPeriodValue);
  418:Src/main.c    **** 
- 419:Src/main.c    **** 
- 420:Src/main.c    **** /* USER CODE END 4 */
+ 419:Src/main.c    **** }
+ 420:Src/main.c    **** 
  421:Src/main.c    **** 
- 422:Src/main.c    **** /**
- 423:Src/main.c    ****   * @brief  This function is executed in case of error occurrence.
- 424:Src/main.c    ****   * @param  None
- 425:Src/main.c    ****   * @retval None
- 426:Src/main.c    ****   */
- 427:Src/main.c    **** void _Error_Handler(char * file, int line)
- 428:Src/main.c    **** {
- 123              		.loc 1 428 0
- 124              		.cfi_startproc
- 125              		@ Volatile: function does not return.
- 126              		@ args = 0, pretend = 0, frame = 0
- 127              		@ frame_needed = 0, uses_anonymous_args = 0
- 128              	.LVL5:
- 129 0000 08B5     		push	{r3, lr}
- 130              	.LCFI3:
- 131              		.cfi_def_cfa_offset 8
- 132              		.cfi_offset 3, -8
- 133              		.cfi_offset 14, -4
- 429:Src/main.c    ****   /* USER CODE BEGIN Error_Handler_Debug */
- 430:Src/main.c    ****   HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
- 134              		.loc 1 430 0
- 135 0002 0122     		movs	r2, #1
- 136 0004 2021     		movs	r1, #32
- 137              	.LVL6:
- 138 0006 0248     		ldr	r0, .L8
- 139              	.LVL7:
- 140 0008 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 141              	.LVL8:
- 142              	.L6:
- 143 000c FEE7     		b	.L6
-ARM GAS  /tmp/ccUhBTIb.s 			page 11
+ 422:Src/main.c    **** /* USER CODE END 4 */
+ 423:Src/main.c    **** 
+ 424:Src/main.c    **** /**
+ 425:Src/main.c    ****   * @brief  This function is executed in case of error occurrence.
+ 426:Src/main.c    ****   * @param  None
+ 427:Src/main.c    ****   * @retval None
+ 428:Src/main.c    ****   */
+ 429:Src/main.c    **** void _Error_Handler(char * file, int line)
+ 430:Src/main.c    **** {
+ 135              		.loc 1 430 0
+ 136              		.cfi_startproc
+ 137              		@ Volatile: function does not return.
+ 138              		@ args = 0, pretend = 0, frame = 0
+ 139              		@ frame_needed = 0, uses_anonymous_args = 0
+ 140              	.LVL5:
+ 141 0000 08B5     		push	{r3, lr}
+ 142              	.LCFI3:
+ 143              		.cfi_def_cfa_offset 8
+ARM GAS  /tmp/cc1ovdIk.s 			page 11
 
 
- 144              	.L9:
- 145 000e 00BF     		.align	2
- 146              	.L8:
- 147 0010 00140240 		.word	1073878016
- 148              		.cfi_endproc
- 149              	.LFE129:
- 151              		.section	.text.MX_IWDG_Init,"ax",%progbits
- 152              		.align	1
- 153              		.syntax unified
- 154              		.thumb
- 155              		.thumb_func
- 156              		.fpu fpv4-sp-d16
- 158              	MX_IWDG_Init:
- 159              	.LFB125:
- 218:Src/main.c    **** 
- 160              		.loc 1 218 0
- 161              		.cfi_startproc
- 162              		@ args = 0, pretend = 0, frame = 0
- 163              		@ frame_needed = 0, uses_anonymous_args = 0
- 164 0000 08B5     		push	{r3, lr}
- 165              	.LCFI4:
- 166              		.cfi_def_cfa_offset 8
- 167              		.cfi_offset 3, -8
- 168              		.cfi_offset 14, -4
- 220:Src/main.c    ****   hiwdg.Init.Prescaler = IWDG_PRESCALER_4;
- 169              		.loc 1 220 0
- 170 0002 0848     		ldr	r0, .L14
- 171 0004 084B     		ldr	r3, .L14+4
- 172 0006 0360     		str	r3, [r0]
- 221:Src/main.c    ****   hiwdg.Init.Reload = 4095;
- 173              		.loc 1 221 0
- 174 0008 0023     		movs	r3, #0
- 175 000a 4360     		str	r3, [r0, #4]
- 222:Src/main.c    ****   if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
- 176              		.loc 1 222 0
- 177 000c 40F6FF73 		movw	r3, #4095
- 178 0010 8360     		str	r3, [r0, #8]
- 223:Src/main.c    ****   {
- 179              		.loc 1 223 0
- 180 0012 FFF7FEFF 		bl	HAL_IWDG_Init
- 181              	.LVL9:
- 182 0016 00B9     		cbnz	r0, .L13
- 183 0018 08BD     		pop	{r3, pc}
- 184              	.L13:
- 225:Src/main.c    ****   }
- 185              		.loc 1 225 0
- 186 001a E121     		movs	r1, #225
- 187 001c 0348     		ldr	r0, .L14+8
- 188 001e FFF7FEFF 		bl	_Error_Handler
- 189              	.LVL10:
- 190              	.L15:
- 191 0022 00BF     		.align	2
- 192              	.L14:
- 193 0024 00000000 		.word	hiwdg
- 194 0028 00300040 		.word	1073754112
- 195 002c 00000000 		.word	.LC0
- 196              		.cfi_endproc
-ARM GAS  /tmp/ccUhBTIb.s 			page 12
+ 144              		.cfi_offset 3, -8
+ 145              		.cfi_offset 14, -4
+ 431:Src/main.c    ****   /* USER CODE BEGIN Error_Handler_Debug */
+ 432:Src/main.c    ****   HAL_GPIO_WritePin(LED_Yellow_GPIO_Port, LED_Yellow_Pin, GPIO_PIN_SET);
+ 146              		.loc 1 432 0
+ 147 0002 0122     		movs	r2, #1
+ 148 0004 1021     		movs	r1, #16
+ 149              	.LVL6:
+ 150 0006 0248     		ldr	r0, .L8
+ 151              	.LVL7:
+ 152 0008 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 153              	.LVL8:
+ 154              	.L6:
+ 155 000c FEE7     		b	.L6
+ 156              	.L9:
+ 157 000e 00BF     		.align	2
+ 158              	.L8:
+ 159 0010 00140240 		.word	1073878016
+ 160              		.cfi_endproc
+ 161              	.LFE127:
+ 163              		.section	.text.GetLSIFrequency,"ax",%progbits
+ 164              		.align	1
+ 165              		.syntax unified
+ 166              		.thumb
+ 167              		.thumb_func
+ 168              		.fpu fpv4-sp-d16
+ 170              	GetLSIFrequency:
+ 171              	.LFB126:
+ 327:Src/main.c    ****   uint32_t pclk1 = 0;
+ 172              		.loc 1 327 0
+ 173              		.cfi_startproc
+ 174              		@ args = 0, pretend = 0, frame = 40
+ 175              		@ frame_needed = 0, uses_anonymous_args = 0
+ 176 0000 00B5     		push	{lr}
+ 177              	.LCFI4:
+ 178              		.cfi_def_cfa_offset 4
+ 179              		.cfi_offset 14, -4
+ 180 0002 8BB0     		sub	sp, sp, #44
+ 181              	.LCFI5:
+ 182              		.cfi_def_cfa_offset 48
+ 183              	.LVL9:
+ 335:Src/main.c    **** 
+ 184              		.loc 1 335 0
+ 185 0004 0122     		movs	r2, #1
+ 186 0006 3F4B     		ldr	r3, .L27
+ 187 0008 1A60     		str	r2, [r3]
+ 188              	.L11:
+ 338:Src/main.c    ****   {
+ 189              		.loc 1 338 0 discriminator 1
+ 190 000a 3F4B     		ldr	r3, .L27+4
+ 191 000c 5B6F     		ldr	r3, [r3, #116]
+ 192 000e 13F0020F 		tst	r3, #2
+ 193 0012 FAD0     		beq	.L11
+ 344:Src/main.c    **** 
+ 194              		.loc 1 344 0
+ 195 0014 3D48     		ldr	r0, .L27+8
+ 196 0016 3E4B     		ldr	r3, .L27+12
+ARM GAS  /tmp/cc1ovdIk.s 			page 12
 
 
- 197              	.LFE125:
- 199              		.section	.text.MX_TIM5_Init,"ax",%progbits
- 200              		.align	1
- 201              		.syntax unified
- 202              		.thumb
- 203              		.thumb_func
- 204              		.fpu fpv4-sp-d16
- 206              	MX_TIM5_Init:
- 207              	.LFB126:
- 232:Src/main.c    **** 
- 208              		.loc 1 232 0
- 209              		.cfi_startproc
- 210              		@ args = 0, pretend = 0, frame = 40
- 211              		@ frame_needed = 0, uses_anonymous_args = 0
- 212 0000 00B5     		push	{lr}
- 213              	.LCFI5:
- 214              		.cfi_def_cfa_offset 4
- 215              		.cfi_offset 14, -4
- 216 0002 8BB0     		sub	sp, sp, #44
- 217              	.LCFI6:
- 218              		.cfi_def_cfa_offset 48
- 238:Src/main.c    ****   htim5.Init.Prescaler = 0;
- 219              		.loc 1 238 0
- 220 0004 2848     		ldr	r0, .L30
- 221 0006 294B     		ldr	r3, .L30+4
- 222 0008 0360     		str	r3, [r0]
- 239:Src/main.c    ****   htim5.Init.CounterMode = TIM_COUNTERMODE_UP;
- 223              		.loc 1 239 0
- 224 000a 0023     		movs	r3, #0
- 225 000c 4360     		str	r3, [r0, #4]
- 240:Src/main.c    ****   htim5.Init.Period = 0xFFFF;
- 226              		.loc 1 240 0
- 227 000e 8360     		str	r3, [r0, #8]
- 241:Src/main.c    ****   htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
- 228              		.loc 1 241 0
- 229 0010 4FF6FF72 		movw	r2, #65535
- 230 0014 C260     		str	r2, [r0, #12]
- 242:Src/main.c    ****   if (HAL_TIM_Base_Init(&htim5) != HAL_OK)
- 231              		.loc 1 242 0
- 232 0016 0361     		str	r3, [r0, #16]
- 243:Src/main.c    ****   {
- 233              		.loc 1 243 0
- 234 0018 FFF7FEFF 		bl	HAL_TIM_Base_Init
- 235              	.LVL11:
- 236 001c 40BB     		cbnz	r0, .L24
- 248:Src/main.c    ****   if (HAL_TIM_ConfigClockSource(&htim5, &sClockSourceConfig) != HAL_OK)
- 237              		.loc 1 248 0
- 238 001e 0AA9     		add	r1, sp, #40
- 239 0020 4FF48053 		mov	r3, #4096
- 240 0024 41F8103D 		str	r3, [r1, #-16]!
- 249:Src/main.c    ****   {
- 241              		.loc 1 249 0
- 242 0028 1F48     		ldr	r0, .L30
- 243 002a FFF7FEFF 		bl	HAL_TIM_ConfigClockSource
- 244              	.LVL12:
- 245 002e 18BB     		cbnz	r0, .L25
- 254:Src/main.c    ****   {
-ARM GAS  /tmp/ccUhBTIb.s 			page 13
+ 197 0018 0360     		str	r3, [r0]
+ 351:Src/main.c    ****   htim5.Init.CounterMode       = TIM_COUNTERMODE_UP;
+ 198              		.loc 1 351 0
+ 199 001a 0023     		movs	r3, #0
+ 200 001c 4360     		str	r3, [r0, #4]
+ 352:Src/main.c    ****   htim5.Init.Period            = 0xFFFF;
+ 201              		.loc 1 352 0
+ 202 001e 8360     		str	r3, [r0, #8]
+ 353:Src/main.c    ****   htim5.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
+ 203              		.loc 1 353 0
+ 204 0020 4FF6FF72 		movw	r2, #65535
+ 205 0024 C260     		str	r2, [r0, #12]
+ 354:Src/main.c    ****   if (HAL_TIM_Base_Init(&htim5) != HAL_OK)
+ 206              		.loc 1 354 0
+ 207 0026 0361     		str	r3, [r0, #16]
+ 355:Src/main.c    ****   {
+ 208              		.loc 1 355 0
+ 209 0028 FFF7FEFF 		bl	HAL_TIM_Base_Init
+ 210              	.LVL10:
+ 211 002c 0028     		cmp	r0, #0
+ 212 002e 46D1     		bne	.L20
+ 360:Src/main.c    ****   if (HAL_TIM_ConfigClockSource(&htim5, &sClockSourceConfig) != HAL_OK)
+ 213              		.loc 1 360 0
+ 214 0030 0AA9     		add	r1, sp, #40
+ 215 0032 4FF48053 		mov	r3, #4096
+ 216 0036 41F8103D 		str	r3, [r1, #-16]!
+ 361:Src/main.c    ****   {
+ 217              		.loc 1 361 0
+ 218 003a 3448     		ldr	r0, .L27+8
+ 219 003c FFF7FEFF 		bl	HAL_TIM_ConfigClockSource
+ 220              	.LVL11:
+ 221 0040 0028     		cmp	r0, #0
+ 222 0042 41D1     		bne	.L21
+ 366:Src/main.c    ****   {
+ 223              		.loc 1 366 0
+ 224 0044 3148     		ldr	r0, .L27+8
+ 225 0046 FFF7FEFF 		bl	HAL_TIM_IC_Init
+ 226              	.LVL12:
+ 227 004a 0028     		cmp	r0, #0
+ 228 004c 41D1     		bne	.L22
+ 371:Src/main.c    ****   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+ 229              		.loc 1 371 0
+ 230 004e 0023     		movs	r3, #0
+ 231 0050 0093     		str	r3, [sp]
+ 372:Src/main.c    ****   if (HAL_TIMEx_MasterConfigSynchronization(&htim5, &sMasterConfig) != HAL_OK)
+ 232              		.loc 1 372 0
+ 233 0052 0193     		str	r3, [sp, #4]
+ 373:Src/main.c    ****   {
+ 234              		.loc 1 373 0
+ 235 0054 6946     		mov	r1, sp
+ 236 0056 2D48     		ldr	r0, .L27+8
+ 237 0058 FFF7FEFF 		bl	HAL_TIMEx_MasterConfigSynchronization
+ 238              	.LVL13:
+ 239 005c 0028     		cmp	r0, #0
+ 240 005e 3DD1     		bne	.L23
+ 379:Src/main.c    ****   sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
+ 241              		.loc 1 379 0
+ARM GAS  /tmp/cc1ovdIk.s 			page 13
 
 
- 246              		.loc 1 254 0
- 247 0030 1D48     		ldr	r0, .L30
- 248 0032 FFF7FEFF 		bl	HAL_TIM_IC_Init
- 249              	.LVL13:
- 250 0036 18BB     		cbnz	r0, .L26
- 259:Src/main.c    ****   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
- 251              		.loc 1 259 0
- 252 0038 0023     		movs	r3, #0
- 253 003a 0493     		str	r3, [sp, #16]
- 260:Src/main.c    ****   if (HAL_TIMEx_MasterConfigSynchronization(&htim5, &sMasterConfig) != HAL_OK)
- 254              		.loc 1 260 0
- 255 003c 0593     		str	r3, [sp, #20]
- 261:Src/main.c    ****   {
- 256              		.loc 1 261 0
- 257 003e 04A9     		add	r1, sp, #16
- 258 0040 1948     		ldr	r0, .L30
- 259 0042 FFF7FEFF 		bl	HAL_TIMEx_MasterConfigSynchronization
- 260              	.LVL14:
- 261 0046 00BB     		cbnz	r0, .L27
- 266:Src/main.c    ****   sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
- 262              		.loc 1 266 0
- 263 0048 0023     		movs	r3, #0
- 264 004a 0093     		str	r3, [sp]
- 267:Src/main.c    ****   sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
- 265              		.loc 1 267 0
- 266 004c 0122     		movs	r2, #1
- 267 004e 0192     		str	r2, [sp, #4]
- 268:Src/main.c    ****   sConfigIC.ICFilter = 0;
- 268              		.loc 1 268 0
- 269 0050 0293     		str	r3, [sp, #8]
- 269:Src/main.c    ****   if (HAL_TIM_IC_ConfigChannel(&htim5, &sConfigIC, TIM_CHANNEL_4) != HAL_OK)
- 270              		.loc 1 269 0
- 271 0052 0393     		str	r3, [sp, #12]
- 270:Src/main.c    ****   {
- 272              		.loc 1 270 0
- 273 0054 0C22     		movs	r2, #12
- 274 0056 6946     		mov	r1, sp
- 275 0058 1348     		ldr	r0, .L30
- 276 005a FFF7FEFF 		bl	HAL_TIM_IC_ConfigChannel
- 277              	.LVL15:
- 278 005e C8B9     		cbnz	r0, .L28
- 275:Src/main.c    ****   {
- 279              		.loc 1 275 0
- 280 0060 4021     		movs	r1, #64
- 281 0062 1148     		ldr	r0, .L30
- 282 0064 FFF7FEFF 		bl	HAL_TIMEx_RemapConfig
- 283              	.LVL16:
- 284 0068 C8B9     		cbnz	r0, .L29
- 280:Src/main.c    **** 
- 285              		.loc 1 280 0
- 286 006a 0BB0     		add	sp, sp, #44
- 287              	.LCFI7:
- 288              		.cfi_remember_state
- 289              		.cfi_def_cfa_offset 4
- 290              		@ sp needed
- 291 006c 5DF804FB 		ldr	pc, [sp], #4
- 292              	.L24:
-ARM GAS  /tmp/ccUhBTIb.s 			page 14
+ 242 0060 0023     		movs	r3, #0
+ 243 0062 0293     		str	r3, [sp, #8]
+ 380:Src/main.c    ****   sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
+ 244              		.loc 1 380 0
+ 245 0064 0122     		movs	r2, #1
+ 246 0066 0392     		str	r2, [sp, #12]
+ 381:Src/main.c    ****   sConfigIC.ICFilter = 0;
+ 247              		.loc 1 381 0
+ 248 0068 0493     		str	r3, [sp, #16]
+ 382:Src/main.c    ****   if (HAL_TIM_IC_ConfigChannel(&htim5, &sConfigIC, TIM_CHANNEL_4) != HAL_OK)
+ 249              		.loc 1 382 0
+ 250 006a 0593     		str	r3, [sp, #20]
+ 383:Src/main.c    ****   {
+ 251              		.loc 1 383 0
+ 252 006c 0C22     		movs	r2, #12
+ 253 006e 02A9     		add	r1, sp, #8
+ 254 0070 2648     		ldr	r0, .L27+8
+ 255 0072 FFF7FEFF 		bl	HAL_TIM_IC_ConfigChannel
+ 256              	.LVL14:
+ 257 0076 0028     		cmp	r0, #0
+ 258 0078 35D1     		bne	.L24
+ 389:Src/main.c    ****   {
+ 259              		.loc 1 389 0
+ 260 007a 4021     		movs	r1, #64
+ 261 007c 2348     		ldr	r0, .L27+8
+ 262 007e FFF7FEFF 		bl	HAL_TIMEx_RemapConfig
+ 263              	.LVL15:
+ 264 0082 0028     		cmp	r0, #0
+ 265 0084 34D1     		bne	.L25
+ 395:Src/main.c    **** 
+ 266              		.loc 1 395 0
+ 267 0086 2148     		ldr	r0, .L27+8
+ 268 0088 0368     		ldr	r3, [r0]
+ 269 008a 0022     		movs	r2, #0
+ 270 008c 1A61     		str	r2, [r3, #16]
+ 398:Src/main.c    ****   {
+ 271              		.loc 1 398 0
+ 272 008e 0C21     		movs	r1, #12
+ 273 0090 FFF7FEFF 		bl	HAL_TIM_IC_Start_IT
+ 274              	.LVL16:
+ 275 0094 0028     		cmp	r0, #0
+ 276 0096 30D1     		bne	.L26
+ 277              	.L18:
+ 405:Src/main.c    ****   {
+ 278              		.loc 1 405 0 discriminator 1
+ 279 0098 1E4B     		ldr	r3, .L27+16
+ 280 009a 1B68     		ldr	r3, [r3]
+ 281 009c 002B     		cmp	r3, #0
+ 282 009e FBD0     		beq	.L18
+ 408:Src/main.c    **** 
+ 283              		.loc 1 408 0
+ 284 00a0 0022     		movs	r2, #0
+ 285 00a2 1D4B     		ldr	r3, .L27+20
+ 286 00a4 1A60     		str	r2, [r3]
+ 412:Src/main.c    **** 
+ 287              		.loc 1 412 0
+ 288 00a6 1948     		ldr	r0, .L27+8
+ARM GAS  /tmp/cc1ovdIk.s 			page 14
 
 
- 293              	.LCFI8:
- 294              		.cfi_restore_state
- 245:Src/main.c    ****   }
- 295              		.loc 1 245 0
- 296 0070 F521     		movs	r1, #245
- 297 0072 0F48     		ldr	r0, .L30+8
- 298 0074 FFF7FEFF 		bl	_Error_Handler
- 299              	.LVL17:
- 300              	.L25:
- 251:Src/main.c    ****   }
- 301              		.loc 1 251 0
- 302 0078 FB21     		movs	r1, #251
- 303 007a 0D48     		ldr	r0, .L30+8
- 304 007c FFF7FEFF 		bl	_Error_Handler
- 305              	.LVL18:
- 306              	.L26:
- 256:Src/main.c    ****   }
- 307              		.loc 1 256 0
- 308 0080 4FF48071 		mov	r1, #256
- 309 0084 0A48     		ldr	r0, .L30+8
- 310 0086 FFF7FEFF 		bl	_Error_Handler
- 311              	.LVL19:
- 312              	.L27:
- 263:Src/main.c    ****   }
- 313              		.loc 1 263 0
- 314 008a 40F20711 		movw	r1, #263
- 315 008e 0848     		ldr	r0, .L30+8
- 316 0090 FFF7FEFF 		bl	_Error_Handler
- 317              	.LVL20:
- 318              	.L28:
- 272:Src/main.c    ****   }
- 319              		.loc 1 272 0
- 320 0094 4FF48871 		mov	r1, #272
- 321 0098 0548     		ldr	r0, .L30+8
- 322 009a FFF7FEFF 		bl	_Error_Handler
- 323              	.LVL21:
- 324              	.L29:
- 277:Src/main.c    ****   }
- 325              		.loc 1 277 0
- 326 009e 40F21511 		movw	r1, #277
- 327 00a2 0348     		ldr	r0, .L30+8
- 328 00a4 FFF7FEFF 		bl	_Error_Handler
- 329              	.LVL22:
- 330              	.L31:
- 331              		.align	2
- 332              	.L30:
- 333 00a8 00000000 		.word	htim5
- 334 00ac 000C0040 		.word	1073744896
- 335 00b0 00000000 		.word	.LC0
- 336              		.cfi_endproc
- 337              	.LFE126:
- 339              		.section	.text.GetLSIFrequency,"ax",%progbits
- 340              		.align	1
- 341              		.syntax unified
- 342              		.thumb
- 343              		.thumb_func
- 344              		.fpu fpv4-sp-d16
-ARM GAS  /tmp/ccUhBTIb.s 			page 15
-
-
- 346              	GetLSIFrequency:
- 347              	.LFB128:
- 326:Src/main.c    ****   uint32_t pclk1 = 0;
- 348              		.loc 1 326 0
- 349              		.cfi_startproc
- 350              		@ args = 0, pretend = 0, frame = 40
- 351              		@ frame_needed = 0, uses_anonymous_args = 0
- 352 0000 10B5     		push	{r4, lr}
- 353              	.LCFI9:
- 354              		.cfi_def_cfa_offset 8
- 355              		.cfi_offset 4, -8
- 356              		.cfi_offset 14, -4
- 357 0002 8AB0     		sub	sp, sp, #40
- 358              	.LCFI10:
- 359              		.cfi_def_cfa_offset 48
- 360              	.LVL23:
- 334:Src/main.c    **** 
- 361              		.loc 1 334 0
- 362 0004 0122     		movs	r2, #1
- 363 0006 3D4B     		ldr	r3, .L49
- 364 0008 1A60     		str	r2, [r3]
- 365              	.L33:
- 337:Src/main.c    ****   {
- 366              		.loc 1 337 0 discriminator 1
- 367 000a 3D4B     		ldr	r3, .L49+4
- 368 000c 5B6F     		ldr	r3, [r3, #116]
- 369 000e 13F0020F 		tst	r3, #2
- 370 0012 FAD0     		beq	.L33
- 343:Src/main.c    **** 
- 371              		.loc 1 343 0
- 372 0014 3B48     		ldr	r0, .L49+8
- 373 0016 3C4B     		ldr	r3, .L49+12
- 374 0018 0360     		str	r3, [r0]
- 350:Src/main.c    ****   htim5.Init.CounterMode       = TIM_COUNTERMODE_UP;
- 375              		.loc 1 350 0
- 376 001a 0023     		movs	r3, #0
- 377 001c 4360     		str	r3, [r0, #4]
- 351:Src/main.c    ****   htim5.Init.Period            = 0xFFFF;
- 378              		.loc 1 351 0
- 379 001e 8360     		str	r3, [r0, #8]
- 352:Src/main.c    ****   htim5.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
- 380              		.loc 1 352 0
- 381 0020 4FF6FF72 		movw	r2, #65535
- 382 0024 C260     		str	r2, [r0, #12]
- 353:Src/main.c    ****   if (HAL_TIM_Base_Init(&htim5) != HAL_OK)
- 383              		.loc 1 353 0
- 384 0026 0361     		str	r3, [r0, #16]
- 354:Src/main.c    ****   {
- 385              		.loc 1 354 0
- 386 0028 FFF7FEFF 		bl	HAL_TIM_Base_Init
- 387              	.LVL24:
- 388 002c 0028     		cmp	r0, #0
- 389 002e 41D1     		bne	.L42
- 359:Src/main.c    ****   if (HAL_TIM_ConfigClockSource(&htim5, &sClockSourceConfig) != HAL_OK)
- 390              		.loc 1 359 0
- 391 0030 0AA9     		add	r1, sp, #40
- 392 0032 4FF48053 		mov	r3, #4096
-ARM GAS  /tmp/ccUhBTIb.s 			page 16
-
-
- 393 0036 41F8103D 		str	r3, [r1, #-16]!
- 360:Src/main.c    ****   {
- 394              		.loc 1 360 0
- 395 003a 3248     		ldr	r0, .L49+8
- 396 003c FFF7FEFF 		bl	HAL_TIM_ConfigClockSource
- 397              	.LVL25:
- 398 0040 0028     		cmp	r0, #0
- 399 0042 3CD1     		bne	.L43
- 365:Src/main.c    ****   {
- 400              		.loc 1 365 0
- 401 0044 2F48     		ldr	r0, .L49+8
- 402 0046 FFF7FEFF 		bl	HAL_TIM_IC_Init
- 403              	.LVL26:
- 404 004a 0028     		cmp	r0, #0
- 405 004c 3CD1     		bne	.L44
- 370:Src/main.c    ****   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
- 406              		.loc 1 370 0
- 407 004e 0023     		movs	r3, #0
- 408 0050 0093     		str	r3, [sp]
- 371:Src/main.c    ****   if (HAL_TIMEx_MasterConfigSynchronization(&htim5, &sMasterConfig) != HAL_OK)
- 409              		.loc 1 371 0
- 410 0052 0193     		str	r3, [sp, #4]
- 372:Src/main.c    ****   {
- 411              		.loc 1 372 0
- 412 0054 6946     		mov	r1, sp
- 413 0056 2B48     		ldr	r0, .L49+8
- 414 0058 FFF7FEFF 		bl	HAL_TIMEx_MasterConfigSynchronization
- 415              	.LVL27:
- 416 005c 0028     		cmp	r0, #0
- 417 005e 38D1     		bne	.L45
- 378:Src/main.c    ****   sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
- 418              		.loc 1 378 0
- 419 0060 0023     		movs	r3, #0
- 420 0062 0293     		str	r3, [sp, #8]
- 379:Src/main.c    ****   sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
- 421              		.loc 1 379 0
- 422 0064 0122     		movs	r2, #1
- 423 0066 0392     		str	r2, [sp, #12]
- 380:Src/main.c    ****   sConfigIC.ICFilter = 0;
- 424              		.loc 1 380 0
- 425 0068 0493     		str	r3, [sp, #16]
- 381:Src/main.c    ****   if (HAL_TIM_IC_ConfigChannel(&htim5, &sConfigIC, TIM_CHANNEL_4) != HAL_OK)
- 426              		.loc 1 381 0
- 427 006a 0593     		str	r3, [sp, #20]
- 382:Src/main.c    ****   {
- 428              		.loc 1 382 0
- 429 006c 0C22     		movs	r2, #12
- 430 006e 02A9     		add	r1, sp, #8
- 431 0070 2448     		ldr	r0, .L49+8
- 432 0072 FFF7FEFF 		bl	HAL_TIM_IC_ConfigChannel
- 433              	.LVL28:
- 434 0076 0028     		cmp	r0, #0
- 435 0078 30D1     		bne	.L46
- 388:Src/main.c    ****   {
- 436              		.loc 1 388 0
- 437 007a 4021     		movs	r1, #64
- 438 007c 2148     		ldr	r0, .L49+8
-ARM GAS  /tmp/ccUhBTIb.s 			page 17
-
-
- 439 007e FFF7FEFF 		bl	HAL_TIMEx_RemapConfig
- 440              	.LVL29:
- 441 0082 0028     		cmp	r0, #0
- 442 0084 2FD1     		bne	.L47
- 394:Src/main.c    **** 
- 443              		.loc 1 394 0
- 444 0086 1F48     		ldr	r0, .L49+8
- 445 0088 0368     		ldr	r3, [r0]
- 446 008a 0022     		movs	r2, #0
- 447 008c 1A61     		str	r2, [r3, #16]
- 397:Src/main.c    ****   {
- 448              		.loc 1 397 0
- 449 008e 0C21     		movs	r1, #12
- 450 0090 FFF7FEFF 		bl	HAL_TIM_IC_Start_IT
- 451              	.LVL30:
- 452 0094 60BB     		cbnz	r0, .L48
- 453              	.L40:
- 404:Src/main.c    ****   {
- 454              		.loc 1 404 0 discriminator 1
- 455 0096 1D4B     		ldr	r3, .L49+16
- 456 0098 1B68     		ldr	r3, [r3]
- 457 009a 012B     		cmp	r3, #1
- 458 009c FBD0     		beq	.L40
- 407:Src/main.c    **** 
- 459              		.loc 1 407 0
- 460 009e 0024     		movs	r4, #0
- 461 00a0 1B4B     		ldr	r3, .L49+20
- 462 00a2 1C60     		str	r4, [r3]
- 411:Src/main.c    **** 
- 463              		.loc 1 411 0
- 464 00a4 1748     		ldr	r0, .L49+8
- 465 00a6 FFF7FEFF 		bl	HAL_TIM_IC_DeInit
- 466              	.LVL31:
- 415:Src/main.c    **** 
- 467              		.loc 1 415 0
- 468 00aa 1A4B     		ldr	r3, .L49+24
- 469 00ac 1B68     		ldr	r3, [r3]
+ 289 00a8 FFF7FEFF 		bl	HAL_TIM_IC_DeInit
+ 290              	.LVL17:
+ 416:Src/main.c    ****   return (pclk1 / uwPeriodValue);
+ 291              		.loc 1 416 0
+ 292 00ac FFF7FEFF 		bl	HAL_RCC_GetPCLK1Freq
+ 293              	.LVL18:
  417:Src/main.c    **** 
- 470              		.loc 1 417 0
- 471 00ae 2046     		mov	r0, r4
- 472 00b0 0AB0     		add	sp, sp, #40
- 473              	.LCFI11:
- 474              		.cfi_remember_state
- 475              		.cfi_def_cfa_offset 8
- 476              		@ sp needed
- 477 00b2 10BD     		pop	{r4, pc}
- 478              	.L42:
- 479              	.LCFI12:
- 480              		.cfi_restore_state
- 356:Src/main.c    ****   }
- 481              		.loc 1 356 0
- 482 00b4 4FF4B271 		mov	r1, #356
- 483 00b8 1748     		ldr	r0, .L49+28
- 484 00ba FFF7FEFF 		bl	_Error_Handler
- 485              	.LVL32:
- 486              	.L43:
- 362:Src/main.c    ****   }
-ARM GAS  /tmp/ccUhBTIb.s 			page 18
+ 294              		.loc 1 417 0
+ 295 00b0 1A4B     		ldr	r3, .L27+24
+ 296 00b2 1B68     		ldr	r3, [r3]
+ 419:Src/main.c    **** 
+ 297              		.loc 1 419 0
+ 298 00b4 B0FBF3F0 		udiv	r0, r0, r3
+ 299              	.LVL19:
+ 300 00b8 0BB0     		add	sp, sp, #44
+ 301              	.LCFI6:
+ 302              		.cfi_remember_state
+ 303              		.cfi_def_cfa_offset 4
+ 304              		@ sp needed
+ 305 00ba 5DF804FB 		ldr	pc, [sp], #4
+ 306              	.LVL20:
+ 307              	.L20:
+ 308              	.LCFI7:
+ 309              		.cfi_restore_state
+ 357:Src/main.c    ****   }
+ 310              		.loc 1 357 0
+ 311 00be 40F26511 		movw	r1, #357
+ 312 00c2 1748     		ldr	r0, .L27+28
+ 313 00c4 FFF7FEFF 		bl	_Error_Handler
+ 314              	.LVL21:
+ 315              	.L21:
+ 363:Src/main.c    ****   }
+ 316              		.loc 1 363 0
+ 317 00c8 40F26B11 		movw	r1, #363
+ 318 00cc 1448     		ldr	r0, .L27+28
+ 319 00ce FFF7FEFF 		bl	_Error_Handler
+ 320              	.LVL22:
+ 321              	.L22:
+ 368:Src/main.c    ****   }
+ 322              		.loc 1 368 0
+ 323 00d2 4FF4B871 		mov	r1, #368
+ 324 00d6 1248     		ldr	r0, .L27+28
+ 325 00d8 FFF7FEFF 		bl	_Error_Handler
+ 326              	.LVL23:
+ 327              	.L23:
+ 375:Src/main.c    ****   }
+ 328              		.loc 1 375 0
+ 329 00dc 40F27711 		movw	r1, #375
+ 330 00e0 0F48     		ldr	r0, .L27+28
+ 331 00e2 FFF7FEFF 		bl	_Error_Handler
+ 332              	.LVL24:
+ 333              	.L24:
+ 385:Src/main.c    ****   }
+ 334              		.loc 1 385 0
+ 335 00e6 40F28111 		movw	r1, #385
+ 336 00ea 0D48     		ldr	r0, .L27+28
+ 337 00ec FFF7FEFF 		bl	_Error_Handler
+ARM GAS  /tmp/cc1ovdIk.s 			page 15
 
 
- 487              		.loc 1 362 0
- 488 00be 4FF4B571 		mov	r1, #362
- 489 00c2 1548     		ldr	r0, .L49+28
- 490 00c4 FFF7FEFF 		bl	_Error_Handler
- 491              	.LVL33:
- 492              	.L44:
- 367:Src/main.c    ****   }
- 493              		.loc 1 367 0
- 494 00c8 40F26F11 		movw	r1, #367
- 495 00cc 1248     		ldr	r0, .L49+28
- 496 00ce FFF7FEFF 		bl	_Error_Handler
- 497              	.LVL34:
- 498              	.L45:
- 374:Src/main.c    ****   }
- 499              		.loc 1 374 0
- 500 00d2 4FF4BB71 		mov	r1, #374
- 501 00d6 1048     		ldr	r0, .L49+28
- 502 00d8 FFF7FEFF 		bl	_Error_Handler
- 503              	.LVL35:
- 504              	.L46:
- 384:Src/main.c    ****   }
- 505              		.loc 1 384 0
- 506 00dc 4FF4C071 		mov	r1, #384
- 507 00e0 0D48     		ldr	r0, .L49+28
- 508 00e2 FFF7FEFF 		bl	_Error_Handler
- 509              	.LVL36:
- 510              	.L47:
- 390:Src/main.c    ****   }
- 511              		.loc 1 390 0
- 512 00e6 4FF4C371 		mov	r1, #390
- 513 00ea 0B48     		ldr	r0, .L49+28
- 514 00ec FFF7FEFF 		bl	_Error_Handler
- 515              	.LVL37:
- 516              	.L48:
- 399:Src/main.c    ****   }
- 517              		.loc 1 399 0
- 518 00f0 40F28F11 		movw	r1, #399
- 519 00f4 0848     		ldr	r0, .L49+28
- 520 00f6 FFF7FEFF 		bl	_Error_Handler
- 521              	.LVL38:
- 522              	.L50:
- 523 00fa 00BF     		.align	2
- 524              	.L49:
- 525 00fc 800E4742 		.word	1111953024
- 526 0100 00380240 		.word	1073887232
- 527 0104 00000000 		.word	htim5
- 528 0108 000C0040 		.word	1073744896
- 529 010c 00000000 		.word	.LANCHOR0
- 530 0110 00000000 		.word	.LANCHOR1
- 531 0114 00000000 		.word	.LANCHOR2
- 532 0118 00000000 		.word	.LC0
- 533              		.cfi_endproc
- 534              	.LFE128:
- 536              		.section	.text.SystemClock_Config,"ax",%progbits
- 537              		.align	1
- 538              		.global	SystemClock_Config
- 539              		.syntax unified
-ARM GAS  /tmp/ccUhBTIb.s 			page 19
-
-
- 540              		.thumb
- 541              		.thumb_func
- 542              		.fpu fpv4-sp-d16
- 544              	SystemClock_Config:
- 545              	.LFB124:
+ 338              	.LVL25:
+ 339              	.L25:
+ 391:Src/main.c    ****   }
+ 340              		.loc 1 391 0
+ 341 00f0 40F28711 		movw	r1, #391
+ 342 00f4 0A48     		ldr	r0, .L27+28
+ 343 00f6 FFF7FEFF 		bl	_Error_Handler
+ 344              	.LVL26:
+ 345              	.L26:
+ 400:Src/main.c    ****   }
+ 346              		.loc 1 400 0
+ 347 00fa 4FF4C871 		mov	r1, #400
+ 348 00fe 0848     		ldr	r0, .L27+28
+ 349 0100 FFF7FEFF 		bl	_Error_Handler
+ 350              	.LVL27:
+ 351              	.L28:
+ 352              		.align	2
+ 353              	.L27:
+ 354 0104 800E4742 		.word	1111953024
+ 355 0108 00380240 		.word	1073887232
+ 356 010c 00000000 		.word	htim5
+ 357 0110 000C0040 		.word	1073744896
+ 358 0114 00000000 		.word	.LANCHOR0
+ 359 0118 00000000 		.word	.LANCHOR1
+ 360 011c 00000000 		.word	.LANCHOR2
+ 361 0120 00000000 		.word	.LC0
+ 362              		.cfi_endproc
+ 363              	.LFE126:
+ 365              		.section	.text.SystemClock_Config,"ax",%progbits
+ 366              		.align	1
+ 367              		.global	SystemClock_Config
+ 368              		.syntax unified
+ 369              		.thumb
+ 370              		.thumb_func
+ 371              		.fpu fpv4-sp-d16
+ 373              	SystemClock_Config:
+ 374              	.LFB124:
  167:Src/main.c    **** 
- 546              		.loc 1 167 0
- 547              		.cfi_startproc
- 548              		@ args = 0, pretend = 0, frame = 80
- 549              		@ frame_needed = 0, uses_anonymous_args = 0
- 550 0000 00B5     		push	{lr}
- 551              	.LCFI13:
- 552              		.cfi_def_cfa_offset 4
- 553              		.cfi_offset 14, -4
- 554 0002 95B0     		sub	sp, sp, #84
- 555              	.LCFI14:
- 556              		.cfi_def_cfa_offset 88
- 557              	.LBB3:
+ 375              		.loc 1 167 0
+ 376              		.cfi_startproc
+ 377              		@ args = 0, pretend = 0, frame = 80
+ 378              		@ frame_needed = 0, uses_anonymous_args = 0
+ 379 0000 00B5     		push	{lr}
+ 380              	.LCFI8:
+ 381              		.cfi_def_cfa_offset 4
+ 382              		.cfi_offset 14, -4
+ 383 0002 95B0     		sub	sp, sp, #84
+ 384              	.LCFI9:
+ 385              		.cfi_def_cfa_offset 88
+ 386              	.LBB4:
  174:Src/main.c    **** 
- 558              		.loc 1 174 0
- 559 0004 0023     		movs	r3, #0
- 560 0006 0193     		str	r3, [sp, #4]
- 561 0008 234A     		ldr	r2, .L57
- 562 000a 116C     		ldr	r1, [r2, #64]
- 563 000c 41F08051 		orr	r1, r1, #268435456
- 564 0010 1164     		str	r1, [r2, #64]
- 565 0012 126C     		ldr	r2, [r2, #64]
- 566 0014 02F08052 		and	r2, r2, #268435456
- 567 0018 0192     		str	r2, [sp, #4]
- 568 001a 019A     		ldr	r2, [sp, #4]
- 569              	.LBE3:
- 570              	.LBB4:
+ 387              		.loc 1 174 0
+ 388 0004 0023     		movs	r3, #0
+ 389 0006 0193     		str	r3, [sp, #4]
+ 390 0008 234A     		ldr	r2, .L35
+ 391 000a 116C     		ldr	r1, [r2, #64]
+ 392 000c 41F08051 		orr	r1, r1, #268435456
+ARM GAS  /tmp/cc1ovdIk.s 			page 16
+
+
+ 393 0010 1164     		str	r1, [r2, #64]
+ 394 0012 126C     		ldr	r2, [r2, #64]
+ 395 0014 02F08052 		and	r2, r2, #268435456
+ 396 0018 0192     		str	r2, [sp, #4]
+ 397 001a 019A     		ldr	r2, [sp, #4]
+ 398              	.LBE4:
+ 399              	.LBB5:
  176:Src/main.c    **** 
- 571              		.loc 1 176 0
- 572 001c 0293     		str	r3, [sp, #8]
- 573 001e 1F4A     		ldr	r2, .L57+4
- 574 0020 1168     		ldr	r1, [r2]
- 575 0022 41F48041 		orr	r1, r1, #16384
- 576 0026 1160     		str	r1, [r2]
- 577 0028 1268     		ldr	r2, [r2]
- 578 002a 02F48042 		and	r2, r2, #16384
- 579 002e 0292     		str	r2, [sp, #8]
- 580 0030 029A     		ldr	r2, [sp, #8]
- 581              	.LBE4:
+ 400              		.loc 1 176 0
+ 401 001c 0293     		str	r3, [sp, #8]
+ 402 001e 1F4A     		ldr	r2, .L35+4
+ 403 0020 1168     		ldr	r1, [r2]
+ 404 0022 41F48041 		orr	r1, r1, #16384
+ 405 0026 1160     		str	r1, [r2]
+ 406 0028 1268     		ldr	r2, [r2]
+ 407 002a 02F48042 		and	r2, r2, #16384
+ 408 002e 0292     		str	r2, [sp, #8]
+ 409 0030 029A     		ldr	r2, [sp, #8]
+ 410              	.LBE5:
  180:Src/main.c    ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
- 582              		.loc 1 180 0
- 583 0032 0A22     		movs	r2, #10
- 584 0034 0892     		str	r2, [sp, #32]
+ 411              		.loc 1 180 0
+ 412 0032 0A22     		movs	r2, #10
+ 413 0034 0892     		str	r2, [sp, #32]
  181:Src/main.c    ****   RCC_OscInitStruct.HSICalibrationValue = 16;
- 585              		.loc 1 181 0
- 586 0036 0122     		movs	r2, #1
- 587 0038 0B92     		str	r2, [sp, #44]
+ 414              		.loc 1 181 0
+ 415 0036 0122     		movs	r2, #1
+ 416 0038 0B92     		str	r2, [sp, #44]
  182:Src/main.c    ****   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
- 588              		.loc 1 182 0
- 589 003a 1021     		movs	r1, #16
- 590 003c 0C91     		str	r1, [sp, #48]
+ 417              		.loc 1 182 0
+ 418 003a 1021     		movs	r1, #16
+ 419 003c 0C91     		str	r1, [sp, #48]
  183:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
-ARM GAS  /tmp/ccUhBTIb.s 			page 20
-
-
- 591              		.loc 1 183 0
- 592 003e 0D92     		str	r2, [sp, #52]
+ 420              		.loc 1 183 0
+ 421 003e 0D92     		str	r2, [sp, #52]
  184:Src/main.c    ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 593              		.loc 1 184 0
- 594 0040 0E93     		str	r3, [sp, #56]
+ 422              		.loc 1 184 0
+ 423 0040 0E93     		str	r3, [sp, #56]
  185:Src/main.c    ****   {
- 595              		.loc 1 185 0
- 596 0042 08A8     		add	r0, sp, #32
- 597 0044 FFF7FEFF 		bl	HAL_RCC_OscConfig
- 598              	.LVL39:
- 599 0048 F0B9     		cbnz	r0, .L55
+ 424              		.loc 1 185 0
+ 425 0042 08A8     		add	r0, sp, #32
+ 426 0044 FFF7FEFF 		bl	HAL_RCC_OscConfig
+ 427              	.LVL28:
+ 428 0048 F0B9     		cbnz	r0, .L33
  192:Src/main.c    ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
- 600              		.loc 1 192 0
- 601 004a 0F23     		movs	r3, #15
- 602 004c 0393     		str	r3, [sp, #12]
+ 429              		.loc 1 192 0
+ 430 004a 0F23     		movs	r3, #15
+ 431 004c 0393     		str	r3, [sp, #12]
  194:Src/main.c    ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 603              		.loc 1 194 0
- 604 004e 0021     		movs	r1, #0
- 605 0050 0491     		str	r1, [sp, #16]
+ 432              		.loc 1 194 0
+ 433 004e 0021     		movs	r1, #0
+ 434 0050 0491     		str	r1, [sp, #16]
  195:Src/main.c    ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
- 606              		.loc 1 195 0
- 607 0052 0591     		str	r1, [sp, #20]
+ 435              		.loc 1 195 0
+ 436 0052 0591     		str	r1, [sp, #20]
  196:Src/main.c    ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
- 608              		.loc 1 196 0
- 609 0054 0691     		str	r1, [sp, #24]
+ 437              		.loc 1 196 0
+ 438 0054 0691     		str	r1, [sp, #24]
+ARM GAS  /tmp/cc1ovdIk.s 			page 17
+
+
  197:Src/main.c    **** 
- 610              		.loc 1 197 0
- 611 0056 0791     		str	r1, [sp, #28]
+ 439              		.loc 1 197 0
+ 440 0056 0791     		str	r1, [sp, #28]
  199:Src/main.c    ****   {
- 612              		.loc 1 199 0
- 613 0058 03A8     		add	r0, sp, #12
- 614 005a FFF7FEFF 		bl	HAL_RCC_ClockConfig
- 615              	.LVL40:
- 616 005e B8B9     		cbnz	r0, .L56
+ 441              		.loc 1 199 0
+ 442 0058 03A8     		add	r0, sp, #12
+ 443 005a FFF7FEFF 		bl	HAL_RCC_ClockConfig
+ 444              	.LVL29:
+ 445 005e B8B9     		cbnz	r0, .L34
  206:Src/main.c    **** 
- 617              		.loc 1 206 0
- 618 0060 FFF7FEFF 		bl	HAL_RCC_GetHCLKFreq
- 619              	.LVL41:
- 620 0064 0E4B     		ldr	r3, .L57+8
- 621 0066 A3FB0030 		umull	r3, r0, r3, r0
- 622 006a 8009     		lsrs	r0, r0, #6
- 623 006c FFF7FEFF 		bl	HAL_SYSTICK_Config
- 624              	.LVL42:
+ 446              		.loc 1 206 0
+ 447 0060 FFF7FEFF 		bl	HAL_RCC_GetHCLKFreq
+ 448              	.LVL30:
+ 449 0064 0E4B     		ldr	r3, .L35+8
+ 450 0066 A3FB0030 		umull	r3, r0, r3, r0
+ 451 006a 8009     		lsrs	r0, r0, #6
+ 452 006c FFF7FEFF 		bl	HAL_SYSTICK_Config
+ 453              	.LVL31:
  210:Src/main.c    **** 
- 625              		.loc 1 210 0
- 626 0070 0420     		movs	r0, #4
- 627 0072 FFF7FEFF 		bl	HAL_SYSTICK_CLKSourceConfig
- 628              	.LVL43:
+ 454              		.loc 1 210 0
+ 455 0070 0420     		movs	r0, #4
+ 456 0072 FFF7FEFF 		bl	HAL_SYSTICK_CLKSourceConfig
+ 457              	.LVL32:
  213:Src/main.c    **** }
- 629              		.loc 1 213 0
- 630 0076 0022     		movs	r2, #0
- 631 0078 1146     		mov	r1, r2
- 632 007a 4FF0FF30 		mov	r0, #-1
- 633 007e FFF7FEFF 		bl	HAL_NVIC_SetPriority
- 634              	.LVL44:
+ 458              		.loc 1 213 0
+ 459 0076 0022     		movs	r2, #0
+ 460 0078 1146     		mov	r1, r2
+ 461 007a 4FF0FF30 		mov	r0, #-1
+ 462 007e FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 463              	.LVL33:
  214:Src/main.c    **** 
- 635              		.loc 1 214 0
-ARM GAS  /tmp/ccUhBTIb.s 			page 21
-
-
- 636 0082 15B0     		add	sp, sp, #84
- 637              	.LCFI15:
- 638              		.cfi_remember_state
- 639              		.cfi_def_cfa_offset 4
- 640              		@ sp needed
- 641 0084 5DF804FB 		ldr	pc, [sp], #4
- 642              	.L55:
- 643              	.LCFI16:
- 644              		.cfi_restore_state
+ 464              		.loc 1 214 0
+ 465 0082 15B0     		add	sp, sp, #84
+ 466              	.LCFI10:
+ 467              		.cfi_remember_state
+ 468              		.cfi_def_cfa_offset 4
+ 469              		@ sp needed
+ 470 0084 5DF804FB 		ldr	pc, [sp], #4
+ 471              	.L33:
+ 472              	.LCFI11:
+ 473              		.cfi_restore_state
  187:Src/main.c    ****   }
- 645              		.loc 1 187 0
- 646 0088 BB21     		movs	r1, #187
- 647 008a 0648     		ldr	r0, .L57+12
- 648 008c FFF7FEFF 		bl	_Error_Handler
- 649              	.LVL45:
- 650              	.L56:
+ 474              		.loc 1 187 0
+ 475 0088 BB21     		movs	r1, #187
+ 476 008a 0648     		ldr	r0, .L35+12
+ 477 008c FFF7FEFF 		bl	_Error_Handler
+ 478              	.LVL34:
+ 479              	.L34:
  201:Src/main.c    ****   }
- 651              		.loc 1 201 0
- 652 0090 C921     		movs	r1, #201
- 653 0092 0448     		ldr	r0, .L57+12
- 654 0094 FFF7FEFF 		bl	_Error_Handler
- 655              	.LVL46:
- 656              	.L58:
- 657              		.align	2
- 658              	.L57:
- 659 0098 00380240 		.word	1073887232
- 660 009c 00700040 		.word	1073770496
- 661 00a0 D34D6210 		.word	274877907
- 662 00a4 00000000 		.word	.LC0
- 663              		.cfi_endproc
- 664              	.LFE124:
- 666              		.section	.text.main,"ax",%progbits
- 667              		.align	1
- 668              		.global	main
- 669              		.syntax unified
- 670              		.thumb
- 671              		.thumb_func
- 672              		.fpu fpv4-sp-d16
- 674              	main:
- 675              	.LFB123:
-  75:Src/main.c    **** 
- 676              		.loc 1 75 0
- 677              		.cfi_startproc
- 678              		@ Volatile: function does not return.
- 679              		@ args = 0, pretend = 0, frame = 0
- 680              		@ frame_needed = 0, uses_anonymous_args = 0
- 681 0000 08B5     		push	{r3, lr}
- 682              	.LCFI17:
- 683              		.cfi_def_cfa_offset 8
- 684              		.cfi_offset 3, -8
- 685              		.cfi_offset 14, -4
-  84:Src/main.c    **** 
- 686              		.loc 1 84 0
- 687 0002 FFF7FEFF 		bl	HAL_Init
- 688              	.LVL47:
-  91:Src/main.c    **** 
- 689              		.loc 1 91 0
-ARM GAS  /tmp/ccUhBTIb.s 			page 22
+ 480              		.loc 1 201 0
+ 481 0090 C921     		movs	r1, #201
+ 482 0092 0448     		ldr	r0, .L35+12
+ 483 0094 FFF7FEFF 		bl	_Error_Handler
+ 484              	.LVL35:
+ 485              	.L36:
+ 486              		.align	2
+ 487              	.L35:
+ARM GAS  /tmp/cc1ovdIk.s 			page 18
 
 
- 690 0006 FFF7FEFF 		bl	SystemClock_Config
- 691              	.LVL48:
-  98:Src/main.c    ****   MX_IWDG_Init();
- 692              		.loc 1 98 0
- 693 000a FFF7FEFF 		bl	MX_GPIO_Init
- 694              	.LVL49:
-  99:Src/main.c    ****   MX_TIM5_Init();
- 695              		.loc 1 99 0
- 696 000e FFF7FEFF 		bl	MX_IWDG_Init
- 697              	.LVL50:
- 100:Src/main.c    **** 
- 698              		.loc 1 100 0
- 699 0012 FFF7FEFF 		bl	MX_TIM5_Init
- 700              	.LVL51:
- 105:Src/main.c    ****   {
- 701              		.loc 1 105 0
- 702 0016 184B     		ldr	r3, .L64
- 703 0018 5B6F     		ldr	r3, [r3, #116]
- 704 001a 13F0005F 		tst	r3, #536870912
- 705 001e 25D0     		beq	.L60
- 108:Src/main.c    **** 
- 706              		.loc 1 108 0
- 707 0020 0122     		movs	r2, #1
- 708 0022 0821     		movs	r1, #8
- 709 0024 1548     		ldr	r0, .L64+4
- 710 0026 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 711              	.LVL52:
- 111:Src/main.c    ****   }
- 712              		.loc 1 111 0
- 713 002a 134A     		ldr	r2, .L64
- 714 002c 536F     		ldr	r3, [r2, #116]
- 715 002e 43F08073 		orr	r3, r3, #16777216
- 716 0032 5367     		str	r3, [r2, #116]
- 717              	.L61:
- 120:Src/main.c    **** 
- 718              		.loc 1 120 0
- 719 0034 FFF7FEFF 		bl	GetLSIFrequency
- 720              	.LVL53:
- 721 0038 114A     		ldr	r2, .L64+8
- 722 003a 1060     		str	r0, [r2]
- 128:Src/main.c    ****   hiwdg.Init.Prescaler = IWDG_PRESCALER_32;
- 723              		.loc 1 128 0
- 724 003c 114B     		ldr	r3, .L64+12
- 725 003e 1249     		ldr	r1, .L64+16
- 726 0040 1960     		str	r1, [r3]
- 129:Src/main.c    ****   hiwdg.Init.Reload = uwLsiFreq/128;
- 727              		.loc 1 129 0
- 728 0042 0321     		movs	r1, #3
- 729 0044 5960     		str	r1, [r3, #4]
- 130:Src/main.c    ****   /* if (HAL_IWDG_Init(&hiwdg) != HAL_OK) */
- 730              		.loc 1 130 0
- 731 0046 1268     		ldr	r2, [r2]
- 732 0048 D209     		lsrs	r2, r2, #7
- 733 004a 9A60     		str	r2, [r3, #8]
- 734              	.L62:
- 143:Src/main.c    **** 
- 735              		.loc 1 143 0
-ARM GAS  /tmp/ccUhBTIb.s 			page 23
+ 488 0098 00380240 		.word	1073887232
+ 489 009c 00700040 		.word	1073770496
+ 490 00a0 D34D6210 		.word	274877907
+ 491 00a4 00000000 		.word	.LC0
+ 492              		.cfi_endproc
+ 493              	.LFE124:
+ 495              		.section	.text.main,"ax",%progbits
+ 496              		.align	1
+ 497              		.global	main
+ 498              		.syntax unified
+ 499              		.thumb
+ 500              		.thumb_func
+ 501              		.fpu fpv4-sp-d16
+ 503              	main:
+ 504              	.LFB123:
+  76:Src/main.c    **** 
+ 505              		.loc 1 76 0
+ 506              		.cfi_startproc
+ 507              		@ Volatile: function does not return.
+ 508              		@ args = 0, pretend = 0, frame = 0
+ 509              		@ frame_needed = 0, uses_anonymous_args = 0
+ 510 0000 08B5     		push	{r3, lr}
+ 511              	.LCFI12:
+ 512              		.cfi_def_cfa_offset 8
+ 513              		.cfi_offset 3, -8
+ 514              		.cfi_offset 14, -4
+  85:Src/main.c    **** 
+ 515              		.loc 1 85 0
+ 516 0002 FFF7FEFF 		bl	HAL_Init
+ 517              	.LVL36:
+  92:Src/main.c    **** 
+ 518              		.loc 1 92 0
+ 519 0006 FFF7FEFF 		bl	SystemClock_Config
+ 520              	.LVL37:
+  99:Src/main.c    ****   /* MX_IWDG_Init(); */
+ 521              		.loc 1 99 0
+ 522 000a FFF7FEFF 		bl	MX_GPIO_Init
+ 523              	.LVL38:
+ 106:Src/main.c    ****   {
+ 524              		.loc 1 106 0
+ 525 000e 1C4B     		ldr	r3, .L43
+ 526 0010 5B6F     		ldr	r3, [r3, #116]
+ 527 0012 13F0005F 		tst	r3, #536870912
+ 528 0016 28D0     		beq	.L38
+ 109:Src/main.c    **** 
+ 529              		.loc 1 109 0
+ 530 0018 0122     		movs	r2, #1
+ 531 001a 0821     		movs	r1, #8
+ 532 001c 1948     		ldr	r0, .L43+4
+ 533 001e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 534              	.LVL39:
+ 112:Src/main.c    ****   }
+ 535              		.loc 1 112 0
+ 536 0022 174A     		ldr	r2, .L43
+ 537 0024 536F     		ldr	r3, [r2, #116]
+ 538 0026 43F08073 		orr	r3, r3, #16777216
+ 539 002a 5367     		str	r3, [r2, #116]
+ARM GAS  /tmp/cc1ovdIk.s 			page 19
 
 
- 736 004c 0421     		movs	r1, #4
- 737 004e 0B48     		ldr	r0, .L64+4
- 738 0050 FFF7FEFF 		bl	HAL_GPIO_TogglePin
- 739              	.LVL54:
- 146:Src/main.c    **** 
- 740              		.loc 1 146 0
- 741 0054 F020     		movs	r0, #240
- 742 0056 FFF7FEFF 		bl	HAL_Delay
- 743              	.LVL55:
- 149:Src/main.c    ****     {
- 744              		.loc 1 149 0
- 745 005a 0A48     		ldr	r0, .L64+12
- 746 005c FFF7FEFF 		bl	HAL_IWDG_Refresh
- 747              	.LVL56:
- 748 0060 0028     		cmp	r0, #0
- 749 0062 F3D0     		beq	.L62
- 151:Src/main.c    ****     }
- 750              		.loc 1 151 0
- 751 0064 9721     		movs	r1, #151
- 752 0066 0948     		ldr	r0, .L64+20
- 753 0068 FFF7FEFF 		bl	_Error_Handler
- 754              	.LVL57:
- 755              	.L60:
- 116:Src/main.c    ****   }
- 756              		.loc 1 116 0
- 757 006c 0022     		movs	r2, #0
- 758 006e 0821     		movs	r1, #8
- 759 0070 0248     		ldr	r0, .L64+4
- 760 0072 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 761              	.LVL58:
- 762 0076 DDE7     		b	.L61
- 763              	.L65:
- 764              		.align	2
- 765              	.L64:
- 766 0078 00380240 		.word	1073887232
- 767 007c 00140240 		.word	1073878016
- 768 0080 00000000 		.word	.LANCHOR3
- 769 0084 00000000 		.word	hiwdg
- 770 0088 00300040 		.word	1073754112
- 771 008c 00000000 		.word	.LC0
- 772              		.cfi_endproc
- 773              	.LFE123:
- 775              		.section	.text.assert_failed,"ax",%progbits
- 776              		.align	1
- 777              		.global	assert_failed
- 778              		.syntax unified
- 779              		.thumb
- 780              		.thumb_func
- 781              		.fpu fpv4-sp-d16
- 783              	assert_failed:
- 784              	.LFB130:
- 431:Src/main.c    ****   
- 432:Src/main.c    ****     
- 433:Src/main.c    ****   /* User can add his own implementation to report the HAL error return state */
- 434:Src/main.c    ****   while(1) 
- 435:Src/main.c    ****   {
- 436:Src/main.c    ****   }
-ARM GAS  /tmp/ccUhBTIb.s 			page 24
+ 540              	.L39:
+ 121:Src/main.c    **** 
+ 541              		.loc 1 121 0
+ 542 002c FFF7FEFF 		bl	GetLSIFrequency
+ 543              	.LVL40:
+ 544 0030 154B     		ldr	r3, .L43+8
+ 545 0032 1860     		str	r0, [r3]
+ 129:Src/main.c    ****   hiwdg.Init.Prescaler = IWDG_PRESCALER_32;
+ 546              		.loc 1 129 0
+ 547 0034 1548     		ldr	r0, .L43+12
+ 548 0036 164A     		ldr	r2, .L43+16
+ 549 0038 0260     		str	r2, [r0]
+ 130:Src/main.c    ****   hiwdg.Init.Reload = uwLsiFreq/128;
+ 550              		.loc 1 130 0
+ 551 003a 0322     		movs	r2, #3
+ 552 003c 4260     		str	r2, [r0, #4]
+ 131:Src/main.c    ****   if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
+ 553              		.loc 1 131 0
+ 554 003e 1B68     		ldr	r3, [r3]
+ 555 0040 DB09     		lsrs	r3, r3, #7
+ 556 0042 8360     		str	r3, [r0, #8]
+ 132:Src/main.c    ****   {
+ 557              		.loc 1 132 0
+ 558 0044 FFF7FEFF 		bl	HAL_IWDG_Init
+ 559              	.LVL41:
+ 560 0048 A8B9     		cbnz	r0, .L42
+ 561              	.L40:
+ 144:Src/main.c    **** 
+ 562              		.loc 1 144 0
+ 563 004a 0421     		movs	r1, #4
+ 564 004c 0D48     		ldr	r0, .L43+4
+ 565 004e FFF7FEFF 		bl	HAL_GPIO_TogglePin
+ 566              	.LVL42:
+ 147:Src/main.c    **** 
+ 567              		.loc 1 147 0
+ 568 0052 F020     		movs	r0, #240
+ 569 0054 FFF7FEFF 		bl	HAL_Delay
+ 570              	.LVL43:
+ 150:Src/main.c    ****     {
+ 571              		.loc 1 150 0
+ 572 0058 0C48     		ldr	r0, .L43+12
+ 573 005a FFF7FEFF 		bl	HAL_IWDG_Refresh
+ 574              	.LVL44:
+ 575 005e 0028     		cmp	r0, #0
+ 576 0060 F3D0     		beq	.L40
+ 152:Src/main.c    ****     }
+ 577              		.loc 1 152 0
+ 578 0062 9821     		movs	r1, #152
+ 579 0064 0B48     		ldr	r0, .L43+20
+ 580 0066 FFF7FEFF 		bl	_Error_Handler
+ 581              	.LVL45:
+ 582              	.L38:
+ 117:Src/main.c    ****   }
+ 583              		.loc 1 117 0
+ 584 006a 0022     		movs	r2, #0
+ 585 006c 0821     		movs	r1, #8
+ 586 006e 0548     		ldr	r0, .L43+4
+ARM GAS  /tmp/cc1ovdIk.s 			page 20
 
 
- 437:Src/main.c    ****   /* USER CODE END Error_Handler_Debug */ 
- 438:Src/main.c    **** }
- 439:Src/main.c    **** 
- 440:Src/main.c    **** #ifdef USE_FULL_ASSERT
+ 587 0070 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 588              	.LVL46:
+ 589 0074 DAE7     		b	.L39
+ 590              	.L42:
+ 134:Src/main.c    ****   }
+ 591              		.loc 1 134 0
+ 592 0076 8621     		movs	r1, #134
+ 593 0078 0648     		ldr	r0, .L43+20
+ 594 007a FFF7FEFF 		bl	_Error_Handler
+ 595              	.LVL47:
+ 596              	.L44:
+ 597 007e 00BF     		.align	2
+ 598              	.L43:
+ 599 0080 00380240 		.word	1073887232
+ 600 0084 00140240 		.word	1073878016
+ 601 0088 00000000 		.word	.LANCHOR3
+ 602 008c 00000000 		.word	hiwdg
+ 603 0090 00300040 		.word	1073754112
+ 604 0094 00000000 		.word	.LC0
+ 605              		.cfi_endproc
+ 606              	.LFE123:
+ 608              		.section	.text.assert_failed,"ax",%progbits
+ 609              		.align	1
+ 610              		.global	assert_failed
+ 611              		.syntax unified
+ 612              		.thumb
+ 613              		.thumb_func
+ 614              		.fpu fpv4-sp-d16
+ 616              	assert_failed:
+ 617              	.LFB128:
+ 433:Src/main.c    ****   
+ 434:Src/main.c    ****     
+ 435:Src/main.c    ****   /* User can add his own implementation to report the HAL error return state */
+ 436:Src/main.c    ****   while(1) 
+ 437:Src/main.c    ****   {
+ 438:Src/main.c    ****   }
+ 439:Src/main.c    ****   /* USER CODE END Error_Handler_Debug */ 
+ 440:Src/main.c    **** }
  441:Src/main.c    **** 
- 442:Src/main.c    **** /**
- 443:Src/main.c    ****    * @brief Reports the name of the source file and the source line number
- 444:Src/main.c    ****    * where the assert_param error has occurred.
- 445:Src/main.c    ****    * @param file: pointer to the source file name
- 446:Src/main.c    ****    * @param line: assert_param error line source number
- 447:Src/main.c    ****    * @retval None
- 448:Src/main.c    ****    */
- 449:Src/main.c    **** void assert_failed(uint8_t* file, uint32_t line)
- 450:Src/main.c    **** {
- 785              		.loc 1 450 0
- 786              		.cfi_startproc
- 787              		@ args = 0, pretend = 0, frame = 0
- 788              		@ frame_needed = 0, uses_anonymous_args = 0
- 789              		@ link register save eliminated.
- 790              	.LVL59:
- 791 0000 7047     		bx	lr
- 792              		.cfi_endproc
- 793              	.LFE130:
- 795              		.global	uwMeasurementDone
- 796              		.global	uwPeriodValue
- 797              		.global	uwCaptureNumber
- 798              		.comm	htim5,60,4
- 799              		.comm	hiwdg,12,4
- 800              		.section	.bss.uwCaptureNumber,"aw",%nobits
- 801              		.align	2
- 802              		.set	.LANCHOR1,. + 0
- 805              	uwCaptureNumber:
- 806 0000 00000000 		.space	4
- 807              		.section	.bss.uwLsiFreq,"aw",%nobits
- 808              		.align	2
- 809              		.set	.LANCHOR3,. + 0
- 812              	uwLsiFreq:
- 813 0000 00000000 		.space	4
- 814              		.section	.bss.uwMeasurementDone,"aw",%nobits
- 815              		.align	2
- 816              		.set	.LANCHOR0,. + 0
- 819              	uwMeasurementDone:
- 820 0000 00000000 		.space	4
- 821              		.section	.bss.uwPeriodValue,"aw",%nobits
- 822              		.align	2
- 823              		.set	.LANCHOR2,. + 0
- 826              	uwPeriodValue:
- 827 0000 00000000 		.space	4
- 828              		.section	.rodata.MX_IWDG_Init.str1.4,"aMS",%progbits,1
- 829              		.align	2
- 830              	.LC0:
- 831 0000 5372632F 		.ascii	"Src/main.c\000"
- 831      6D61696E 
- 831      2E6300
- 832              		.text
- 833              	.Letext0:
- 834              		.file 2 "/home/saicharan/arm/arm-none-eabi/include/machine/_default_types.h"
-ARM GAS  /tmp/ccUhBTIb.s 			page 25
+ 442:Src/main.c    **** #ifdef USE_FULL_ASSERT
+ 443:Src/main.c    **** 
+ 444:Src/main.c    **** /**
+ 445:Src/main.c    ****    * @brief Reports the name of the source file and the source line number
+ 446:Src/main.c    ****    * where the assert_param error has occurred.
+ 447:Src/main.c    ****    * @param file: pointer to the source file name
+ 448:Src/main.c    ****    * @param line: assert_param error line source number
+ 449:Src/main.c    ****    * @retval None
+ 450:Src/main.c    ****    */
+ 451:Src/main.c    **** void assert_failed(uint8_t* file, uint32_t line)
+ 452:Src/main.c    **** {
+ 618              		.loc 1 452 0
+ 619              		.cfi_startproc
+ 620              		@ args = 0, pretend = 0, frame = 0
+ 621              		@ frame_needed = 0, uses_anonymous_args = 0
+ 622              		@ link register save eliminated.
+ 623              	.LVL48:
+ 624 0000 7047     		bx	lr
+ARM GAS  /tmp/cc1ovdIk.s 			page 21
 
 
- 835              		.file 3 "/home/saicharan/arm/arm-none-eabi/include/stdint.h"
- 836              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 837              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 838              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 839              		.file 7 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
- 840              		.file 8 "/home/saicharan/arm/arm-none-eabi/include/sys/lock.h"
- 841              		.file 9 "/home/saicharan/arm/arm-none-eabi/include/sys/_types.h"
- 842              		.file 10 "/home/saicharan/arm/lib/gcc/arm-none-eabi/6.3.0/include/stddef.h"
- 843              		.file 11 "/home/saicharan/arm/arm-none-eabi/include/sys/reent.h"
- 844              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 845              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
- 846              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
- 847              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
- 848              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 849              		.file 17 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h"
- 850              		.file 18 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
- 851              		.file 19 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h"
- 852              		.file 20 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
- 853              		.file 21 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-ARM GAS  /tmp/ccUhBTIb.s 			page 26
+ 625              		.cfi_endproc
+ 626              	.LFE128:
+ 628              		.global	uwMeasurementDone
+ 629              		.global	uwPeriodValue
+ 630              		.global	uwCaptureNumber
+ 631              		.comm	htim5,60,4
+ 632              		.comm	hiwdg,12,4
+ 633              		.section	.bss.uwCaptureNumber,"aw",%nobits
+ 634              		.align	2
+ 635              		.set	.LANCHOR1,. + 0
+ 638              	uwCaptureNumber:
+ 639 0000 00000000 		.space	4
+ 640              		.section	.bss.uwLsiFreq,"aw",%nobits
+ 641              		.align	2
+ 642              		.set	.LANCHOR3,. + 0
+ 645              	uwLsiFreq:
+ 646 0000 00000000 		.space	4
+ 647              		.section	.bss.uwMeasurementDone,"aw",%nobits
+ 648              		.align	2
+ 649              		.set	.LANCHOR0,. + 0
+ 652              	uwMeasurementDone:
+ 653 0000 00000000 		.space	4
+ 654              		.section	.bss.uwPeriodValue,"aw",%nobits
+ 655              		.align	2
+ 656              		.set	.LANCHOR2,. + 0
+ 659              	uwPeriodValue:
+ 660 0000 00000000 		.space	4
+ 661              		.section	.rodata.GetLSIFrequency.str1.4,"aMS",%progbits,1
+ 662              		.align	2
+ 663              	.LC0:
+ 664 0000 5372632F 		.ascii	"Src/main.c\000"
+ 664      6D61696E 
+ 664      2E6300
+ 665              		.text
+ 666              	.Letext0:
+ 667              		.file 2 "/home/saicharan/arm/arm-none-eabi/include/machine/_default_types.h"
+ 668              		.file 3 "/home/saicharan/arm/arm-none-eabi/include/stdint.h"
+ 669              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 670              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 671              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 672              		.file 7 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
+ 673              		.file 8 "/home/saicharan/arm/arm-none-eabi/include/sys/lock.h"
+ 674              		.file 9 "/home/saicharan/arm/arm-none-eabi/include/sys/_types.h"
+ 675              		.file 10 "/home/saicharan/arm/lib/gcc/arm-none-eabi/6.3.0/include/stddef.h"
+ 676              		.file 11 "/home/saicharan/arm/arm-none-eabi/include/sys/reent.h"
+ 677              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 678              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
+ 679              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
+ 680              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 681              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 682              		.file 17 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h"
+ 683              		.file 18 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 684              		.file 19 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h"
+ 685              		.file 20 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
+ 686              		.file 21 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ARM GAS  /tmp/cc1ovdIk.s 			page 22
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 main.c
-     /tmp/ccUhBTIb.s:18     .text.MX_GPIO_Init:0000000000000000 $t
-     /tmp/ccUhBTIb.s:24     .text.MX_GPIO_Init:0000000000000000 MX_GPIO_Init
-     /tmp/ccUhBTIb.s:107    .text.MX_GPIO_Init:0000000000000060 $d
-     /tmp/ccUhBTIb.s:114    .text._Error_Handler:0000000000000000 $t
-     /tmp/ccUhBTIb.s:121    .text._Error_Handler:0000000000000000 _Error_Handler
-     /tmp/ccUhBTIb.s:147    .text._Error_Handler:0000000000000010 $d
-     /tmp/ccUhBTIb.s:152    .text.MX_IWDG_Init:0000000000000000 $t
-     /tmp/ccUhBTIb.s:158    .text.MX_IWDG_Init:0000000000000000 MX_IWDG_Init
-     /tmp/ccUhBTIb.s:193    .text.MX_IWDG_Init:0000000000000024 $d
-                            *COM*:000000000000000c hiwdg
-     /tmp/ccUhBTIb.s:200    .text.MX_TIM5_Init:0000000000000000 $t
-     /tmp/ccUhBTIb.s:206    .text.MX_TIM5_Init:0000000000000000 MX_TIM5_Init
-     /tmp/ccUhBTIb.s:333    .text.MX_TIM5_Init:00000000000000a8 $d
+     /tmp/cc1ovdIk.s:18     .text.MX_GPIO_Init:0000000000000000 $t
+     /tmp/cc1ovdIk.s:24     .text.MX_GPIO_Init:0000000000000000 MX_GPIO_Init
+     /tmp/cc1ovdIk.s:118    .text.MX_GPIO_Init:0000000000000074 $d
+     /tmp/cc1ovdIk.s:126    .text._Error_Handler:0000000000000000 $t
+     /tmp/cc1ovdIk.s:133    .text._Error_Handler:0000000000000000 _Error_Handler
+     /tmp/cc1ovdIk.s:159    .text._Error_Handler:0000000000000010 $d
+     /tmp/cc1ovdIk.s:164    .text.GetLSIFrequency:0000000000000000 $t
+     /tmp/cc1ovdIk.s:170    .text.GetLSIFrequency:0000000000000000 GetLSIFrequency
+     /tmp/cc1ovdIk.s:354    .text.GetLSIFrequency:0000000000000104 $d
                             *COM*:000000000000003c htim5
-     /tmp/ccUhBTIb.s:340    .text.GetLSIFrequency:0000000000000000 $t
-     /tmp/ccUhBTIb.s:346    .text.GetLSIFrequency:0000000000000000 GetLSIFrequency
-     /tmp/ccUhBTIb.s:525    .text.GetLSIFrequency:00000000000000fc $d
-     /tmp/ccUhBTIb.s:537    .text.SystemClock_Config:0000000000000000 $t
-     /tmp/ccUhBTIb.s:544    .text.SystemClock_Config:0000000000000000 SystemClock_Config
-     /tmp/ccUhBTIb.s:659    .text.SystemClock_Config:0000000000000098 $d
-     /tmp/ccUhBTIb.s:667    .text.main:0000000000000000 $t
-     /tmp/ccUhBTIb.s:674    .text.main:0000000000000000 main
-     /tmp/ccUhBTIb.s:766    .text.main:0000000000000078 $d
-     /tmp/ccUhBTIb.s:776    .text.assert_failed:0000000000000000 $t
-     /tmp/ccUhBTIb.s:783    .text.assert_failed:0000000000000000 assert_failed
-     /tmp/ccUhBTIb.s:819    .bss.uwMeasurementDone:0000000000000000 uwMeasurementDone
-     /tmp/ccUhBTIb.s:826    .bss.uwPeriodValue:0000000000000000 uwPeriodValue
-     /tmp/ccUhBTIb.s:805    .bss.uwCaptureNumber:0000000000000000 uwCaptureNumber
-     /tmp/ccUhBTIb.s:801    .bss.uwCaptureNumber:0000000000000000 $d
-     /tmp/ccUhBTIb.s:808    .bss.uwLsiFreq:0000000000000000 $d
-     /tmp/ccUhBTIb.s:812    .bss.uwLsiFreq:0000000000000000 uwLsiFreq
-     /tmp/ccUhBTIb.s:815    .bss.uwMeasurementDone:0000000000000000 $d
-     /tmp/ccUhBTIb.s:822    .bss.uwPeriodValue:0000000000000000 $d
-     /tmp/ccUhBTIb.s:829    .rodata.MX_IWDG_Init.str1.4:0000000000000000 $d
+     /tmp/cc1ovdIk.s:366    .text.SystemClock_Config:0000000000000000 $t
+     /tmp/cc1ovdIk.s:373    .text.SystemClock_Config:0000000000000000 SystemClock_Config
+     /tmp/cc1ovdIk.s:488    .text.SystemClock_Config:0000000000000098 $d
+     /tmp/cc1ovdIk.s:496    .text.main:0000000000000000 $t
+     /tmp/cc1ovdIk.s:503    .text.main:0000000000000000 main
+     /tmp/cc1ovdIk.s:599    .text.main:0000000000000080 $d
+                            *COM*:000000000000000c hiwdg
+     /tmp/cc1ovdIk.s:609    .text.assert_failed:0000000000000000 $t
+     /tmp/cc1ovdIk.s:616    .text.assert_failed:0000000000000000 assert_failed
+     /tmp/cc1ovdIk.s:652    .bss.uwMeasurementDone:0000000000000000 uwMeasurementDone
+     /tmp/cc1ovdIk.s:659    .bss.uwPeriodValue:0000000000000000 uwPeriodValue
+     /tmp/cc1ovdIk.s:638    .bss.uwCaptureNumber:0000000000000000 uwCaptureNumber
+     /tmp/cc1ovdIk.s:634    .bss.uwCaptureNumber:0000000000000000 $d
+     /tmp/cc1ovdIk.s:641    .bss.uwLsiFreq:0000000000000000 $d
+     /tmp/cc1ovdIk.s:645    .bss.uwLsiFreq:0000000000000000 uwLsiFreq
+     /tmp/cc1ovdIk.s:648    .bss.uwMeasurementDone:0000000000000000 $d
+     /tmp/cc1ovdIk.s:655    .bss.uwPeriodValue:0000000000000000 $d
+     /tmp/cc1ovdIk.s:662    .rodata.GetLSIFrequency.str1.4:0000000000000000 $d
                      .debug_frame:0000000000000010 $d
 
 UNDEFINED SYMBOLS
@@ -1506,7 +1296,6 @@ HAL_GPIO_WritePin
 HAL_GPIO_Init
 HAL_NVIC_SetPriority
 HAL_NVIC_EnableIRQ
-HAL_IWDG_Init
 HAL_TIM_Base_Init
 HAL_TIM_ConfigClockSource
 HAL_TIM_IC_Init
@@ -1515,15 +1304,14 @@ HAL_TIM_IC_ConfigChannel
 HAL_TIMEx_RemapConfig
 HAL_TIM_IC_Start_IT
 HAL_TIM_IC_DeInit
+HAL_RCC_GetPCLK1Freq
 HAL_RCC_OscConfig
 HAL_RCC_ClockConfig
 HAL_RCC_GetHCLKFreq
 HAL_SYSTICK_Config
 HAL_SYSTICK_CLKSourceConfig
-ARM GAS  /tmp/ccUhBTIb.s 			page 27
-
-
 HAL_Init
+HAL_IWDG_Init
 HAL_GPIO_TogglePin
 HAL_Delay
 HAL_IWDG_Refresh
