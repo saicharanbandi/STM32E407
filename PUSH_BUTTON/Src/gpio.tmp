@@ -6,10 +6,19 @@ static void MX_GPIO_Init(void)
 #n
 #tGPIO_InitTypeDef GPIO_InitStruct;
 #n#t/* GPIO Ports Clock Enable */
+#t__HAL_RCC_GPIOC_CLK_ENABLE();
 #t__HAL_RCC_GPIOF_CLK_ENABLE();
 #t__HAL_RCC_GPIOA_CLK_ENABLE();
 #n#t/*Configure GPIO pin Output Level */
+#tHAL_GPIO_WritePin(LED_User_GPIO_Port, LED_User_Pin, GPIO_PIN_RESET);
+#n#t/*Configure GPIO pin Output Level */
 #tHAL_GPIO_WritePin(GPIOF, LED_Green_Pin|LED_Red_Pin, GPIO_PIN_RESET);
+#n#t/*Configure GPIO pin : LED_User_Pin */
+#tGPIO_InitStruct.Pin = LED_User_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tGPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+#tHAL_GPIO_Init(LED_User_GPIO_Port, &GPIO_InitStruct);
 #n#t/*Configure GPIO pin : PUSH_BUTTON_Pin */
 #tGPIO_InitStruct.Pin = PUSH_BUTTON_Pin;
 #tGPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;

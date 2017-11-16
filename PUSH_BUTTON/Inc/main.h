@@ -47,6 +47,8 @@
 
 /* Private define ------------------------------------------------------------*/
 
+#define LED_User_Pin GPIO_PIN_13
+#define LED_User_GPIO_Port GPIOC
 #define PUSH_BUTTON_Pin GPIO_PIN_1
 #define PUSH_BUTTON_GPIO_Port GPIOF
 #define PUSH_BUTTON_EXTI_IRQn EXTI1_IRQn

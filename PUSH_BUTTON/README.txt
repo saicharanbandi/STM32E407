@@ -4,3 +4,4 @@ It is interesting to see that Externally used Push button is not so reliable bec
 
 I still need to experiment with the priority options though.
 
+Another interesting fact is that the I cannot configure both WKUP_BUTTON and LED_User at the same time. I think they are internally shorted or some hardware problem is there!!
