@@ -60,8 +60,8 @@ __IO uint32_t uwMeasurementDone = 0;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-/* static void MX_IWDG_Init(void); */
-/* static void MX_TIM5_Init(void); */
+static void MX_IWDG_Init(void);
+static void MX_TIM5_Init(void);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
@@ -97,8 +97,8 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  /* MX_IWDG_Init(); */
-  /* MX_TIM5_Init(); */
+  MX_IWDG_Init();
+  MX_TIM5_Init();
 
   /* USER CODE BEGIN 2 */
 
@@ -213,71 +213,71 @@ void SystemClock_Config(void)
   HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
 }
 
-/* /\* IWDG init function *\/ */
-/* static void MX_IWDG_Init(void) */
-/* { */
+/* IWDG init function */
+static void MX_IWDG_Init(void)
+{
 
-/*   hiwdg.Instance = IWDG; */
-/*   hiwdg.Init.Prescaler = IWDG_PRESCALER_4; */
-/*   hiwdg.Init.Reload = 4095; */
-/*   if (HAL_IWDG_Init(&hiwdg) != HAL_OK) */
-/*   { */
-/*     _Error_Handler(__FILE__, __LINE__); */
-/*   } */
+  hiwdg.Instance = IWDG;
+  hiwdg.Init.Prescaler = IWDG_PRESCALER_4;
+  hiwdg.Init.Reload = 4095;
+  if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
 
-/* } */
+}
 
-/* /\* TIM5 init function *\/ */
-/* static void MX_TIM5_Init(void) */
-/* { */
+/* TIM5 init function */
+static void MX_TIM5_Init(void)
+{
 
-/*   TIM_ClockConfigTypeDef sClockSourceConfig; */
-/*   TIM_MasterConfigTypeDef sMasterConfig; */
-/*   TIM_IC_InitTypeDef sConfigIC; */
+  TIM_ClockConfigTypeDef sClockSourceConfig;
+  TIM_MasterConfigTypeDef sMasterConfig;
+  TIM_IC_InitTypeDef sConfigIC;
 
-/*   htim5.Instance = TIM5; */
-/*   htim5.Init.Prescaler = 0; */
-/*   htim5.Init.CounterMode = TIM_COUNTERMODE_UP; */
-/*   htim5.Init.Period = 0xFFFF; */
-/*   htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1; */
-/*   if (HAL_TIM_Base_Init(&htim5) != HAL_OK) */
-/*   { */
-/*     _Error_Handler(__FILE__, __LINE__); */
-/*   } */
+  htim5.Instance = TIM5;
+  htim5.Init.Prescaler = 0;
+  htim5.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim5.Init.Period = 0xFFFF;
+  htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  if (HAL_TIM_Base_Init(&htim5) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
 
-/*   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL; */
-/*   if (HAL_TIM_ConfigClockSource(&htim5, &sClockSourceConfig) != HAL_OK) */
-/*   { */
-/*     _Error_Handler(__FILE__, __LINE__); */
-/*   } */
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim5, &sClockSourceConfig) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
 
-/*   if (HAL_TIM_IC_Init(&htim5) != HAL_OK) */
-/*   { */
-/*     _Error_Handler(__FILE__, __LINE__); */
-/*   } */
+  if (HAL_TIM_IC_Init(&htim5) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
 
-/*   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET; */
-/*   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE; */
-/*   if (HAL_TIMEx_MasterConfigSynchronization(&htim5, &sMasterConfig) != HAL_OK) */
-/*   { */
-/*     _Error_Handler(__FILE__, __LINE__); */
-/*   } */
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim5, &sMasterConfig) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
 
-/*   sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING; */
-/*   sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI; */
-/*   sConfigIC.ICPrescaler = TIM_ICPSC_DIV1; */
-/*   sConfigIC.ICFilter = 0; */
-/*   if (HAL_TIM_IC_ConfigChannel(&htim5, &sConfigIC, TIM_CHANNEL_4) != HAL_OK) */
-/*   { */
-/*     _Error_Handler(__FILE__, __LINE__); */
-/*   } */
+  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
+  sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
+  sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
+  sConfigIC.ICFilter = 0;
+  if (HAL_TIM_IC_ConfigChannel(&htim5, &sConfigIC, TIM_CHANNEL_4) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
 
-/*   if (HAL_TIMEx_RemapConfig(&htim5, TIM_TIM5_LSI) != HAL_OK) */
-/*   { */
-/*     _Error_Handler(__FILE__, __LINE__); */
-/*   } */
+  if (HAL_TIMEx_RemapConfig(&htim5, TIM_TIM5_LSI) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
 
-/* } */
+}
 
 /** Configure pins as 
         * Analog 
@@ -312,7 +312,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(WKUP_BUTTON_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI0_IRQn, 1, 1);
+  HAL_NVIC_SetPriority(EXTI0_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI0_IRQn);
 
 }

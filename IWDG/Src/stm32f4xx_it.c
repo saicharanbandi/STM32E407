@@ -204,6 +204,7 @@ void SysTick_Handler(void)
 void EXTI0_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI0_IRQn 0 */
+  /* Check if the EXTI0 pin (External Interrupt) is set */
   if (__HAL_GPIO_EXTI_GET_FLAG(GPIO_PIN_0))
   {
     /* Resetting the LED_Green completely */

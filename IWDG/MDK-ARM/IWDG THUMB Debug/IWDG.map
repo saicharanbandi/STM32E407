@@ -1,5 +1,7 @@
 Archive member included to satisfy reference by file (symbol)
 
+/usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+                              IWDG THUMB Debug/stm32f4xx_hal_rcc.o (__aeabi_uldivmod)
 /usr/share/crossworks_for_arm_4.0/lib/libdebugio_v7em_t_le_eabi.a(libdebugio.o)
                               IWDG THUMB Debug/thumb_crt0.o (debug_fopen)
 /usr/share/crossworks_for_arm_4.0/lib/libdebugio_mempoll_v7em_t_le_eabi.a(mempoll_debug_operations.o)
@@ -12,8 +14,6 @@ Archive member included to satisfy reference by file (symbol)
                               /usr/share/crossworks_for_arm_4.0/lib/libvfprintf_v7em_t_le_eabi.o (frexp)
 /usr/share/crossworks_for_arm_4.0/lib/libm_v7em_t_le_eabi.a(libm2_asm.o)
                               /usr/share/crossworks_for_arm_4.0/lib/libm_v7em_t_le_eabi.a(libm2.o) (fabs)
-/usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
-                              /usr/share/crossworks_for_arm_4.0/lib/libvfprintf_v7em_t_le_eabi.o (__aeabi_uldivmod)
 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc2.o)
                               /usr/share/crossworks_for_arm_4.0/lib/libvfscanf_v7em_t_le_eabi.o (__getc)
 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc2_asm.o)
@@ -150,22 +150,22 @@ Discarded input sections
  .data          0x0000000000000000        0x0 IWDG THUMB Debug/stm32f4xx_it.o
  .bss           0x0000000000000000        0x0 IWDG THUMB Debug/stm32f4xx_it.o
  .debug_macro   0x0000000000000000      0x8ec IWDG THUMB Debug/stm32f4xx_it.o
- .debug_macro   0x0000000000000000       0x52 IWDG THUMB Debug/stm32f4xx_it.o
+ .debug_macro   0x0000000000000000       0x58 IWDG THUMB Debug/stm32f4xx_it.o
  .debug_macro   0x0000000000000000      0x187 IWDG THUMB Debug/stm32f4xx_it.o
- .debug_macro   0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_it.o
- .debug_macro   0x0000000000000000       0x28 IWDG THUMB Debug/stm32f4xx_it.o
+ .debug_macro   0x0000000000000000       0x32 IWDG THUMB Debug/stm32f4xx_it.o
+ .debug_macro   0x0000000000000000       0x2f IWDG THUMB Debug/stm32f4xx_it.o
  .debug_macro   0x0000000000000000      0x188 IWDG THUMB Debug/stm32f4xx_it.o
  .debug_macro   0x0000000000000000       0x35 IWDG THUMB Debug/stm32f4xx_it.o
  .debug_macro   0x0000000000000000       0x50 IWDG THUMB Debug/stm32f4xx_it.o
  .debug_macro   0x0000000000000000      0xe66 IWDG THUMB Debug/stm32f4xx_it.o
- .debug_macro   0x0000000000000000    0x15e04 IWDG THUMB Debug/stm32f4xx_it.o
+ .debug_macro   0x0000000000000000    0x15d08 IWDG THUMB Debug/stm32f4xx_it.o
  .debug_macro   0x0000000000000000       0x43 IWDG THUMB Debug/stm32f4xx_it.o
- .debug_macro   0x0000000000000000     0x3574 IWDG THUMB Debug/stm32f4xx_it.o
+ .debug_macro   0x0000000000000000     0x3535 IWDG THUMB Debug/stm32f4xx_it.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_it.o
  .debug_macro   0x0000000000000000       0x71 IWDG THUMB Debug/stm32f4xx_it.o
- .debug_macro   0x0000000000000000       0x5e IWDG THUMB Debug/stm32f4xx_it.o
+ .debug_macro   0x0000000000000000       0x5d IWDG THUMB Debug/stm32f4xx_it.o
  .debug_macro   0x0000000000000000      0x96b IWDG THUMB Debug/stm32f4xx_it.o
- .debug_macro   0x0000000000000000      0x9e1 IWDG THUMB Debug/stm32f4xx_it.o
+ .debug_macro   0x0000000000000000      0x9e6 IWDG THUMB Debug/stm32f4xx_it.o
  .debug_macro   0x0000000000000000      0x11e IWDG THUMB Debug/stm32f4xx_it.o
  .debug_macro   0x0000000000000000      0x13e IWDG THUMB Debug/stm32f4xx_it.o
  .debug_macro   0x0000000000000000       0x27 IWDG THUMB Debug/stm32f4xx_it.o
@@ -180,7 +180,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7f IWDG THUMB Debug/stm32f4xx_it.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_it.o
  .debug_macro   0x0000000000000000      0x6e0 IWDG THUMB Debug/stm32f4xx_it.o
- .debug_macro   0x0000000000000000       0x5b IWDG THUMB Debug/stm32f4xx_it.o
+ .debug_macro   0x0000000000000000       0x59 IWDG THUMB Debug/stm32f4xx_it.o
  .debug_macro   0x0000000000000000      0x14d IWDG THUMB Debug/stm32f4xx_it.o
  .debug_macro   0x0000000000000000      0x125 IWDG THUMB Debug/stm32f4xx_it.o
  .group         0x0000000000000000        0x8 IWDG THUMB Debug/stm32f4xx_hal_msp.o
@@ -223,22 +223,22 @@ Discarded input sections
  .text.HAL_TIM_Base_MspDeInit
                 0x0000000000000000       0x34 IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .debug_macro   0x0000000000000000      0x8ec IWDG THUMB Debug/stm32f4xx_hal_msp.o
- .debug_macro   0x0000000000000000       0x52 IWDG THUMB Debug/stm32f4xx_hal_msp.o
+ .debug_macro   0x0000000000000000       0x58 IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .debug_macro   0x0000000000000000      0x187 IWDG THUMB Debug/stm32f4xx_hal_msp.o
- .debug_macro   0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_msp.o
- .debug_macro   0x0000000000000000       0x28 IWDG THUMB Debug/stm32f4xx_hal_msp.o
+ .debug_macro   0x0000000000000000       0x32 IWDG THUMB Debug/stm32f4xx_hal_msp.o
+ .debug_macro   0x0000000000000000       0x2f IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .debug_macro   0x0000000000000000      0x188 IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .debug_macro   0x0000000000000000       0x35 IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .debug_macro   0x0000000000000000       0x50 IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .debug_macro   0x0000000000000000      0xe66 IWDG THUMB Debug/stm32f4xx_hal_msp.o
- .debug_macro   0x0000000000000000    0x15e04 IWDG THUMB Debug/stm32f4xx_hal_msp.o
+ .debug_macro   0x0000000000000000    0x15d08 IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .debug_macro   0x0000000000000000       0x43 IWDG THUMB Debug/stm32f4xx_hal_msp.o
- .debug_macro   0x0000000000000000     0x3574 IWDG THUMB Debug/stm32f4xx_hal_msp.o
+ .debug_macro   0x0000000000000000     0x3535 IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .debug_macro   0x0000000000000000       0x71 IWDG THUMB Debug/stm32f4xx_hal_msp.o
- .debug_macro   0x0000000000000000       0x5e IWDG THUMB Debug/stm32f4xx_hal_msp.o
+ .debug_macro   0x0000000000000000       0x5d IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .debug_macro   0x0000000000000000      0x96b IWDG THUMB Debug/stm32f4xx_hal_msp.o
- .debug_macro   0x0000000000000000      0x9e1 IWDG THUMB Debug/stm32f4xx_hal_msp.o
+ .debug_macro   0x0000000000000000      0x9e6 IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .debug_macro   0x0000000000000000      0x11e IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .debug_macro   0x0000000000000000      0x13e IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .debug_macro   0x0000000000000000       0x27 IWDG THUMB Debug/stm32f4xx_hal_msp.o
@@ -253,7 +253,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7f IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .debug_macro   0x0000000000000000      0x6e0 IWDG THUMB Debug/stm32f4xx_hal_msp.o
- .debug_macro   0x0000000000000000       0x5b IWDG THUMB Debug/stm32f4xx_hal_msp.o
+ .debug_macro   0x0000000000000000       0x59 IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .debug_macro   0x0000000000000000      0x14d IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .debug_macro   0x0000000000000000      0x125 IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .group         0x0000000000000000        0x8 IWDG THUMB Debug/system_stm32f4xx.o
@@ -293,27 +293,25 @@ Discarded input sections
  .text          0x0000000000000000        0x0 IWDG THUMB Debug/system_stm32f4xx.o
  .data          0x0000000000000000        0x0 IWDG THUMB Debug/system_stm32f4xx.o
  .bss           0x0000000000000000        0x0 IWDG THUMB Debug/system_stm32f4xx.o
- .rodata.APBPrescTable
-                0x0000000000000000        0x8 IWDG THUMB Debug/system_stm32f4xx.o
  .text.SystemCoreClockUpdate
                 0x0000000000000000       0xec IWDG THUMB Debug/system_stm32f4xx.o
  .debug_macro   0x0000000000000000      0x8ec IWDG THUMB Debug/system_stm32f4xx.o
- .debug_macro   0x0000000000000000       0x33 IWDG THUMB Debug/system_stm32f4xx.o
- .debug_macro   0x0000000000000000       0x28 IWDG THUMB Debug/system_stm32f4xx.o
+ .debug_macro   0x0000000000000000       0x32 IWDG THUMB Debug/system_stm32f4xx.o
+ .debug_macro   0x0000000000000000       0x2f IWDG THUMB Debug/system_stm32f4xx.o
  .debug_macro   0x0000000000000000      0x188 IWDG THUMB Debug/system_stm32f4xx.o
  .debug_macro   0x0000000000000000       0x35 IWDG THUMB Debug/system_stm32f4xx.o
  .debug_macro   0x0000000000000000       0x50 IWDG THUMB Debug/system_stm32f4xx.o
  .debug_macro   0x0000000000000000      0xe66 IWDG THUMB Debug/system_stm32f4xx.o
- .debug_macro   0x0000000000000000    0x15e04 IWDG THUMB Debug/system_stm32f4xx.o
+ .debug_macro   0x0000000000000000    0x15d08 IWDG THUMB Debug/system_stm32f4xx.o
  .debug_macro   0x0000000000000000       0x43 IWDG THUMB Debug/system_stm32f4xx.o
- .debug_macro   0x0000000000000000       0x52 IWDG THUMB Debug/system_stm32f4xx.o
+ .debug_macro   0x0000000000000000       0x58 IWDG THUMB Debug/system_stm32f4xx.o
  .debug_macro   0x0000000000000000      0x187 IWDG THUMB Debug/system_stm32f4xx.o
- .debug_macro   0x0000000000000000     0x3574 IWDG THUMB Debug/system_stm32f4xx.o
+ .debug_macro   0x0000000000000000     0x3535 IWDG THUMB Debug/system_stm32f4xx.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/system_stm32f4xx.o
  .debug_macro   0x0000000000000000       0x71 IWDG THUMB Debug/system_stm32f4xx.o
- .debug_macro   0x0000000000000000       0x5e IWDG THUMB Debug/system_stm32f4xx.o
+ .debug_macro   0x0000000000000000       0x5d IWDG THUMB Debug/system_stm32f4xx.o
  .debug_macro   0x0000000000000000      0x96b IWDG THUMB Debug/system_stm32f4xx.o
- .debug_macro   0x0000000000000000      0x9e1 IWDG THUMB Debug/system_stm32f4xx.o
+ .debug_macro   0x0000000000000000      0x9e6 IWDG THUMB Debug/system_stm32f4xx.o
  .debug_macro   0x0000000000000000      0x11e IWDG THUMB Debug/system_stm32f4xx.o
  .debug_macro   0x0000000000000000      0x13e IWDG THUMB Debug/system_stm32f4xx.o
  .debug_macro   0x0000000000000000       0x27 IWDG THUMB Debug/system_stm32f4xx.o
@@ -328,7 +326,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7f IWDG THUMB Debug/system_stm32f4xx.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/system_stm32f4xx.o
  .debug_macro   0x0000000000000000      0x6e0 IWDG THUMB Debug/system_stm32f4xx.o
- .debug_macro   0x0000000000000000       0x5b IWDG THUMB Debug/system_stm32f4xx.o
+ .debug_macro   0x0000000000000000       0x59 IWDG THUMB Debug/system_stm32f4xx.o
  .debug_macro   0x0000000000000000      0x14d IWDG THUMB Debug/system_stm32f4xx.o
  .debug_macro   0x0000000000000000      0x125 IWDG THUMB Debug/system_stm32f4xx.o
  .group         0x0000000000000000        0x8 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
@@ -370,18 +368,18 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .rodata        0x0000000000000000       0x9e IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .text.HAL_RCCEx_PeriphCLKConfig
-                0x0000000000000000      0x41c IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
+                0x0000000000000000      0x3f0 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .text.HAL_RCCEx_GetPeriphCLKConfig
-                0x0000000000000000       0x7c IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
+                0x0000000000000000       0x50 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .text.HAL_RCCEx_GetPeriphCLKFreq
                 0x0000000000000000       0xb0 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .text.HAL_RCC_DeInit
-                0x0000000000000000       0x70 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
- .debug_frame   0x0000000000000000       0x88 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
- .debug_info    0x0000000000000000      0xad5 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
- .debug_abbrev  0x0000000000000000      0x234 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
+                0x0000000000000000      0x158 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
+ .debug_frame   0x0000000000000000       0xa0 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
+ .debug_info    0x0000000000000000      0xa0b IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
+ .debug_abbrev  0x0000000000000000      0x1ce IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_pubnames
-                0x0000000000000000       0xed IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
+                0x0000000000000000       0xe2 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_pubtypes
                 0x0000000000000000      0x213 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_aranges
@@ -389,22 +387,22 @@ Discarded input sections
  .debug_ranges  0x0000000000000000       0x28 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_macro   0x0000000000000000      0x19a IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_macro   0x0000000000000000      0x8ec IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
- .debug_macro   0x0000000000000000       0x52 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
+ .debug_macro   0x0000000000000000       0x58 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_macro   0x0000000000000000      0x187 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
- .debug_macro   0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
- .debug_macro   0x0000000000000000       0x28 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
+ .debug_macro   0x0000000000000000       0x32 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
+ .debug_macro   0x0000000000000000       0x2f IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_macro   0x0000000000000000      0x188 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_macro   0x0000000000000000       0x35 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_macro   0x0000000000000000       0x50 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_macro   0x0000000000000000      0xe66 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
- .debug_macro   0x0000000000000000    0x15e04 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
+ .debug_macro   0x0000000000000000    0x15d08 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_macro   0x0000000000000000       0x43 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
- .debug_macro   0x0000000000000000     0x3574 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
+ .debug_macro   0x0000000000000000     0x3535 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_macro   0x0000000000000000       0x71 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
- .debug_macro   0x0000000000000000       0x5e IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
+ .debug_macro   0x0000000000000000       0x5d IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_macro   0x0000000000000000      0x96b IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
- .debug_macro   0x0000000000000000      0x9e1 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
+ .debug_macro   0x0000000000000000      0x9e6 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_macro   0x0000000000000000      0x11e IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_macro   0x0000000000000000      0x13e IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_macro   0x0000000000000000       0x27 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
@@ -419,11 +417,11 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7f IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_macro   0x0000000000000000      0x6e0 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
- .debug_macro   0x0000000000000000       0x5b IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
+ .debug_macro   0x0000000000000000       0x59 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_macro   0x0000000000000000      0x14d IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .debug_macro   0x0000000000000000      0x125 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
- .debug_line    0x0000000000000000      0x61f IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
- .debug_str     0x0000000000000000    0xba40d IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
+ .debug_line    0x0000000000000000      0x60b IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
+ .debug_str     0x0000000000000000    0xba3af IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .comment       0x0000000000000000       0x4d IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
  .ARM.attributes
                 0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_rcc_ex.o
@@ -476,7 +474,7 @@ Discarded input sections
  .text.FLASH_MassErase
                 0x0000000000000000       0x84 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .text.FLASH_Erase_Sector
-                0x0000000000000000      0x128 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
+                0x0000000000000000      0x114 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .text.FLASH_OB_EnableWRP
                 0x0000000000000000       0x7c IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .text.FLASH_OB_DisableWRP
@@ -498,10 +496,10 @@ Discarded input sections
  .text.FLASH_FlushCaches
                 0x0000000000000000       0x80 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_frame   0x0000000000000000      0x228 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
- .debug_info    0x0000000000000000      0xc2c IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
- .debug_abbrev  0x0000000000000000      0x29a IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
+ .debug_info    0x0000000000000000      0xbdb IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
+ .debug_abbrev  0x0000000000000000      0x245 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_pubnames
-                0x0000000000000000      0x25a IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
+                0x0000000000000000      0x24f IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_pubtypes
                 0x0000000000000000      0x25d IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_aranges
@@ -509,22 +507,22 @@ Discarded input sections
  .debug_ranges  0x0000000000000000       0x88 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_macro   0x0000000000000000      0x1a0 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_macro   0x0000000000000000      0x8ec IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
- .debug_macro   0x0000000000000000       0x52 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
+ .debug_macro   0x0000000000000000       0x58 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_macro   0x0000000000000000      0x187 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
- .debug_macro   0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
- .debug_macro   0x0000000000000000       0x28 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
+ .debug_macro   0x0000000000000000       0x32 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
+ .debug_macro   0x0000000000000000       0x2f IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_macro   0x0000000000000000      0x188 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_macro   0x0000000000000000       0x35 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_macro   0x0000000000000000       0x50 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_macro   0x0000000000000000      0xe66 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
- .debug_macro   0x0000000000000000    0x15e04 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
+ .debug_macro   0x0000000000000000    0x15d08 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_macro   0x0000000000000000       0x43 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
- .debug_macro   0x0000000000000000     0x3574 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
+ .debug_macro   0x0000000000000000     0x3535 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_macro   0x0000000000000000       0x71 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
- .debug_macro   0x0000000000000000       0x5e IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
+ .debug_macro   0x0000000000000000       0x5d IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_macro   0x0000000000000000      0x96b IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
- .debug_macro   0x0000000000000000      0x9e1 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
+ .debug_macro   0x0000000000000000      0x9e6 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_macro   0x0000000000000000      0x11e IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_macro   0x0000000000000000      0x13e IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_macro   0x0000000000000000       0x27 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
@@ -539,11 +537,11 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7f IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_macro   0x0000000000000000      0x6e0 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
- .debug_macro   0x0000000000000000       0x5b IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
+ .debug_macro   0x0000000000000000       0x59 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_macro   0x0000000000000000      0x14d IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .debug_macro   0x0000000000000000      0x125 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
- .debug_line    0x0000000000000000      0x769 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
- .debug_str     0x0000000000000000    0xba543 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
+ .debug_line    0x0000000000000000      0x75b IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
+ .debug_str     0x0000000000000000    0xba4e5 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .comment       0x0000000000000000       0x4d IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
  .ARM.attributes
                 0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_flash_ex.o
@@ -591,22 +589,22 @@ Discarded input sections
  .text.HAL_GPIO_LockPin
                 0x0000000000000000       0x74 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
  .debug_macro   0x0000000000000000      0x8ec IWDG THUMB Debug/stm32f4xx_hal_gpio.o
- .debug_macro   0x0000000000000000       0x52 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+ .debug_macro   0x0000000000000000       0x58 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
  .debug_macro   0x0000000000000000      0x187 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
- .debug_macro   0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
- .debug_macro   0x0000000000000000       0x28 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+ .debug_macro   0x0000000000000000       0x32 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+ .debug_macro   0x0000000000000000       0x2f IWDG THUMB Debug/stm32f4xx_hal_gpio.o
  .debug_macro   0x0000000000000000      0x188 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
  .debug_macro   0x0000000000000000       0x35 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
  .debug_macro   0x0000000000000000       0x50 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
  .debug_macro   0x0000000000000000      0xe66 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
- .debug_macro   0x0000000000000000    0x15e04 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+ .debug_macro   0x0000000000000000    0x15d08 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
  .debug_macro   0x0000000000000000       0x43 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
- .debug_macro   0x0000000000000000     0x3574 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+ .debug_macro   0x0000000000000000     0x3535 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
  .debug_macro   0x0000000000000000       0x71 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
- .debug_macro   0x0000000000000000       0x5e IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+ .debug_macro   0x0000000000000000       0x5d IWDG THUMB Debug/stm32f4xx_hal_gpio.o
  .debug_macro   0x0000000000000000      0x96b IWDG THUMB Debug/stm32f4xx_hal_gpio.o
- .debug_macro   0x0000000000000000      0x9e1 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+ .debug_macro   0x0000000000000000      0x9e6 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
  .debug_macro   0x0000000000000000      0x11e IWDG THUMB Debug/stm32f4xx_hal_gpio.o
  .debug_macro   0x0000000000000000      0x13e IWDG THUMB Debug/stm32f4xx_hal_gpio.o
  .debug_macro   0x0000000000000000       0x27 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
@@ -621,7 +619,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7f IWDG THUMB Debug/stm32f4xx_hal_gpio.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
  .debug_macro   0x0000000000000000      0x6e0 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
- .debug_macro   0x0000000000000000       0x5b IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+ .debug_macro   0x0000000000000000       0x59 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
  .debug_macro   0x0000000000000000      0x14d IWDG THUMB Debug/stm32f4xx_hal_gpio.o
  .debug_macro   0x0000000000000000      0x125 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
  .group         0x0000000000000000        0x8 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
@@ -664,16 +662,16 @@ Discarded input sections
  .text.HAL_PWR_DeInit
                 0x0000000000000000       0x20 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .text.HAL_PWR_EnableBkUpAccess
-                0x0000000000000000       0x2c IWDG THUMB Debug/stm32f4xx_hal_pwr.o
+                0x0000000000000000       0x10 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .text.HAL_PWR_DisableBkUpAccess
-                0x0000000000000000       0x2c IWDG THUMB Debug/stm32f4xx_hal_pwr.o
+                0x0000000000000000       0x10 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .rodata        0x0000000000000000       0x9b IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .text.HAL_PWR_ConfigPVD
                 0x0000000000000000      0x164 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .text.HAL_PWR_EnablePVD
-                0x0000000000000000       0x2a IWDG THUMB Debug/stm32f4xx_hal_pwr.o
+                0x0000000000000000       0x10 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .text.HAL_PWR_DisablePVD
-                0x0000000000000000       0x2a IWDG THUMB Debug/stm32f4xx_hal_pwr.o
+                0x0000000000000000       0x10 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .text.HAL_PWR_EnableWakeUpPin
                 0x0000000000000000       0x34 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .text.HAL_PWR_DisableWakeUpPin
@@ -696,11 +694,11 @@ Discarded input sections
                 0x0000000000000000       0x14 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .text.HAL_PWR_DisableSEVOnPend
                 0x0000000000000000       0x14 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
- .debug_frame   0x0000000000000000      0x1e4 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
- .debug_info    0x0000000000000000      0xdc8 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
- .debug_abbrev  0x0000000000000000      0x264 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
+ .debug_frame   0x0000000000000000      0x1a4 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
+ .debug_info    0x0000000000000000      0xce0 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
+ .debug_abbrev  0x0000000000000000      0x1e4 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_pubnames
-                0x0000000000000000      0x229 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
+                0x0000000000000000      0x21e IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_pubtypes
                 0x0000000000000000      0x1f7 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_aranges
@@ -708,22 +706,22 @@ Discarded input sections
  .debug_ranges  0x0000000000000000       0x90 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_macro   0x0000000000000000      0x1b2 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_macro   0x0000000000000000      0x8ec IWDG THUMB Debug/stm32f4xx_hal_pwr.o
- .debug_macro   0x0000000000000000       0x52 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
+ .debug_macro   0x0000000000000000       0x58 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_macro   0x0000000000000000      0x187 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
- .debug_macro   0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
- .debug_macro   0x0000000000000000       0x28 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
+ .debug_macro   0x0000000000000000       0x32 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
+ .debug_macro   0x0000000000000000       0x2f IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_macro   0x0000000000000000      0x188 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_macro   0x0000000000000000       0x35 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_macro   0x0000000000000000       0x50 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_macro   0x0000000000000000      0xe66 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
- .debug_macro   0x0000000000000000    0x15e04 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
+ .debug_macro   0x0000000000000000    0x15d08 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_macro   0x0000000000000000       0x43 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
- .debug_macro   0x0000000000000000     0x3574 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
+ .debug_macro   0x0000000000000000     0x3535 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_macro   0x0000000000000000       0x71 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
- .debug_macro   0x0000000000000000       0x5e IWDG THUMB Debug/stm32f4xx_hal_pwr.o
+ .debug_macro   0x0000000000000000       0x5d IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_macro   0x0000000000000000      0x96b IWDG THUMB Debug/stm32f4xx_hal_pwr.o
- .debug_macro   0x0000000000000000      0x9e1 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
+ .debug_macro   0x0000000000000000      0x9e6 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_macro   0x0000000000000000      0x11e IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_macro   0x0000000000000000      0x13e IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_macro   0x0000000000000000       0x27 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
@@ -738,11 +736,11 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7f IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_macro   0x0000000000000000      0x6e0 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
- .debug_macro   0x0000000000000000       0x5b IWDG THUMB Debug/stm32f4xx_hal_pwr.o
+ .debug_macro   0x0000000000000000       0x59 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_macro   0x0000000000000000      0x14d IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .debug_macro   0x0000000000000000      0x125 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
- .debug_line    0x0000000000000000      0x695 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
- .debug_str     0x0000000000000000    0xba567 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
+ .debug_line    0x0000000000000000      0x65d IWDG THUMB Debug/stm32f4xx_hal_pwr.o
+ .debug_str     0x0000000000000000    0xba509 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .comment       0x0000000000000000       0x4d IWDG THUMB Debug/stm32f4xx_hal_pwr.o
  .ARM.attributes
                 0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_pwr.o
@@ -796,7 +794,7 @@ Discarded input sections
  .text.HAL_FLASH_OperationErrorCallback
                 0x0000000000000000        0xa IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .text.HAL_FLASH_Unlock
-                0x0000000000000000       0x2c IWDG THUMB Debug/stm32f4xx_hal_flash.o
+                0x0000000000000000       0x40 IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .text.HAL_FLASH_Lock
                 0x0000000000000000       0x18 IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .text.HAL_FLASH_OB_Unlock
@@ -819,9 +817,9 @@ Discarded input sections
                 0x0000000000000000       0x78 IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .text.FLASH_SetErrorCode
                 0x0000000000000000       0xa4 IWDG THUMB Debug/stm32f4xx_hal_flash.o
- .debug_frame   0x0000000000000000      0x214 IWDG THUMB Debug/stm32f4xx_hal_flash.o
- .debug_info    0x0000000000000000      0xaa0 IWDG THUMB Debug/stm32f4xx_hal_flash.o
- .debug_abbrev  0x0000000000000000      0x270 IWDG THUMB Debug/stm32f4xx_hal_flash.o
+ .debug_frame   0x0000000000000000      0x224 IWDG THUMB Debug/stm32f4xx_hal_flash.o
+ .debug_info    0x0000000000000000      0xab4 IWDG THUMB Debug/stm32f4xx_hal_flash.o
+ .debug_abbrev  0x0000000000000000      0x28c IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .debug_pubnames
                 0x0000000000000000      0x2a0 IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .debug_pubtypes
@@ -831,22 +829,22 @@ Discarded input sections
  .debug_ranges  0x0000000000000000       0x90 IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .debug_macro   0x0000000000000000      0x1a0 IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .debug_macro   0x0000000000000000      0x8ec IWDG THUMB Debug/stm32f4xx_hal_flash.o
- .debug_macro   0x0000000000000000       0x52 IWDG THUMB Debug/stm32f4xx_hal_flash.o
+ .debug_macro   0x0000000000000000       0x58 IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .debug_macro   0x0000000000000000      0x187 IWDG THUMB Debug/stm32f4xx_hal_flash.o
- .debug_macro   0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_flash.o
- .debug_macro   0x0000000000000000       0x28 IWDG THUMB Debug/stm32f4xx_hal_flash.o
+ .debug_macro   0x0000000000000000       0x32 IWDG THUMB Debug/stm32f4xx_hal_flash.o
+ .debug_macro   0x0000000000000000       0x2f IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .debug_macro   0x0000000000000000      0x188 IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .debug_macro   0x0000000000000000       0x35 IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .debug_macro   0x0000000000000000       0x50 IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .debug_macro   0x0000000000000000      0xe66 IWDG THUMB Debug/stm32f4xx_hal_flash.o
- .debug_macro   0x0000000000000000    0x15e04 IWDG THUMB Debug/stm32f4xx_hal_flash.o
+ .debug_macro   0x0000000000000000    0x15d08 IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .debug_macro   0x0000000000000000       0x43 IWDG THUMB Debug/stm32f4xx_hal_flash.o
- .debug_macro   0x0000000000000000     0x3574 IWDG THUMB Debug/stm32f4xx_hal_flash.o
+ .debug_macro   0x0000000000000000     0x3535 IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .debug_macro   0x0000000000000000       0x71 IWDG THUMB Debug/stm32f4xx_hal_flash.o
- .debug_macro   0x0000000000000000       0x5e IWDG THUMB Debug/stm32f4xx_hal_flash.o
+ .debug_macro   0x0000000000000000       0x5d IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .debug_macro   0x0000000000000000      0x96b IWDG THUMB Debug/stm32f4xx_hal_flash.o
- .debug_macro   0x0000000000000000      0x9e1 IWDG THUMB Debug/stm32f4xx_hal_flash.o
+ .debug_macro   0x0000000000000000      0x9e6 IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .debug_macro   0x0000000000000000      0x11e IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .debug_macro   0x0000000000000000      0x13e IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .debug_macro   0x0000000000000000       0x27 IWDG THUMB Debug/stm32f4xx_hal_flash.o
@@ -861,11 +859,11 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7f IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .debug_macro   0x0000000000000000      0x6e0 IWDG THUMB Debug/stm32f4xx_hal_flash.o
- .debug_macro   0x0000000000000000       0x5b IWDG THUMB Debug/stm32f4xx_hal_flash.o
+ .debug_macro   0x0000000000000000       0x59 IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .debug_macro   0x0000000000000000      0x14d IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .debug_macro   0x0000000000000000      0x125 IWDG THUMB Debug/stm32f4xx_hal_flash.o
- .debug_line    0x0000000000000000      0x6b2 IWDG THUMB Debug/stm32f4xx_hal_flash.o
- .debug_str     0x0000000000000000    0xba4b8 IWDG THUMB Debug/stm32f4xx_hal_flash.o
+ .debug_line    0x0000000000000000      0x6b4 IWDG THUMB Debug/stm32f4xx_hal_flash.o
+ .debug_str     0x0000000000000000    0xba46e IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .comment       0x0000000000000000       0x4d IWDG THUMB Debug/stm32f4xx_hal_flash.o
  .ARM.attributes
                 0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_flash.o
@@ -920,9 +918,9 @@ Discarded input sections
  .text.HAL_DMA_Abort_IT
                 0x0000000000000000       0x3a IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .text.HAL_DMA_PollForTransfer
-                0x0000000000000000      0x1d0 IWDG THUMB Debug/stm32f4xx_hal_dma.o
+                0x0000000000000000      0x1c6 IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .text.HAL_DMA_IRQHandler
-                0x0000000000000000      0x31c IWDG THUMB Debug/stm32f4xx_hal_dma.o
+                0x0000000000000000      0x314 IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .text.HAL_DMA_RegisterCallback
                 0x0000000000000000       0xa8 IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .text.HAL_DMA_UnRegisterCallback
@@ -951,22 +949,22 @@ Discarded input sections
  .debug_ranges  0x0000000000000000       0x80 IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .debug_macro   0x0000000000000000      0x1a1 IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .debug_macro   0x0000000000000000      0x8ec IWDG THUMB Debug/stm32f4xx_hal_dma.o
- .debug_macro   0x0000000000000000       0x52 IWDG THUMB Debug/stm32f4xx_hal_dma.o
+ .debug_macro   0x0000000000000000       0x58 IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .debug_macro   0x0000000000000000      0x187 IWDG THUMB Debug/stm32f4xx_hal_dma.o
- .debug_macro   0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_dma.o
- .debug_macro   0x0000000000000000       0x28 IWDG THUMB Debug/stm32f4xx_hal_dma.o
+ .debug_macro   0x0000000000000000       0x32 IWDG THUMB Debug/stm32f4xx_hal_dma.o
+ .debug_macro   0x0000000000000000       0x2f IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .debug_macro   0x0000000000000000      0x188 IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .debug_macro   0x0000000000000000       0x35 IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .debug_macro   0x0000000000000000       0x50 IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .debug_macro   0x0000000000000000      0xe66 IWDG THUMB Debug/stm32f4xx_hal_dma.o
- .debug_macro   0x0000000000000000    0x15e04 IWDG THUMB Debug/stm32f4xx_hal_dma.o
+ .debug_macro   0x0000000000000000    0x15d08 IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .debug_macro   0x0000000000000000       0x43 IWDG THUMB Debug/stm32f4xx_hal_dma.o
- .debug_macro   0x0000000000000000     0x3574 IWDG THUMB Debug/stm32f4xx_hal_dma.o
+ .debug_macro   0x0000000000000000     0x3535 IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .debug_macro   0x0000000000000000       0x71 IWDG THUMB Debug/stm32f4xx_hal_dma.o
- .debug_macro   0x0000000000000000       0x5e IWDG THUMB Debug/stm32f4xx_hal_dma.o
+ .debug_macro   0x0000000000000000       0x5d IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .debug_macro   0x0000000000000000      0x96b IWDG THUMB Debug/stm32f4xx_hal_dma.o
- .debug_macro   0x0000000000000000      0x9e1 IWDG THUMB Debug/stm32f4xx_hal_dma.o
+ .debug_macro   0x0000000000000000      0x9e6 IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .debug_macro   0x0000000000000000      0x11e IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .debug_macro   0x0000000000000000      0x13e IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .debug_macro   0x0000000000000000       0x27 IWDG THUMB Debug/stm32f4xx_hal_dma.o
@@ -981,11 +979,11 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7f IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .debug_macro   0x0000000000000000      0x6e0 IWDG THUMB Debug/stm32f4xx_hal_dma.o
- .debug_macro   0x0000000000000000       0x5b IWDG THUMB Debug/stm32f4xx_hal_dma.o
+ .debug_macro   0x0000000000000000       0x59 IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .debug_macro   0x0000000000000000      0x14d IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .debug_macro   0x0000000000000000      0x125 IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .debug_line    0x0000000000000000      0x8e3 IWDG THUMB Debug/stm32f4xx_hal_dma.o
- .debug_str     0x0000000000000000    0xba713 IWDG THUMB Debug/stm32f4xx_hal_dma.o
+ .debug_str     0x0000000000000000    0xba6c9 IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .comment       0x0000000000000000       0x4d IWDG THUMB Debug/stm32f4xx_hal_dma.o
  .ARM.attributes
                 0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_dma.o
@@ -1027,23 +1025,23 @@ Discarded input sections
  .data          0x0000000000000000        0x0 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .bss           0x0000000000000000        0x0 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .text.HAL_PWREx_EnableBkUpReg
-                0x0000000000000000       0x64 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
+                0x0000000000000000       0x48 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .text.HAL_PWREx_DisableBkUpReg
-                0x0000000000000000       0x64 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
+                0x0000000000000000       0x48 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .text.HAL_PWREx_EnableFlashPowerDown
-                0x0000000000000000       0x2c IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
+                0x0000000000000000       0x10 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .text.HAL_PWREx_DisableFlashPowerDown
-                0x0000000000000000       0x2c IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
+                0x0000000000000000       0x10 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .text.HAL_PWREx_GetVoltageRange
                 0x0000000000000000       0x10 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .rodata        0x0000000000000000       0x9e IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .text.HAL_PWREx_ControlVoltageScaling
-                0x0000000000000000       0xa0 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
- .debug_frame   0x0000000000000000       0xd8 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
- .debug_info    0x0000000000000000      0xa41 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
- .debug_abbrev  0x0000000000000000      0x218 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
+                0x0000000000000000       0x9c IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
+ .debug_frame   0x0000000000000000       0xb8 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
+ .debug_info    0x0000000000000000      0x965 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
+ .debug_abbrev  0x0000000000000000      0x1e4 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_pubnames
-                0x0000000000000000      0x13e IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
+                0x0000000000000000      0x133 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_pubtypes
                 0x0000000000000000      0x1dc IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_aranges
@@ -1051,22 +1049,22 @@ Discarded input sections
  .debug_ranges  0x0000000000000000       0x38 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_macro   0x0000000000000000      0x1b2 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_macro   0x0000000000000000      0x8ec IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
- .debug_macro   0x0000000000000000       0x52 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
+ .debug_macro   0x0000000000000000       0x58 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_macro   0x0000000000000000      0x187 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
- .debug_macro   0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
- .debug_macro   0x0000000000000000       0x28 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
+ .debug_macro   0x0000000000000000       0x32 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
+ .debug_macro   0x0000000000000000       0x2f IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_macro   0x0000000000000000      0x188 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_macro   0x0000000000000000       0x35 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_macro   0x0000000000000000       0x50 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_macro   0x0000000000000000      0xe66 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
- .debug_macro   0x0000000000000000    0x15e04 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
+ .debug_macro   0x0000000000000000    0x15d08 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_macro   0x0000000000000000       0x43 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
- .debug_macro   0x0000000000000000     0x3574 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
+ .debug_macro   0x0000000000000000     0x3535 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_macro   0x0000000000000000       0x71 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
- .debug_macro   0x0000000000000000       0x5e IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
+ .debug_macro   0x0000000000000000       0x5d IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_macro   0x0000000000000000      0x96b IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
- .debug_macro   0x0000000000000000      0x9e1 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
+ .debug_macro   0x0000000000000000      0x9e6 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_macro   0x0000000000000000      0x11e IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_macro   0x0000000000000000      0x13e IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_macro   0x0000000000000000       0x27 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
@@ -1081,11 +1079,11 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7f IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_macro   0x0000000000000000      0x6e0 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
- .debug_macro   0x0000000000000000       0x5b IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
+ .debug_macro   0x0000000000000000       0x59 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_macro   0x0000000000000000      0x14d IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .debug_macro   0x0000000000000000      0x125 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
- .debug_line    0x0000000000000000      0x523 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
- .debug_str     0x0000000000000000    0xba42e IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
+ .debug_line    0x0000000000000000      0x4eb IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
+ .debug_str     0x0000000000000000    0xba3d0 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .comment       0x0000000000000000       0x4d IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
  .ARM.attributes
                 0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_pwr_ex.o
@@ -1127,19 +1125,17 @@ Discarded input sections
  .data          0x0000000000000000        0x0 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .bss           0x0000000000000000        0x0 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .text.HAL_RCC_DeInit
-                0x0000000000000000        0x4 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+                0x0000000000000000        0x6 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .text.HAL_RCC_MCOConfig
                 0x0000000000000000      0x164 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .text.HAL_RCC_EnableCSS
                 0x0000000000000000       0x10 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .text.HAL_RCC_DisableCSS
                 0x0000000000000000       0x10 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
- .text.HAL_RCC_GetPCLK1Freq
-                0x0000000000000000       0x44 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .text.HAL_RCC_GetPCLK2Freq
-                0x0000000000000000       0x44 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+                0x0000000000000000       0x28 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .text.HAL_RCC_GetOscConfig
-                0x0000000000000000      0x170 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+                0x0000000000000000      0x120 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .text.HAL_RCC_GetClockConfig
                 0x0000000000000000       0x58 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .text.HAL_RCC_NMI_IRQHandler
@@ -1147,22 +1143,22 @@ Discarded input sections
  .text.HAL_RCC_CSSCallback
                 0x0000000000000000        0x4 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .debug_macro   0x0000000000000000      0x8ec IWDG THUMB Debug/stm32f4xx_hal_rcc.o
- .debug_macro   0x0000000000000000       0x52 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+ .debug_macro   0x0000000000000000       0x58 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .debug_macro   0x0000000000000000      0x187 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
- .debug_macro   0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
- .debug_macro   0x0000000000000000       0x28 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+ .debug_macro   0x0000000000000000       0x32 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+ .debug_macro   0x0000000000000000       0x2f IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .debug_macro   0x0000000000000000      0x188 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .debug_macro   0x0000000000000000       0x35 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .debug_macro   0x0000000000000000       0x50 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .debug_macro   0x0000000000000000      0xe66 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
- .debug_macro   0x0000000000000000    0x15e04 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+ .debug_macro   0x0000000000000000    0x15d08 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .debug_macro   0x0000000000000000       0x43 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
- .debug_macro   0x0000000000000000     0x3574 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+ .debug_macro   0x0000000000000000     0x3535 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .debug_macro   0x0000000000000000       0x71 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
- .debug_macro   0x0000000000000000       0x5e IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+ .debug_macro   0x0000000000000000       0x5d IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .debug_macro   0x0000000000000000      0x96b IWDG THUMB Debug/stm32f4xx_hal_rcc.o
- .debug_macro   0x0000000000000000      0x9e1 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+ .debug_macro   0x0000000000000000      0x9e6 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .debug_macro   0x0000000000000000      0x11e IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .debug_macro   0x0000000000000000      0x13e IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .debug_macro   0x0000000000000000       0x27 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
@@ -1177,7 +1173,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7f IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .debug_macro   0x0000000000000000      0x6e0 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
- .debug_macro   0x0000000000000000       0x5b IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+ .debug_macro   0x0000000000000000       0x59 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .debug_macro   0x0000000000000000      0x14d IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .debug_macro   0x0000000000000000      0x125 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .group         0x0000000000000000        0x8 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
@@ -1218,22 +1214,22 @@ Discarded input sections
  .data          0x0000000000000000        0x0 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .bss           0x0000000000000000        0x0 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .debug_macro   0x0000000000000000      0x8ec IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
- .debug_macro   0x0000000000000000       0x52 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
+ .debug_macro   0x0000000000000000       0x58 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .debug_macro   0x0000000000000000      0x187 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
- .debug_macro   0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
- .debug_macro   0x0000000000000000       0x28 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
+ .debug_macro   0x0000000000000000       0x32 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
+ .debug_macro   0x0000000000000000       0x2f IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .debug_macro   0x0000000000000000      0x188 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .debug_macro   0x0000000000000000       0x35 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .debug_macro   0x0000000000000000       0x50 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .debug_macro   0x0000000000000000      0xe66 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
- .debug_macro   0x0000000000000000    0x15e04 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
+ .debug_macro   0x0000000000000000    0x15d08 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .debug_macro   0x0000000000000000       0x43 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
- .debug_macro   0x0000000000000000     0x3574 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
+ .debug_macro   0x0000000000000000     0x3535 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .debug_macro   0x0000000000000000       0x71 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
- .debug_macro   0x0000000000000000       0x5e IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
+ .debug_macro   0x0000000000000000       0x5d IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .debug_macro   0x0000000000000000      0x96b IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
- .debug_macro   0x0000000000000000      0x9e1 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
+ .debug_macro   0x0000000000000000      0x9e6 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .debug_macro   0x0000000000000000      0x11e IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .debug_macro   0x0000000000000000      0x13e IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .debug_macro   0x0000000000000000       0x27 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
@@ -1248,7 +1244,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7f IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .debug_macro   0x0000000000000000      0x6e0 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
- .debug_macro   0x0000000000000000       0x5b IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
+ .debug_macro   0x0000000000000000       0x59 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .debug_macro   0x0000000000000000      0x14d IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .debug_macro   0x0000000000000000      0x125 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .group         0x0000000000000000        0x8 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
@@ -1327,22 +1323,22 @@ Discarded input sections
  .text.HAL_NVIC_GetActive
                 0x0000000000000000       0x34 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .debug_macro   0x0000000000000000      0x8ec IWDG THUMB Debug/stm32f4xx_hal_cortex.o
- .debug_macro   0x0000000000000000       0x52 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+ .debug_macro   0x0000000000000000       0x58 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .debug_macro   0x0000000000000000      0x187 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
- .debug_macro   0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
- .debug_macro   0x0000000000000000       0x28 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+ .debug_macro   0x0000000000000000       0x32 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+ .debug_macro   0x0000000000000000       0x2f IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .debug_macro   0x0000000000000000      0x188 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .debug_macro   0x0000000000000000       0x35 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .debug_macro   0x0000000000000000       0x50 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .debug_macro   0x0000000000000000      0xe66 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
- .debug_macro   0x0000000000000000    0x15e04 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+ .debug_macro   0x0000000000000000    0x15d08 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .debug_macro   0x0000000000000000       0x43 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
- .debug_macro   0x0000000000000000     0x3574 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+ .debug_macro   0x0000000000000000     0x3535 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .debug_macro   0x0000000000000000       0x71 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
- .debug_macro   0x0000000000000000       0x5e IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+ .debug_macro   0x0000000000000000       0x5d IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .debug_macro   0x0000000000000000      0x96b IWDG THUMB Debug/stm32f4xx_hal_cortex.o
- .debug_macro   0x0000000000000000      0x9e1 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+ .debug_macro   0x0000000000000000      0x9e6 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .debug_macro   0x0000000000000000      0x11e IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .debug_macro   0x0000000000000000      0x13e IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .debug_macro   0x0000000000000000       0x27 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
@@ -1357,7 +1353,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7f IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .debug_macro   0x0000000000000000      0x6e0 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
- .debug_macro   0x0000000000000000       0x5b IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+ .debug_macro   0x0000000000000000       0x59 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .debug_macro   0x0000000000000000      0x14d IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .debug_macro   0x0000000000000000      0x125 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .group         0x0000000000000000        0x8 IWDG THUMB Debug/stm32f4xx_hal_tim.o
@@ -1560,22 +1556,22 @@ Discarded input sections
  .text.TIM_SlaveTimer_SetConfig
                 0x0000000000000000      0x5ec IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .debug_macro   0x0000000000000000      0x8ec IWDG THUMB Debug/stm32f4xx_hal_tim.o
- .debug_macro   0x0000000000000000       0x52 IWDG THUMB Debug/stm32f4xx_hal_tim.o
+ .debug_macro   0x0000000000000000       0x58 IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .debug_macro   0x0000000000000000      0x187 IWDG THUMB Debug/stm32f4xx_hal_tim.o
- .debug_macro   0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_tim.o
- .debug_macro   0x0000000000000000       0x28 IWDG THUMB Debug/stm32f4xx_hal_tim.o
+ .debug_macro   0x0000000000000000       0x32 IWDG THUMB Debug/stm32f4xx_hal_tim.o
+ .debug_macro   0x0000000000000000       0x2f IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .debug_macro   0x0000000000000000      0x188 IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .debug_macro   0x0000000000000000       0x35 IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .debug_macro   0x0000000000000000       0x50 IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .debug_macro   0x0000000000000000      0xe66 IWDG THUMB Debug/stm32f4xx_hal_tim.o
- .debug_macro   0x0000000000000000    0x15e04 IWDG THUMB Debug/stm32f4xx_hal_tim.o
+ .debug_macro   0x0000000000000000    0x15d08 IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .debug_macro   0x0000000000000000       0x43 IWDG THUMB Debug/stm32f4xx_hal_tim.o
- .debug_macro   0x0000000000000000     0x3574 IWDG THUMB Debug/stm32f4xx_hal_tim.o
+ .debug_macro   0x0000000000000000     0x3535 IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .debug_macro   0x0000000000000000       0x71 IWDG THUMB Debug/stm32f4xx_hal_tim.o
- .debug_macro   0x0000000000000000       0x5e IWDG THUMB Debug/stm32f4xx_hal_tim.o
+ .debug_macro   0x0000000000000000       0x5d IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .debug_macro   0x0000000000000000      0x96b IWDG THUMB Debug/stm32f4xx_hal_tim.o
- .debug_macro   0x0000000000000000      0x9e1 IWDG THUMB Debug/stm32f4xx_hal_tim.o
+ .debug_macro   0x0000000000000000      0x9e6 IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .debug_macro   0x0000000000000000      0x11e IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .debug_macro   0x0000000000000000      0x13e IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .debug_macro   0x0000000000000000       0x27 IWDG THUMB Debug/stm32f4xx_hal_tim.o
@@ -1590,7 +1586,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7f IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .debug_macro   0x0000000000000000      0x6e0 IWDG THUMB Debug/stm32f4xx_hal_tim.o
- .debug_macro   0x0000000000000000       0x5b IWDG THUMB Debug/stm32f4xx_hal_tim.o
+ .debug_macro   0x0000000000000000       0x59 IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .debug_macro   0x0000000000000000      0x14d IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .debug_macro   0x0000000000000000      0x125 IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .group         0x0000000000000000        0x8 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
@@ -1634,7 +1630,7 @@ Discarded input sections
  .text.HAL_DMAEx_MultiBufferStart
                 0x0000000000000000       0xb8 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .text.HAL_DMAEx_MultiBufferStart_IT
-                0x0000000000000000     0x14e0 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
+                0x0000000000000000     0x1494 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .text.HAL_DMAEx_ChangeMemory
                 0x0000000000000000       0x2e IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .text.DMA_MultiBufferSetConfig
@@ -1651,22 +1647,22 @@ Discarded input sections
  .debug_ranges  0x0000000000000000       0x28 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .debug_macro   0x0000000000000000      0x19a IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .debug_macro   0x0000000000000000      0x8ec IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
- .debug_macro   0x0000000000000000       0x52 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
+ .debug_macro   0x0000000000000000       0x58 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .debug_macro   0x0000000000000000      0x187 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
- .debug_macro   0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
- .debug_macro   0x0000000000000000       0x28 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
+ .debug_macro   0x0000000000000000       0x32 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
+ .debug_macro   0x0000000000000000       0x2f IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .debug_macro   0x0000000000000000      0x188 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .debug_macro   0x0000000000000000       0x35 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .debug_macro   0x0000000000000000       0x50 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .debug_macro   0x0000000000000000      0xe66 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
- .debug_macro   0x0000000000000000    0x15e04 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
+ .debug_macro   0x0000000000000000    0x15d08 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .debug_macro   0x0000000000000000       0x43 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
- .debug_macro   0x0000000000000000     0x3574 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
+ .debug_macro   0x0000000000000000     0x3535 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .debug_macro   0x0000000000000000       0x71 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
- .debug_macro   0x0000000000000000       0x5e IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
+ .debug_macro   0x0000000000000000       0x5d IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .debug_macro   0x0000000000000000      0x96b IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
- .debug_macro   0x0000000000000000      0x9e1 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
+ .debug_macro   0x0000000000000000      0x9e6 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .debug_macro   0x0000000000000000      0x11e IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .debug_macro   0x0000000000000000      0x13e IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .debug_macro   0x0000000000000000       0x27 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
@@ -1681,11 +1677,11 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7f IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .debug_macro   0x0000000000000000      0x6e0 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
- .debug_macro   0x0000000000000000       0x5b IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
+ .debug_macro   0x0000000000000000       0x59 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .debug_macro   0x0000000000000000      0x14d IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .debug_macro   0x0000000000000000      0x125 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
- .debug_line    0x0000000000000000     0x1015 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
- .debug_str     0x0000000000000000    0xba4fb IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
+ .debug_line    0x0000000000000000     0x1016 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
+ .debug_str     0x0000000000000000    0xba4b1 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .comment       0x0000000000000000       0x4d IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
  .ARM.attributes
                 0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_dma_ex.o
@@ -1793,22 +1789,22 @@ Discarded input sections
  .text.TIM_CCxNChannelCmd
                 0x0000000000000000       0xb0 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .debug_macro   0x0000000000000000      0x8ec IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
- .debug_macro   0x0000000000000000       0x52 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+ .debug_macro   0x0000000000000000       0x58 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .debug_macro   0x0000000000000000      0x187 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
- .debug_macro   0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
- .debug_macro   0x0000000000000000       0x28 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+ .debug_macro   0x0000000000000000       0x32 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+ .debug_macro   0x0000000000000000       0x2f IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .debug_macro   0x0000000000000000      0x188 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .debug_macro   0x0000000000000000       0x35 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .debug_macro   0x0000000000000000       0x50 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .debug_macro   0x0000000000000000      0xe66 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
- .debug_macro   0x0000000000000000    0x15e04 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+ .debug_macro   0x0000000000000000    0x15d08 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .debug_macro   0x0000000000000000       0x43 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
- .debug_macro   0x0000000000000000     0x3574 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+ .debug_macro   0x0000000000000000     0x3535 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .debug_macro   0x0000000000000000       0x71 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
- .debug_macro   0x0000000000000000       0x5e IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+ .debug_macro   0x0000000000000000       0x5d IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .debug_macro   0x0000000000000000      0x96b IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
- .debug_macro   0x0000000000000000      0x9e1 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+ .debug_macro   0x0000000000000000      0x9e6 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .debug_macro   0x0000000000000000      0x11e IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .debug_macro   0x0000000000000000      0x13e IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .debug_macro   0x0000000000000000       0x27 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
@@ -1823,7 +1819,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7f IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .debug_macro   0x0000000000000000      0x6e0 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
- .debug_macro   0x0000000000000000       0x5b IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+ .debug_macro   0x0000000000000000       0x59 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .debug_macro   0x0000000000000000      0x14d IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .debug_macro   0x0000000000000000      0x125 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .group         0x0000000000000000        0x8 IWDG THUMB Debug/stm32f4xx_hal.o
@@ -1892,28 +1888,28 @@ Discarded input sections
  .text.HAL_DBGMCU_DisableDBGStandbyMode
                 0x0000000000000000       0x14 IWDG THUMB Debug/stm32f4xx_hal.o
  .text.HAL_EnableCompensationCell
-                0x0000000000000000       0x2c IWDG THUMB Debug/stm32f4xx_hal.o
+                0x0000000000000000       0x10 IWDG THUMB Debug/stm32f4xx_hal.o
  .text.HAL_DisableCompensationCell
-                0x0000000000000000       0x2c IWDG THUMB Debug/stm32f4xx_hal.o
+                0x0000000000000000       0x10 IWDG THUMB Debug/stm32f4xx_hal.o
  .text.HAL_GetUID
                 0x0000000000000000       0x34 IWDG THUMB Debug/stm32f4xx_hal.o
  .debug_macro   0x0000000000000000      0x8ec IWDG THUMB Debug/stm32f4xx_hal.o
- .debug_macro   0x0000000000000000       0x52 IWDG THUMB Debug/stm32f4xx_hal.o
+ .debug_macro   0x0000000000000000       0x58 IWDG THUMB Debug/stm32f4xx_hal.o
  .debug_macro   0x0000000000000000      0x187 IWDG THUMB Debug/stm32f4xx_hal.o
- .debug_macro   0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal.o
- .debug_macro   0x0000000000000000       0x28 IWDG THUMB Debug/stm32f4xx_hal.o
+ .debug_macro   0x0000000000000000       0x32 IWDG THUMB Debug/stm32f4xx_hal.o
+ .debug_macro   0x0000000000000000       0x2f IWDG THUMB Debug/stm32f4xx_hal.o
  .debug_macro   0x0000000000000000      0x188 IWDG THUMB Debug/stm32f4xx_hal.o
  .debug_macro   0x0000000000000000       0x35 IWDG THUMB Debug/stm32f4xx_hal.o
  .debug_macro   0x0000000000000000       0x50 IWDG THUMB Debug/stm32f4xx_hal.o
  .debug_macro   0x0000000000000000      0xe66 IWDG THUMB Debug/stm32f4xx_hal.o
- .debug_macro   0x0000000000000000    0x15e04 IWDG THUMB Debug/stm32f4xx_hal.o
+ .debug_macro   0x0000000000000000    0x15d08 IWDG THUMB Debug/stm32f4xx_hal.o
  .debug_macro   0x0000000000000000       0x43 IWDG THUMB Debug/stm32f4xx_hal.o
- .debug_macro   0x0000000000000000     0x3574 IWDG THUMB Debug/stm32f4xx_hal.o
+ .debug_macro   0x0000000000000000     0x3535 IWDG THUMB Debug/stm32f4xx_hal.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal.o
  .debug_macro   0x0000000000000000       0x71 IWDG THUMB Debug/stm32f4xx_hal.o
- .debug_macro   0x0000000000000000       0x5e IWDG THUMB Debug/stm32f4xx_hal.o
+ .debug_macro   0x0000000000000000       0x5d IWDG THUMB Debug/stm32f4xx_hal.o
  .debug_macro   0x0000000000000000      0x96b IWDG THUMB Debug/stm32f4xx_hal.o
- .debug_macro   0x0000000000000000      0x9e1 IWDG THUMB Debug/stm32f4xx_hal.o
+ .debug_macro   0x0000000000000000      0x9e6 IWDG THUMB Debug/stm32f4xx_hal.o
  .debug_macro   0x0000000000000000      0x11e IWDG THUMB Debug/stm32f4xx_hal.o
  .debug_macro   0x0000000000000000      0x13e IWDG THUMB Debug/stm32f4xx_hal.o
  .debug_macro   0x0000000000000000       0x27 IWDG THUMB Debug/stm32f4xx_hal.o
@@ -1928,7 +1924,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7f IWDG THUMB Debug/stm32f4xx_hal.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal.o
  .debug_macro   0x0000000000000000      0x6e0 IWDG THUMB Debug/stm32f4xx_hal.o
- .debug_macro   0x0000000000000000       0x5b IWDG THUMB Debug/stm32f4xx_hal.o
+ .debug_macro   0x0000000000000000       0x59 IWDG THUMB Debug/stm32f4xx_hal.o
  .debug_macro   0x0000000000000000      0x14d IWDG THUMB Debug/stm32f4xx_hal.o
  .debug_macro   0x0000000000000000      0x125 IWDG THUMB Debug/stm32f4xx_hal.o
  .group         0x0000000000000000        0x8 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
@@ -1978,22 +1974,22 @@ Discarded input sections
                 0x0000000000000000       0x18 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .debug_macro   0x0000000000000000      0x19a IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .debug_macro   0x0000000000000000      0x8ec IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
- .debug_macro   0x0000000000000000       0x52 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
+ .debug_macro   0x0000000000000000       0x58 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .debug_macro   0x0000000000000000      0x187 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
- .debug_macro   0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
- .debug_macro   0x0000000000000000       0x28 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
+ .debug_macro   0x0000000000000000       0x32 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
+ .debug_macro   0x0000000000000000       0x2f IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .debug_macro   0x0000000000000000      0x188 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .debug_macro   0x0000000000000000       0x35 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .debug_macro   0x0000000000000000       0x50 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .debug_macro   0x0000000000000000      0xe66 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
- .debug_macro   0x0000000000000000    0x15e04 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
+ .debug_macro   0x0000000000000000    0x15d08 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .debug_macro   0x0000000000000000       0x43 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
- .debug_macro   0x0000000000000000     0x3574 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
+ .debug_macro   0x0000000000000000     0x3535 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .debug_macro   0x0000000000000000       0x71 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
- .debug_macro   0x0000000000000000       0x5e IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
+ .debug_macro   0x0000000000000000       0x5d IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .debug_macro   0x0000000000000000      0x96b IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
- .debug_macro   0x0000000000000000      0x9e1 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
+ .debug_macro   0x0000000000000000      0x9e6 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .debug_macro   0x0000000000000000      0x11e IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .debug_macro   0x0000000000000000      0x13e IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .debug_macro   0x0000000000000000       0x27 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
@@ -2008,14 +2004,65 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7f IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .debug_macro   0x0000000000000000       0x89 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .debug_macro   0x0000000000000000      0x6e0 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
- .debug_macro   0x0000000000000000       0x5b IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
+ .debug_macro   0x0000000000000000       0x59 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .debug_macro   0x0000000000000000      0x14d IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .debug_macro   0x0000000000000000      0x125 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .debug_line    0x0000000000000000      0x463 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
- .debug_str     0x0000000000000000    0xba180 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
+ .debug_str     0x0000000000000000    0xba136 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .comment       0x0000000000000000       0x4d IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
  .ARM.attributes
                 0x0000000000000000       0x33 IWDG THUMB Debug/stm32f4xx_hal_flash_ramfunc.o
+ .text.libc     0x0000000000000000        0x0 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .data.libc     0x0000000000000000        0x0 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .bss.libc      0x0000000000000000        0x0 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.__int64_umod
+                0x0000000000000000        0xc /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.__int64_asr
+                0x0000000000000000       0x28 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.__int64_div
+                0x0000000000000000       0x44 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.__int64_lsl
+                0x0000000000000000       0x28 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.__int64_lsr
+                0x0000000000000000       0x28 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.__int64_mod
+                0x0000000000000000       0x48 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.__aeabi_ldivmod
+                0x0000000000000000       0x58 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.__int64_cmp
+                0x0000000000000000       0x1c /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.__int64_ucmp
+                0x0000000000000000       0x18 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.muldi3
+                0x0000000000000000       0x18 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.__int32_umod
+                0x0000000000000000        0xc /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.__int32_div
+                0x0000000000000000      0x310 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .rodata.libc.__aeabi_idiv
+                0x0000000000000000        0xa /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .rodata.libc.__aeabi_uidiv
+                0x0000000000000000       0x46 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.__int32_mod
+                0x0000000000000000        0xc /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.__aeabi_uidivmod
+                0x0000000000000000       0x2c /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.__aeabi_idivmod
+                0x0000000000000000       0x4c /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.ctl_count_leading_zeros_32
+                0x0000000000000000       0x34 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.ctl_count_leading_zeros_16
+                0x0000000000000000       0x34 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.__gnu_thumb1_case_shi
+                0x0000000000000000       0x14 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.__gnu_thumb1_case_si
+                0x0000000000000000       0x18 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.__gnu_thumb1_case_sqi
+                0x0000000000000000       0x14 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.__gnu_thumb1_case_uhi
+                0x0000000000000000       0x14 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+ .text.libc.__gnu_thumb1_case_uqi
+                0x0000000000000000       0x14 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
  .text          0x0000000000000000        0x0 /usr/share/crossworks_for_arm_4.0/lib/libdebugio_v7em_t_le_eabi.a(libdebugio.o)
  .data          0x0000000000000000        0x0 /usr/share/crossworks_for_arm_4.0/lib/libdebugio_v7em_t_le_eabi.a(libdebugio.o)
  .bss           0x0000000000000000        0x0 /usr/share/crossworks_for_arm_4.0/lib/libdebugio_v7em_t_le_eabi.a(libdebugio.o)
@@ -2556,62 +2603,6 @@ Discarded input sections
  .debug_frame   0x0000000000000000       0x70 /usr/share/crossworks_for_arm_4.0/lib/libm_v7em_t_le_eabi.a(libm2_asm.o)
  .ARM.attributes
                 0x0000000000000000       0x1c /usr/share/crossworks_for_arm_4.0/lib/libm_v7em_t_le_eabi.a(libm2_asm.o)
- .text.libc     0x0000000000000000        0x0 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .data.libc     0x0000000000000000        0x0 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .bss.libc      0x0000000000000000        0x0 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.__int64_umod
-                0x0000000000000000        0xc /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.__int64_asr
-                0x0000000000000000       0x28 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.__int64_div
-                0x0000000000000000       0x44 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.__int64_lsl
-                0x0000000000000000       0x28 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.__int64_lsr
-                0x0000000000000000       0x28 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.__int64_mod
-                0x0000000000000000       0x48 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.__int64_udivmod
-                0x0000000000000000       0xd0 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.__aeabi_ldivmod
-                0x0000000000000000       0x58 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.__int64_cmp
-                0x0000000000000000       0x1c /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.__int64_ucmp
-                0x0000000000000000       0x18 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.muldi3
-                0x0000000000000000       0x18 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.__int32_umod
-                0x0000000000000000        0xc /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.__int32_div
-                0x0000000000000000      0x310 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .rodata.libc.__aeabi_idiv
-                0x0000000000000000        0xa /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .rodata.libc.__aeabi_uidiv
-                0x0000000000000000       0x46 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.__int32_mod
-                0x0000000000000000        0xc /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.__aeabi_uidivmod
-                0x0000000000000000       0x2c /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.__aeabi_idivmod
-                0x0000000000000000       0x4c /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.ctl_count_leading_zeros_32
-                0x0000000000000000       0x34 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.ctl_count_leading_zeros_16
-                0x0000000000000000       0x34 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.__gnu_thumb1_case_shi
-                0x0000000000000000       0x14 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.__gnu_thumb1_case_si
-                0x0000000000000000       0x18 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.__gnu_thumb1_case_sqi
-                0x0000000000000000       0x14 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.__gnu_thumb1_case_uhi
-                0x0000000000000000       0x14 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .text.libc.__gnu_thumb1_case_uqi
-                0x0000000000000000       0x14 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .debug_frame   0x0000000000000000      0x15c /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
- .ARM.attributes
-                0x0000000000000000       0x1c /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
  .text          0x0000000000000000        0x0 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc2.o)
  .data          0x0000000000000000        0x0 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc2.o)
  .bss           0x0000000000000000        0x0 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc2.o)
@@ -4219,243 +4210,251 @@ Linker script and memory map
                 0x0000000000000001                . = ASSERT (((__init_rodata_start__ == __init_rodata_end__) || ((__init_rodata_end__ >= __FLASH_segment_start__) && (__init_rodata_end__ <= __FLASH_segment_end__))), error: .init_rodata is too large to fit in FLASH memory segment)
                 0x00000000080003b8                __text_load_start__ = ALIGN (__init_rodata_end__, 0x4)
 
-.text           0x00000000080003b8     0x3ae0
+.text           0x00000000080003b8     0x3bbc
                 0x00000000080003b8                __text_start__ = .
  *(.text .text.* .glue_7t .glue_7 .gnu.linkonce.t.* .gcc_except_table .ARM.extab* .gnu.linkonce.armextab.*)
  .glue_7        0x00000000080003b8        0x0 linker stubs
  .glue_7t       0x00000000080003b8        0x0 linker stubs
- .text.main     0x00000000080003b8       0xa0 IWDG THUMB Debug/main.o
+ .text.main     0x00000000080003b8       0xb4 IWDG THUMB Debug/main.o
                 0x00000000080003b8                main
  .text.SystemClock_Config
-                0x0000000008000458       0xd0 IWDG THUMB Debug/main.o
-                0x0000000008000458                SystemClock_Config
+                0x000000000800046c       0xd0 IWDG THUMB Debug/main.o
+                0x000000000800046c                SystemClock_Config
  .text.MX_IWDG_Init
-                0x0000000008000528       0x3c IWDG THUMB Debug/main.o
+                0x000000000800053c       0x3c IWDG THUMB Debug/main.o
  .text.MX_TIM5_Init
-                0x0000000008000564       0xe8 IWDG THUMB Debug/main.o
+                0x0000000008000578       0xe8 IWDG THUMB Debug/main.o
  .text.MX_GPIO_Init
-                0x000000000800064c       0x80 IWDG THUMB Debug/main.o
+                0x0000000008000660       0xa0 IWDG THUMB Debug/main.o
  .text.GetLSIFrequency
-                0x00000000080006cc      0x158 IWDG THUMB Debug/main.o
+                0x0000000008000700      0x15c IWDG THUMB Debug/main.o
  .text._Error_Handler
-                0x0000000008000824       0x18 IWDG THUMB Debug/main.o
-                0x0000000008000824                _Error_Handler
+                0x000000000800085c       0x18 IWDG THUMB Debug/main.o
+                0x000000000800085c                _Error_Handler
  .text.assert_failed
-                0x000000000800083c        0xc IWDG THUMB Debug/main.o
-                0x000000000800083c                assert_failed
+                0x0000000008000874        0xc IWDG THUMB Debug/main.o
+                0x0000000008000874                assert_failed
  .text.NMI_Handler
-                0x0000000008000848        0x4 IWDG THUMB Debug/stm32f4xx_it.o
-                0x0000000008000848                NMI_Handler
+                0x0000000008000880        0x4 IWDG THUMB Debug/stm32f4xx_it.o
+                0x0000000008000880                NMI_Handler
  .text.HardFault_Handler
-                0x000000000800084c        0x2 IWDG THUMB Debug/stm32f4xx_it.o
-                0x000000000800084c                HardFault_Handler
+                0x0000000008000884       0x14 IWDG THUMB Debug/stm32f4xx_it.o
+                0x0000000008000884                HardFault_Handler
  .text.MemManage_Handler
-                0x000000000800084e        0x2 IWDG THUMB Debug/stm32f4xx_it.o
-                0x000000000800084e                MemManage_Handler
+                0x0000000008000898        0x2 IWDG THUMB Debug/stm32f4xx_it.o
+                0x0000000008000898                MemManage_Handler
  .text.BusFault_Handler
-                0x0000000008000850        0x2 IWDG THUMB Debug/stm32f4xx_it.o
-                0x0000000008000850                BusFault_Handler
+                0x000000000800089a        0x2 IWDG THUMB Debug/stm32f4xx_it.o
+                0x000000000800089a                BusFault_Handler
  .text.UsageFault_Handler
-                0x0000000008000852        0x2 IWDG THUMB Debug/stm32f4xx_it.o
-                0x0000000008000852                UsageFault_Handler
+                0x000000000800089c        0x2 IWDG THUMB Debug/stm32f4xx_it.o
+                0x000000000800089c                UsageFault_Handler
  .text.SVC_Handler
-                0x0000000008000854        0x4 IWDG THUMB Debug/stm32f4xx_it.o
-                0x0000000008000854                SVC_Handler
+                0x000000000800089e        0x4 IWDG THUMB Debug/stm32f4xx_it.o
+                0x000000000800089e                SVC_Handler
  .text.DebugMon_Handler
-                0x0000000008000858        0x4 IWDG THUMB Debug/stm32f4xx_it.o
-                0x0000000008000858                DebugMon_Handler
+                0x00000000080008a2        0x4 IWDG THUMB Debug/stm32f4xx_it.o
+                0x00000000080008a2                DebugMon_Handler
  .text.PendSV_Handler
-                0x000000000800085c        0x4 IWDG THUMB Debug/stm32f4xx_it.o
-                0x000000000800085c                PendSV_Handler
+                0x00000000080008a6        0x4 IWDG THUMB Debug/stm32f4xx_it.o
+                0x00000000080008a6                PendSV_Handler
  .text.SysTick_Handler
-                0x0000000008000860        0xe IWDG THUMB Debug/stm32f4xx_it.o
-                0x0000000008000860                SysTick_Handler
- *fill*         0x000000000800086e        0x2 
+                0x00000000080008aa        0xe IWDG THUMB Debug/stm32f4xx_it.o
+                0x00000000080008aa                SysTick_Handler
  .text.EXTI0_IRQHandler
-                0x0000000008000870       0x28 IWDG THUMB Debug/stm32f4xx_it.o
-                0x0000000008000870                EXTI0_IRQHandler
+                0x00000000080008b8       0x34 IWDG THUMB Debug/stm32f4xx_it.o
+                0x00000000080008b8                EXTI0_IRQHandler
  .text.TIM5_IRQHandler
-                0x0000000008000898       0x64 IWDG THUMB Debug/stm32f4xx_it.o
-                0x0000000008000898                TIM5_IRQHandler
+                0x00000000080008ec       0x64 IWDG THUMB Debug/stm32f4xx_it.o
+                0x00000000080008ec                TIM5_IRQHandler
  .text.HAL_MspInit
-                0x00000000080008fc       0x60 IWDG THUMB Debug/stm32f4xx_hal_msp.o
-                0x00000000080008fc                HAL_MspInit
+                0x0000000008000950       0x60 IWDG THUMB Debug/stm32f4xx_hal_msp.o
+                0x0000000008000950                HAL_MspInit
  .text.HAL_TIM_Base_MspInit
-                0x000000000800095c       0x4c IWDG THUMB Debug/stm32f4xx_hal_msp.o
-                0x000000000800095c                HAL_TIM_Base_MspInit
+                0x00000000080009b0       0x4c IWDG THUMB Debug/stm32f4xx_hal_msp.o
+                0x00000000080009b0                HAL_TIM_Base_MspInit
  .text.SystemInit
-                0x00000000080009a8       0x54 IWDG THUMB Debug/system_stm32f4xx.o
-                0x00000000080009a8                SystemInit
+                0x00000000080009fc       0x54 IWDG THUMB Debug/system_stm32f4xx.o
+                0x00000000080009fc                SystemInit
  .text.HAL_GPIO_Init
-                0x00000000080009fc      0x5d4 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
-                0x00000000080009fc                HAL_GPIO_Init
+                0x0000000008000a50      0x5d4 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+                0x0000000008000a50                HAL_GPIO_Init
  .text.HAL_GPIO_WritePin
-                0x0000000008000fd0       0x74 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
-                0x0000000008000fd0                HAL_GPIO_WritePin
+                0x0000000008001024       0x74 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+                0x0000000008001024                HAL_GPIO_WritePin
  .text.HAL_GPIO_TogglePin
-                0x0000000008001044       0x44 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
-                0x0000000008001044                HAL_GPIO_TogglePin
+                0x0000000008001098       0x44 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+                0x0000000008001098                HAL_GPIO_TogglePin
  .text.HAL_GPIO_EXTI_IRQHandler
-                0x0000000008001088       0x38 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
-                0x0000000008001088                HAL_GPIO_EXTI_IRQHandler
+                0x00000000080010dc       0x38 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+                0x00000000080010dc                HAL_GPIO_EXTI_IRQHandler
  .text.HAL_GPIO_EXTI_Callback
-                0x00000000080010c0        0xe IWDG THUMB Debug/stm32f4xx_hal_gpio.o
-                0x00000000080010c0                HAL_GPIO_EXTI_Callback
- *fill*         0x00000000080010ce        0x2 
+                0x0000000008001114        0xe IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+                0x0000000008001114                HAL_GPIO_EXTI_Callback
+ *fill*         0x0000000008001122        0x2 
  .text.HAL_RCC_OscConfig
-                0x00000000080010d0      0x618 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
-                0x00000000080010d0                HAL_RCC_OscConfig
+                0x0000000008001124      0x5ac IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+                0x0000000008001124                HAL_RCC_OscConfig
  .text.HAL_RCC_ClockConfig
-                0x00000000080016e8      0x374 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
-                0x00000000080016e8                HAL_RCC_ClockConfig
+                0x00000000080016d0      0x314 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+                0x00000000080016d0                HAL_RCC_ClockConfig
  .text.HAL_RCC_GetSysClockFreq
-                0x0000000008001a5c       0xf4 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
-                0x0000000008001a5c                HAL_RCC_GetSysClockFreq
+                0x00000000080019e4      0x150 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+                0x00000000080019e4                HAL_RCC_GetSysClockFreq
  .text.HAL_RCC_GetHCLKFreq
-                0x0000000008001b50        0xc IWDG THUMB Debug/stm32f4xx_hal_rcc.o
-                0x0000000008001b50                HAL_RCC_GetHCLKFreq
+                0x0000000008001b34        0xc IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+                0x0000000008001b34                HAL_RCC_GetHCLKFreq
+ .text.HAL_RCC_GetPCLK1Freq
+                0x0000000008001b40       0x28 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+                0x0000000008001b40                HAL_RCC_GetPCLK1Freq
  .text.HAL_IWDG_Init
-                0x0000000008001b5c       0xdc IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
-                0x0000000008001b5c                HAL_IWDG_Init
+                0x0000000008001b68       0xdc IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
+                0x0000000008001b68                HAL_IWDG_Init
  .text.HAL_IWDG_Refresh
-                0x0000000008001c38       0x16 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
-                0x0000000008001c38                HAL_IWDG_Refresh
- *fill*         0x0000000008001c4e        0x2 
+                0x0000000008001c44       0x16 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
+                0x0000000008001c44                HAL_IWDG_Refresh
+ *fill*         0x0000000008001c5a        0x2 
  .text.NVIC_SetPriorityGrouping
-                0x0000000008001c50       0x40 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+                0x0000000008001c5c       0x40 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .text.NVIC_GetPriorityGrouping
-                0x0000000008001c90       0x14 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+                0x0000000008001c9c       0x14 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .text.NVIC_EnableIRQ
-                0x0000000008001ca4       0x2c IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+                0x0000000008001cb0       0x2c IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .text.NVIC_SetPriority
-                0x0000000008001cd0       0x50 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+                0x0000000008001cdc       0x50 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .text.NVIC_EncodePriority
-                0x0000000008001d20       0x58 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+                0x0000000008001d2c       0x58 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .text.SysTick_Config
-                0x0000000008001d78       0x40 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+                0x0000000008001d84       0x40 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .text.HAL_NVIC_SetPriorityGrouping
-                0x0000000008001db8       0x40 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
-                0x0000000008001db8                HAL_NVIC_SetPriorityGrouping
+                0x0000000008001dc4       0x40 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+                0x0000000008001dc4                HAL_NVIC_SetPriorityGrouping
  .text.HAL_NVIC_SetPriority
-                0x0000000008001df8       0x58 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
-                0x0000000008001df8                HAL_NVIC_SetPriority
+                0x0000000008001e04       0x58 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+                0x0000000008001e04                HAL_NVIC_SetPriority
  .text.HAL_NVIC_EnableIRQ
-                0x0000000008001e50       0x30 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
-                0x0000000008001e50                HAL_NVIC_EnableIRQ
+                0x0000000008001e5c       0x30 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+                0x0000000008001e5c                HAL_NVIC_EnableIRQ
  .text.HAL_SYSTICK_Config
-                0x0000000008001e80       0x16 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
-                0x0000000008001e80                HAL_SYSTICK_Config
- *fill*         0x0000000008001e96        0x2 
+                0x0000000008001e8c       0x16 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+                0x0000000008001e8c                HAL_SYSTICK_Config
+ *fill*         0x0000000008001ea2        0x2 
  .text.HAL_SYSTICK_CLKSourceConfig
-                0x0000000008001e98       0x4c IWDG THUMB Debug/stm32f4xx_hal_cortex.o
-                0x0000000008001e98                HAL_SYSTICK_CLKSourceConfig
+                0x0000000008001ea4       0x4c IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+                0x0000000008001ea4                HAL_SYSTICK_CLKSourceConfig
  .text.HAL_SYSTICK_IRQHandler
-                0x0000000008001ee4        0xa IWDG THUMB Debug/stm32f4xx_hal_cortex.o
-                0x0000000008001ee4                HAL_SYSTICK_IRQHandler
+                0x0000000008001ef0        0xa IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+                0x0000000008001ef0                HAL_SYSTICK_IRQHandler
  .text.HAL_SYSTICK_Callback
-                0x0000000008001eee        0x4 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
-                0x0000000008001eee                HAL_SYSTICK_Callback
- *fill*         0x0000000008001ef2        0x2 
+                0x0000000008001efa        0x4 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+                0x0000000008001efa                HAL_SYSTICK_Callback
+ *fill*         0x0000000008001efe        0x2 
  .text.HAL_TIM_Base_Init
-                0x0000000008001ef4      0x174 IWDG THUMB Debug/stm32f4xx_hal_tim.o
-                0x0000000008001ef4                HAL_TIM_Base_Init
+                0x0000000008001f00      0x174 IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x0000000008001f00                HAL_TIM_Base_Init
  .text.HAL_TIM_IC_Init
-                0x0000000008002068      0x17c IWDG THUMB Debug/stm32f4xx_hal_tim.o
-                0x0000000008002068                HAL_TIM_IC_Init
+                0x0000000008002074      0x17c IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x0000000008002074                HAL_TIM_IC_Init
  .text.HAL_TIM_IC_DeInit
-                0x00000000080021e4      0x12c IWDG THUMB Debug/stm32f4xx_hal_tim.o
-                0x00000000080021e4                HAL_TIM_IC_DeInit
+                0x00000000080021f0      0x12c IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x00000000080021f0                HAL_TIM_IC_DeInit
  .text.HAL_TIM_IC_MspInit
-                0x0000000008002310        0xa IWDG THUMB Debug/stm32f4xx_hal_tim.o
-                0x0000000008002310                HAL_TIM_IC_MspInit
+                0x000000000800231c        0xa IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x000000000800231c                HAL_TIM_IC_MspInit
  .text.HAL_TIM_IC_MspDeInit
-                0x000000000800231a        0xa IWDG THUMB Debug/stm32f4xx_hal_tim.o
-                0x000000000800231a                HAL_TIM_IC_MspDeInit
+                0x0000000008002326        0xa IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x0000000008002326                HAL_TIM_IC_MspDeInit
  .text.HAL_TIM_IC_Start_IT
-                0x0000000008002324      0x23c IWDG THUMB Debug/stm32f4xx_hal_tim.o
-                0x0000000008002324                HAL_TIM_IC_Start_IT
+                0x0000000008002330      0x23c IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x0000000008002330                HAL_TIM_IC_Start_IT
  .text.HAL_TIM_IRQHandler
-                0x0000000008002560      0x20e IWDG THUMB Debug/stm32f4xx_hal_tim.o
-                0x0000000008002560                HAL_TIM_IRQHandler
- *fill*         0x000000000800276e        0x2 
+                0x000000000800256c      0x20e IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x000000000800256c                HAL_TIM_IRQHandler
+ *fill*         0x000000000800277a        0x2 
  .text.HAL_TIM_IC_ConfigChannel
-                0x0000000008002770      0x368 IWDG THUMB Debug/stm32f4xx_hal_tim.o
-                0x0000000008002770                HAL_TIM_IC_ConfigChannel
+                0x000000000800277c      0x368 IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x000000000800277c                HAL_TIM_IC_ConfigChannel
  .text.HAL_TIM_ConfigClockSource
-                0x0000000008002ad8      0x880 IWDG THUMB Debug/stm32f4xx_hal_tim.o
-                0x0000000008002ad8                HAL_TIM_ConfigClockSource
+                0x0000000008002ae4      0x880 IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x0000000008002ae4                HAL_TIM_ConfigClockSource
  .text.HAL_TIM_ReadCapturedValue
-                0x0000000008003358      0x238 IWDG THUMB Debug/stm32f4xx_hal_tim.o
-                0x0000000008003358                HAL_TIM_ReadCapturedValue
+                0x0000000008003364      0x238 IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x0000000008003364                HAL_TIM_ReadCapturedValue
  .text.HAL_TIM_PeriodElapsedCallback
-                0x0000000008003590        0xa IWDG THUMB Debug/stm32f4xx_hal_tim.o
-                0x0000000008003590                HAL_TIM_PeriodElapsedCallback
+                0x000000000800359c        0xa IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x000000000800359c                HAL_TIM_PeriodElapsedCallback
  .text.HAL_TIM_OC_DelayElapsedCallback
-                0x000000000800359a        0xa IWDG THUMB Debug/stm32f4xx_hal_tim.o
-                0x000000000800359a                HAL_TIM_OC_DelayElapsedCallback
+                0x00000000080035a6        0xa IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x00000000080035a6                HAL_TIM_OC_DelayElapsedCallback
  .text.HAL_TIM_IC_CaptureCallback
-                0x00000000080035a4        0xa IWDG THUMB Debug/stm32f4xx_hal_tim.o
-                0x00000000080035a4                HAL_TIM_IC_CaptureCallback
+                0x00000000080035b0        0xa IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x00000000080035b0                HAL_TIM_IC_CaptureCallback
  .text.HAL_TIM_PWM_PulseFinishedCallback
-                0x00000000080035ae        0xa IWDG THUMB Debug/stm32f4xx_hal_tim.o
-                0x00000000080035ae                HAL_TIM_PWM_PulseFinishedCallback
+                0x00000000080035ba        0xa IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x00000000080035ba                HAL_TIM_PWM_PulseFinishedCallback
  .text.HAL_TIM_TriggerCallback
-                0x00000000080035b8        0xa IWDG THUMB Debug/stm32f4xx_hal_tim.o
-                0x00000000080035b8                HAL_TIM_TriggerCallback
- *fill*         0x00000000080035c2        0x2 
+                0x00000000080035c4        0xa IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x00000000080035c4                HAL_TIM_TriggerCallback
+ *fill*         0x00000000080035ce        0x2 
  .text.TIM_Base_SetConfig
-                0x00000000080035c4      0x148 IWDG THUMB Debug/stm32f4xx_hal_tim.o
-                0x00000000080035c4                TIM_Base_SetConfig
+                0x00000000080035d0      0x148 IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x00000000080035d0                TIM_Base_SetConfig
  .text.TIM_TI1_SetConfig
-                0x000000000800370c       0xec IWDG THUMB Debug/stm32f4xx_hal_tim.o
-                0x000000000800370c                TIM_TI1_SetConfig
+                0x0000000008003718       0xec IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x0000000008003718                TIM_TI1_SetConfig
  .text.TIM_CCxChannelCmd
-                0x00000000080037f8      0x104 IWDG THUMB Debug/stm32f4xx_hal_tim.o
-                0x00000000080037f8                TIM_CCxChannelCmd
+                0x0000000008003804      0x104 IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x0000000008003804                TIM_CCxChannelCmd
  .text.TIM_TI1_ConfigInputStage
-                0x00000000080038fc       0x5c IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x0000000008003908       0x5c IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .text.TIM_TI2_SetConfig
-                0x0000000008003958       0x78 IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x0000000008003964       0x78 IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .text.TIM_TI2_ConfigInputStage
-                0x00000000080039d0       0x5e IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x00000000080039dc       0x5e IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .text.TIM_TI3_SetConfig
-                0x0000000008003a2e       0x76 IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x0000000008003a3a       0x76 IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .text.TIM_TI4_SetConfig
-                0x0000000008003aa4       0x78 IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x0000000008003ab0       0x78 IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .text.TIM_ITRx_SetConfig
-                0x0000000008003b1c       0x3a IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x0000000008003b28       0x3a IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .text.TIM_ETR_SetConfig
-                0x0000000008003b56       0x3a IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x0000000008003b62       0x3a IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .text.HAL_TIMEx_MasterConfigSynchronization
-                0x0000000008003b90      0x164 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
-                0x0000000008003b90                HAL_TIMEx_MasterConfigSynchronization
+                0x0000000008003b9c      0x164 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+                0x0000000008003b9c                HAL_TIMEx_MasterConfigSynchronization
  .text.HAL_TIMEx_RemapConfig
-                0x0000000008003cf4       0xc0 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
-                0x0000000008003cf4                HAL_TIMEx_RemapConfig
+                0x0000000008003d00       0xc0 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+                0x0000000008003d00                HAL_TIMEx_RemapConfig
  .text.HAL_TIMEx_CommutationCallback
-                0x0000000008003db4        0xa IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
-                0x0000000008003db4                HAL_TIMEx_CommutationCallback
+                0x0000000008003dc0        0xa IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+                0x0000000008003dc0                HAL_TIMEx_CommutationCallback
  .text.HAL_TIMEx_BreakCallback
-                0x0000000008003dbe        0xa IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
-                0x0000000008003dbe                HAL_TIMEx_BreakCallback
+                0x0000000008003dca        0xa IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+                0x0000000008003dca                HAL_TIMEx_BreakCallback
  .text.HAL_Init
-                0x0000000008003dc8       0x40 IWDG THUMB Debug/stm32f4xx_hal.o
-                0x0000000008003dc8                HAL_Init
+                0x0000000008003dd4       0x40 IWDG THUMB Debug/stm32f4xx_hal.o
+                0x0000000008003dd4                HAL_Init
  .text.HAL_InitTick
-                0x0000000008003e08       0x38 IWDG THUMB Debug/stm32f4xx_hal.o
-                0x0000000008003e08                HAL_InitTick
+                0x0000000008003e14       0x38 IWDG THUMB Debug/stm32f4xx_hal.o
+                0x0000000008003e14                HAL_InitTick
  .text.HAL_IncTick
-                0x0000000008003e40       0x14 IWDG THUMB Debug/stm32f4xx_hal.o
-                0x0000000008003e40                HAL_IncTick
+                0x0000000008003e4c       0x14 IWDG THUMB Debug/stm32f4xx_hal.o
+                0x0000000008003e4c                HAL_IncTick
  .text.HAL_GetTick
-                0x0000000008003e54        0xc IWDG THUMB Debug/stm32f4xx_hal.o
-                0x0000000008003e54                HAL_GetTick
+                0x0000000008003e60        0xc IWDG THUMB Debug/stm32f4xx_hal.o
+                0x0000000008003e60                HAL_GetTick
  .text.HAL_Delay
-                0x0000000008003e60       0x38 IWDG THUMB Debug/stm32f4xx_hal.o
-                0x0000000008003e60                HAL_Delay
-                0x0000000008003e98                __text_end__ = (__text_start__ + SIZEOF (.text))
-                0x0000000000003ae0                __text_size__ = SIZEOF (.text)
-                0x0000000008003e98                __text_load_end__ = __text_end__
+                0x0000000008003e6c       0x38 IWDG THUMB Debug/stm32f4xx_hal.o
+                0x0000000008003e6c                HAL_Delay
+ .text.libc.__int64_udivmod
+                0x0000000008003ea4       0xd0 /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+                0x0000000008003ea4                __int64_udivmod
+                0x0000000008003ea4                __aeabi_uldivmod
+                0x0000000008003ea4                __int64_udiv
+                0x0000000008003ea4                __udivdi3
+                0x0000000008003f74                __text_end__ = (__text_start__ + SIZEOF (.text))
+                0x0000000000003bbc                __text_size__ = SIZEOF (.text)
+                0x0000000008003f74                __text_load_end__ = __text_end__
 
 .vfp11_veneer   0x0000000100000000        0x0
  .vfp11_veneer  0x0000000100000000        0x0 linker stubs
@@ -4466,75 +4465,78 @@ Linker script and memory map
 .iplt           0x0000000100000000        0x0
  .iplt          0x0000000100000000        0x0 IWDG THUMB Debug/thumb_crt0.o
                 0x0000000000000001                . = ASSERT (((__text_start__ == __text_end__) || ((__text_end__ >= __FLASH_segment_start__) && (__text_end__ <= __FLASH_segment_end__))), error: .text is too large to fit in FLASH memory segment)
-                0x0000000008003e98                __dtors_load_start__ = ALIGN (__text_end__, 0x4)
+                0x0000000008003f74                __dtors_load_start__ = ALIGN (__text_end__, 0x4)
 
-.dtors          0x0000000008003e98        0x0
-                0x0000000008003e98                __dtors_start__ = .
+.dtors          0x0000000008003f74        0x0
+                0x0000000008003f74                __dtors_start__ = .
  *(SORT(.dtors.*))
  *(.dtors)
  *(.fini_array)
  *(SORT(.fini_array.*))
-                0x0000000008003e98                __dtors_end__ = (__dtors_start__ + SIZEOF (.dtors))
+                0x0000000008003f74                __dtors_end__ = (__dtors_start__ + SIZEOF (.dtors))
                 0x0000000000000000                __dtors_size__ = SIZEOF (.dtors)
-                0x0000000008003e98                __dtors_load_end__ = __dtors_end__
+                0x0000000008003f74                __dtors_load_end__ = __dtors_end__
                 0x0000000000000001                . = ASSERT (((__dtors_start__ == __dtors_end__) || ((__dtors_end__ >= __FLASH_segment_start__) && (__dtors_end__ <= __FLASH_segment_end__))), error: .dtors is too large to fit in FLASH memory segment)
-                0x0000000008003e98                __ctors_load_start__ = ALIGN (__dtors_end__, 0x4)
+                0x0000000008003f74                __ctors_load_start__ = ALIGN (__dtors_end__, 0x4)
 
-.ctors          0x0000000008003e98        0x0
-                0x0000000008003e98                __ctors_start__ = .
+.ctors          0x0000000008003f74        0x0
+                0x0000000008003f74                __ctors_start__ = .
  *(SORT(.ctors.*))
  *(.ctors)
  *(.init_array)
  *(SORT(.init_array.*))
-                0x0000000008003e98                __ctors_end__ = (__ctors_start__ + SIZEOF (.ctors))
+                0x0000000008003f74                __ctors_end__ = (__ctors_start__ + SIZEOF (.ctors))
                 0x0000000000000000                __ctors_size__ = SIZEOF (.ctors)
-                0x0000000008003e98                __ctors_load_end__ = __ctors_end__
+                0x0000000008003f74                __ctors_load_end__ = __ctors_end__
                 0x0000000000000001                . = ASSERT (((__ctors_start__ == __ctors_end__) || ((__ctors_end__ >= __FLASH_segment_start__) && (__ctors_end__ <= __FLASH_segment_end__))), error: .ctors is too large to fit in FLASH memory segment)
-                0x0000000008003e98                __rodata_load_start__ = ALIGN (__ctors_end__, 0x4)
+                0x0000000008003f74                __rodata_load_start__ = ALIGN (__ctors_end__, 0x4)
 
-.rodata         0x0000000008003e98      0x432
-                0x0000000008003e98                __rodata_start__ = .
+.rodata         0x0000000008003f74      0x43a
+                0x0000000008003f74                __rodata_start__ = .
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x0000000008003e98       0x71 IWDG THUMB Debug/main.o
- *fill*         0x0000000008003f09        0x3 
+ .rodata        0x0000000008003f74       0x71 IWDG THUMB Debug/main.o
+ *fill*         0x0000000008003fe5        0x3 
  .rodata.AHBPrescTable
-                0x0000000008003f0c       0x10 IWDG THUMB Debug/system_stm32f4xx.o
-                0x0000000008003f0c                AHBPrescTable
- .rodata        0x0000000008003f1c       0x9c IWDG THUMB Debug/stm32f4xx_hal_gpio.o
- .rodata        0x0000000008003fb8       0x9b IWDG THUMB Debug/stm32f4xx_hal_rcc.o
- *fill*         0x0000000008004053        0x1 
- .rodata        0x0000000008004054       0x9c IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
- .rodata        0x00000000080040f0       0x9e IWDG THUMB Debug/stm32f4xx_hal_cortex.o
- *fill*         0x000000000800418e        0x2 
- .rodata        0x0000000008004190       0x9b IWDG THUMB Debug/stm32f4xx_hal_tim.o
- *fill*         0x000000000800422b        0x1 
- .rodata        0x000000000800422c       0x9e IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
-                0x00000000080042ca                __rodata_end__ = (__rodata_start__ + SIZEOF (.rodata))
-                0x0000000000000432                __rodata_size__ = SIZEOF (.rodata)
-                0x00000000080042ca                __rodata_load_end__ = __rodata_end__
+                0x0000000008003fe8       0x10 IWDG THUMB Debug/system_stm32f4xx.o
+                0x0000000008003fe8                AHBPrescTable
+ .rodata.APBPrescTable
+                0x0000000008003ff8        0x8 IWDG THUMB Debug/system_stm32f4xx.o
+                0x0000000008003ff8                APBPrescTable
+ .rodata        0x0000000008004000       0x9c IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+ .rodata        0x000000000800409c       0x9b IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+ *fill*         0x0000000008004137        0x1 
+ .rodata        0x0000000008004138       0x9c IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
+ .rodata        0x00000000080041d4       0x9e IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+ *fill*         0x0000000008004272        0x2 
+ .rodata        0x0000000008004274       0x9b IWDG THUMB Debug/stm32f4xx_hal_tim.o
+ *fill*         0x000000000800430f        0x1 
+ .rodata        0x0000000008004310       0x9e IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+                0x00000000080043ae                __rodata_end__ = (__rodata_start__ + SIZEOF (.rodata))
+                0x000000000000043a                __rodata_size__ = SIZEOF (.rodata)
+                0x00000000080043ae                __rodata_load_end__ = __rodata_end__
 
 .rel.dyn        0x0000000008000000        0x0
  .rel.iplt      0x0000000008000000        0x0 IWDG THUMB Debug/thumb_crt0.o
                 0x0000000000000001                . = ASSERT (((__rodata_start__ == __rodata_end__) || ((__rodata_end__ >= __FLASH_segment_start__) && (__rodata_end__ <= __FLASH_segment_end__))), error: .rodata is too large to fit in FLASH memory segment)
-                0x00000000080042cc                __ARM.exidx_load_start__ = ALIGN (__rodata_end__, 0x4)
+                0x00000000080043b0                __ARM.exidx_load_start__ = ALIGN (__rodata_end__, 0x4)
 
-.ARM.exidx      0x00000000080042cc        0x0
-                0x00000000080042cc                __ARM.exidx_start__ = .
-                0x00000000080042cc                __exidx_start = __ARM.exidx_start__
+.ARM.exidx      0x00000000080043b0        0x0
+                0x00000000080043b0                __ARM.exidx_start__ = .
+                0x00000000080043b0                __exidx_start = __ARM.exidx_start__
  *(.ARM.exidx .ARM.exidx.*)
-                0x00000000080042cc                __ARM.exidx_end__ = (__ARM.exidx_start__ + SIZEOF (.ARM.exidx))
+                0x00000000080043b0                __ARM.exidx_end__ = (__ARM.exidx_start__ + SIZEOF (.ARM.exidx))
                 0x0000000000000000                __ARM.exidx_size__ = SIZEOF (.ARM.exidx)
-                0x00000000080042cc                __exidx_end = __ARM.exidx_end__
-                0x00000000080042cc                __ARM.exidx_load_end__ = __ARM.exidx_end__
+                0x00000000080043b0                __exidx_end = __ARM.exidx_end__
+                0x00000000080043b0                __ARM.exidx_load_end__ = __ARM.exidx_end__
                 0x0000000000000001                . = ASSERT (((__ARM.exidx_start__ == __ARM.exidx_end__) || ((__ARM.exidx_end__ >= __FLASH_segment_start__) && (__ARM.exidx_end__ <= __FLASH_segment_end__))), error: .ARM.exidx is too large to fit in FLASH memory segment)
-                0x00000000080042cc                __fast_load_start__ = ALIGN (__ARM.exidx_end__, 0x4)
+                0x00000000080043b0                __fast_load_start__ = ALIGN (__ARM.exidx_end__, 0x4)
 
-.fast           0x0000000020000000        0x0 load address 0x00000000080042cc
+.fast           0x0000000020000000        0x0 load address 0x00000000080043b0
                 0x0000000020000000                __fast_start__ = .
  *(.fast .fast.*)
                 0x0000000020000000                __fast_end__ = (__fast_start__ + SIZEOF (.fast))
                 0x0000000000000000                __fast_size__ = SIZEOF (.fast)
-                0x00000000080042cc                __fast_load_end__ = (__fast_load_start__ + SIZEOF (.fast))
+                0x00000000080043b0                __fast_load_end__ = (__fast_load_start__ + SIZEOF (.fast))
                 0x0000000000000001                . = ASSERT (((__fast_load_start__ == __fast_load_end__) || ((__fast_load_end__ >= __FLASH_segment_start__) && (__fast_load_end__ <= __FLASH_segment_end__))), error: .fast is too large to fit in FLASH memory segment)
 
 .fast_run       0x0000000020000000        0x0
@@ -4544,9 +4546,9 @@ Linker script and memory map
                 0x0000000000000000                __fast_run_size__ = SIZEOF (.fast_run)
                 0x0000000020000000                __fast_run_load_end__ = __fast_run_end__
                 0x0000000000000001                . = ASSERT (((__fast_run_start__ == __fast_run_end__) || ((__fast_run_end__ >= __RAM_segment_start__) && (__fast_run_end__ <= __RAM_segment_end__))), error: .fast_run is too large to fit in RAM memory segment)
-                0x00000000080042cc                __data_load_start__ = ALIGN ((__fast_load_start__ + SIZEOF (.fast)), 0x4)
+                0x00000000080043b0                __data_load_start__ = ALIGN ((__fast_load_start__ + SIZEOF (.fast)), 0x4)
 
-.data           0x0000000020000000        0x4 load address 0x00000000080042cc
+.data           0x0000000020000000        0x4 load address 0x00000000080043b0
                 0x0000000020000000                __data_start__ = .
  *(.data .data.* .gnu.linkonce.d.*)
  .data.SystemCoreClock
@@ -4554,13 +4556,13 @@ Linker script and memory map
                 0x0000000020000000                SystemCoreClock
                 0x0000000020000004                __data_end__ = (__data_start__ + SIZEOF (.data))
                 0x0000000000000004                __data_size__ = SIZEOF (.data)
-                0x00000000080042d0                __data_load_end__ = (__data_load_start__ + SIZEOF (.data))
+                0x00000000080043b4                __data_load_end__ = (__data_load_start__ + SIZEOF (.data))
 
 .igot.plt       0x0000000100000000        0x0
  .igot.plt      0x0000000100000000        0x0 IWDG THUMB Debug/thumb_crt0.o
                 0x0000000000000001                . = ASSERT (((__data_load_start__ == __data_load_end__) || ((__data_load_end__ >= __FLASH_segment_start__) && (__data_load_end__ <= __FLASH_segment_end__))), error: .data is too large to fit in FLASH memory segment)
 
-.data_run       0x0000000020000000        0x4 load address 0x00000000080042cc
+.data_run       0x0000000020000000        0x4 load address 0x00000000080043b0
                 0x0000000020000000                __data_run_start__ = .
                 0x0000000020000004                . = MAX ((__data_run_start__ + SIZEOF (.data)), .)
  *fill*         0x0000000020000000        0x4 
@@ -4568,16 +4570,16 @@ Linker script and memory map
                 0x0000000000000004                __data_run_size__ = SIZEOF (.data_run)
                 0x0000000020000004                __data_run_load_end__ = __data_run_end__
                 0x0000000000000001                . = ASSERT (((__data_run_start__ == __data_run_end__) || ((__data_run_end__ >= __RAM_segment_start__) && (__data_run_end__ <= __RAM_segment_end__))), error: .data_run is too large to fit in RAM memory segment)
-                0x00000000080042d0                __tdata_load_start__ = ALIGN ((__data_load_start__ + SIZEOF (.data)), 0x4)
+                0x00000000080043b4                __tdata_load_start__ = ALIGN ((__data_load_start__ + SIZEOF (.data)), 0x4)
 
-.tdata          0x0000000020000004        0x0 load address 0x00000000080042d0
+.tdata          0x0000000020000004        0x0 load address 0x00000000080043b4
                 0x0000000020000004                __tdata_start__ = .
  *(.tdata .tdata.*)
                 0x0000000020000004                __tdata_end__ = (__tdata_start__ + SIZEOF (.tdata))
                 0x0000000000000000                __tdata_size__ = SIZEOF (.tdata)
-                0x00000000080042d0                __tdata_load_end__ = (__tdata_load_start__ + SIZEOF (.tdata))
-                0x00000000080042d0                __FLASH_segment_used_end__ = (ALIGN ((__data_load_start__ + SIZEOF (.data)), 0x4) + SIZEOF (.tdata))
-                0x00000000000042d0                __FLASH_segment_used_size__ = (__FLASH_segment_used_end__ - __FLASH_segment_start__)
+                0x00000000080043b4                __tdata_load_end__ = (__tdata_load_start__ + SIZEOF (.tdata))
+                0x00000000080043b4                __FLASH_segment_used_end__ = (ALIGN ((__data_load_start__ + SIZEOF (.data)), 0x4) + SIZEOF (.tdata))
+                0x00000000000043b4                __FLASH_segment_used_size__ = (__FLASH_segment_used_end__ - __FLASH_segment_start__)
                 0x0000000000000001                . = ASSERT (((__tdata_load_start__ == __tdata_load_end__) || ((__tdata_load_end__ >= __FLASH_segment_start__) && (__tdata_load_end__ <= __FLASH_segment_end__))), error: .tdata is too large to fit in FLASH memory segment)
 
 .tdata_run      0x0000000020000004        0x0
@@ -4729,6 +4731,8 @@ OUTPUT(IWDG THUMB Debug/IWDG.elf elf32-littlearm)
                 0x000000000000020d       0x33 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .ARM.attributes
                 0x0000000000000240       0x33 IWDG THUMB Debug/stm32f4xx_hal.o
+ .ARM.attributes
+                0x0000000000000273       0x1c /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
 
 .comment        0x0000000000000000       0x4c
  .comment       0x0000000000000000       0x4c IWDG THUMB Debug/main.o
@@ -4744,37 +4748,37 @@ OUTPUT(IWDG THUMB Debug/IWDG.elf elf32-littlearm)
  .comment       0x000000000000004c       0x4d IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .comment       0x000000000000004c       0x4d IWDG THUMB Debug/stm32f4xx_hal.o
 
-.debug_line     0x0000000000000000     0x87a6
+.debug_line     0x0000000000000000     0x86b4
  .debug_line    0x0000000000000000      0x297 IWDG THUMB Debug/thumb_crt0.o
  .debug_line    0x0000000000000297      0x120 IWDG THUMB Debug/STM32_Startup.o
- .debug_line    0x00000000000003b7      0x540 IWDG THUMB Debug/main.o
- .debug_line    0x00000000000008f7      0x51e IWDG THUMB Debug/stm32f4xx_it.o
- .debug_line    0x0000000000000e15      0x47d IWDG THUMB Debug/stm32f4xx_hal_msp.o
- .debug_line    0x0000000000001292      0x479 IWDG THUMB Debug/system_stm32f4xx.o
- .debug_line    0x000000000000170b      0x80d IWDG THUMB Debug/stm32f4xx_hal_gpio.o
- .debug_line    0x0000000000001f18      0x930 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
- .debug_line    0x0000000000002848      0x4c3 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
- .debug_line    0x0000000000002d0b      0x930 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
- .debug_line    0x000000000000363b     0x3b64 IWDG THUMB Debug/stm32f4xx_hal_tim.o
- .debug_line    0x000000000000719f      0xfef IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
- .debug_line    0x000000000000818e      0x618 IWDG THUMB Debug/stm32f4xx_hal.o
+ .debug_line    0x00000000000003b7      0x544 IWDG THUMB Debug/main.o
+ .debug_line    0x00000000000008fb      0x520 IWDG THUMB Debug/stm32f4xx_it.o
+ .debug_line    0x0000000000000e1b      0x47d IWDG THUMB Debug/stm32f4xx_hal_msp.o
+ .debug_line    0x0000000000001298      0x479 IWDG THUMB Debug/system_stm32f4xx.o
+ .debug_line    0x0000000000001711      0x80d IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+ .debug_line    0x0000000000001f1e      0x851 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+ .debug_line    0x000000000000276f      0x4c3 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
+ .debug_line    0x0000000000002c32      0x930 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+ .debug_line    0x0000000000003562     0x3b64 IWDG THUMB Debug/stm32f4xx_hal_tim.o
+ .debug_line    0x00000000000070c6      0xfef IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+ .debug_line    0x00000000000080b5      0x5ff IWDG THUMB Debug/stm32f4xx_hal.o
 
-.debug_info     0x0000000000000000     0xbd6f
+.debug_info     0x0000000000000000     0xbaf0
  .debug_info    0x0000000000000000       0xc8 IWDG THUMB Debug/thumb_crt0.o
  .debug_info    0x00000000000000c8       0xfe IWDG THUMB Debug/STM32_Startup.o
- .debug_info    0x00000000000001c6     0x14ff IWDG THUMB Debug/main.o
- .debug_info    0x00000000000016c5      0xc65 IWDG THUMB Debug/stm32f4xx_it.o
- .debug_info    0x000000000000232a      0xf34 IWDG THUMB Debug/stm32f4xx_hal_msp.o
- .debug_info    0x000000000000325e      0xa1d IWDG THUMB Debug/system_stm32f4xx.o
- .debug_info    0x0000000000003c7b      0xc71 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
- .debug_info    0x00000000000048ec     0x1050 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
- .debug_info    0x000000000000593c      0x788 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
- .debug_info    0x00000000000060c4     0x12f3 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
- .debug_info    0x00000000000073b7     0x26f6 IWDG THUMB Debug/stm32f4xx_hal_tim.o
- .debug_info    0x0000000000009aad     0x14cf IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
- .debug_info    0x000000000000af7c      0xdf3 IWDG THUMB Debug/stm32f4xx_hal.o
+ .debug_info    0x00000000000001c6     0x151c IWDG THUMB Debug/main.o
+ .debug_info    0x00000000000016e2      0xd1e IWDG THUMB Debug/stm32f4xx_it.o
+ .debug_info    0x0000000000002400      0xf34 IWDG THUMB Debug/stm32f4xx_hal_msp.o
+ .debug_info    0x0000000000003334      0xa1d IWDG THUMB Debug/system_stm32f4xx.o
+ .debug_info    0x0000000000003d51      0xc71 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+ .debug_info    0x00000000000049c2      0xd82 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+ .debug_info    0x0000000000005744      0x788 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
+ .debug_info    0x0000000000005ecc     0x12f3 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+ .debug_info    0x00000000000071bf     0x26f5 IWDG THUMB Debug/stm32f4xx_hal_tim.o
+ .debug_info    0x00000000000098b4     0x14cf IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+ .debug_info    0x000000000000ad83      0xd6d IWDG THUMB Debug/stm32f4xx_hal.o
 
-.debug_abbrev   0x0000000000000000     0x1833
+.debug_abbrev   0x0000000000000000     0x1781
  .debug_abbrev  0x0000000000000000       0x12 IWDG THUMB Debug/thumb_crt0.o
  .debug_abbrev  0x0000000000000012       0x14 IWDG THUMB Debug/STM32_Startup.o
  .debug_abbrev  0x0000000000000026      0x28c IWDG THUMB Debug/main.o
@@ -4782,12 +4786,12 @@ OUTPUT(IWDG THUMB Debug/IWDG.elf elf32-littlearm)
  .debug_abbrev  0x0000000000000444      0x1b3 IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .debug_abbrev  0x00000000000005f7      0x177 IWDG THUMB Debug/system_stm32f4xx.o
  .debug_abbrev  0x000000000000076e      0x208 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
- .debug_abbrev  0x0000000000000976      0x2e1 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
- .debug_abbrev  0x0000000000000c57      0x18f IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
- .debug_abbrev  0x0000000000000de6      0x31e IWDG THUMB Debug/stm32f4xx_hal_cortex.o
- .debug_abbrev  0x0000000000001104      0x268 IWDG THUMB Debug/stm32f4xx_hal_tim.o
- .debug_abbrev  0x000000000000136c      0x245 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
- .debug_abbrev  0x00000000000015b1      0x282 IWDG THUMB Debug/stm32f4xx_hal.o
+ .debug_abbrev  0x0000000000000976      0x284 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+ .debug_abbrev  0x0000000000000bfa      0x18f IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
+ .debug_abbrev  0x0000000000000d89      0x31e IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+ .debug_abbrev  0x00000000000010a7      0x268 IWDG THUMB Debug/stm32f4xx_hal_tim.o
+ .debug_abbrev  0x000000000000130f      0x245 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+ .debug_abbrev  0x0000000000001554      0x22d IWDG THUMB Debug/stm32f4xx_hal.o
 
 .debug_aranges  0x0000000000000000      0x9b0
  .debug_aranges
@@ -4831,136 +4835,137 @@ OUTPUT(IWDG THUMB Debug/IWDG.elf elf32-littlearm)
  .debug_ranges  0x00000000000006f0      0x130 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .debug_ranges  0x0000000000000820       0xb8 IWDG THUMB Debug/stm32f4xx_hal.o
 
-.debug_frame    0x0000000000000000     0x2160
+.debug_frame    0x0000000000000000     0x22a8
  .debug_frame   0x0000000000000000      0x128 IWDG THUMB Debug/main.o
- .debug_frame   0x0000000000000128       0xe4 IWDG THUMB Debug/stm32f4xx_it.o
- .debug_frame   0x000000000000020c       0x7c IWDG THUMB Debug/stm32f4xx_hal_msp.o
- .debug_frame   0x0000000000000288       0x40 IWDG THUMB Debug/system_stm32f4xx.o
- .debug_frame   0x00000000000002c8      0x148 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
- .debug_frame   0x0000000000000410      0x1a4 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
- .debug_frame   0x00000000000005b4       0x58 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
- .debug_frame   0x000000000000060c      0x42c IWDG THUMB Debug/stm32f4xx_hal_cortex.o
- .debug_frame   0x0000000000000a38      0xf90 IWDG THUMB Debug/stm32f4xx_hal_tim.o
- .debug_frame   0x00000000000019c8      0x5b0 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
- .debug_frame   0x0000000000001f78      0x1e8 IWDG THUMB Debug/stm32f4xx_hal.o
+ .debug_frame   0x0000000000000128       0xf0 IWDG THUMB Debug/stm32f4xx_it.o
+ .debug_frame   0x0000000000000218       0x7c IWDG THUMB Debug/stm32f4xx_hal_msp.o
+ .debug_frame   0x0000000000000294       0x40 IWDG THUMB Debug/system_stm32f4xx.o
+ .debug_frame   0x00000000000002d4      0x148 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+ .debug_frame   0x000000000000041c      0x1a4 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+ .debug_frame   0x00000000000005c0       0x58 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
+ .debug_frame   0x0000000000000618      0x42c IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+ .debug_frame   0x0000000000000a44      0xf90 IWDG THUMB Debug/stm32f4xx_hal_tim.o
+ .debug_frame   0x00000000000019d4      0x5b0 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+ .debug_frame   0x0000000000001f84      0x1c8 IWDG THUMB Debug/stm32f4xx_hal.o
+ .debug_frame   0x000000000000214c      0x15c /usr/share/crossworks_for_arm_4.0/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
 
 .debug_pubnames
-                0x0000000000000000     0x37b8
+                0x0000000000000000     0x37b2
  .debug_pubnames
-                0x0000000000000000      0x7ea IWDG THUMB Debug/main.o
+                0x0000000000000000      0x7e5 IWDG THUMB Debug/main.o
  .debug_pubnames
-                0x00000000000007ea       0xfa IWDG THUMB Debug/stm32f4xx_it.o
+                0x00000000000007e5      0x11e IWDG THUMB Debug/stm32f4xx_it.o
  .debug_pubnames
-                0x00000000000008e4      0x6ad IWDG THUMB Debug/stm32f4xx_hal_msp.o
+                0x0000000000000903      0x6a8 IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .debug_pubnames
-                0x0000000000000f91       0x73 IWDG THUMB Debug/system_stm32f4xx.o
+                0x0000000000000fab       0x73 IWDG THUMB Debug/system_stm32f4xx.o
  .debug_pubnames
-                0x0000000000001004      0x133 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+                0x000000000000101e      0x133 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
  .debug_pubnames
-                0x0000000000001137      0x1cd IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+                0x0000000000001151      0x1c2 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .debug_pubnames
-                0x0000000000001304       0x81 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
+                0x0000000000001313       0x81 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .debug_pubnames
-                0x0000000000001385      0x9b1 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+                0x0000000000001394      0x9ac IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .debug_pubnames
-                0x0000000000001d36      0xc4e IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x0000000000001d40      0xc4e IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .debug_pubnames
-                0x0000000000002984      0x562 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+                0x000000000000298e      0x562 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .debug_pubnames
-                0x0000000000002ee6      0x8d2 IWDG THUMB Debug/stm32f4xx_hal.o
+                0x0000000000002ef0      0x8c2 IWDG THUMB Debug/stm32f4xx_hal.o
 
 .debug_pubtypes
-                0x0000000000000000     0x1c4d
+                0x0000000000000000     0x1c6b
  .debug_pubtypes
                 0x0000000000000000      0x3c1 IWDG THUMB Debug/main.o
  .debug_pubtypes
-                0x00000000000003c1      0x2bc IWDG THUMB Debug/stm32f4xx_it.o
+                0x00000000000003c1      0x2cd IWDG THUMB Debug/stm32f4xx_it.o
  .debug_pubtypes
-                0x000000000000067d      0x2ae IWDG THUMB Debug/stm32f4xx_hal_msp.o
+                0x000000000000068e      0x2ae IWDG THUMB Debug/stm32f4xx_hal_msp.o
  .debug_pubtypes
-                0x000000000000092b      0x1c3 IWDG THUMB Debug/system_stm32f4xx.o
+                0x000000000000093c      0x1c3 IWDG THUMB Debug/system_stm32f4xx.o
  .debug_pubtypes
-                0x0000000000000aee      0x235 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+                0x0000000000000aff      0x235 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
  .debug_pubtypes
-                0x0000000000000d23      0x266 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+                0x0000000000000d34      0x273 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
  .debug_pubtypes
-                0x0000000000000f89      0x1f9 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
+                0x0000000000000fa7      0x1f9 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
  .debug_pubtypes
-                0x0000000000001182      0x215 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+                0x00000000000011a0      0x215 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
  .debug_pubtypes
-                0x0000000000001397      0x37e IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                0x00000000000013b5      0x37e IWDG THUMB Debug/stm32f4xx_hal_tim.o
  .debug_pubtypes
-                0x0000000000001715      0x336 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+                0x0000000000001733      0x336 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
  .debug_pubtypes
-                0x0000000000001a4b      0x202 IWDG THUMB Debug/stm32f4xx_hal.o
+                0x0000000000001a69      0x202 IWDG THUMB Debug/stm32f4xx_hal.o
 
-.debug_macro    0x0000000000000000    0x1eddf
+.debug_macro    0x0000000000000000    0x1ecab
  .debug_macro   0x0000000000000000      0x19e IWDG THUMB Debug/main.o
  .debug_macro   0x000000000000019e      0x8ec IWDG THUMB Debug/main.o
- .debug_macro   0x0000000000000a8a       0x52 IWDG THUMB Debug/main.o
- .debug_macro   0x0000000000000adc      0x187 IWDG THUMB Debug/main.o
- .debug_macro   0x0000000000000c63       0x33 IWDG THUMB Debug/main.o
- .debug_macro   0x0000000000000c96       0x28 IWDG THUMB Debug/main.o
- .debug_macro   0x0000000000000cbe      0x188 IWDG THUMB Debug/main.o
- .debug_macro   0x0000000000000e46       0x35 IWDG THUMB Debug/main.o
- .debug_macro   0x0000000000000e7b       0x50 IWDG THUMB Debug/main.o
- .debug_macro   0x0000000000000ecb      0xe66 IWDG THUMB Debug/main.o
- .debug_macro   0x0000000000001d31    0x15e04 IWDG THUMB Debug/main.o
- .debug_macro   0x0000000000017b35       0x43 IWDG THUMB Debug/main.o
- .debug_macro   0x0000000000017b78     0x3574 IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001b0ec       0x89 IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001b175       0x71 IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001b1e6       0x5e IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001b244      0x96b IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001bbaf      0x9e1 IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001c590      0x11e IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001c6ae      0x13e IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001c7ec       0x27 IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001c813      0x287 IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001ca9a       0x5f IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001caf9      0x23a IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001cd33      0x133 IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001ce66      0x21e IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001d084       0x2e IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001d0b2       0x79 IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001d12b      0x11e IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001d249       0x7f IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001d2c8       0x89 IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001d351      0x6e0 IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001da31       0x5b IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001da8c      0x14d IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001dbd9      0x125 IWDG THUMB Debug/main.o
- .debug_macro   0x000000000001dcfe      0x1a8 IWDG THUMB Debug/stm32f4xx_it.o
- .debug_macro   0x000000000001dea6      0x19a IWDG THUMB Debug/stm32f4xx_hal_msp.o
- .debug_macro   0x000000000001e040      0x1a0 IWDG THUMB Debug/system_stm32f4xx.o
- .debug_macro   0x000000000001e1e0      0x1d2 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
- .debug_macro   0x000000000001e3b2      0x1c4 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
- .debug_macro   0x000000000001e576      0x1a0 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
- .debug_macro   0x000000000001e716      0x19a IWDG THUMB Debug/stm32f4xx_hal_cortex.o
- .debug_macro   0x000000000001e8b0      0x19b IWDG THUMB Debug/stm32f4xx_hal_tim.o
- .debug_macro   0x000000000001ea4b      0x19a IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
- .debug_macro   0x000000000001ebe5      0x1fa IWDG THUMB Debug/stm32f4xx_hal.o
+ .debug_macro   0x0000000000000a8a       0x58 IWDG THUMB Debug/main.o
+ .debug_macro   0x0000000000000ae2      0x187 IWDG THUMB Debug/main.o
+ .debug_macro   0x0000000000000c69       0x32 IWDG THUMB Debug/main.o
+ .debug_macro   0x0000000000000c9b       0x2f IWDG THUMB Debug/main.o
+ .debug_macro   0x0000000000000cca      0x188 IWDG THUMB Debug/main.o
+ .debug_macro   0x0000000000000e52       0x35 IWDG THUMB Debug/main.o
+ .debug_macro   0x0000000000000e87       0x50 IWDG THUMB Debug/main.o
+ .debug_macro   0x0000000000000ed7      0xe66 IWDG THUMB Debug/main.o
+ .debug_macro   0x0000000000001d3d    0x15d08 IWDG THUMB Debug/main.o
+ .debug_macro   0x0000000000017a45       0x43 IWDG THUMB Debug/main.o
+ .debug_macro   0x0000000000017a88     0x3535 IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001afbd       0x89 IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001b046       0x71 IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001b0b7       0x5d IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001b114      0x96b IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001ba7f      0x9e6 IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001c465      0x11e IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001c583      0x13e IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001c6c1       0x27 IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001c6e8      0x287 IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001c96f       0x5f IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001c9ce      0x23a IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001cc08      0x133 IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001cd3b      0x21e IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001cf59       0x2e IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001cf87       0x79 IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001d000      0x11e IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001d11e       0x7f IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001d19d       0x89 IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001d226      0x6e0 IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001d906       0x59 IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001d95f      0x14d IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001daac      0x125 IWDG THUMB Debug/main.o
+ .debug_macro   0x000000000001dbd1      0x1a8 IWDG THUMB Debug/stm32f4xx_it.o
+ .debug_macro   0x000000000001dd79      0x19a IWDG THUMB Debug/stm32f4xx_hal_msp.o
+ .debug_macro   0x000000000001df13      0x1a0 IWDG THUMB Debug/system_stm32f4xx.o
+ .debug_macro   0x000000000001e0b3      0x1d2 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+ .debug_macro   0x000000000001e285      0x1be IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+ .debug_macro   0x000000000001e443      0x1a0 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
+ .debug_macro   0x000000000001e5e3      0x19a IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+ .debug_macro   0x000000000001e77d      0x19a IWDG THUMB Debug/stm32f4xx_hal_tim.o
+ .debug_macro   0x000000000001e917      0x19a IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+ .debug_macro   0x000000000001eab1      0x1fa IWDG THUMB Debug/stm32f4xx_hal.o
 
-.debug_str      0x0000000000000000    0xbd116
- .debug_str     0x0000000000000000    0xbac52 IWDG THUMB Debug/main.o
-                                      0xbaf1d (size before relaxing)
- .debug_str     0x00000000000bac52      0x160 IWDG THUMB Debug/stm32f4xx_it.o
-                                      0xba687 (size before relaxing)
- .debug_str     0x00000000000badb2       0xc0 IWDG THUMB Debug/stm32f4xx_hal_msp.o
-                                      0xbab9e (size before relaxing)
- .debug_str     0x00000000000bae72      0x122 IWDG THUMB Debug/system_stm32f4xx.o
-                                      0xba2f9 (size before relaxing)
- .debug_str     0x00000000000baf94      0x264 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
-                                      0xba532 (size before relaxing)
- .debug_str     0x00000000000bb1f8      0x2e8 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
-                                      0xba6dc (size before relaxing)
- .debug_str     0x00000000000bb4e0       0xd8 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
-                                      0xba251 (size before relaxing)
- .debug_str     0x00000000000bb5b8      0x418 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
-                                      0xbabb8 (size before relaxing)
- .debug_str     0x00000000000bb9d0      0xc9e IWDG THUMB Debug/stm32f4xx_hal_tim.o
-                                      0xbb2e5 (size before relaxing)
- .debug_str     0x00000000000bc66e      0x543 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
-                                      0xbaba0 (size before relaxing)
- .debug_str     0x00000000000bcbb1      0x565 IWDG THUMB Debug/stm32f4xx_hal.o
-                                      0xbada4 (size before relaxing)
+.debug_str      0x0000000000000000    0xbd07b
+ .debug_str     0x0000000000000000    0xbabfa IWDG THUMB Debug/main.o
+                                      0xbaece (size before relaxing)
+ .debug_str     0x00000000000babfa      0x160 IWDG THUMB Debug/stm32f4xx_it.o
+                                      0xba68b (size before relaxing)
+ .debug_str     0x00000000000bad5a       0xc0 IWDG THUMB Debug/stm32f4xx_hal_msp.o
+                                      0xbab4f (size before relaxing)
+ .debug_str     0x00000000000bae1a      0x122 IWDG THUMB Debug/system_stm32f4xx.o
+                                      0xba2af (size before relaxing)
+ .debug_str     0x00000000000baf3c      0x264 IWDG THUMB Debug/stm32f4xx_hal_gpio.o
+                                      0xba4e8 (size before relaxing)
+ .debug_str     0x00000000000bb1a0      0x2c3 IWDG THUMB Debug/stm32f4xx_hal_rcc.o
+                                      0xba667 (size before relaxing)
+ .debug_str     0x00000000000bb463       0xd8 IWDG THUMB Debug/stm32f4xx_hal_iwdg.o
+                                      0xba207 (size before relaxing)
+ .debug_str     0x00000000000bb53b      0x418 IWDG THUMB Debug/stm32f4xx_hal_cortex.o
+                                      0xbab69 (size before relaxing)
+ .debug_str     0x00000000000bb953      0xc9e IWDG THUMB Debug/stm32f4xx_hal_tim.o
+                                      0xbb29b (size before relaxing)
+ .debug_str     0x00000000000bc5f1      0x543 IWDG THUMB Debug/stm32f4xx_hal_tim_ex.o
+                                      0xbab56 (size before relaxing)
+ .debug_str     0x00000000000bcb34      0x547 IWDG THUMB Debug/stm32f4xx_hal.o
+                                      0xbad23 (size before relaxing)

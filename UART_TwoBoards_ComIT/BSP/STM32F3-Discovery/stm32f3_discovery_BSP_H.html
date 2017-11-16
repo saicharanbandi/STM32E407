@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-11-15 Mi 10:20 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Foo X. Bar" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #cc0000;">/**</span>
+<span style="color: #cc0000;">  ******************************************************************************</span>
+<span style="color: #cc0000;">  * </span><span style="color: #1f5bff;">@file</span><span style="color: #cc0000;">    stm32f3_discovery.h</span>
+<span style="color: #cc0000;">  * </span><span style="color: #1f5bff;">@author</span><span style="color: #cc0000;">  MCD Application Team</span>
+<span style="color: #cc0000;">  * </span><span style="color: #1f5bff;">@version</span><span style="color: #cc0000;"> V2.1.2</span>
+<span style="color: #cc0000;">  * </span><span style="color: #1f5bff;">@date</span><span style="color: #cc0000;">    13-November-2015</span>
+<span style="color: #cc0000;">  * </span><span style="color: #1f5bff;">@brief</span><span style="color: #cc0000;">   This file contains definitions for STM32F3-Discovery's Leds, push-</span>
+<span style="color: #cc0000;">  *          buttons hardware resources.</span>
+<span style="color: #cc0000;">  ******************************************************************************</span>
+<span style="color: #cc0000;">  * </span><span style="color: #1f5bff;">@attention</span>
+<span style="color: #cc0000;">  *</span>
+<span style="color: #cc0000;">  * &lt;h2&gt;&lt;center&gt;&amp;copy; COPYRIGHT(c) 2015 STMicroelectronics&lt;/center&gt;&lt;/h2&gt;</span>
+<span style="color: #cc0000;">  *</span>
+<span style="color: #cc0000;">  * Redistribution and use in source and binary forms, with or without modification,</span>
+<span style="color: #cc0000;">  * are permitted provided that the following conditions are met:</span>
+<span style="color: #cc0000;">  *   1. Redistributions of source code must retain the above copyright notice,</span>
+<span style="color: #cc0000;">  *      this list of conditions and the following disclaimer.</span>
+<span style="color: #cc0000;">  *   2. Redistributions in binary form must reproduce the above copyright notice,</span>
+<span style="color: #cc0000;">  *      this list of conditions and the following disclaimer in the documentation</span>
+<span style="color: #cc0000;">  *      and/or other materials provided with the distribution.</span>
+<span style="color: #cc0000;">  *   3. Neither the name of STMicroelectronics nor the names of its contributors</span>
+<span style="color: #cc0000;">  *      may be used to endorse or promote products derived from this software</span>
+<span style="color: #cc0000;">  *      without specific prior written permission.</span>
+<span style="color: #cc0000;">  *</span>
+<span style="color: #cc0000;">  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"</span>
+<span style="color: #cc0000;">  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span>
+<span style="color: #cc0000;">  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE</span>
+<span style="color: #cc0000;">  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE</span>
+<span style="color: #cc0000;">  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL</span>
+<span style="color: #cc0000;">  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR</span>
+<span style="color: #cc0000;">  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span>
+<span style="color: #cc0000;">  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,</span>
+<span style="color: #cc0000;">  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</span>
+<span style="color: #cc0000;">  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+<span style="color: #cc0000;">  *</span>
+<span style="color: #cc0000;">  ******************************************************************************</span>
+<span style="color: #cc0000;">  */</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">Define to prevent recursive inclusion -------------------------------------</span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#if</span><span style="color: #b218b2;">n</span><span style="color: #b218b2;">def</span> __STM32F3_DISCOVERY_H
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">__STM32F3_DISCOVERY_H</span>
+
+<span style="color: #b218b2;">#ifdef</span> __cplusplus
+ <span style="color: #00af00;">extern</span> <span style="color: #ff1f8b;">"C"</span> {
+<span style="color: #b218b2;">#endif</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">Includes ------------------------------------------------------------------</span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#include</span> <span style="color: #ff1f8b;">"stm32f3xx_hal.h"</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/** </span><span style="color: #b2b2b2; font-style: italic;">@addtogroup BSP</span>
+<span style="color: #b2b2b2; font-style: italic;">  * @{</span>
+<span style="color: #b2b2b2; font-style: italic;">  </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/** </span><span style="color: #b2b2b2; font-style: italic;">@addtogroup STM32F3_DISCOVERY STM32F3_DISCOVERY</span>
+<span style="color: #b2b2b2; font-style: italic;">  * @{</span>
+<span style="color: #b2b2b2; font-style: italic;">  </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/** </span><span style="color: #b2b2b2; font-style: italic;">@addtogroup STM32F3_DISCOVERY_LOW_LEVEL STM32F3_DISCOVERY_LOW_LEVEL</span>
+<span style="color: #b2b2b2; font-style: italic;">  * @{</span>
+<span style="color: #b2b2b2; font-style: italic;">  </span><span style="color: #b2b2b2; font-style: italic;">*/</span> 
+
+<span style="color: #b2b2b2; font-style: italic;">/** </span><span style="color: #b2b2b2; font-style: italic;">@defgroup STM32F3_DISCOVERY_LOW_LEVEL_Exported_Types STM32F3_DISCOVERY_LOW_LEVEL_Exported_Types</span>
+<span style="color: #b2b2b2; font-style: italic;">  * @{</span>
+<span style="color: #b2b2b2; font-style: italic;">  </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #cc0000;">/**</span>
+<span style="color: #cc0000;"> * </span><span style="color: #1f5bff;">@brief</span><span style="color: #cc0000;"> LED Types Definition</span>
+<span style="color: #cc0000;"> */</span>
+<span style="color: #00af00;">typedef</span> <span style="color: #00af00;">enum</span>
+{
+  <span style="color: #ff8700;">LED3</span> = 0,
+  <span style="color: #ff8700;">LED4</span> = 1,
+  <span style="color: #ff8700;">LED5</span> = 2,
+  <span style="color: #ff8700;">LED6</span> = 3,
+  <span style="color: #ff8700;">LED7</span> = 4,
+  <span style="color: #ff8700;">LED8</span> = 5,
+  <span style="color: #ff8700;">LED9</span> = 6,
+  <span style="color: #ff8700;">LED10</span> = 7,
+
+  <span style="color: #ff8700;">LED_GREEN</span>  = LED6, 
+  <span style="color: #ff8700;">LED_ORANGE</span> = LED5, 
+  <span style="color: #ff8700;">LED_RED</span>    = LED3, 
+  <span style="color: #ff8700;">LED_BLUE</span>   = LED4,
+  <span style="color: #ff8700;">LED_GREEN_2</span>  = LED7,
+  <span style="color: #ff8700;">LED_ORANGE_2</span> = LED8,
+  <span style="color: #ff8700;">LED_RED_2</span>    = LED10,
+  <span style="color: #ff8700;">LED_BLUE_2</span>   = LED9
+}<span style="color: #18b2b2;">Led_TypeDef</span>;
+
+<span style="color: #cc0000;">/**</span>
+<span style="color: #cc0000;"> * </span><span style="color: #1f5bff;">@brief</span><span style="color: #cc0000;"> BUTTON Types Definition</span>
+<span style="color: #cc0000;"> */</span>
+<span style="color: #00af00;">typedef</span> <span style="color: #00af00;">enum</span> 
+{
+  <span style="color: #ff8700;">BUTTON_USER</span> = 0
+
+}<span style="color: #18b2b2;">Button_TypeDef</span>;
+
+<span style="color: #00af00;">typedef</span> <span style="color: #00af00;">enum</span> 
+{  
+  <span style="color: #ff8700;">BUTTON_MODE_GPIO</span> = 0,
+  <span style="color: #ff8700;">BUTTON_MODE_EXTI</span> = 1
+
+}<span style="color: #18b2b2;">ButtonMode_TypeDef</span>;
+<span style="color: #cc0000;">/**</span>
+<span style="color: #cc0000;">  * @}</span>
+<span style="color: #cc0000;">  */</span> 
+
+<span style="color: #b2b2b2; font-style: italic;">/** </span><span style="color: #b2b2b2; font-style: italic;">@defgroup STM32F3_DISCOVERY_LOW_LEVEL_Exported_Constants STM32F3_DISCOVERY_LOW_LEVEL_Exported_Constants</span>
+<span style="color: #b2b2b2; font-style: italic;">  * @{</span>
+<span style="color: #b2b2b2; font-style: italic;">  </span><span style="color: #b2b2b2; font-style: italic;">*/</span> 
+
+<span style="color: #b2b2b2; font-style: italic;">/** </span>
+<span style="color: #b2b2b2; font-style: italic;">  * @brief  Define for STM32F3_DISCOVERY board  </span>
+<span style="color: #b2b2b2; font-style: italic;">  </span><span style="color: #b2b2b2; font-style: italic;">*/</span> 
+<span style="color: #b218b2;">#if</span> <span style="color: #cc0000;">!</span><span style="color: #b218b2;">defined</span> (USE_STM32F3_DISCO)
+<span style="color: #b218b2;"> #define</span> <span style="color: #ff8700;">USE_STM32F3_DISCO</span>
+<span style="color: #b218b2;">#endif</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/** </span><span style="color: #b2b2b2; font-style: italic;">@addtogroup STM32F3_DISCOVERY_LOW_LEVEL_LED STM32F3_DISCOVERY_LOW_LEVEL_LED</span>
+<span style="color: #b2b2b2; font-style: italic;">  * @{</span>
+<span style="color: #b2b2b2; font-style: italic;">  </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">LEDn</span>                             8
+
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">LED6_PIN</span>                         GPIO_PIN_15
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">LED6_GPIO_PORT</span>                   GPIOE
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">LED6_GPIO_CLK_ENABLE</span>()           __HAL_RCC_GPIOE_CLK_ENABLE() 
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">LED6_GPIO_CLK_DISABLE</span>()          __HAL_RCC_GPIOE_CLK_DISABLE()
+
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">LED8_PIN</span>                         GPIO_PIN_14
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">LED8_GPIO_PORT</span>                   GPIOE
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">LED8_GPIO_CLK_ENABLE</span>()           __HAL_RCC_GPIOE_CLK_ENABLE() 
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">LED8_GPIO_CLK_DISABLE</span>()          __HAL_RCC_GPIOE_CLK_DISABLE()
+
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">LED10_PIN</span>                        GPIO_PIN_13
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">LED10_GPIO_PORT</span>                  GPIOE
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">LED10_GPIO_CLK_ENABLE</span>()           __HAL_RCC_GPIOE_CLK_ENABLE()
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">LED10_GPIO_CLK_DISABLE</span>()          __HAL_RCC_GPIOE_CLK_DISABLE()
+
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">LED9_PIN</span>                         GPIO_PIN_12
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">LED9_GPIO_PORT</span>                   GPIOE
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">LED9_GPIO_CLK_ENABLE</span>()           __HAL_RCC_GPIOE_CLK_ENABLE()
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">LED9_GPIO_CLK_DISABLE</span>()          __HAL_RCC_GPIOE_CLK_DISABLE()
+
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">LED7_PIN</span>                         GPIO_PIN_11
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">LED7_GPIO_PORT</span>                   GPIOE
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">LED7_GPIO_CLK_ENABLE</span>()           __HAL_RCC_GPIOE_CLK_ENABLE()
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">LED7_GPIO_CLK_DISABLE</span>()          __HAL_RCC_GPIOE_CLK_DISABLE()
+
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">LED5_PIN</span>                         GPIO_PIN_10
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">LED5_GPIO_PORT</span>                   GPIOE
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">LED5_GPIO_CLK_ENABLE</span>()           __HAL_RCC_GPIOE_CLK_ENABLE()
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">LED5_GPIO_CLK_DISABLE</span>()          __HAL_RCC_GPIOE_CLK_DISABLE()
+
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">LED3_PIN</span>                         GPIO_PIN_9
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">LED3_GPIO_PORT</span>                   GPIOE
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">LED3_GPIO_CLK_ENABLE</span>()           __HAL_RCC_GPIOE_CLK_ENABLE()
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">LED3_GPIO_CLK_DISABLE</span>()          __HAL_RCC_GPIOE_CLK_DISABLE()
+
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">LED4_PIN</span>                         GPIO_PIN_8
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">LED4_GPIO_PORT</span>                   GPIOE
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">LED4_GPIO_CLK_ENABLE</span>()           __HAL_RCC_GPIOE_CLK_ENABLE()
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">LED4_GPIO_CLK_DISABLE</span>()          __HAL_RCC_GPIOE_CLK_DISABLE()
+
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">LEDx_GPIO_CLK_ENABLE</span>(<span style="color: #ff8700;">__LED__</span>)   <span style="color: #00af00;">do</span> { <span style="color: #00af00;">if</span> ((__LED__) == LED3) LED3_GPIO_CLK_ENABLE(); <span style="color: #00af00;">else</span>\
+                                             <span style="color: #00af00;">if</span> ((__LED__) == LED4) LED4_GPIO_CLK_ENABLE(); <span style="color: #00af00;">else</span>\
+                                             <span style="color: #00af00;">if</span> ((__LED__) == LED5) LED5_GPIO_CLK_ENABLE(); <span style="color: #00af00;">else</span>\
+                                             <span style="color: #00af00;">if</span> ((__LED__) == LED6) LED6_GPIO_CLK_ENABLE(); <span style="color: #00af00;">else</span>\
+                                             <span style="color: #00af00;">if</span> ((__LED__) == LED7) LED7_GPIO_CLK_ENABLE(); <span style="color: #00af00;">else</span>\
+                                             <span style="color: #00af00;">if</span> ((__LED__) == LED8) LED8_GPIO_CLK_ENABLE(); <span style="color: #00af00;">else</span>\
+                                             <span style="color: #00af00;">if</span> ((__LED__) == LED9) LED9_GPIO_CLK_ENABLE(); <span style="color: #00af00;">else</span>\
+                                             <span style="color: #00af00;">if</span> ((__LED__) == LED10) LED10_GPIO_CLK_ENABLE();} <span style="color: #00af00;">while</span>(0)
+
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">LEDx_GPIO_CLK_DISABLE</span>(<span style="color: #ff8700;">__LED__</span>)  (((__LED__) == LED3) ? LED3_GPIO_CLK_DISABLE() :\
+                                         ((__LED__) == LED4) ? LED4_GPIO_CLK_DISABLE() :\
+                                         ((__LED__) == LED5) ? LED5_GPIO_CLK_DISABLE() :\
+                                         ((__LED__) == LED6) ? LED6_GPIO_CLK_DISABLE() :\
+                                         ((__LED__) == LED7) ? LED7_GPIO_CLK_DISABLE() :\
+                                         ((__LED__) == LED8) ? LED8_GPIO_CLK_DISABLE() :\
+                                         ((__LED__) == LED9) ? LED9_GPIO_CLK_DISABLE() :\
+                                         ((__LED__) == LED10) ? LED10_GPIO_CLK_DISABLE() : 0 )
+<span style="color: #cc0000;">/**</span>
+<span style="color: #cc0000;">  * @}</span>
+<span style="color: #cc0000;">  */</span> 
+
+<span style="color: #b2b2b2; font-style: italic;">/** </span><span style="color: #b2b2b2; font-style: italic;">@addtogroup STM32F3_DISCOVERY_LOW_LEVEL_BUTTON STM32F3_DISCOVERY_LOW_LEVEL_BUTTON</span>
+<span style="color: #b2b2b2; font-style: italic;">  * @{</span>
+<span style="color: #b2b2b2; font-style: italic;">  </span><span style="color: #b2b2b2; font-style: italic;">*/</span>  
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">BUTTONn</span>                          1  
+
+<span style="color: #cc0000;">/**</span>
+<span style="color: #cc0000;"> * </span><span style="color: #1f5bff;">@brief</span><span style="color: #cc0000;"> push-button</span>
+<span style="color: #cc0000;"> */</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">USER_BUTTON_PIN</span>                  GPIO_PIN_0
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">USER_BUTTON_GPIO_PORT</span>            GPIOA
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">USER_BUTTON_GPIO_CLK_ENABLE</span>()    __HAL_RCC_GPIOA_CLK_ENABLE()
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">USER_BUTTON_GPIO_CLK_DISABLE</span>()   __HAL_RCC_GPIOA_CLK_DISABLE()
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">USER_BUTTON_EXTI_IRQn</span>            EXTI0_IRQn 
+
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">BUTTONx_GPIO_CLK_ENABLE</span>(<span style="color: #ff8700;">__BUTTON__</span>)  <span style="color: #00af00;">do</span> { <span style="color: #00af00;">if</span> ((__BUTTON__) == BUTTON_USER) USER_BUTTON_GPIO_CLK_ENABLE();} <span style="color: #00af00;">while</span>(0)
+
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">BUTTONx_GPIO_CLK_DISABLE</span>(<span style="color: #ff8700;">__BUTTON__</span>) (((__BUTTON__) == BUTTON_USER) ? USER_BUTTON_GPIO_CLK_DISABLE() : 0 )
+<span style="color: #cc0000;">/**</span>
+<span style="color: #cc0000;">  * @}</span>
+<span style="color: #cc0000;">  */</span> 
+
+<span style="color: #b2b2b2; font-style: italic;">/** </span><span style="color: #b2b2b2; font-style: italic;">@addtogroup STM32F3_DISCOVERY_LOW_LEVEL_BUS STM32F3_DISCOVERY_LOW_LEVEL_BUS</span>
+<span style="color: #b2b2b2; font-style: italic;">  * @{</span>
+<span style="color: #b2b2b2; font-style: italic;">  </span><span style="color: #b2b2b2; font-style: italic;">*/</span>  
+<span style="color: #b2b2b2; font-style: italic;">/*</span><span style="color: #b2b2b2; font-style: italic;">##################### SPIx ###################################</span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #cc0000;">/**</span>
+<span style="color: #cc0000;">  * </span><span style="color: #1f5bff;">@brief</span><span style="color: #cc0000;">  Definition for SPI Interface pins (SPI1 used)</span>
+<span style="color: #cc0000;">  */</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">DISCOVERY_SPIx</span>                        SPI1
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">DISCOVERY_SPIx_CLK_ENABLE</span>()           __HAL_RCC_SPI1_CLK_ENABLE()
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">DISCOVERY_SPIx_GPIO_PORT</span>              GPIOA                      <span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">GPIOA </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">DISCOVERY_SPIx_AF</span>                     GPIO_AF5_SPI1
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">DISCOVERY_SPIx_GPIO_CLK_ENABLE</span>()      __HAL_RCC_GPIOA_CLK_ENABLE()
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">DISCOVERY_SPIx_GPIO_CLK_DISABLE</span>()     __HAL_RCC_GPIOA_CLK_DISABLE()
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">DISCOVERY_SPIx_SCK_PIN</span>                GPIO_PIN_5                 <span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">PA.05 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">DISCOVERY_SPIx_MISO_PIN</span>               GPIO_PIN_6                 <span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">PA.06 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">DISCOVERY_SPIx_MOSI_PIN</span>               GPIO_PIN_7                 <span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">PA.07 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">Maximum Timeout values for flags waiting loops. These timeouts are not based</span>
+<span style="color: #b2b2b2; font-style: italic;">   on accurate values, they just guarantee that the application will not remain</span>
+<span style="color: #b2b2b2; font-style: italic;">   stuck if the SPI communication is corrupted.</span>
+<span style="color: #b2b2b2; font-style: italic;">   You may modify these timeout values depending on CPU frequency and application</span>
+<span style="color: #b2b2b2; font-style: italic;">   conditions (interrupts routines ...). </span><span style="color: #b2b2b2; font-style: italic;">*/</span>   
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">SPIx_TIMEOUT_MAX</span>                      ((<span style="color: #18b2b2;">uint32_t</span>)0x1000)
+
+<span style="color: #b2b2b2; font-style: italic;">/*</span><span style="color: #b2b2b2; font-style: italic;">##################### I2Cx ###################################</span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #cc0000;">/**</span>
+<span style="color: #cc0000;">  * </span><span style="color: #1f5bff;">@brief</span><span style="color: #cc0000;">  Definition for I2C Interface pins (I2C1 used)</span>
+<span style="color: #cc0000;">  */</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">DISCOVERY_I2Cx</span>                        I2C1
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">DISCOVERY_I2Cx_CLK_ENABLE</span>()           __HAL_RCC_I2C1_CLK_ENABLE()
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">DISCOVERY_I2Cx_CLK_DISABLE</span>()          __HAL_RCC_I2C1_CLK_DISABLE()
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">DISCOVERY_I2Cx_FORCE_RESET</span>()          __HAL_RCC_I2C1_FORCE_RESET()
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">DISCOVERY_I2Cx_RELEASE_RESET</span>()        __HAL_RCC_I2C1_RELEASE_RESET() 
+
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">DISCOVERY_I2Cx_SCL_PIN</span>                GPIO_PIN_6                  <span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">PB.06 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">DISCOVERY_I2Cx_SDA_PIN</span>                GPIO_PIN_7                  <span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">PB.07 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">DISCOVERY_I2Cx_GPIO_PORT</span>              GPIOB                       <span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">GPIOB </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">DISCOVERY_I2Cx_GPIO_CLK_ENABLE</span>()      __HAL_RCC_GPIOB_CLK_ENABLE() 
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">DISCOVERY_I2Cx_GPIO_CLK_DISABLE</span>()     __HAL_RCC_GPIOB_CLK_DISABLE()
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">DISCOVERY_I2Cx_AF</span>                     GPIO_AF4_I2C1
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">Maximum Timeout values for flags waiting loops. These timeouts are not based</span>
+<span style="color: #b2b2b2; font-style: italic;">   on accurate values, they just guarantee that the application will not remain</span>
+<span style="color: #b2b2b2; font-style: italic;">   stuck if the I2C communication is corrupted.</span>
+<span style="color: #b2b2b2; font-style: italic;">   You may modify these timeout values depending on CPU frequency and application</span>
+<span style="color: #b2b2b2; font-style: italic;">   conditions (interrupts routines ...). </span><span style="color: #b2b2b2; font-style: italic;">*/</span>   
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">I2Cx_TIMEOUT_MAX</span>                      0x10000     
+
+<span style="color: #cc0000;">/**</span>
+<span style="color: #cc0000;">  * @}</span>
+<span style="color: #cc0000;">  */</span> 
+
+  <span style="color: #b2b2b2; font-style: italic;">/** </span><span style="color: #b2b2b2; font-style: italic;">@addtogroup STM32F072B_DISCOVERY_LOW_LEVEL_COMPONENT</span>
+<span style="color: #b2b2b2; font-style: italic;">  * @{</span>
+<span style="color: #b2b2b2; font-style: italic;">  </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/*</span><span style="color: #b2b2b2; font-style: italic;">##################### GYRO ##########################</span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">Read/Write command </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">READWRITE_CMD</span>              ((<span style="color: #18b2b2;">uint8_t</span>)0x80) 
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">Multiple byte read/write command </span><span style="color: #b2b2b2; font-style: italic;">*/</span> 
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">MULTIPLEBYTE_CMD</span>           ((<span style="color: #18b2b2;">uint8_t</span>)0x40)
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">Dummy Byte Send by the SPI Master device in order to generate the Clock to the Slave device </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">DUMMY_BYTE</span>                 ((<span style="color: #18b2b2;">uint8_t</span>)0x00)
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">Chip Select macro definition </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">GYRO_CS_LOW</span>()       HAL_GPIO_WritePin(GYRO_CS_GPIO_PORT, GYRO_CS_PIN, GPIO_PIN_RESET)
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">GYRO_CS_HIGH</span>()      HAL_GPIO_WritePin(GYRO_CS_GPIO_PORT, GYRO_CS_PIN, GPIO_PIN_SET)
+
+<span style="color: #cc0000;">/**</span>
+<span style="color: #cc0000;">  * </span><span style="color: #1f5bff;">@brief</span><span style="color: #cc0000;">  GYRO SPI Interface pins</span>
+<span style="color: #cc0000;">  */</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">GYRO_CS_GPIO_PORT</span>            GPIOE                       <span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">GPIOE </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">GYRO_CS_GPIO_CLK_ENABLE</span>()    __HAL_RCC_GPIOE_CLK_ENABLE()
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">GYRO_CS_GPIO_CLK_DISABLE</span>()   __HAL_RCC_GPIOE_CLK_DISABLE()
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">GYRO_CS_PIN</span>                  GPIO_PIN_3                  <span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">PE.03 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">GYRO_INT_GPIO_PORT</span>           GPIOE                       <span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">GPIOE </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">GYRO_INT_GPIO_CLK_ENABLE</span>()   __HAL_RCC_GPIOE_CLK_ENABLE()
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">GYRO_INT_GPIO_CLK_DISABLE</span>()  __HAL_RCC_GPIOE_CLK_DISABLE()
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">GYRO_INT1_PIN</span>                GPIO_PIN_0                  <span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">PE.00 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">GYRO_INT1_EXTI_IRQn</span>          EXTI0_IRQn 
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">GYRO_INT2_PIN</span>                GPIO_PIN_1                  <span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">PE.01 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">GYRO_INT2_EXTI_IRQn</span>          EXTI1_IRQn 
+
+<span style="color: #b2b2b2; font-style: italic;">/*</span><span style="color: #b2b2b2; font-style: italic;">##################### ACCELEROMETER ##########################</span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #cc0000;">/**</span>
+<span style="color: #cc0000;">  * </span><span style="color: #1f5bff;">@brief</span><span style="color: #cc0000;">  ACCELEROMETER I2C1 Interface pins</span>
+<span style="color: #cc0000;">  */</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">ACCELERO_I2C_ADDRESS</span>             0x32
+
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">ACCELERO_DRDY_PIN</span>                GPIO_PIN_2                  <span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">PE.02 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">ACCELERO_DRDY_GPIO_PORT</span>          GPIOE                       <span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">GPIOE </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">ACCELERO_DRDY_GPIO_CLK_ENABLE</span>()  __HAL_RCC_GPIOE_CLK_ENABLE() 
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">ACCELERO_DRDY_GPIO_CLK_DISABLE</span>() __HAL_RCC_GPIOE_CLK_DISABLE() 
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">ACCELERO_DRDY_EXTI_IRQn</span>          EXTI2_TSC_IRQn              <span style="color: #b2b2b2; font-style: italic;">/*</span><span style="color: #b2b2b2; font-style: italic;">TAMP_STAMP_IRQn</span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">ACCELERO_INT_GPIO_PORT</span>           GPIOE                       <span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">GPIOE </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">ACCELERO_INT_GPIO_CLK_ENABLE</span>()   __HAL_RCC_GPIOE_CLK_ENABLE()
+<span style="color: #b218b2;">#define</span> <span style="color: #ef2929;">ACCELERO_INT_GPIO_CLK_DISABLE</span>()  __HAL_RCC_GPIOE_CLK_DISABLE()
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">ACCELERO_INT1_PIN</span>                GPIO_PIN_4                  <span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">PE.04 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">ACCELERO_INT1_EXTI_IRQn</span>          EXTI4_IRQn 
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">ACCELERO_INT2_PIN</span>                GPIO_PIN_5                  <span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">PE.05 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">ACCELERO_INT2_EXTI_IRQn</span>          EXTI9_5_IRQn 
+
+<span style="color: #cc0000;">/**</span>
+<span style="color: #cc0000;">  * @}</span>
+<span style="color: #cc0000;">  */</span>
+
+<span style="color: #cc0000;">/**</span>
+<span style="color: #cc0000;">  * @}</span>
+<span style="color: #cc0000;">  */</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/** </span><span style="color: #b2b2b2; font-style: italic;">@defgroup STM32F3_DISCOVERY_LOW_LEVEL_Exported_Macros STM32F3_DISCOVERY_LOW_LEVEL_Exported_Macros</span>
+<span style="color: #b2b2b2; font-style: italic;">  * @{</span>
+<span style="color: #b2b2b2; font-style: italic;">  </span><span style="color: #b2b2b2; font-style: italic;">*/</span>  
+<span style="color: #cc0000;">/**</span>
+<span style="color: #cc0000;">  * @}</span>
+<span style="color: #cc0000;">  */</span> 
+
+
+<span style="color: #b2b2b2; font-style: italic;">/** </span><span style="color: #b2b2b2; font-style: italic;">@defgroup STM32F3_DISCOVERY_LOW_LEVEL_Exported_Functions STM32F3_DISCOVERY_LOW_LEVEL_Exported_Functions</span>
+<span style="color: #b2b2b2; font-style: italic;">  * @{</span>
+<span style="color: #b2b2b2; font-style: italic;">  </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #18b2b2;">uint32_t</span>  <span style="color: #ef2929;">BSP_GetVersion</span>(<span style="color: #18b2b2;">void</span>);
+<span style="color: #18b2b2;">void</span>      <span style="color: #ef2929;">BSP_LED_Init</span>(<span style="color: #18b2b2;">Led_TypeDef</span> <span style="color: #ff8700;">Led</span>);
+<span style="color: #18b2b2;">void</span>      <span style="color: #ef2929;">BSP_LED_On</span>(<span style="color: #18b2b2;">Led_TypeDef</span> <span style="color: #ff8700;">Led</span>);
+<span style="color: #18b2b2;">void</span>      <span style="color: #ef2929;">BSP_LED_Off</span>(<span style="color: #18b2b2;">Led_TypeDef</span> <span style="color: #ff8700;">Led</span>);
+<span style="color: #18b2b2;">void</span>      <span style="color: #ef2929;">BSP_LED_Toggle</span>(<span style="color: #18b2b2;">Led_TypeDef</span> <span style="color: #ff8700;">Led</span>);
+<span style="color: #18b2b2;">void</span>      <span style="color: #ef2929;">BSP_PB_Init</span>(<span style="color: #18b2b2;">Button_TypeDef</span> <span style="color: #ff8700;">Button</span>, <span style="color: #18b2b2;">ButtonMode_TypeDef</span> <span style="color: #ff8700;">ButtonMode</span>);
+<span style="color: #18b2b2;">uint32_t</span>  <span style="color: #ef2929;">BSP_PB_GetState</span>(<span style="color: #18b2b2;">Button_TypeDef</span> <span style="color: #ff8700;">Button</span>);
+
+<span style="color: #cc0000;">/**</span>
+<span style="color: #cc0000;">  * @}</span>
+<span style="color: #cc0000;">  */</span>
+
+<span style="color: #cc0000;">/**</span>
+<span style="color: #cc0000;">  * @}</span>
+<span style="color: #cc0000;">  */</span> 
+
+<span style="color: #cc0000;">/**</span>
+<span style="color: #cc0000;">  * @}</span>
+<span style="color: #cc0000;">  */</span> 
+
+<span style="color: #cc0000;">/**</span>
+<span style="color: #cc0000;">  * @}</span>
+<span style="color: #cc0000;">  */</span>
+
+<span style="color: #b218b2;">#ifdef</span> __cplusplus
+}
+<span style="color: #b218b2;">#endif</span>
+
+<span style="color: #b218b2;">#endif</span> <span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">__STM32F3_DISCOVERY_H </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/************************ </span><span style="color: #b2b2b2; font-style: italic;">(C) COPYRIGHT STMicroelectronics *****END OF FILE***</span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+
+</pre>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Foo X. Bar</p>
+<p class="date">Created: 2017-11-15 Mi 10:20</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

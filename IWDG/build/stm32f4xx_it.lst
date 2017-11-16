@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccWQnMF4.s 			page 1
+ARM GAS  /tmp/ccXwztCM.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccWQnMF4.s 			page 1
   29:Src/stm32f4xx_it.c ****   * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   30:Src/stm32f4xx_it.c ****   *
   31:Src/stm32f4xx_it.c ****   ******************************************************************************
-ARM GAS  /tmp/ccWQnMF4.s 			page 2
+ARM GAS  /tmp/ccXwztCM.s 			page 2
 
 
   32:Src/stm32f4xx_it.c ****   */
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccWQnMF4.s 			page 1
   69:Src/stm32f4xx_it.c **** 
   70:Src/stm32f4xx_it.c ****   /* USER CODE END NonMaskableInt_IRQn 1 */
   71:Src/stm32f4xx_it.c **** }
-ARM GAS  /tmp/ccWQnMF4.s 			page 3
+ARM GAS  /tmp/ccXwztCM.s 			page 3
 
 
   72:Src/stm32f4xx_it.c **** 
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccWQnMF4.s 			page 1
   92:Src/stm32f4xx_it.c **** /**
   93:Src/stm32f4xx_it.c **** * @brief This function handles Memory management fault.
   94:Src/stm32f4xx_it.c **** */
-ARM GAS  /tmp/ccWQnMF4.s 			page 4
+ARM GAS  /tmp/ccXwztCM.s 			page 4
 
 
   95:Src/stm32f4xx_it.c **** void MemManage_Handler(void)
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccWQnMF4.s 			page 1
  123              	UsageFault_Handler:
  124              	.LFB127:
  113:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN BusFault_IRQn 0 */
-ARM GAS  /tmp/ccWQnMF4.s 			page 5
+ARM GAS  /tmp/ccXwztCM.s 			page 5
 
 
  114:Src/stm32f4xx_it.c **** 
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccWQnMF4.s 			page 1
  150              		@ link register save eliminated.
  151 0000 7047     		bx	lr
  152              		.cfi_endproc
-ARM GAS  /tmp/ccWQnMF4.s 			page 6
+ARM GAS  /tmp/ccXwztCM.s 			page 6
 
 
  153              	.LFE128:
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccWQnMF4.s 			page 1
  185              		.cfi_startproc
  186              		@ args = 0, pretend = 0, frame = 0
  187              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccWQnMF4.s 			page 7
+ARM GAS  /tmp/ccXwztCM.s 			page 7
 
 
  188              		@ link register save eliminated.
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccWQnMF4.s 			page 1
  227              		.thumb
  228              		.thumb_func
  229              		.fpu fpv4-sp-d16
-ARM GAS  /tmp/ccWQnMF4.s 			page 8
+ARM GAS  /tmp/ccXwztCM.s 			page 8
 
 
  231              	EXTI0_IRQHandler:
@@ -450,39 +450,40 @@ ARM GAS  /tmp/ccWQnMF4.s 			page 1
  240              		.cfi_offset 3, -8
  241              		.cfi_offset 14, -4
  206:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI0_IRQn 0 */
- 207:Src/stm32f4xx_it.c ****   if (__HAL_GPIO_EXTI_GET_FLAG(GPIO_PIN_0))
- 242              		.loc 1 207 0
+ 207:Src/stm32f4xx_it.c ****   /* Check if the EXTI0 pin (External Interrupt) is set */
+ 208:Src/stm32f4xx_it.c ****   if (__HAL_GPIO_EXTI_GET_FLAG(GPIO_PIN_0))
+ 242              		.loc 1 208 0
  243 0002 094B     		ldr	r3, .L22
  244 0004 5B69     		ldr	r3, [r3, #20]
  245 0006 13F0010F 		tst	r3, #1
  246 000a 03D1     		bne	.L21
  247              	.L19:
- 208:Src/stm32f4xx_it.c ****   {
- 209:Src/stm32f4xx_it.c ****     /* Resetting the LED_Green completely */
- 210:Src/stm32f4xx_it.c ****     HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_RESET);
- 211:Src/stm32f4xx_it.c ****     *(__IO uint32_t *) 0xA0001000 = 0xFF;
- 212:Src/stm32f4xx_it.c ****     
- 213:Src/stm32f4xx_it.c ****   }
- 214:Src/stm32f4xx_it.c ****   /* USER CODE END EXTI0_IRQn 0 */
- 215:Src/stm32f4xx_it.c ****   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
- 248              		.loc 1 215 0
+ 209:Src/stm32f4xx_it.c ****   {
+ 210:Src/stm32f4xx_it.c ****     /* Resetting the LED_Green completely */
+ 211:Src/stm32f4xx_it.c ****     HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_RESET);
+ 212:Src/stm32f4xx_it.c ****     *(__IO uint32_t *) 0xA0001000 = 0xFF;
+ 213:Src/stm32f4xx_it.c ****     
+ 214:Src/stm32f4xx_it.c ****   }
+ 215:Src/stm32f4xx_it.c ****   /* USER CODE END EXTI0_IRQn 0 */
+ 216:Src/stm32f4xx_it.c ****   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
+ 248              		.loc 1 216 0
  249 000c 0120     		movs	r0, #1
  250 000e FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
  251              	.LVL3:
  252 0012 08BD     		pop	{r3, pc}
  253              	.L21:
- 210:Src/stm32f4xx_it.c ****     *(__IO uint32_t *) 0xA0001000 = 0xFF;
- 254              		.loc 1 210 0
+ 211:Src/stm32f4xx_it.c ****     *(__IO uint32_t *) 0xA0001000 = 0xFF;
+ 254              		.loc 1 211 0
  255 0014 0022     		movs	r2, #0
  256 0016 0421     		movs	r1, #4
  257 0018 0448     		ldr	r0, .L22+4
  258 001a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ARM GAS  /tmp/ccXwztCM.s 			page 9
+
+
  259              	.LVL4:
-ARM GAS  /tmp/ccWQnMF4.s 			page 9
-
-
- 211:Src/stm32f4xx_it.c ****     
- 260              		.loc 1 211 0
+ 212:Src/stm32f4xx_it.c ****     
+ 260              		.loc 1 212 0
  261 001e FF22     		movs	r2, #255
  262 0020 034B     		ldr	r3, .L22+8
  263 0022 1A60     		str	r2, [r3]
@@ -504,16 +505,16 @@ ARM GAS  /tmp/ccWQnMF4.s 			page 1
  280              		.fpu fpv4-sp-d16
  282              	TIM5_IRQHandler:
  283              	.LFB133:
- 216:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI0_IRQn 1 */
- 217:Src/stm32f4xx_it.c ****   /* USER CODE END EXTI0_IRQn 1 */
- 218:Src/stm32f4xx_it.c **** }
- 219:Src/stm32f4xx_it.c **** 
- 220:Src/stm32f4xx_it.c **** /**
- 221:Src/stm32f4xx_it.c **** * @brief This function handles TIM5 global interrupt.
- 222:Src/stm32f4xx_it.c **** */
- 223:Src/stm32f4xx_it.c **** void TIM5_IRQHandler(void)
- 224:Src/stm32f4xx_it.c **** {
- 284              		.loc 1 224 0
+ 217:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI0_IRQn 1 */
+ 218:Src/stm32f4xx_it.c ****   /* USER CODE END EXTI0_IRQn 1 */
+ 219:Src/stm32f4xx_it.c **** }
+ 220:Src/stm32f4xx_it.c **** 
+ 221:Src/stm32f4xx_it.c **** /**
+ 222:Src/stm32f4xx_it.c **** * @brief This function handles TIM5 global interrupt.
+ 223:Src/stm32f4xx_it.c **** */
+ 224:Src/stm32f4xx_it.c **** void TIM5_IRQHandler(void)
+ 225:Src/stm32f4xx_it.c **** {
+ 284              		.loc 1 225 0
  285              		.cfi_startproc
  286              		@ args = 0, pretend = 0, frame = 0
  287              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -524,23 +525,23 @@ ARM GAS  /tmp/ccWQnMF4.s 			page 1
  292              		.cfi_offset 5, -12
  293              		.cfi_offset 6, -8
  294              		.cfi_offset 14, -4
- 225:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN TIM5_IRQn 0 */
- 226:Src/stm32f4xx_it.c **** 
- 227:Src/stm32f4xx_it.c ****   /* USER CODE END TIM5_IRQn 0 */
- 228:Src/stm32f4xx_it.c ****   HAL_TIM_IRQHandler(&htim5);
- 295              		.loc 1 228 0
+ 226:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN TIM5_IRQn 0 */
+ 227:Src/stm32f4xx_it.c **** 
+ 228:Src/stm32f4xx_it.c ****   /* USER CODE END TIM5_IRQn 0 */
+ 229:Src/stm32f4xx_it.c ****   HAL_TIM_IRQHandler(&htim5);
+ 295              		.loc 1 229 0
  296 0002 0F4E     		ldr	r6, .L27
  297 0004 3046     		mov	r0, r6
  298 0006 FFF7FEFF 		bl	HAL_TIM_IRQHandler
  299              	.LVL5:
- 229:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN TIM5_IRQn 1 */
- 230:Src/stm32f4xx_it.c ****  /* Get the Input Capture value */
- 231:Src/stm32f4xx_it.c ****   tmpCC4[uwCaptureNumber++] = HAL_TIM_ReadCapturedValue(&htim5, TIM_CHANNEL_4);
- 300              		.loc 1 231 0
+ 230:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN TIM5_IRQn 1 */
+ 231:Src/stm32f4xx_it.c ****  /* Get the Input Capture value */
+ 232:Src/stm32f4xx_it.c ****   tmpCC4[uwCaptureNumber++] = HAL_TIM_ReadCapturedValue(&htim5, TIM_CHANNEL_4);
+ 300              		.loc 1 232 0
+ARM GAS  /tmp/ccXwztCM.s 			page 10
+
+
  301 000a 0E4C     		ldr	r4, .L27+4
-ARM GAS  /tmp/ccWQnMF4.s 			page 10
-
-
  302 000c 2568     		ldr	r5, [r4]
  303 000e 6B1C     		adds	r3, r5, #1
  304 0010 2360     		str	r3, [r4]
@@ -550,16 +551,16 @@ ARM GAS  /tmp/ccWQnMF4.s 			page 1
  308              	.LVL6:
  309 001a 0B4B     		ldr	r3, .L27+8
  310 001c 23F81500 		strh	r0, [r3, r5, lsl #1]	@ movhi
- 232:Src/stm32f4xx_it.c ****     
- 233:Src/stm32f4xx_it.c ****   if (uwCaptureNumber >= 2)
- 311              		.loc 1 233 0
+ 233:Src/stm32f4xx_it.c ****     
+ 234:Src/stm32f4xx_it.c ****   if (uwCaptureNumber >= 2)
+ 311              		.loc 1 234 0
  312 0020 2368     		ldr	r3, [r4]
  313 0022 012B     		cmp	r3, #1
  314 0024 0BD9     		bls	.L24
- 234:Src/stm32f4xx_it.c ****   {
- 235:Src/stm32f4xx_it.c ****     /* Compute the period length */
- 236:Src/stm32f4xx_it.c ****     uwPeriodValue = (uint16_t)(0xFFFF - tmpCC4[0] + tmpCC4[1] + 1);
- 315              		.loc 1 236 0
+ 235:Src/stm32f4xx_it.c ****   {
+ 236:Src/stm32f4xx_it.c ****     /* Compute the period length */
+ 237:Src/stm32f4xx_it.c ****     uwPeriodValue = (uint16_t)(0xFFFF - tmpCC4[0] + tmpCC4[1] + 1);
+ 315              		.loc 1 237 0
  316 0026 084A     		ldr	r2, .L27+8
  317 0028 5388     		ldrh	r3, [r2, #2]
  318 002a 1288     		ldrh	r2, [r2]
@@ -567,13 +568,13 @@ ARM GAS  /tmp/ccWQnMF4.s 			page 1
  320 002e 9BB2     		uxth	r3, r3
  321 0030 064A     		ldr	r2, .L27+12
  322 0032 1360     		str	r3, [r2]
- 237:Src/stm32f4xx_it.c ****     uwMeasurementDone = 1;
- 323              		.loc 1 237 0
+ 238:Src/stm32f4xx_it.c ****     uwMeasurementDone = 1;
+ 323              		.loc 1 238 0
  324 0034 0122     		movs	r2, #1
  325 0036 064B     		ldr	r3, .L27+16
  326 0038 1A60     		str	r2, [r3]
- 238:Src/stm32f4xx_it.c ****     uwCaptureNumber = 0;
- 327              		.loc 1 238 0
+ 239:Src/stm32f4xx_it.c ****     uwCaptureNumber = 0;
+ 327              		.loc 1 239 0
  328 003a 0022     		movs	r2, #0
  329 003c 2260     		str	r2, [r4]
  330              	.L24:
@@ -597,10 +598,10 @@ ARM GAS  /tmp/ccWQnMF4.s 			page 1
  351              		.text
  352              	.Letext0:
  353              		.file 2 "/home/saicharan/arm/arm-none-eabi/include/machine/_default_types.h"
+ARM GAS  /tmp/ccXwztCM.s 			page 11
+
+
  354              		.file 3 "/home/saicharan/arm/arm-none-eabi/include/stdint.h"
-ARM GAS  /tmp/ccWQnMF4.s 			page 11
-
-
  355              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
  356              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
  357              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
@@ -614,38 +615,38 @@ ARM GAS  /tmp/ccWQnMF4.s 			page 1
  365              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
  366              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
  367              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
-ARM GAS  /tmp/ccWQnMF4.s 			page 12
+ARM GAS  /tmp/ccXwztCM.s 			page 12
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f4xx_it.c
-     /tmp/ccWQnMF4.s:18     .text.NMI_Handler:0000000000000000 $t
-     /tmp/ccWQnMF4.s:25     .text.NMI_Handler:0000000000000000 NMI_Handler
-     /tmp/ccWQnMF4.s:38     .text.HardFault_Handler:0000000000000000 $t
-     /tmp/ccWQnMF4.s:45     .text.HardFault_Handler:0000000000000000 HardFault_Handler
-     /tmp/ccWQnMF4.s:69     .text.HardFault_Handler:0000000000000010 $d
-     /tmp/ccWQnMF4.s:74     .text.MemManage_Handler:0000000000000000 $t
-     /tmp/ccWQnMF4.s:81     .text.MemManage_Handler:0000000000000000 MemManage_Handler
-     /tmp/ccWQnMF4.s:95     .text.BusFault_Handler:0000000000000000 $t
-     /tmp/ccWQnMF4.s:102    .text.BusFault_Handler:0000000000000000 BusFault_Handler
-     /tmp/ccWQnMF4.s:116    .text.UsageFault_Handler:0000000000000000 $t
-     /tmp/ccWQnMF4.s:123    .text.UsageFault_Handler:0000000000000000 UsageFault_Handler
-     /tmp/ccWQnMF4.s:137    .text.SVC_Handler:0000000000000000 $t
-     /tmp/ccWQnMF4.s:144    .text.SVC_Handler:0000000000000000 SVC_Handler
-     /tmp/ccWQnMF4.s:156    .text.DebugMon_Handler:0000000000000000 $t
-     /tmp/ccWQnMF4.s:163    .text.DebugMon_Handler:0000000000000000 DebugMon_Handler
-     /tmp/ccWQnMF4.s:175    .text.PendSV_Handler:0000000000000000 $t
-     /tmp/ccWQnMF4.s:182    .text.PendSV_Handler:0000000000000000 PendSV_Handler
-     /tmp/ccWQnMF4.s:194    .text.SysTick_Handler:0000000000000000 $t
-     /tmp/ccWQnMF4.s:201    .text.SysTick_Handler:0000000000000000 SysTick_Handler
-     /tmp/ccWQnMF4.s:224    .text.EXTI0_IRQHandler:0000000000000000 $t
-     /tmp/ccWQnMF4.s:231    .text.EXTI0_IRQHandler:0000000000000000 EXTI0_IRQHandler
-     /tmp/ccWQnMF4.s:268    .text.EXTI0_IRQHandler:0000000000000028 $d
-     /tmp/ccWQnMF4.s:275    .text.TIM5_IRQHandler:0000000000000000 $t
-     /tmp/ccWQnMF4.s:282    .text.TIM5_IRQHandler:0000000000000000 TIM5_IRQHandler
-     /tmp/ccWQnMF4.s:335    .text.TIM5_IRQHandler:0000000000000040 $d
-     /tmp/ccWQnMF4.s:349    .bss.tmpCC4:0000000000000000 tmpCC4
-     /tmp/ccWQnMF4.s:345    .bss.tmpCC4:0000000000000000 $d
+     /tmp/ccXwztCM.s:18     .text.NMI_Handler:0000000000000000 $t
+     /tmp/ccXwztCM.s:25     .text.NMI_Handler:0000000000000000 NMI_Handler
+     /tmp/ccXwztCM.s:38     .text.HardFault_Handler:0000000000000000 $t
+     /tmp/ccXwztCM.s:45     .text.HardFault_Handler:0000000000000000 HardFault_Handler
+     /tmp/ccXwztCM.s:69     .text.HardFault_Handler:0000000000000010 $d
+     /tmp/ccXwztCM.s:74     .text.MemManage_Handler:0000000000000000 $t
+     /tmp/ccXwztCM.s:81     .text.MemManage_Handler:0000000000000000 MemManage_Handler
+     /tmp/ccXwztCM.s:95     .text.BusFault_Handler:0000000000000000 $t
+     /tmp/ccXwztCM.s:102    .text.BusFault_Handler:0000000000000000 BusFault_Handler
+     /tmp/ccXwztCM.s:116    .text.UsageFault_Handler:0000000000000000 $t
+     /tmp/ccXwztCM.s:123    .text.UsageFault_Handler:0000000000000000 UsageFault_Handler
+     /tmp/ccXwztCM.s:137    .text.SVC_Handler:0000000000000000 $t
+     /tmp/ccXwztCM.s:144    .text.SVC_Handler:0000000000000000 SVC_Handler
+     /tmp/ccXwztCM.s:156    .text.DebugMon_Handler:0000000000000000 $t
+     /tmp/ccXwztCM.s:163    .text.DebugMon_Handler:0000000000000000 DebugMon_Handler
+     /tmp/ccXwztCM.s:175    .text.PendSV_Handler:0000000000000000 $t
+     /tmp/ccXwztCM.s:182    .text.PendSV_Handler:0000000000000000 PendSV_Handler
+     /tmp/ccXwztCM.s:194    .text.SysTick_Handler:0000000000000000 $t
+     /tmp/ccXwztCM.s:201    .text.SysTick_Handler:0000000000000000 SysTick_Handler
+     /tmp/ccXwztCM.s:224    .text.EXTI0_IRQHandler:0000000000000000 $t
+     /tmp/ccXwztCM.s:231    .text.EXTI0_IRQHandler:0000000000000000 EXTI0_IRQHandler
+     /tmp/ccXwztCM.s:268    .text.EXTI0_IRQHandler:0000000000000028 $d
+     /tmp/ccXwztCM.s:275    .text.TIM5_IRQHandler:0000000000000000 $t
+     /tmp/ccXwztCM.s:282    .text.TIM5_IRQHandler:0000000000000000 TIM5_IRQHandler
+     /tmp/ccXwztCM.s:335    .text.TIM5_IRQHandler:0000000000000040 $d
+     /tmp/ccXwztCM.s:349    .bss.tmpCC4:0000000000000000 tmpCC4
+     /tmp/ccXwztCM.s:345    .bss.tmpCC4:0000000000000000 $d
                      .debug_frame:0000000000000010 $d
 
 UNDEFINED SYMBOLS
