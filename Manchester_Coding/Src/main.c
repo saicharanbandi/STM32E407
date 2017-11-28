@@ -58,8 +58,8 @@ uint32_t               uwDiffCapture = 0;
 /* Capture index */
 uint16_t               uhCaptureIndex = 0;
 
-/* Frequency Value */
-uint32_t               uwFrequency = 0;
+/* /\* Frequency Value *\/ */
+/* uint32_t               uwFrequency = 0; */
 
 /* T value as 125 usec */
 static unsigned long T = 125*0.000001;
@@ -102,6 +102,9 @@ int main(void)
 
   /* USER CODE BEGIN Init */
 
+
+  
+
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -116,32 +119,36 @@ int main(void)
   MX_TIM4_Init();
 
   /* USER CODE BEGIN 2 */
-
+  /* Start the Timer4 Input Capture in Interrupt mode */
+  if(HAL_TIM_IC_Start_IT(&htim4, TIM_CHANNEL_3) != HAL_OK)
+    {
+      _Error_Handler(__FILE__,__LINE__);
+    }
   /* Call the Manchester_Rx function here and compare the "response"
      and "rx_msg" values */
-  
+  Manch_Rx(rx_msg);
+  if(*rx_msg == response)
+    {
+      /* Turn On LED_Green */
+      HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
+    }
+  else
+    {
+      /* Turn on LED_Red */
+      HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
+    }
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
-  {
-    Manch_Rx(rx_msg);
-    if(*rx_msg == response)
-      {
-	/* Turn On LED_Green */
-	HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
-      }
-    else
-      {
-	/* Turn on LED_Blue */
-	HAL_GPIO_WritePin(LED_Blue_GPIO_Port, LED_Blue_Pin, GPIO_PIN_SET);
-      }
-  /* USER CODE END WHILE */
+    {
     
+  /* USER CODE END WHILE */
+
   /* USER CODE BEGIN 3 */
 
-  }
+    }
   /* USER CODE END 3 */
 
 }
@@ -168,7 +175,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
   RCC_OscInitStruct.PLL.PLLM = 16;
-  RCC_OscInitStruct.PLL.PLLN = 336;
+  RCC_OscInitStruct.PLL.PLLN = 256;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
   RCC_OscInitStruct.PLL.PLLQ = 4;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
@@ -289,7 +296,7 @@ unsigned char Manch_Rx(unsigned char* rx_msg)
     {
       
       /* Wait till both the data is in synchronization */
-      while (!((uwFrequency < (2*T-Delta_T)) & (uwFrequency > (2*T+Delta_T))))
+      while (!((uwDiffCapture < (2*T-Delta_T)) && (uwDiffCapture > (2*T+Delta_T))))
 	{
 	  HAL_TIM_IC_CaptureCallback(&htim4);
 	}
@@ -303,10 +310,10 @@ unsigned char Manch_Rx(unsigned char* rx_msg)
 	  Current_bit = 0;
 	}
       HAL_TIM_IC_CaptureCallback(&htim4);
-      if((uwFrequency > (T-Delta_T)) & (uwFrequency < (T-Delta_T)))
+      if((uwDiffCapture > (T-Delta_T)) && (uwDiffCapture < (T-Delta_T)))
 	{
 	  HAL_TIM_IC_CaptureCallback(&htim4);
-	  if((uwFrequency > (T-Delta_T)) & (uwFrequency < (T-Delta_T)))
+	  if((uwDiffCapture > (T-Delta_T)) && (uwDiffCapture < (T-Delta_T)))
 	    {
 	      Next_bit = Current_bit;
 	    }
@@ -315,7 +322,7 @@ unsigned char Manch_Rx(unsigned char* rx_msg)
 	      Manch_Rx_Error();
 	    }
 	}
-      else if((uwFrequency > (2*T-Delta_T)) & (uwFrequency < (2*T-Delta_T)))
+      else if((uwDiffCapture > (2*T-Delta_T)) && (uwDiffCapture < (2*T-Delta_T)))
 	{
 	  Next_bit = ~ Current_bit;
 	}
@@ -333,47 +340,47 @@ unsigned char Manch_Rx(unsigned char* rx_msg)
 
 void Manch_Rx_Error(void)
 {
-  /* Blink Red LED */
-  HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
+  /* Blink Blue LED */
+  HAL_GPIO_WritePin(LED_Blue_GPIO_Port, LED_Blue_Pin, GPIO_PIN_SET);
 }
 
 /**
-  * @brief  Conversion complete callback in non blocking mode 
-  * @param  htim: TIM handle
-  * @retval None
-  */
+ * @brief  Conversion complete callback in non blocking mode 
+ * @param  htim: TIM handle
+ * @retval None
+ */
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
   if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_3)
-  {
-    if(uhCaptureIndex == 0)
     {
-      /* Get the 1st Input Capture value */
-      uwIC3Value1 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_3);
-      uhCaptureIndex = 1;
-    }
-    else if(uhCaptureIndex == 1)
-    {
-      /* Get the 2nd Input Capture value */
-      uwIC3Value2 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_3); 
+      if(uhCaptureIndex == 0)
+	{
+	  /* Get the 1st Input Capture value */
+	  uwIC3Value1 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_3);
+	  uhCaptureIndex = 1;
+	}
+      else if(uhCaptureIndex == 1)
+	{
+	  /* Get the 2nd Input Capture value */
+	  uwIC3Value2 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_3); 
       
-      /* Capture computation */
-      if (uwIC3Value2 > uwIC3Value1)
-      {
-        uwDiffCapture = (uwIC3Value2 - uwIC3Value1); 
-      }
-      else  /* (uwIC2Value2 <= uwIC2Value1) */
-      {
-        uwDiffCapture = ((0xFFFF - uwIC3Value1) + uwIC3Value2); 
-      }
+	  /* Capture computation */
+	  if (uwIC3Value2 > uwIC3Value1)
+	    {
+	      uwDiffCapture = (uwIC3Value2 - uwIC3Value1); 
+	    }
+	  else  /* (uwIC2Value2 <= uwIC2Value1) */
+	    {
+	      uwDiffCapture = ((0xFFFF - uwIC3Value1) + uwIC3Value2); 
+	    }
 
-      /* Frequency computation: for this example TIMx (TIM1) is clocked by
-         2xAPB2Clk */      
-      uwFrequency = (2*HAL_RCC_GetPCLK1Freq()) / uwDiffCapture;
-      uhCaptureIndex = 0;
+	  /* /\* Frequency computation: for this example TIMx (TIM1) is clocked by */
+	  /*    2xAPB2Clk *\/       */
+	  /* uwFrequency = (2*HAL_RCC_GetPCLK1Freq()) / uwDiffCapture; */
+	  uhCaptureIndex = 0;
       
+	}
     }
-  }
 }
 
 /* USER CODE END 4 */
@@ -391,8 +398,8 @@ void _Error_Handler(char * file, int line)
   HAL_GPIO_WritePin(LED_Yellow_GPIO_Port, LED_Yellow_Pin, GPIO_PIN_SET);
   /* User can add his own implementation to report the HAL error return state */
   while(1) 
-  {
-  }
+    {
+    }
   /* USER CODE END Error_Handler_Debug */ 
 }
 
@@ -408,8 +415,10 @@ void _Error_Handler(char * file, int line)
 void assert_failed(uint8_t* file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
+  HAL_GPIO_WritePin(LED_Yellow_GPIO_Port, LED_Yellow_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
   /* User can add his own implementation to report the file name and line number,
-    ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
   /* USER CODE END 6 */
 
 }
