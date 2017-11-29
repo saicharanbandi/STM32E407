@@ -61,7 +61,7 @@ uint16_t uhCaptureIndex = 0;
 /* pulse_T value */
 /* static float pulse_T = 0; */
 /* pulse_Frequency value */
-static uint32_t  pulse_Frequency = 0;
+uint32_t  pulse_Frequency = 0;
 /* T value as 125 usec */
 /* static float T = 125*0.000001; */
 
@@ -149,12 +149,18 @@ int main(void)
   /*     HAL_GPIO_TogglePin(LED_Red_GPIO_Port, LED_Red_Pin); */
   /*     HAL_Delay(250); */
   /*   } */
-  while(!((pulse_Frequency > 4000) && (pulse_Frequency < 10000)))
+  while(!((pulse_Frequency > 2050) && (pulse_Frequency < 3050)))
     {
-      HAL_TIM_IC_CaptureCallback(&htim4);
+      /* HAL_TIM_IC_CaptureCallback(&htim4); */
       HAL_GPIO_TogglePin(LED_Red_GPIO_Port, LED_Red_Pin);
       HAL_Delay(250);
     }
+  /* Checking for uwDiffCapture value */
+  /* while(!((uwDiffCapture > 31000) && (uwDiffCapture < 32000))) */
+  /*   { */
+  /*     HAL_GPIO_TogglePin(LED_Red_GPIO_Port, LED_Red_Pin); */
+  /*     HAL_Delay(500); */
+  /*   } */
   HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_RESET);
 
   /* When it is in sync turn on LED_Green */
@@ -198,7 +204,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
   RCC_OscInitStruct.PLL.PLLM = 16;
   RCC_OscInitStruct.PLL.PLLN = 256;
-  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV8;
   RCC_OscInitStruct.PLL.PLLQ = 4;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
@@ -211,10 +217,10 @@ void SystemClock_Config(void)
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
   }
@@ -281,8 +287,6 @@ static void MX_GPIO_Init(void)
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
-  __HAL_RCC_GPIOA_CLK_ENABLE();
-  __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOF, LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin, GPIO_PIN_RESET);
