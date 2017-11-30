@@ -49,33 +49,9 @@ TIM_HandleTypeDef htim4;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-
-/* Captured values */
-uint32_t uwIC3Value1 = 0;
-uint32_t uwIC3Value2 = 0;
-uint32_t uwDiffCapture = 0;
-
-/* Capture Index */
-uint16_t uhCaptureIndex = 0;
-
-/* pulse_T value */
-/* static float pulse_T = 0; */
-/* pulse_Frequency value */
-uint32_t  pulse_Frequency = 0;
-/* T value as 125 usec */
-/* static float T = 125*0.000001; */
-
-/* Freq_T is 8kHz */
-/* static uint32_t Freq_T = 8000; */
-
-/* Delta_T value as 25 usec */
-/* static float Delta_T = 25*0.000001; */
-
-/* Freq_Delta_T value is 40kHz */
-/* static uint32_t Freq_Delta_T = 4000; */
-
-/* Interrupt_Detected variable called from IRQ */
 unsigned char interrupt_detected = 0;
+unsigned char uPulseFrequency = 0;
+unsigned char uPulseFrequency2 = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -120,20 +96,6 @@ int main(void)
   MX_TIM4_Init();
 
   /* USER CODE BEGIN 2 */
-  
-  /* /\* Call the Manch_Rx() function here and compare the "response" */
-  /*    and "rx_msg" values *\/ */
-  /* Manch_Rx(rx_msg); */
-  /* if(*rx_msg == response) */
-  /*   { */
-  /*     /\* Turn on LED_Green *\/ */
-  /*     HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET); */
-  /*   } */
-  /* else */
-  /*   { */
-  /*     /\* Turn on LED_Red *\/ */
-  /*     HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET); */
-  /*   } */
   while(interrupt_detected == 0)
     {
     }
@@ -141,27 +103,22 @@ int main(void)
     {
       _Error_Handler(__FILE__, __LINE__);
     }
-  
-  /* Test in general the value of uwDiffCapture */
-  /* while(!(pulse_Frequency > (2*Freq_T-Freq_Delta_T) && (pulse_Frequency < (2*Freq_T+Freq_Delta_T)))) */
-  /*   { */
-  /*     HAL_TIM_IC_CaptureCallback(&htim4); */
-  /*     HAL_GPIO_TogglePin(LED_Red_GPIO_Port, LED_Red_Pin); */
-  /*     HAL_Delay(250); */
-  /*   } */
-  while(!((pulse_Frequency > 2050) && (pulse_Frequency < 3050)))
+
+  while(uPulseFrequency2 == 0)
     {
-      /* HAL_TIM_IC_CaptureCallback(&htim4); */
       HAL_GPIO_TogglePin(LED_Red_GPIO_Port, LED_Red_Pin);
       HAL_Delay(250);
     }
-  /* Checking for uwDiffCapture value */
-  /* while(!((uwDiffCapture > 31000) && (uwDiffCapture < 32000))) */
-  /*   { */
-  /*     HAL_GPIO_TogglePin(LED_Red_GPIO_Port, LED_Red_Pin); */
-  /*     HAL_Delay(500); */
-  /*   } */
+  uPulseFrequency2 = 0;
   HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_RESET);
+  while(uPulseFrequency == 0)
+    {
+      HAL_GPIO_TogglePin(LED_Blue_GPIO_Port, LED_Blue_Pin);
+      HAL_Delay(250);
+    }
+  uPulseFrequency = 0;
+
+  
 
   /* When it is in sync turn on LED_Green */
   HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
@@ -171,7 +128,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
@@ -291,12 +247,19 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOF, LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : LED_Green_Pin LED_Blue_Pin LED_Yellow_Pin LED_Red_Pin */
-  GPIO_InitStruct.Pin = LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin;
+  /*Configure GPIO pins : LED_Green_Pin LED_Blue_Pin LED_Yellow_Pin */
+  GPIO_InitStruct.Pin = LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : LED_Red_Pin */
+  GPIO_InitStruct.Pin = LED_Red_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LED_Red_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : Hardware_Trigger_Pin */
   GPIO_InitStruct.Pin = Hardware_Trigger_Pin;
@@ -305,55 +268,12 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(Hardware_Trigger_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 1, 0);
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 }
 
 /* USER CODE BEGIN 4 */
-
-
-/**
- * @brief Conversion complete callback in non blocking mode
- * @param htim: TIM handle
- * @retval None
- */
-void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
-{
-  if(htim -> Channel == HAL_TIM_ACTIVE_CHANNEL_3)
-    {
-      
-      if(uhCaptureIndex == 0)
-	{
-	  /* Get the 1st Input Capture value */
-	  uwIC3Value1 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_3);
-	  uhCaptureIndex = 1;
-	}
-      else if(uhCaptureIndex == 1)
-	{
-	  /* Get the 2nd Input Capture value */
-	  uwIC3Value2 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_3);
-	  /* Capture comuputation */
-	  if (uwIC3Value2 > uwIC3Value1)
-	    {
-	      uwDiffCapture = (uwIC3Value2 - uwIC3Value1);
-	    }
-	  else /* (uwIC3Value2 <= uwIC3Value1) */
-	    {
-	      uwDiffCapture = ((0xFFFF - uwIC3Value1) + uwIC3Value2);
-	    }
-	  /* Calculation of 'window_T' */
-	  /* pulse_T = uwDiffCapture / (2*HAL_RCC_GetPCLK1Freq()); */
-	  /* Calcualtion of pulse_Frequency */
-	  pulse_Frequency = (2*HAL_RCC_GetPCLK1Freq()) / uwDiffCapture;
-	  uhCaptureIndex = 0;
-	}
-    }
-  HAL_GPIO_WritePin(LED_Blue_GPIO_Port, LED_Blue_Pin, GPIO_PIN_SET);
-}
-
-
-
 
 /* USER CODE END 4 */
 
@@ -365,9 +285,6 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 void _Error_Handler(char * file, int line)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-
-  /* Turn on LED Yellow */
-  HAL_GPIO_WritePin(LED_Yellow_GPIO_Port, LED_Yellow_Pin, GPIO_PIN_SET);
   /* User can add his own implementation to report the HAL error return state */
   while(1) 
   {

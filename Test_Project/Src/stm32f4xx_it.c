@@ -36,7 +36,36 @@
 #include "stm32f4xx_it.h"
 
 /* USER CODE BEGIN 0 */
+/* Captured values */
+uint32_t uwIC3Value1 = 0;
+uint32_t uwIC3Value2 = 0;
+uint32_t uwDiffCapture = 0;
+
+/* Capture Index */
+uint16_t uhCaptureIndex = 0;
+
+/* pulse_T value */
+/* static float pulse_T = 0; */
+/* pulse_Frequency value */
+uint32_t  pulse_Frequency = 0;
+/* T value as 125 usec */
+/* static float T = 125*0.000001; */
+
+/* Freq_T is 8kHz */
+/* static uint32_t Freq_T = 8000; */
+
+/* Delta_T value as 25 usec */
+/* static float Delta_T = 25*0.000001; */
+
+/* Freq_Delta_T value is 40kHz */
+/* static uint32_t Freq_Delta_T = 4000; */
+
+/* Interrupt_Detected variable called from IRQ */
 extern unsigned char interrupt_detected;
+
+/* uPulseFrequency variable declaration */
+extern unsigned char uPulseFrequency;
+extern unsigned char uPulseFrequency2;
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
@@ -194,7 +223,39 @@ void TIM4_IRQHandler(void)
   /* USER CODE END TIM4_IRQn 0 */
   HAL_TIM_IRQHandler(&htim4);
   /* USER CODE BEGIN TIM4_IRQn 1 */
-  
+  if(uhCaptureIndex == 0)
+    {
+      /* Get the 1st Input Capture value */
+      uwIC3Value1 = HAL_TIM_ReadCapturedValue(&htim4, TIM_CHANNEL_3);
+      uhCaptureIndex = 1;
+    }
+  else if(uhCaptureIndex == 1)
+    {
+      /* Get the 2nd Input Capture value */
+      uwIC3Value2 = HAL_TIM_ReadCapturedValue(&htim4, TIM_CHANNEL_3);
+      /* Capture comuputation */
+      if (uwIC3Value2 > uwIC3Value1)
+	{
+	  uwDiffCapture = (uwIC3Value2 - uwIC3Value1);
+	}
+      else /* (uwIC3Value2 <= uwIC3Value1) */
+	{
+	  uwDiffCapture = ((0xFFFF - uwIC3Value1) + uwIC3Value2);
+	}
+      /* Calculation of 'window_T' */
+      /* pulse_T = uwDiffCapture / (2*HAL_RCC_GetPCLK1Freq()); */
+      /* Calcualtion of pulse_Frequency */
+      pulse_Frequency = (2*HAL_RCC_GetPCLK1Freq()) / uwDiffCapture;
+      uhCaptureIndex = 0;
+    }
+  if((uwDiffCapture > 6000) && (uwDiffCapture < 6900))
+    {
+      uPulseFrequency = 1;
+    }
+  if((uwDiffCapture > 12600) && (uwDiffCapture < 12900))
+    {
+      uPulseFrequency2 = 1;
+    }
   /* USER CODE END TIM4_IRQn 1 */
 }
 

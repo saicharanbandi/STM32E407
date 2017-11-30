@@ -10,19 +10,25 @@ static void MX_GPIO_Init(void)
 #t__HAL_RCC_GPIOD_CLK_ENABLE();
 #n#t/*Configure GPIO pin Output Level */
 #tHAL_GPIO_WritePin(GPIOF, LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin, GPIO_PIN_RESET);
-#n#t/*Configure GPIO pins : LED_Green_Pin LED_Blue_Pin LED_Yellow_Pin LED_Red_Pin */
-#tGPIO_InitStruct.Pin = LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin;
+#n#t/*Configure GPIO pins : LED_Green_Pin LED_Blue_Pin LED_Yellow_Pin */
+#tGPIO_InitStruct.Pin = LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin;
 #tGPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
 #tGPIO_InitStruct.Pull = GPIO_PULLDOWN;
 #tGPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
 #tHAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+#n#t/*Configure GPIO pin : LED_Red_Pin */
+#tGPIO_InitStruct.Pin = LED_Red_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tGPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+#tHAL_GPIO_Init(LED_Red_GPIO_Port, &GPIO_InitStruct);
 #n#t/*Configure GPIO pin : Hardware_Trigger_Pin */
 #tGPIO_InitStruct.Pin = Hardware_Trigger_Pin;
 #tGPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
 #tGPIO_InitStruct.Pull = GPIO_PULLDOWN;
 #tHAL_GPIO_Init(Hardware_Trigger_GPIO_Port, &GPIO_InitStruct);
 #n#t/* EXTI interrupt init*/
-#tHAL_NVIC_SetPriority(EXTI15_10_IRQn, 1, 0);
+#tHAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
 #tHAL_NVIC_EnableIRQ(EXTI15_10_IRQn);#n#n
 }
 #n
