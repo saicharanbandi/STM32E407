@@ -49,9 +49,19 @@ TIM_HandleTypeDef htim4;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-unsigned char interrupt_detected = 0;
-unsigned char uPulseFrequency = 0;
-unsigned char uPulseFrequency2 = 0;
+/* still need to comment appropriately like in _it.c file */
+uint16_t uwDiffCapture = 0;
+/* volatile unsigned char uIRQ_Temp = 0; */
+unsigned char start_capture = 0;
+/* unsigned char uPulse_Width_2T = 0; */
+int i = 1;
+int j = 1;
+int k = 0;
+uint16_t tmp[28] = {};
+uint16_t tmp2[28] = {};
+unsigned char msg[16] = {};
+unsigned char Current_bit = 0;
+unsigned char Next_bit = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -61,7 +71,7 @@ static void MX_TIM4_Init(void);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
-
+void Manch_Error(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
@@ -96,32 +106,81 @@ int main(void)
   MX_TIM4_Init();
 
   /* USER CODE BEGIN 2 */
-  while(interrupt_detected == 0)
+  /* Wait for Hardware_Trigger */
+  while(start_capture == 0)
     {
     }
+  /* Start the TIM4, CHANNEL3 in IC_Interrupt mode */
   if(HAL_TIM_IC_Start_IT(&htim4, TIM_CHANNEL_3) != HAL_OK)
     {
       _Error_Handler(__FILE__, __LINE__);
     }
-
-  while(uPulseFrequency2 == 0)
+  /* while(uPulse_Width_2T == 0) */
+  /*   { */
+  /*     HAL_TIM_IRQHandler(&htim4); */
+  /*     HAL_GPIO_TogglePin(LED_Red_GPIO_Port, LED_Red_Pin); */
+  /*     HAL_Delay(250); */
+  /*   } */
+  /* uPulse_Width_2T = 0; */
+  /* HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_RESET); */
+  /* uIRQ_Temp = 0; */
+  /* while(uIRQ_Temp == 0) */
+  /*   { */
+  /*     HAL_TIM_IRQHandler(&htim4); */
+  /*   } */
+  /* if((uwDiffCapture > 6350) && (uwDiffCapture < 6450)) */
+  /*   { */
+  /*     HAL_GPIO_WritePin(LED_Blue_GPIO_Port, LED_Blue_Pin, GPIO_PIN_SET); */
+  /*   } */
+  /* else if((uwDiffCapture > 12600) && (uwDiffCapture < 12800)) */
+  /*   { */
+  /*     HAL_GPIO_WritePin(LED_Yellow_GPIO_Port, LED_Yellow_Pin, GPIO_PIN_SET); */
+  /*   } */
+  /* uIRQ_Temp = 0; */
+  /* Decoding with Manchester_Decoding Array based Method */
+  while(i != 27)
     {
-      HAL_GPIO_TogglePin(LED_Red_GPIO_Port, LED_Red_Pin);
-      HAL_Delay(250);
     }
-  uPulseFrequency2 = 0;
-  HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_RESET);
-  while(uPulseFrequency == 0)
+  for (j = 1; j < 28; j++)
     {
-      HAL_GPIO_TogglePin(LED_Blue_GPIO_Port, LED_Blue_Pin);
-      HAL_Delay(250);
+      while((uwDiffCapture > 12600) && (uwDiffCapture < 12800))
+	{
+	  uwDiffCapture = tmp[j] - tmp[j-1];
+	  j++;
+	}
+      Current_bit = tmp2[j];
+      j++;
+      uwDiffCapture = tmp[j] - tmp[j-1];
+      if((uwDiffCapture > 6300) && (uwDiffCapture < 6500))
+	{
+	  j++;
+	  uwDiffCapture = tmp[j] - tmp[j-1];
+	  if((uwDiffCapture > 6300) && (uwDiffCapture < 6500))
+	    {
+	      msg[k] = Current_bit;
+	      k++;
+	    }
+	  else
+	    {
+	      Manch_Error();
+	    }
+	}
+      else if((uwDiffCapture > 12600) && (uwDiffCapture < 12800))
+	{
+	  msg[k] = ~ Current_bit;
+	  k++;
+	}
+      else
+	{
+	  Manch_Error();
+	}
+      
     }
-  uPulseFrequency = 0;
-
+  
+  
   
 
-  /* When it is in sync turn on LED_Green */
-  HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
+  
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -160,7 +219,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
   RCC_OscInitStruct.PLL.PLLM = 16;
   RCC_OscInitStruct.PLL.PLLN = 256;
-  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV8;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
   RCC_OscInitStruct.PLL.PLLQ = 4;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
@@ -176,7 +235,7 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
   }
@@ -247,19 +306,12 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOF, LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : LED_Green_Pin LED_Blue_Pin LED_Yellow_Pin */
-  GPIO_InitStruct.Pin = LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin;
+  /*Configure GPIO pins : LED_Green_Pin LED_Blue_Pin LED_Yellow_Pin LED_Red_Pin */
+  GPIO_InitStruct.Pin = LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : LED_Red_Pin */
-  GPIO_InitStruct.Pin = LED_Red_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LED_Red_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : Hardware_Trigger_Pin */
   GPIO_InitStruct.Pin = Hardware_Trigger_Pin;
@@ -268,13 +320,16 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(Hardware_Trigger_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 1, 0);
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 }
 
 /* USER CODE BEGIN 4 */
-
+void Manch_Error(void)
+{
+  HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
+}
 /* USER CODE END 4 */
 
 /**
