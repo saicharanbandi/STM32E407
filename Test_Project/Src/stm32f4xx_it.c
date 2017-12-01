@@ -43,11 +43,11 @@ extern int i;
 extern uint16_t tmp[28];
 extern uint16_t tmp2[28];
 /* uwDiffCapture will be initialized in Main() */
-/* volatile extern uint16_t uwDiffCapture; */
+volatile extern uint16_t uwDiffCapture;
 /* uIRQ_Temp variable will be initialized in Main() */
-/* volatile extern unsigned char uIRQ_Temp; */
+volatile extern unsigned char uIRQ_Temp;
 /* uPulse_Width_2T variable will be initialized here */
-/* extern unsigned char uPulse_Width_2T; */
+extern unsigned char uPulse_Width_2T;
 /* start_capture variable to designate that the hardware_trigger occurred */
 extern unsigned char start_capture;
 /* USER CODE END 0 */
@@ -208,38 +208,28 @@ void TIM4_IRQHandler(void)
   HAL_TIM_IRQHandler(&htim4);
 
   /* USER CODE BEGIN TIM4_IRQn 1 */
-  /* tmp[1] = HAL_TIM_ReadCapturedValue(&htim4, TIM_CHANNEL_3); */
+  tmp[1] = HAL_TIM_ReadCapturedValue(&htim4, TIM_CHANNEL_3);
   
-  /* if(tmp[1] > tmp[0]) */
-  /*   { */
-  /*     uwDiffCapture = (tmp[1]-tmp[0]); */
-  /*   } */
-  /* else /\* tmp[1] <= tmp[0] *\/ */
-  /*   { */
-  /*     uwDiffCapture = (0xFFFF-tmp[1])+tmp[0]; */
-  /*   } */
-  /* /\* Checking for pulse of 2T width *\/ */
-  /* if((uwDiffCapture > 12600) && (uwDiffCapture < 12900)) */
-  /*   { */
-      
-  /*   } */
+  if(tmp[1] > tmp[0])
+    {
+      uwDiffCapture = (tmp[1]-tmp[0]);
+    }
+  else /* tmp[1] <= tmp[0] */
+    {
+      uwDiffCapture = (0xFFFF-tmp[1])+tmp[0];
+    }
+  /* Checking for pulse of 2T width */
+  if((uwDiffCapture > 12600) && (uwDiffCapture < 12900))
+    {
+       
+    }
   
-  /* /\* Left shifting the vector *\/ */
-  /* tmp[0] = tmp[1]; */
+  /* Left shifting the vector */
+  tmp[0] = tmp[1];
   /* Updating this variable tells that interrupt has occurred */
-  /* uIRQ_Temp = 1; */
+  uIRQ_Temp = 1;
   
-  tmp[i] = HAL_TIM_ReadCapturedValue(&htim4, TIM_CHANNEL_3);
-  if(HAL_GPIO_ReadPin(TIM_4_3_GPIO_Port, TIM_4_3_Pin) == GPIO_PIN_SET)
-    {
-      tmp2[i] = 1;
-
-    }
-  else if(HAL_GPIO_ReadPin(TIM_4_3_GPIO_Port, TIM_4_3_Pin) == GPIO_PIN_RESET)
-    {
-      tmp2[i] = 0;
-    }
-  i++;
+ 
   
   
   /* USER CODE END TIM4_IRQn 1 */

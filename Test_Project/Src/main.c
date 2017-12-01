@@ -50,15 +50,15 @@ TIM_HandleTypeDef htim4;
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 /* still need to comment appropriately like in _it.c file */
-uint16_t uwDiffCapture = 0;
-/* volatile unsigned char uIRQ_Temp = 0; */
+volatile uint16_t uwDiffCapture = 0;
+volatile unsigned char uIRQ_Temp = 0;
 unsigned char start_capture = 0;
-/* unsigned char uPulse_Width_2T = 0; */
+unsigned char uPulse_Width_2T = 0;
 int i = 1;
-int j = 1;
-int k = 0;
-uint16_t tmp[28] = {};
-uint16_t tmp2[28] = {};
+/* int j = 1; */
+/* int k = 0; */
+/* uint16_t tmp[28] = {}; */
+/* uint16_t tmp2[28] = {}; */
 unsigned char msg[16] = {};
 unsigned char Current_bit = 0;
 unsigned char Next_bit = 0;
@@ -115,67 +115,29 @@ int main(void)
     {
       _Error_Handler(__FILE__, __LINE__);
     }
-  /* while(uPulse_Width_2T == 0) */
-  /*   { */
-  /*     HAL_TIM_IRQHandler(&htim4); */
-  /*     HAL_GPIO_TogglePin(LED_Red_GPIO_Port, LED_Red_Pin); */
-  /*     HAL_Delay(250); */
-  /*   } */
-  /* uPulse_Width_2T = 0; */
-  /* HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_RESET); */
-  /* uIRQ_Temp = 0; */
-  /* while(uIRQ_Temp == 0) */
-  /*   { */
-  /*     HAL_TIM_IRQHandler(&htim4); */
-  /*   } */
-  /* if((uwDiffCapture > 6350) && (uwDiffCapture < 6450)) */
-  /*   { */
-  /*     HAL_GPIO_WritePin(LED_Blue_GPIO_Port, LED_Blue_Pin, GPIO_PIN_SET); */
-  /*   } */
-  /* else if((uwDiffCapture > 12600) && (uwDiffCapture < 12800)) */
-  /*   { */
-  /*     HAL_GPIO_WritePin(LED_Yellow_GPIO_Port, LED_Yellow_Pin, GPIO_PIN_SET); */
-  /*   } */
-  /* uIRQ_Temp = 0; */
-  /* Decoding with Manchester_Decoding Array based Method */
-  while(i != 27)
+  while(uPulse_Width_2T == 0)
     {
+      HAL_GPIO_TogglePin(LED_Red_GPIO_Port, LED_Red_Pin);
+      HAL_Delay(250);
     }
-  for (j = 1; j < 28; j++)
+  uPulse_Width_2T = 0;
+  HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_RESET);
+  uIRQ_Temp = 0;
+  while(uIRQ_Temp == 0)
     {
-      while((uwDiffCapture > 12600) && (uwDiffCapture < 12800))
-	{
-	  uwDiffCapture = tmp[j] - tmp[j-1];
-	  j++;
-	}
-      Current_bit = tmp2[j];
-      j++;
-      uwDiffCapture = tmp[j] - tmp[j-1];
-      if((uwDiffCapture > 6300) && (uwDiffCapture < 6500))
-	{
-	  j++;
-	  uwDiffCapture = tmp[j] - tmp[j-1];
-	  if((uwDiffCapture > 6300) && (uwDiffCapture < 6500))
-	    {
-	      msg[k] = Current_bit;
-	      k++;
-	    }
-	  else
-	    {
-	      Manch_Error();
-	    }
-	}
-      else if((uwDiffCapture > 12600) && (uwDiffCapture < 12800))
-	{
-	  msg[k] = ~ Current_bit;
-	  k++;
-	}
-      else
-	{
-	  Manch_Error();
-	}
-      
+      HAL_TIM_IRQHandler(&htim4);
     }
+  if((uwDiffCapture > 6350) && (uwDiffCapture < 6450))
+    {
+      HAL_GPIO_WritePin(LED_Blue_GPIO_Port, LED_Blue_Pin, GPIO_PIN_SET);
+    }
+  else if((uwDiffCapture > 12600) && (uwDiffCapture < 12800))
+    {
+      HAL_GPIO_WritePin(LED_Yellow_GPIO_Port, LED_Yellow_Pin, GPIO_PIN_SET);
+    }
+  uIRQ_Temp = 0;
+  
+
   
   
   
