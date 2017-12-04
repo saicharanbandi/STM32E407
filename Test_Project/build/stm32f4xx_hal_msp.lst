@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccRJU9Gn.s 			page 1
+ARM GAS  /tmp/ccw8HWLb.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccRJU9Gn.s 			page 1
   29:Src/stm32f4xx_hal_msp.c ****   * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
   30:Src/stm32f4xx_hal_msp.c ****   * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
   31:Src/stm32f4xx_hal_msp.c ****   * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-ARM GAS  /tmp/ccRJU9Gn.s 			page 2
+ARM GAS  /tmp/ccw8HWLb.s 			page 2
 
 
   32:Src/stm32f4xx_hal_msp.c ****   * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccRJU9Gn.s 			page 1
   52              	.LVL2:
   62:Src/stm32f4xx_hal_msp.c ****   /* UsageFault_IRQn interrupt configuration */
   63:Src/stm32f4xx_hal_msp.c ****   HAL_NVIC_SetPriority(UsageFault_IRQn, 0, 0);
-ARM GAS  /tmp/ccRJU9Gn.s 			page 3
+ARM GAS  /tmp/ccw8HWLb.s 			page 3
 
 
   53              		.loc 1 63 0
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccRJU9Gn.s 			page 1
   76:Src/stm32f4xx_hal_msp.c **** }
   77:Src/stm32f4xx_hal_msp.c **** 
   78:Src/stm32f4xx_hal_msp.c **** void HAL_TIM_IC_MspInit(TIM_HandleTypeDef* htim_ic)
-ARM GAS  /tmp/ccRJU9Gn.s 			page 4
+ARM GAS  /tmp/ccw8HWLb.s 			page 4
 
 
   79:Src/stm32f4xx_hal_msp.c **** {
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccRJU9Gn.s 			page 1
  134              		.loc 1 94 0
  135 002e 0223     		movs	r3, #2
  136 0030 0293     		str	r3, [sp, #8]
-ARM GAS  /tmp/ccRJU9Gn.s 			page 5
+ARM GAS  /tmp/ccw8HWLb.s 			page 5
 
 
   95:Src/stm32f4xx_hal_msp.c ****     GPIO_InitStruct.Pull = GPIO_PULLDOWN;
@@ -259,10 +259,10 @@ ARM GAS  /tmp/ccRJU9Gn.s 			page 1
  148              	.LVL10:
   99:Src/stm32f4xx_hal_msp.c **** 
  100:Src/stm32f4xx_hal_msp.c ****     /* TIM4 interrupt Init */
- 101:Src/stm32f4xx_hal_msp.c ****     HAL_NVIC_SetPriority(TIM4_IRQn, 0, 0);
+ 101:Src/stm32f4xx_hal_msp.c ****     HAL_NVIC_SetPriority(TIM4_IRQn, 1, 0);
  149              		.loc 1 101 0
  150 0040 2246     		mov	r2, r4
- 151 0042 2146     		mov	r1, r4
+ 151 0042 0121     		movs	r1, #1
  152 0044 1E20     		movs	r0, #30
  153 0046 FFF7FEFF 		bl	HAL_NVIC_SetPriority
  154              	.LVL11:
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccRJU9Gn.s 			page 1
  178              		.thumb_func
  179              		.fpu fpv4-sp-d16
  181              	HAL_TIM_IC_MspDeInit:
-ARM GAS  /tmp/ccRJU9Gn.s 			page 6
+ARM GAS  /tmp/ccw8HWLb.s 			page 6
 
 
  182              	.LFB125:
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccRJU9Gn.s 			page 1
  217              	.LVL18:
  128:Src/stm32f4xx_hal_msp.c ****   /* USER CODE BEGIN TIM4_MspDeInit 1 */
  129:Src/stm32f4xx_hal_msp.c **** 
-ARM GAS  /tmp/ccRJU9Gn.s 			page 7
+ARM GAS  /tmp/ccw8HWLb.s 			page 7
 
 
  130:Src/stm32f4xx_hal_msp.c ****   /* USER CODE END TIM4_MspDeInit 1 */
@@ -391,19 +391,19 @@ ARM GAS  /tmp/ccRJU9Gn.s 			page 1
  242              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
  243              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
  244              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
-ARM GAS  /tmp/ccRJU9Gn.s 			page 8
+ARM GAS  /tmp/ccw8HWLb.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f4xx_hal_msp.c
-     /tmp/ccRJU9Gn.s:18     .text.HAL_MspInit:0000000000000000 $t
-     /tmp/ccRJU9Gn.s:25     .text.HAL_MspInit:0000000000000000 HAL_MspInit
-     /tmp/ccRJU9Gn.s:88     .text.HAL_TIM_IC_MspInit:0000000000000000 $t
-     /tmp/ccRJU9Gn.s:95     .text.HAL_TIM_IC_MspInit:0000000000000000 HAL_TIM_IC_MspInit
-     /tmp/ccRJU9Gn.s:168    .text.HAL_TIM_IC_MspInit:0000000000000054 $d
-     /tmp/ccRJU9Gn.s:174    .text.HAL_TIM_IC_MspDeInit:0000000000000000 $t
-     /tmp/ccRJU9Gn.s:181    .text.HAL_TIM_IC_MspDeInit:0000000000000000 HAL_TIM_IC_MspDeInit
-     /tmp/ccRJU9Gn.s:223    .text.HAL_TIM_IC_MspDeInit:0000000000000028 $d
+     /tmp/ccw8HWLb.s:18     .text.HAL_MspInit:0000000000000000 $t
+     /tmp/ccw8HWLb.s:25     .text.HAL_MspInit:0000000000000000 HAL_MspInit
+     /tmp/ccw8HWLb.s:88     .text.HAL_TIM_IC_MspInit:0000000000000000 $t
+     /tmp/ccw8HWLb.s:95     .text.HAL_TIM_IC_MspInit:0000000000000000 HAL_TIM_IC_MspInit
+     /tmp/ccw8HWLb.s:168    .text.HAL_TIM_IC_MspInit:0000000000000054 $d
+     /tmp/ccw8HWLb.s:174    .text.HAL_TIM_IC_MspDeInit:0000000000000000 $t
+     /tmp/ccw8HWLb.s:181    .text.HAL_TIM_IC_MspDeInit:0000000000000000 HAL_TIM_IC_MspDeInit
+     /tmp/ccw8HWLb.s:223    .text.HAL_TIM_IC_MspDeInit:0000000000000028 $d
                      .debug_frame:0000000000000010 $d
 
 UNDEFINED SYMBOLS
