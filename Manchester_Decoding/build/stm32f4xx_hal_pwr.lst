@@ -1,4 +1,8 @@
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 1
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 1
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
    1              		.cpu cortex-m4
@@ -58,7 +62,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
   29:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
   30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
   31:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 2
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 2
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
   32:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
@@ -118,7 +126,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
   86:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *
   87:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** @verbatim
   88:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****  ===============================================================================
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 3
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 3
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
   89:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****               ##### Initialization and de-initialization functions #####
@@ -178,7 +190,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  113:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
  114:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
  115:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief Enables access to the backup domain (RTC registers, RTC 
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 4
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 4
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  116:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *         backup data registers and backup SRAM).
@@ -238,7 +254,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
   96 0006 7047     		bx	lr
   97              	.L9:
   98              		.align	2
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 5
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 5
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
   99              	.L8:
@@ -298,7 +318,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  177:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****           in low power mode
  178:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****       (+) Standby mode: 1.2V domain powered off.
  179:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****    
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 6
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 6
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  180:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****    *** Sleep mode ***
@@ -358,7 +382,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  234:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
  235:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****    *** Auto-wake-up (AWU) from low-power mode ***
  236:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****    =============================================
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 7
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 7
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  237:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****     [..]
@@ -418,7 +446,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  133 000e 0ED0     		beq	.L11
  134              		.loc 1 271 0 discriminator 3
  135 0010 602B     		cmp	r3, #96
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 8
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 8
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  136 0012 0CD0     		beq	.L11
@@ -478,7 +510,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  183              		.loc 1 278 0
  184 005c 204B     		ldr	r3, .L19+12
  185 005e 5A68     		ldr	r2, [r3, #4]
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 9
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 9
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  186 0060 22F48032 		bic	r2, r2, #65536
@@ -538,7 +574,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  222 00a4 13F0010F 		tst	r3, #1
  223 00a8 04D0     		beq	.L15
  297:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   {
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 10
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 10
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  298:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****     __HAL_PWR_PVD_EXTI_ENABLE_RISING_EDGE();
@@ -598,7 +638,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  308:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief Enables the Power Voltage Detector(PVD).
  309:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @retval None
  310:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   */
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 11
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 11
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  311:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** void HAL_PWR_EnablePVD(void)
@@ -658,7 +702,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  314              		.align	1
  315              		.global	HAL_PWR_EnableWakeUpPin
  316              		.syntax unified
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 12
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 12
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  317              		.thumb
@@ -718,7 +766,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  354 0020 00000000 		.word	.LC0
  355 0024 00700040 		.word	1073770496
  356              		.cfi_endproc
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 13
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 13
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  357              	.LFE129:
@@ -778,7 +830,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  395 001e 10BD     		pop	{r4, pc}
  396              	.LVL12:
  397              	.L36:
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 14
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 14
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  398              		.align	2
@@ -838,7 +894,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  428 0006 04D9     		bls	.L38
  429              		.loc 1 384 0 is_stmt 0 discriminator 1
  430 0008 4FF4C071 		mov	r1, #384
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 15
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 15
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  431              	.LVL14:
@@ -898,7 +958,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
   20:Drivers/CMSIS/Include/cmsis_gcc.h ****    *
   21:Drivers/CMSIS/Include/cmsis_gcc.h ****    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
   22:Drivers/CMSIS/Include/cmsis_gcc.h ****    AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 16
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 16
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
   23:Drivers/CMSIS/Include/cmsis_gcc.h ****    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -958,7 +1022,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
   77:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the content of the Control Register.
   78:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Control Register value
   79:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 17
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 17
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
   80:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_CONTROL(void)
@@ -1018,7 +1086,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  134:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_xPSR(void)
  135:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  136:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 18
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 18
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  137:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1078,7 +1150,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  191:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  192:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  193:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 19
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 19
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  194:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -1138,7 +1214,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  248:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_BASEPRI(void)
  249:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  250:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 20
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 20
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  251:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1198,7 +1278,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  305:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  306:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  307:Drivers/CMSIS/Include/cmsis_gcc.h **** #if       (__CORTEX_M == 0x04U) || (__CORTEX_M == 0x07U)
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 21
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 21
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  308:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1258,7 +1342,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  362:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_OUT_REG(r) "=l" (r)
  363:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_USE_REG(r) "l" (r)
  364:Drivers/CMSIS/Include/cmsis_gcc.h **** #else
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 22
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 22
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  365:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_OUT_REG(r) "=r" (r)
@@ -1318,7 +1406,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  470              		.loc 2 396 0
  471              		.syntax unified
  472              	@ 396 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 23
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 23
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  473 0034 20BF     		wfe
@@ -1378,7 +1470,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  399:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****     __SEV();
  400:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****     __WFE();
  401:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****     __WFE();
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 24
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 24
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  402:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   }
@@ -1438,7 +1534,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  548 0016 DBB2     		uxtb	r3, r3
  549 0018 012B     		cmp	r3, #1
  550 001a 04D9     		bls	.L48
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 25
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 25
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  551              		.loc 1 428 0 is_stmt 0 discriminator 1
@@ -1498,7 +1598,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  595              	.LBB33:
  596              		.syntax unified
  597              	@ 396 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 26
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 26
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  598 0044 20BF     		wfe
@@ -1558,7 +1662,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  639              		.fpu fpv4-sp-d16
  641              	HAL_PWR_EnterSTANDBYMode:
  642              	.LFB133:
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 27
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 27
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  451:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** }
@@ -1618,7 +1726,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  678              		.section	.text.HAL_PWR_PVDCallback,"ax",%progbits
  679              		.align	1
  680              		.weak	HAL_PWR_PVDCallback
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 28
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 28
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  681              		.syntax unified
@@ -1678,7 +1790,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  705              	HAL_PWR_PVD_IRQHandler:
  706              	.LFB134:
  485:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   /* Check PWR Exti flag */
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 29
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 29
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  707              		.loc 1 485 0
@@ -1738,7 +1854,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  510:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @note Set SLEEPONEXIT bit of SCR register. When this bit is set, the processor 
  511:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *       re-enters SLEEP mode when an interruption handling is over.
  512:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *       Setting this bit is useful when the processor is expected to run only on
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 30
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 30
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  513:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *       interruptions handling.         
@@ -1798,7 +1918,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  788 0008 1361     		str	r3, [r2, #16]
  789 000a 7047     		bx	lr
  790              	.L70:
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 31
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 31
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  791              		.align	2
@@ -1858,7 +1982,11 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  546:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
  547:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief Disables CORTEX M4 SEVONPEND bit. 
  548:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @note Clears SEVONPEND bit of SCR register. When this bit is set, this causes 
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 32
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 32
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
  549:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *       WFE to wake up when an interrupt moves from inactive to pended.         
@@ -1908,11 +2036,16 @@ ARM GAS  /tmp/cchIk2nD.s 			page 1
  869              		.file 12 "/home/saicharan/arm/arm-none-eabi/include/sys/reent.h"
  870              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h"
  871              		.file 14 "Inc/stm32f4xx_hal_conf.h"
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 33
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 33
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f4xx_hal_pwr.c
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
      /tmp/cchIk2nD.s:18     .text.HAL_PWR_DeInit:0000000000000000 $t
      /tmp/cchIk2nD.s:25     .text.HAL_PWR_DeInit:0000000000000000 HAL_PWR_DeInit
      /tmp/cchIk2nD.s:46     .text.HAL_PWR_DeInit:0000000000000014 $d
@@ -1964,10 +2097,67 @@ DEFINED SYMBOLS
      /tmp/cchIk2nD.s:833    .text.HAL_PWR_DisableSEVOnPend:0000000000000000 HAL_PWR_DisableSEVOnPend
      /tmp/cchIk2nD.s:849    .text.HAL_PWR_DisableSEVOnPend:000000000000000c $d
      /tmp/cchIk2nD.s:854    .rodata.HAL_PWR_ConfigPVD.str1.4:0000000000000000 $d
+=======
+     /tmp/ccaymSk8.s:18     .text.HAL_PWR_DeInit:0000000000000000 $t
+     /tmp/ccaymSk8.s:25     .text.HAL_PWR_DeInit:0000000000000000 HAL_PWR_DeInit
+     /tmp/ccaymSk8.s:46     .text.HAL_PWR_DeInit:0000000000000014 $d
+     /tmp/ccaymSk8.s:51     .text.HAL_PWR_EnableBkUpAccess:0000000000000000 $t
+     /tmp/ccaymSk8.s:58     .text.HAL_PWR_EnableBkUpAccess:0000000000000000 HAL_PWR_EnableBkUpAccess
+     /tmp/ccaymSk8.s:73     .text.HAL_PWR_EnableBkUpAccess:0000000000000008 $d
+     /tmp/ccaymSk8.s:78     .text.HAL_PWR_DisableBkUpAccess:0000000000000000 $t
+     /tmp/ccaymSk8.s:85     .text.HAL_PWR_DisableBkUpAccess:0000000000000000 HAL_PWR_DisableBkUpAccess
+     /tmp/ccaymSk8.s:100    .text.HAL_PWR_DisableBkUpAccess:0000000000000008 $d
+     /tmp/ccaymSk8.s:105    .text.HAL_PWR_ConfigPVD:0000000000000000 $t
+     /tmp/ccaymSk8.s:112    .text.HAL_PWR_ConfigPVD:0000000000000000 HAL_PWR_ConfigPVD
+     /tmp/ccaymSk8.s:252    .text.HAL_PWR_ConfigPVD:00000000000000d4 $d
+     /tmp/ccaymSk8.s:260    .text.HAL_PWR_EnablePVD:0000000000000000 $t
+     /tmp/ccaymSk8.s:267    .text.HAL_PWR_EnablePVD:0000000000000000 HAL_PWR_EnablePVD
+     /tmp/ccaymSk8.s:282    .text.HAL_PWR_EnablePVD:0000000000000008 $d
+     /tmp/ccaymSk8.s:287    .text.HAL_PWR_DisablePVD:0000000000000000 $t
+     /tmp/ccaymSk8.s:294    .text.HAL_PWR_DisablePVD:0000000000000000 HAL_PWR_DisablePVD
+     /tmp/ccaymSk8.s:309    .text.HAL_PWR_DisablePVD:0000000000000008 $d
+     /tmp/ccaymSk8.s:314    .text.HAL_PWR_EnableWakeUpPin:0000000000000000 $t
+     /tmp/ccaymSk8.s:321    .text.HAL_PWR_EnableWakeUpPin:0000000000000000 HAL_PWR_EnableWakeUpPin
+     /tmp/ccaymSk8.s:354    .text.HAL_PWR_EnableWakeUpPin:0000000000000020 $d
+     /tmp/ccaymSk8.s:360    .text.HAL_PWR_DisableWakeUpPin:0000000000000000 $t
+     /tmp/ccaymSk8.s:367    .text.HAL_PWR_DisableWakeUpPin:0000000000000000 HAL_PWR_DisableWakeUpPin
+     /tmp/ccaymSk8.s:400    .text.HAL_PWR_DisableWakeUpPin:0000000000000020 $d
+     /tmp/ccaymSk8.s:406    .text.HAL_PWR_EnterSLEEPMode:0000000000000000 $t
+     /tmp/ccaymSk8.s:413    .text.HAL_PWR_EnterSLEEPMode:0000000000000000 HAL_PWR_EnterSLEEPMode
+     /tmp/ccaymSk8.s:504    .text.HAL_PWR_EnterSLEEPMode:0000000000000040 $d
+     /tmp/ccaymSk8.s:512    .text.HAL_PWR_EnterSTOPMode:0000000000000000 $t
+     /tmp/ccaymSk8.s:519    .text.HAL_PWR_EnterSTOPMode:0000000000000000 HAL_PWR_EnterSTOPMode
+     /tmp/ccaymSk8.s:625    .text.HAL_PWR_EnterSTOPMode:0000000000000058 $d
+     /tmp/ccaymSk8.s:634    .text.HAL_PWR_EnterSTANDBYMode:0000000000000000 $t
+     /tmp/ccaymSk8.s:641    .text.HAL_PWR_EnterSTANDBYMode:0000000000000000 HAL_PWR_EnterSTANDBYMode
+     /tmp/ccaymSk8.s:671    .text.HAL_PWR_EnterSTANDBYMode:0000000000000018 $d
+     /tmp/ccaymSk8.s:679    .text.HAL_PWR_PVDCallback:0000000000000000 $t
+     /tmp/ccaymSk8.s:686    .text.HAL_PWR_PVDCallback:0000000000000000 HAL_PWR_PVDCallback
+     /tmp/ccaymSk8.s:698    .text.HAL_PWR_PVD_IRQHandler:0000000000000000 $t
+     /tmp/ccaymSk8.s:705    .text.HAL_PWR_PVD_IRQHandler:0000000000000000 HAL_PWR_PVD_IRQHandler
+     /tmp/ccaymSk8.s:737    .text.HAL_PWR_PVD_IRQHandler:000000000000001c $d
+     /tmp/ccaymSk8.s:742    .text.HAL_PWR_EnableSleepOnExit:0000000000000000 $t
+     /tmp/ccaymSk8.s:749    .text.HAL_PWR_EnableSleepOnExit:0000000000000000 HAL_PWR_EnableSleepOnExit
+     /tmp/ccaymSk8.s:765    .text.HAL_PWR_EnableSleepOnExit:000000000000000c $d
+     /tmp/ccaymSk8.s:770    .text.HAL_PWR_DisableSleepOnExit:0000000000000000 $t
+     /tmp/ccaymSk8.s:777    .text.HAL_PWR_DisableSleepOnExit:0000000000000000 HAL_PWR_DisableSleepOnExit
+     /tmp/ccaymSk8.s:793    .text.HAL_PWR_DisableSleepOnExit:000000000000000c $d
+     /tmp/ccaymSk8.s:798    .text.HAL_PWR_EnableSEVOnPend:0000000000000000 $t
+     /tmp/ccaymSk8.s:805    .text.HAL_PWR_EnableSEVOnPend:0000000000000000 HAL_PWR_EnableSEVOnPend
+     /tmp/ccaymSk8.s:821    .text.HAL_PWR_EnableSEVOnPend:000000000000000c $d
+     /tmp/ccaymSk8.s:826    .text.HAL_PWR_DisableSEVOnPend:0000000000000000 $t
+     /tmp/ccaymSk8.s:833    .text.HAL_PWR_DisableSEVOnPend:0000000000000000 HAL_PWR_DisableSEVOnPend
+     /tmp/ccaymSk8.s:849    .text.HAL_PWR_DisableSEVOnPend:000000000000000c $d
+     /tmp/ccaymSk8.s:854    .rodata.HAL_PWR_ConfigPVD.str1.4:0000000000000000 $d
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
                      .debug_frame:0000000000000010 $d
 
 UNDEFINED SYMBOLS
 assert_failed
+<<<<<<< HEAD:Manchester_Decoding/build/stm32f4xx_hal_pwr.lst
 ARM GAS  /tmp/cchIk2nD.s 			page 34
+=======
+ARM GAS  /tmp/ccaymSk8.s 			page 34
+>>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/build/stm32f4xx_hal_pwr.lst
 
 
