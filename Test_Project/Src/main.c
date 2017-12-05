@@ -42,12 +42,9 @@
 
 /* USER CODE BEGIN Includes */
 unsigned char start_capture = 0;
-<<<<<<< HEAD:Manchester_Decoding/Src/main.c
 unsigned char i = 0;
 unsigned char msg[8] = { 0 };
 unsigned char response[8] = {1, 1, 0, 1, 0, 1, 0, 1};
-=======
->>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/Src/main.c
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -55,17 +52,10 @@ TIM_HandleTypeDef htim4;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-<<<<<<< HEAD:Manchester_Decoding/Src/main.c
 void Manch_Error();
 
 
 
-=======
-volatile unsigned char uIRQ_Temp = 0;
-/* volatile uint16_t uwDiffCapture = 0; */
-volatile unsigned char uPulse_width_2T = 0; 
-volatile unsigned char uPulse_width_T = 0;
->>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/Src/main.c
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -119,7 +109,6 @@ int main(void)
     {
       _Error_Handler(__FILE__, __LINE__);
     }
-<<<<<<< HEAD:Manchester_Decoding/Src/main.c
   /* Wait till the complete message is received */
   while (i < 8)
     {
@@ -145,23 +134,7 @@ int main(void)
     {
       HAL_GPIO_WritePin(LED_Yellow_GPIO_Port, LED_Yellow_Pin, GPIO_PIN_SET);
     }
-=======
-
-  /* while(uPulse_width_2T == 0) */
-  /*   { */
-  /*     HAL_GPIO_TogglePin(LED_Red_GPIO_Port, LED_Red_Pin); */
-  /*     HAL_Delay(250); */
-  /*   } */
-  HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
-
-  while(uPulse_width_T == 0)
-    {
-      HAL_GPIO_TogglePin(LED_Blue_GPIO_Port, LED_Blue_Pin);
-      HAL_Delay(250);
-    }
->>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/Src/main.c
   
-  HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -307,15 +280,11 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-<<<<<<< HEAD:Manchester_Decoding/Src/main.c
 void Manch_Error()
 {
   /* Turn On Red_LED */
   HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
 }
-=======
-
->>>>>>> c35c600e788d0a3ad9af919022cd29cfce4c2890:Test_Project/Src/main.c
   
 /* USER CODE END 4 */
 
