@@ -37,25 +37,6 @@
 
 /* USER CODE BEGIN 0 */
 
-/* Use start_capture variable to suggest that hardware_trigger has occured */
-extern unsigned char start_capture;
-
-/* Temp vector : to store the Captured values */
-uint16_t tmp[2] = {0, 0};
-
-/* Variables required to decode Manchester */
-uint16_t uwDiffCapture = 0;
-extern unsigned char i;
-unsigned char current_bit = 0;
-unsigned char clock_sync = 0;
-unsigned char update_variable = 0;
-
-/* Manchester decoded msg will be stored in this variable */
-extern unsigned char msg[8];
-
-/* Manchester Error function to designate the correct receiving */
-extern void Manch_Error();
-
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
@@ -214,62 +195,6 @@ void TIM4_IRQHandler(void)
   HAL_TIM_IRQHandler(&htim4);
   /* USER CODE BEGIN TIM4_IRQn 1 */
 
-  /* Capture the timer value when interrupt occured */
-  tmp[1] = HAL_TIM_ReadCapturedValue(&htim4, TIM_CHANNEL_3);
-
-  /* Compute uwDiffCapture value, uwPulse_width with captured values */
-  if(tmp[1] > tmp[0])
-    {
-      uwDiffCapture = tmp[1] - tmp[0];
-    }
-  else /* if tmp[1] <= tmp[0] */
-    {
-      uwDiffCapture = (0xFFFF - tmp[0]) + tmp[1];
-    }
-  /* uwPulse_width = uwDiffCapture / (2* HAL_RCC_GetHCLK1Freq()); */
-
-  /* Left shifting the vector */
-  tmp[0] = tmp[1];
-
-  /* In the beginning I am just using uwDiffCapture values to
-     check rather than using uPulse_width values to check for range*/
-
-  /* The calculated range 
-     For ~417us +- 10% :: uwDiffCapture range (6000 - 7250)
-     For ~833us +- 10% :: uwDiffCapture range (12000 - 14500) */
-
-  /* Waiting for clock to be in sync before decoding any message */
-  /* Or to be precise it is the Start_bit, which is always 1 for DALI */
-  /* It will not be stored in msg[], just used for clock_sync */
-  if(clock_sync == 0)
-    {
-      /* Here I also need to check for settled signal i.e signal with
-	 more than 22Te length */
-
-      /* wait till the settling time is over
-	 For this to calculate my idea is to wait for two UEV flag
-	 variables and then calculate the uwDiffCapture value */
-      while(flag_var < 2)
-	{
-	  if(__HAL_TIM_GET_FLAG(&htim4, TIM_FLAG_UPDATE) == SET)
-	    {
-	      flag_var++;
-	    }
-	}
-      if(update_variable == 0)
-	{
-	  if ((uwDiffCapture > 6000) && (uwDiffCapture < 7250))
-	    {
-	      update_variable = 1;
-	    }
-	    /* else condition is to be written carefully */
-	  else if(update_variable == 1)
-	    {
-	      
-	    }
-	}
-	  
-    }
   /* USER CODE END TIM4_IRQn 1 */
 }
 
@@ -283,7 +208,7 @@ void EXTI15_10_IRQHandler(void)
   /* USER CODE END EXTI15_10_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_12);
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
-  start_capture = 1;
+
   /* USER CODE END EXTI15_10_IRQn 1 */
 }
 

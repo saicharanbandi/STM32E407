@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project>
-<ProjectName>/home/saicharan/Dropbox/arbeit/lichtsteuer-modul/DALI_programming/stm32/trial_code/STM32E407/Manchester_Decoding_wo_Preamble/\Manchester_Decoding_wo_Preamble</ProjectName>
+<ProjectName>/home/saicharan/Dropbox/arbeit/lichtsteuer-modul/DALI_programming/stm32/trial_code/STM32E407/Manchester_Decoding/\Manchester_Decoding</ProjectName>
 <CMSIS>Drivers/CMSIS</CMSIS>
 <HAL_Driver>/home/saicharan/STM32Cube/Repository//STM32Cube_FW_F4_V1.18.0/Drivers/CMSIS</HAL_Driver>
 
@@ -22,7 +22,7 @@
 
 <configs>
   <config>
-    <name>Manchester_Decoding_wo_Preamble</name>				
+    <name>Manchester_Decoding</name>				
     <device>STM32F407ZGTx</device>		 
     <heapSize>0x200</heapSize>
     <stackSize>0x400</stackSize>

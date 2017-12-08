@@ -1,7 +1,7 @@
 [PreviousGenFiles]
-HeaderPath=/home/saicharan/Dropbox/arbeit/lichtsteuer-modul/DALI_programming/stm32/trial_code/STM32E407/Manchester_Decoding_wo_Preamble/Inc
+HeaderPath=/home/saicharan/Dropbox/arbeit/lichtsteuer-modul/DALI_programming/stm32/trial_code/STM32E407/Manchester_Decoding/Inc
 HeaderFiles=stm32f4xx_it.h;stm32f4xx_hal_conf.h;main.h;
-SourcePath=/home/saicharan/Dropbox/arbeit/lichtsteuer-modul/DALI_programming/stm32/trial_code/STM32E407/Manchester_Decoding_wo_Preamble/Src
+SourcePath=/home/saicharan/Dropbox/arbeit/lichtsteuer-modul/DALI_programming/stm32/trial_code/STM32E407/Manchester_Decoding/Src
 SourceFiles=stm32f4xx_it.c;stm32f4xx_hal_msp.c;main.c;
 
 [PreviousLibFiles]
