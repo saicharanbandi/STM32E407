@@ -55,11 +55,12 @@
 #define LED_Yellow_GPIO_Port GPIOF
 #define LED_Red_Pin GPIO_PIN_5
 #define LED_Red_GPIO_Port GPIOF
+#define Manch_Rx_Pin GPIO_PIN_6
+#define Manch_Rx_GPIO_Port GPIOF
+#define Manch_Rx_EXTI_IRQn EXTI9_5_IRQn
 #define Hardware_Trigger_Pin GPIO_PIN_12
 #define Hardware_Trigger_GPIO_Port GPIOF
 #define Hardware_Trigger_EXTI_IRQn EXTI15_10_IRQn
-#define TIM_4_3_Pin GPIO_PIN_14
-#define TIM_4_3_GPIO_Port GPIOD
 
 /* ########################## Assert Selection ############################## */
 /**
