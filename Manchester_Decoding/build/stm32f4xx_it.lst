@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc6Zumgp.s 			page 1
+ARM GAS  /tmp/ccn4mdh3.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc6Zumgp.s 			page 1
   29:Src/stm32f4xx_it.c ****   * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   30:Src/stm32f4xx_it.c ****   *
   31:Src/stm32f4xx_it.c ****   ******************************************************************************
-ARM GAS  /tmp/cc6Zumgp.s 			page 2
+ARM GAS  /tmp/ccn4mdh3.s 			page 2
 
 
   32:Src/stm32f4xx_it.c ****   */
@@ -68,8 +68,8 @@ ARM GAS  /tmp/cc6Zumgp.s 			page 1
   36:Src/stm32f4xx_it.c **** #include "stm32f4xx_it.h"
   37:Src/stm32f4xx_it.c **** 
   38:Src/stm32f4xx_it.c **** /* USER CODE BEGIN 0 */
-  39:Src/stm32f4xx_it.c **** /* Hardware_Trigger interrupt variable */
-  40:Src/stm32f4xx_it.c **** extern unsigned char hardware_trigger;
+  39:Src/stm32f4xx_it.c **** extern unsigned char start_timer;
+  40:Src/stm32f4xx_it.c **** 
   41:Src/stm32f4xx_it.c **** /* USER CODE END 0 */
   42:Src/stm32f4xx_it.c **** 
   43:Src/stm32f4xx_it.c **** /* External variables --------------------------------------------------------*/
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc6Zumgp.s 			page 1
   48              		.cfi_startproc
   49              		@ Volatile: function does not return.
   50              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/cc6Zumgp.s 			page 3
+ARM GAS  /tmp/ccn4mdh3.s 			page 3
 
 
   51              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc6Zumgp.s 			page 1
   88:Src/stm32f4xx_it.c ****   {
   89:Src/stm32f4xx_it.c ****   }
   90:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN MemoryManagement_IRQn 1 */
-ARM GAS  /tmp/cc6Zumgp.s 			page 4
+ARM GAS  /tmp/ccn4mdh3.s 			page 4
 
 
   91:Src/stm32f4xx_it.c **** 
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc6Zumgp.s 			page 1
  121              		.section	.text.SVC_Handler,"ax",%progbits
  122              		.align	1
  123              		.global	SVC_Handler
-ARM GAS  /tmp/cc6Zumgp.s 			page 5
+ARM GAS  /tmp/ccn4mdh3.s 			page 5
 
 
  124              		.syntax unified
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc6Zumgp.s 			page 1
  152              		@ args = 0, pretend = 0, frame = 0
  153              		@ frame_needed = 0, uses_anonymous_args = 0
  154              		@ link register save eliminated.
-ARM GAS  /tmp/cc6Zumgp.s 			page 6
+ARM GAS  /tmp/ccn4mdh3.s 			page 6
 
 
  155 0000 7047     		bx	lr
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc6Zumgp.s 			page 1
  170:Src/stm32f4xx_it.c **** {
  188              		.loc 1 170 0
  189              		.cfi_startproc
-ARM GAS  /tmp/cc6Zumgp.s 			page 7
+ARM GAS  /tmp/ccn4mdh3.s 			page 7
 
 
  190              		@ args = 0, pretend = 0, frame = 0
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cc6Zumgp.s 			page 1
  224              		.cfi_def_cfa_offset 8
  225              		.cfi_offset 3, -8
  226              		.cfi_offset 14, -4
-ARM GAS  /tmp/cc6Zumgp.s 			page 8
+ARM GAS  /tmp/ccn4mdh3.s 			page 8
 
 
  193:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI9_5_IRQn 0 */
@@ -429,20 +429,28 @@ ARM GAS  /tmp/cc6Zumgp.s 			page 1
  228 0002 4020     		movs	r0, #64
  229 0004 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
  230              	.LVL2:
- 231 0008 08BD     		pop	{r3, pc}
- 232              		.cfi_endproc
- 233              	.LFE132:
- 235              		.section	.text.TIM2_IRQHandler,"ax",%progbits
- 236              		.align	1
- 237              		.global	TIM2_IRQHandler
- 238              		.syntax unified
- 239              		.thumb
- 240              		.thumb_func
- 241              		.fpu fpv4-sp-d16
- 243              	TIM2_IRQHandler:
- 244              	.LFB133:
  197:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI9_5_IRQn 1 */
- 198:Src/stm32f4xx_it.c **** 
+ 198:Src/stm32f4xx_it.c ****   start_timer = 1;
+ 231              		.loc 1 198 0
+ 232 0008 0122     		movs	r2, #1
+ 233 000a 014B     		ldr	r3, .L17
+ 234 000c 1A70     		strb	r2, [r3]
+ 235 000e 08BD     		pop	{r3, pc}
+ 236              	.L18:
+ 237              		.align	2
+ 238              	.L17:
+ 239 0010 00000000 		.word	start_timer
+ 240              		.cfi_endproc
+ 241              	.LFE132:
+ 243              		.section	.text.TIM2_IRQHandler,"ax",%progbits
+ 244              		.align	1
+ 245              		.global	TIM2_IRQHandler
+ 246              		.syntax unified
+ 247              		.thumb
+ 248              		.thumb_func
+ 249              		.fpu fpv4-sp-d16
+ 251              	TIM2_IRQHandler:
+ 252              	.LFB133:
  199:Src/stm32f4xx_it.c ****   /* USER CODE END EXTI9_5_IRQn 1 */
  200:Src/stm32f4xx_it.c **** }
  201:Src/stm32f4xx_it.c **** 
@@ -451,139 +459,85 @@ ARM GAS  /tmp/cc6Zumgp.s 			page 1
  204:Src/stm32f4xx_it.c **** */
  205:Src/stm32f4xx_it.c **** void TIM2_IRQHandler(void)
  206:Src/stm32f4xx_it.c **** {
- 245              		.loc 1 206 0
- 246              		.cfi_startproc
- 247              		@ args = 0, pretend = 0, frame = 0
- 248              		@ frame_needed = 0, uses_anonymous_args = 0
- 249 0000 08B5     		push	{r3, lr}
- 250              	.LCFI2:
- 251              		.cfi_def_cfa_offset 8
- 252              		.cfi_offset 3, -8
- 253              		.cfi_offset 14, -4
+ 253              		.loc 1 206 0
+ 254              		.cfi_startproc
+ 255              		@ args = 0, pretend = 0, frame = 0
+ 256              		@ frame_needed = 0, uses_anonymous_args = 0
+ 257 0000 08B5     		push	{r3, lr}
+ 258              	.LCFI2:
+ 259              		.cfi_def_cfa_offset 8
+ 260              		.cfi_offset 3, -8
+ 261              		.cfi_offset 14, -4
  207:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN TIM2_IRQn 0 */
  208:Src/stm32f4xx_it.c **** 
  209:Src/stm32f4xx_it.c ****   /* USER CODE END TIM2_IRQn 0 */
  210:Src/stm32f4xx_it.c ****   HAL_TIM_IRQHandler(&htim2);
- 254              		.loc 1 210 0
- 255 0002 0248     		ldr	r0, .L19
- 256 0004 FFF7FEFF 		bl	HAL_TIM_IRQHandler
- 257              	.LVL3:
- 258 0008 08BD     		pop	{r3, pc}
- 259              	.L20:
- 260 000a 00BF     		.align	2
- 261              	.L19:
- 262 000c 00000000 		.word	htim2
- 263              		.cfi_endproc
- 264              	.LFE133:
- 266              		.section	.text.EXTI15_10_IRQHandler,"ax",%progbits
- 267              		.align	1
- 268              		.global	EXTI15_10_IRQHandler
-ARM GAS  /tmp/cc6Zumgp.s 			page 9
+ 262              		.loc 1 210 0
+ 263 0002 0248     		ldr	r0, .L21
+ 264 0004 FFF7FEFF 		bl	HAL_TIM_IRQHandler
+ 265              	.LVL3:
+ 266 0008 08BD     		pop	{r3, pc}
+ 267              	.L22:
+ARM GAS  /tmp/ccn4mdh3.s 			page 9
 
 
- 269              		.syntax unified
- 270              		.thumb
- 271              		.thumb_func
- 272              		.fpu fpv4-sp-d16
- 274              	EXTI15_10_IRQHandler:
- 275              	.LFB134:
- 211:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN TIM2_IRQn 1 */
- 212:Src/stm32f4xx_it.c **** 
- 213:Src/stm32f4xx_it.c ****   /* USER CODE END TIM2_IRQn 1 */
- 214:Src/stm32f4xx_it.c **** }
- 215:Src/stm32f4xx_it.c **** 
- 216:Src/stm32f4xx_it.c **** /**
- 217:Src/stm32f4xx_it.c **** * @brief This function handles EXTI line[15:10] interrupts.
- 218:Src/stm32f4xx_it.c **** */
- 219:Src/stm32f4xx_it.c **** void EXTI15_10_IRQHandler(void)
- 220:Src/stm32f4xx_it.c **** {
- 276              		.loc 1 220 0
- 277              		.cfi_startproc
- 278              		@ args = 0, pretend = 0, frame = 0
- 279              		@ frame_needed = 0, uses_anonymous_args = 0
- 280 0000 08B5     		push	{r3, lr}
- 281              	.LCFI3:
- 282              		.cfi_def_cfa_offset 8
- 283              		.cfi_offset 3, -8
- 284              		.cfi_offset 14, -4
- 221:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
- 222:Src/stm32f4xx_it.c **** 
- 223:Src/stm32f4xx_it.c ****   /* USER CODE END EXTI15_10_IRQn 0 */
- 224:Src/stm32f4xx_it.c ****   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_12);
- 285              		.loc 1 224 0
- 286 0002 4FF48050 		mov	r0, #4096
- 287 0006 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
- 288              	.LVL4:
- 225:Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
- 226:Src/stm32f4xx_it.c ****   hardware_trigger = 1;
- 289              		.loc 1 226 0
- 290 000a 0122     		movs	r2, #1
- 291 000c 014B     		ldr	r3, .L23
- 292 000e 1A70     		strb	r2, [r3]
- 293 0010 08BD     		pop	{r3, pc}
- 294              	.L24:
- 295 0012 00BF     		.align	2
- 296              	.L23:
- 297 0014 00000000 		.word	hardware_trigger
- 298              		.cfi_endproc
- 299              	.LFE134:
- 301              		.text
- 302              	.Letext0:
- 303              		.file 2 "/home/saicharan/arm/arm-none-eabi/include/machine/_default_types.h"
- 304              		.file 3 "/home/saicharan/arm/arm-none-eabi/include/stdint.h"
- 305              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 306              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 307              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 308              		.file 7 "/home/saicharan/arm/arm-none-eabi/include/sys/lock.h"
- 309              		.file 8 "/home/saicharan/arm/arm-none-eabi/include/sys/_types.h"
- 310              		.file 9 "/home/saicharan/arm/lib/gcc/arm-none-eabi/6.3.0/include/stddef.h"
- 311              		.file 10 "/home/saicharan/arm/arm-none-eabi/include/sys/reent.h"
-ARM GAS  /tmp/cc6Zumgp.s 			page 10
-
-
- 312              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 313              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 314              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
- 315              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
- 316              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 317              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
-ARM GAS  /tmp/cc6Zumgp.s 			page 11
+ 268 000a 00BF     		.align	2
+ 269              	.L21:
+ 270 000c 00000000 		.word	htim2
+ 271              		.cfi_endproc
+ 272              	.LFE133:
+ 274              		.text
+ 275              	.Letext0:
+ 276              		.file 2 "/home/saicharan/arm/arm-none-eabi/include/machine/_default_types.h"
+ 277              		.file 3 "/home/saicharan/arm/arm-none-eabi/include/stdint.h"
+ 278              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 279              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 280              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 281              		.file 7 "/home/saicharan/arm/arm-none-eabi/include/sys/lock.h"
+ 282              		.file 8 "/home/saicharan/arm/arm-none-eabi/include/sys/_types.h"
+ 283              		.file 9 "/home/saicharan/arm/lib/gcc/arm-none-eabi/6.3.0/include/stddef.h"
+ 284              		.file 10 "/home/saicharan/arm/arm-none-eabi/include/sys/reent.h"
+ 285              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 286              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 287              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 288              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 289              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 290              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
+ARM GAS  /tmp/ccn4mdh3.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f4xx_it.c
-     /tmp/cc6Zumgp.s:18     .text.NMI_Handler:0000000000000000 $t
-     /tmp/cc6Zumgp.s:25     .text.NMI_Handler:0000000000000000 NMI_Handler
-     /tmp/cc6Zumgp.s:38     .text.HardFault_Handler:0000000000000000 $t
-     /tmp/cc6Zumgp.s:45     .text.HardFault_Handler:0000000000000000 HardFault_Handler
-     /tmp/cc6Zumgp.s:59     .text.MemManage_Handler:0000000000000000 $t
-     /tmp/cc6Zumgp.s:66     .text.MemManage_Handler:0000000000000000 MemManage_Handler
-     /tmp/cc6Zumgp.s:80     .text.BusFault_Handler:0000000000000000 $t
-     /tmp/cc6Zumgp.s:87     .text.BusFault_Handler:0000000000000000 BusFault_Handler
-     /tmp/cc6Zumgp.s:101    .text.UsageFault_Handler:0000000000000000 $t
-     /tmp/cc6Zumgp.s:108    .text.UsageFault_Handler:0000000000000000 UsageFault_Handler
-     /tmp/cc6Zumgp.s:122    .text.SVC_Handler:0000000000000000 $t
-     /tmp/cc6Zumgp.s:129    .text.SVC_Handler:0000000000000000 SVC_Handler
-     /tmp/cc6Zumgp.s:141    .text.DebugMon_Handler:0000000000000000 $t
-     /tmp/cc6Zumgp.s:148    .text.DebugMon_Handler:0000000000000000 DebugMon_Handler
-     /tmp/cc6Zumgp.s:160    .text.PendSV_Handler:0000000000000000 $t
-     /tmp/cc6Zumgp.s:167    .text.PendSV_Handler:0000000000000000 PendSV_Handler
-     /tmp/cc6Zumgp.s:179    .text.SysTick_Handler:0000000000000000 $t
-     /tmp/cc6Zumgp.s:186    .text.SysTick_Handler:0000000000000000 SysTick_Handler
-     /tmp/cc6Zumgp.s:209    .text.EXTI9_5_IRQHandler:0000000000000000 $t
-     /tmp/cc6Zumgp.s:216    .text.EXTI9_5_IRQHandler:0000000000000000 EXTI9_5_IRQHandler
-     /tmp/cc6Zumgp.s:236    .text.TIM2_IRQHandler:0000000000000000 $t
-     /tmp/cc6Zumgp.s:243    .text.TIM2_IRQHandler:0000000000000000 TIM2_IRQHandler
-     /tmp/cc6Zumgp.s:262    .text.TIM2_IRQHandler:000000000000000c $d
-     /tmp/cc6Zumgp.s:267    .text.EXTI15_10_IRQHandler:0000000000000000 $t
-     /tmp/cc6Zumgp.s:274    .text.EXTI15_10_IRQHandler:0000000000000000 EXTI15_10_IRQHandler
-     /tmp/cc6Zumgp.s:297    .text.EXTI15_10_IRQHandler:0000000000000014 $d
+     /tmp/ccn4mdh3.s:18     .text.NMI_Handler:0000000000000000 $t
+     /tmp/ccn4mdh3.s:25     .text.NMI_Handler:0000000000000000 NMI_Handler
+     /tmp/ccn4mdh3.s:38     .text.HardFault_Handler:0000000000000000 $t
+     /tmp/ccn4mdh3.s:45     .text.HardFault_Handler:0000000000000000 HardFault_Handler
+     /tmp/ccn4mdh3.s:59     .text.MemManage_Handler:0000000000000000 $t
+     /tmp/ccn4mdh3.s:66     .text.MemManage_Handler:0000000000000000 MemManage_Handler
+     /tmp/ccn4mdh3.s:80     .text.BusFault_Handler:0000000000000000 $t
+     /tmp/ccn4mdh3.s:87     .text.BusFault_Handler:0000000000000000 BusFault_Handler
+     /tmp/ccn4mdh3.s:101    .text.UsageFault_Handler:0000000000000000 $t
+     /tmp/ccn4mdh3.s:108    .text.UsageFault_Handler:0000000000000000 UsageFault_Handler
+     /tmp/ccn4mdh3.s:122    .text.SVC_Handler:0000000000000000 $t
+     /tmp/ccn4mdh3.s:129    .text.SVC_Handler:0000000000000000 SVC_Handler
+     /tmp/ccn4mdh3.s:141    .text.DebugMon_Handler:0000000000000000 $t
+     /tmp/ccn4mdh3.s:148    .text.DebugMon_Handler:0000000000000000 DebugMon_Handler
+     /tmp/ccn4mdh3.s:160    .text.PendSV_Handler:0000000000000000 $t
+     /tmp/ccn4mdh3.s:167    .text.PendSV_Handler:0000000000000000 PendSV_Handler
+     /tmp/ccn4mdh3.s:179    .text.SysTick_Handler:0000000000000000 $t
+     /tmp/ccn4mdh3.s:186    .text.SysTick_Handler:0000000000000000 SysTick_Handler
+     /tmp/ccn4mdh3.s:209    .text.EXTI9_5_IRQHandler:0000000000000000 $t
+     /tmp/ccn4mdh3.s:216    .text.EXTI9_5_IRQHandler:0000000000000000 EXTI9_5_IRQHandler
+     /tmp/ccn4mdh3.s:239    .text.EXTI9_5_IRQHandler:0000000000000010 $d
+     /tmp/ccn4mdh3.s:244    .text.TIM2_IRQHandler:0000000000000000 $t
+     /tmp/ccn4mdh3.s:251    .text.TIM2_IRQHandler:0000000000000000 TIM2_IRQHandler
+     /tmp/ccn4mdh3.s:270    .text.TIM2_IRQHandler:000000000000000c $d
                      .debug_frame:0000000000000010 $d
 
 UNDEFINED SYMBOLS
 HAL_IncTick
 HAL_SYSTICK_IRQHandler
 HAL_GPIO_EXTI_IRQHandler
+start_timer
 HAL_TIM_IRQHandler
 htim2
-hardware_trigger

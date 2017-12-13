@@ -58,9 +58,6 @@
 #define Manch_Rx_Pin GPIO_PIN_6
 #define Manch_Rx_GPIO_Port GPIOF
 #define Manch_Rx_EXTI_IRQn EXTI9_5_IRQn
-#define Hardware_Trigger_Pin GPIO_PIN_12
-#define Hardware_Trigger_GPIO_Port GPIOF
-#define Hardware_Trigger_EXTI_IRQn EXTI15_10_IRQn
 
 /* ########################## Assert Selection ############################## */
 /**
