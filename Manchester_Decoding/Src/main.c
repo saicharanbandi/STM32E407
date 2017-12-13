@@ -48,9 +48,19 @@
 TIM_HandleTypeDef htim2;
 
 /* USER CODE BEGIN PV */
+
 /* Private variables ---------------------------------------------------------*/
+/* start_timer variable designates first external interrupt */
 unsigned char start_timer = 0;
-int tick_count = 0;
+/* this variable used to measure the ticks of timer2 */
+unsigned int tick_count = 0;
+/* array initialization for receive buffer */
+volatile unsigned char dali_slave_array_receive_buffer[9];
+/* bit_count variable used in dali_decoding */
+unsigned char bit_count = 0;
+/*Address and Command byte received variables */
+volatile unsigned char slave_addr_byte_received;
+volatile unsigned char slave_cmd_byte_received;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -60,7 +70,7 @@ static void MX_TIM2_Init(void);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
-
+void Forward_Frame_Received(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
@@ -95,6 +105,7 @@ int main(void)
   MX_TIM2_Init();
 
   /* USER CODE BEGIN 2 */
+  /* Wait for the first external interrupt */
   while(start_timer == 0)
     {
     }
@@ -247,31 +258,71 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-  /* HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_RESET); */
-  /* HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_RESET); */
-
-  /* if(HAL_GPIO_ReadPin(Manch_Rx_GPIO_Port, Manch_Rx_Pin) == GPIO_PIN_SET) */
-  /*   { */
-  /*     HAL_GPIO_TogglePin(LED_Green_GPIO_Port, LED_Green_Pin); */
-  /*   } */
-  /* else */
-  /*   { */
-  /*     HAL_GPIO_TogglePin(LED_Red_GPIO_Port, LED_Red_Pin); */
-  /*   } */
-
-  if(tick_count == 56)
+  /* Wait for the settling time to be over */
+  if(tick_count > 39)
     {
-      if(HAL_GPIO_ReadPin(Manch_Rx_GPIO_Port, Manch_Rx_Pin) == GPIO_PIN_SET)
-  	{
-  	  HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
-  	}
-      else
-  	{
-  	  HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
-  	}
+      if(tick_count == (bit_count * 8) + 42)
+	{
+	  HAL_GPIO_WritePin(LED_Yellow_GPIO_Port, LED_Yellow_Pin, GPIO_PIN_SET);
+	  if(HAL_GPIO_ReadPin(Manch_Rx_GPIO_Port, Manch_Rx_Pin) == GPIO_PIN_SET)
+	    {
+              
+	      dali_slave_array_receive_buffer[bit_count] = 0;
+	      if(dali_slave_array_receive_buffer[bit_count] == 0)
+		{
+		  HAL_GPIO_WritePin(LED_Yellow_GPIO_Port, LED_Yellow_Pin, GPIO_PIN_SET);
+		}
+	    }
+	  else
+	    {
+	      dali_slave_array_receive_buffer[bit_count] = 1;
+	    }
+	}
+      if(tick_count % 8 == 0)
+	{
+	  bit_count++;
+	}
+
+      // transfer completed
+      if(bit_count > 8)
+	{
+	  // Stop timer ticking; Stop_base_IT
+	  if(HAL_TIM_Base_Stop_IT(&htim2) != HAL_OK)
+	    {
+	      _Error_Handler(__FILE__, __LINE__);
+	    }
+	  Forward_Frame_Received();
+          
+	}
     }
-    
+
+  // increment ticks
   tick_count++;
+
+  
+}
+
+void Forward_Frame_Received(void)
+{
+  unsigned char i = 0;
+  for (i = 1; i<9; i++)
+    {
+      if(dali_slave_array_receive_buffer[i] == 1)
+	{
+	  slave_addr_byte_received |= (1 << (8-i));
+	}
+    }
+
+  if(slave_addr_byte_received == 213)
+    {
+      HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
+    }
+  else
+    {
+      HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
+    }
+	 
+  
 }
 /* USER CODE END 4 */
 
