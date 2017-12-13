@@ -17,18 +17,11 @@ static void MX_GPIO_Init(void)
 #tHAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
 #n#t/*Configure GPIO pin : Manch_Rx_Pin */
 #tGPIO_InitStruct.Pin = Manch_Rx_Pin;
-#tGPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
-#tGPIO_InitStruct.Pull = GPIO_PULLDOWN;
-#tHAL_GPIO_Init(Manch_Rx_GPIO_Port, &GPIO_InitStruct);
-#n#t/*Configure GPIO pin : Hardware_Trigger_Pin */
-#tGPIO_InitStruct.Pin = Hardware_Trigger_Pin;
 #tGPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
 #tGPIO_InitStruct.Pull = GPIO_PULLDOWN;
-#tHAL_GPIO_Init(Hardware_Trigger_GPIO_Port, &GPIO_InitStruct);
+#tHAL_GPIO_Init(Manch_Rx_GPIO_Port, &GPIO_InitStruct);
 #n#t/* EXTI interrupt init*/
 #tHAL_NVIC_SetPriority(EXTI9_5_IRQn, 1, 0);
-#tHAL_NVIC_EnableIRQ(EXTI9_5_IRQn);#n
-#tHAL_NVIC_SetPriority(EXTI15_10_IRQn, 1, 0);
-#tHAL_NVIC_EnableIRQ(EXTI15_10_IRQn);#n#n
+#tHAL_NVIC_EnableIRQ(EXTI9_5_IRQn);#n#n
 }
 #n

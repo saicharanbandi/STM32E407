@@ -49,7 +49,8 @@ TIM_HandleTypeDef htim2;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-unsigned char hardware_trigger = 0;
+unsigned char start_timer = 0;
+int tick_count = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -94,12 +95,11 @@ int main(void)
   MX_TIM2_Init();
 
   /* USER CODE BEGIN 2 */
-  /* Wait for Hardware_Trigger */
-  while(hardware_trigger == 0)
+  while(start_timer == 0)
     {
     }
 
-  /* Start timer2 in time base interrupt mode */
+  /* Start the timer time base in interrupt mode */
   if(HAL_TIM_Base_Start_IT(&htim2) != HAL_OK)
     {
       _Error_Handler(__FILE__, __LINE__);
@@ -183,9 +183,9 @@ static void MX_TIM2_Init(void)
   TIM_MasterConfigTypeDef sMasterConfig;
 
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 84;
+  htim2.Init.Prescaler = 83;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 104;
+  htim2.Init.Period = 103;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
   {
@@ -234,29 +234,44 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : Manch_Rx_Pin */
   GPIO_InitStruct.Pin = Manch_Rx_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
-  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
-  HAL_GPIO_Init(Manch_Rx_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : Hardware_Trigger_Pin */
-  GPIO_InitStruct.Pin = Hardware_Trigger_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
-  HAL_GPIO_Init(Hardware_Trigger_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(Manch_Rx_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI9_5_IRQn, 1, 0);
   HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
-
-  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 1, 0);
-  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 }
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-  HAL_GPIO_TogglePin(LED_Green_GPIO_Port, LED_Green_Pin);
+  /* HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_RESET); */
+  /* HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_RESET); */
+
+  /* if(HAL_GPIO_ReadPin(Manch_Rx_GPIO_Port, Manch_Rx_Pin) == GPIO_PIN_SET) */
+  /*   { */
+  /*     HAL_GPIO_TogglePin(LED_Green_GPIO_Port, LED_Green_Pin); */
+  /*   } */
+  /* else */
+  /*   { */
+  /*     HAL_GPIO_TogglePin(LED_Red_GPIO_Port, LED_Red_Pin); */
+  /*   } */
+
+  if(tick_count == 56)
+    {
+      if(HAL_GPIO_ReadPin(Manch_Rx_GPIO_Port, Manch_Rx_Pin) == GPIO_PIN_SET)
+  	{
+  	  HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
+  	}
+      else
+  	{
+  	  HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
+  	}
+    }
+    
+  tick_count++;
 }
 /* USER CODE END 4 */
 
