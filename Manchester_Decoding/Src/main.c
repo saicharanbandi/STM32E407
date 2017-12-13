@@ -50,6 +50,7 @@ TIM_HandleTypeDef htim2;
 /* USER CODE BEGIN PV */
 
 /* Private variables ---------------------------------------------------------*/
+
 /* start_timer variable designates first external interrupt */
 unsigned char start_timer = 0;
 /* this variable used to measure the ticks of timer2 */
@@ -61,6 +62,10 @@ unsigned char bit_count = 0;
 /*Address and Command byte received variables */
 volatile unsigned char slave_addr_byte_received;
 volatile unsigned char slave_cmd_byte_received;
+
+unsigned char start_timer = 0;
+int tick_count = 0;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -105,7 +110,10 @@ int main(void)
   MX_TIM2_Init();
 
   /* USER CODE BEGIN 2 */
+
   /* Wait for the first external interrupt */
+
+
   while(start_timer == 0)
     {
     }
@@ -258,6 +266,7 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
+
   /* Wait for the settling time to be over */
   if(tick_count > 39)
     {
@@ -322,6 +331,7 @@ void Forward_Frame_Received(void)
       HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
     }
 	 
+  
   
 }
 /* USER CODE END 4 */
