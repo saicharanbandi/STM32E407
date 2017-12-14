@@ -54,7 +54,7 @@ TIM_HandleTypeDef htim2;
 /* start_timer variable designates first external interrupt */
 unsigned char start_timer = 0;
 /* this variable used to measure the ticks of timer2 */
-unsigned int tick_count = 0;
+int tick_count = 0;
 /* array initialization for receive buffer */
 volatile unsigned char dali_slave_array_receive_buffer[9];
 /* bit_count variable used in dali_decoding */
@@ -63,8 +63,7 @@ unsigned char bit_count = 0;
 volatile unsigned char slave_addr_byte_received;
 volatile unsigned char slave_cmd_byte_received;
 
-unsigned char start_timer = 0;
-int tick_count = 0;
+
 
 /* USER CODE END PV */
 
@@ -268,41 +267,36 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 
   /* Wait for the settling time to be over */
-  if(tick_count > 39)
+  if(tick_count >= 41)
     {
-      if(tick_count == (bit_count * 8) + 42)
+      if(tick_count == bit_count * 8 + 42)
 	{
-	  HAL_GPIO_WritePin(LED_Yellow_GPIO_Port, LED_Yellow_Pin, GPIO_PIN_SET);
 	  if(HAL_GPIO_ReadPin(Manch_Rx_GPIO_Port, Manch_Rx_Pin) == GPIO_PIN_SET)
 	    {
-              
 	      dali_slave_array_receive_buffer[bit_count] = 0;
-	      if(dali_slave_array_receive_buffer[bit_count] == 0)
-		{
-		  HAL_GPIO_WritePin(LED_Yellow_GPIO_Port, LED_Yellow_Pin, GPIO_PIN_SET);
-		}
 	    }
-	  else
+	  else if(HAL_GPIO_ReadPin(Manch_Rx_GPIO_Port, Manch_Rx_Pin) == GPIO_PIN_RESET)
 	    {
 	      dali_slave_array_receive_buffer[bit_count] = 1;
 	    }
 	}
-      if(tick_count % 8 == 0)
-	{
-	  bit_count++;
-	}
+      
+      if(tick_count % 8  == 0)
+      	{
+      	  bit_count++;
+      	}
 
       // transfer completed
       if(bit_count > 8)
-	{
-	  // Stop timer ticking; Stop_base_IT
-	  if(HAL_TIM_Base_Stop_IT(&htim2) != HAL_OK)
-	    {
-	      _Error_Handler(__FILE__, __LINE__);
-	    }
-	  Forward_Frame_Received();
-          
-	}
+      	{
+      	  if(HAL_TIM_Base_Stop_IT(&htim2) != HAL_OK)
+      	    {
+      	      _Error_Handler(__FILE__, __LINE__);
+      	    }
+          Forward_Frame_Received();
+      	}
+      
+      
     }
 
   // increment ticks
@@ -322,7 +316,7 @@ void Forward_Frame_Received(void)
 	}
     }
 
-  if(slave_addr_byte_received == 213)
+  if(slave_addr_byte_received == 0xD4)
     {
       HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
     }
