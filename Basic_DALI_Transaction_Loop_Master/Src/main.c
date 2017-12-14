@@ -48,20 +48,28 @@
 TIM_HandleTypeDef htim2;
 
 /* USER CODE BEGIN PV */
-
 /* Private variables ---------------------------------------------------------*/
+// MANCHESTER ENCODING VARIABLES
+/* Half-bit period T value in usec(microsecond)s*/
+/* static uint32_t T = 416; */
 
-/* start_timer variable designates first external interrupt */
+/* This array represents the forward frame with address and cmd bytes */
+static unsigned char dali_master_array_cmd[17] = {1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0};
+
+/* /\* This array represents the received response from slave *\/ */
+/* volatile unsigned char dali_master_array_receive_buffer[9] = {}; */
+
+
+
+// MANCHESTER DECODING VARIABLES 
+
+/* This variable designates first interrupt for Manchester-Decoding*/
 unsigned char start_timer = 0;
-/* this variable used to measure the ticks of timer2 */
+
+/* This variable is used to measure the ticks of timer2 */
 int tick_count = 0;
-/* array initialization for receive buffer */
-volatile unsigned char dali_slave_array_receive_buffer[9];
-/* bit_count variable used in dali_decoding */
+
 unsigned char bit_count = 0;
-/*Address and Command byte received variables */
-volatile unsigned char slave_addr_byte_received;
-volatile unsigned char slave_cmd_byte_received;
 
 
 
@@ -74,7 +82,7 @@ static void MX_TIM2_Init(void);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
-void Forward_Frame_Received(void);
+void DALI_Master_Sending_Data(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
@@ -109,13 +117,6 @@ int main(void)
   MX_TIM2_Init();
 
   /* USER CODE BEGIN 2 */
-
-  /* Wait for the first external interrupt */
-  while(start_timer == 0)
-    {
-    }
-
-  /* Start the timer time base in interrupt mode */
   if(HAL_TIM_Base_Start_IT(&htim2) != HAL_OK)
     {
       _Error_Handler(__FILE__, __LINE__);
@@ -199,9 +200,9 @@ static void MX_TIM2_Init(void)
   TIM_MasterConfigTypeDef sMasterConfig;
 
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 83;
+  htim2.Init.Prescaler = 8300;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 103;
+  htim2.Init.Period = 10300;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
   {
@@ -239,10 +240,13 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOF_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOF, LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOF, LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin 
+                          |Manch_Tx_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : LED_Green_Pin LED_Blue_Pin LED_Yellow_Pin LED_Red_Pin */
-  GPIO_InitStruct.Pin = LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin;
+  /*Configure GPIO pins : LED_Green_Pin LED_Blue_Pin LED_Yellow_Pin LED_Red_Pin 
+                           Manch_Tx_Pin */
+  GPIO_InitStruct.Pin = LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin 
+                          |Manch_Tx_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -250,7 +254,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : Manch_Rx_Pin */
   GPIO_InitStruct.Pin = Manch_Rx_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(Manch_Rx_GPIO_Port, &GPIO_InitStruct);
 
@@ -263,68 +267,77 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-
-  /* Wait for the settling time to be over */
-  if(tick_count >= 41)
-    {
-      if(tick_count == bit_count * 8 + 42)
-	{
-	  if(HAL_GPIO_ReadPin(Manch_Rx_GPIO_Port, Manch_Rx_Pin) == GPIO_PIN_SET)
-	    {
-	      dali_slave_array_receive_buffer[bit_count] = 0;
-	    }
-	  else if(HAL_GPIO_ReadPin(Manch_Rx_GPIO_Port, Manch_Rx_Pin) == GPIO_PIN_RESET)
-	    {
-	      dali_slave_array_receive_buffer[bit_count] = 1;
-	    }
-	}
-      
-      if(tick_count % 8  == 0)
-      	{
-      	  bit_count++;
-      	}
-
-      // transfer completed
-      if(bit_count > 8)
-      	{
-      	  if(HAL_TIM_Base_Stop_IT(&htim2) != HAL_OK)
-      	    {
-      	      _Error_Handler(__FILE__, __LINE__);
-      	    }
-          Forward_Frame_Received();
-      	}
-      
-      
-    }
-
-  // increment ticks
-  tick_count++;
-
+  DALI_Master_Sending_Data();
   
 }
 
-void Forward_Frame_Received(void)
+/* void DALI_Master_Receiving_Data(void) */
+/* { */
+/*   // Yet to configure */
+
+/* } */
+/* Included start_bit as 1 */
+void DALI_Master_Sending_Data(void)
 {
-  unsigned char i = 0;
-  for (i = 1; i<9; i++)
+  unsigned char pulsePosition = 0;
+  if(tick_count < 8)
     {
-      if(dali_slave_array_receive_buffer[i] == 1)
+      if(tick_count < 4)
 	{
-	  slave_addr_byte_received |= (1 << (8-i));
+	  HAL_GPIO_WritePin(LED_Yellow_GPIO_Port, LED_Yellow_Pin, GPIO_PIN_SET);
+	  HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_RESET);
+	}
+      else
+	{
+	  HAL_GPIO_WritePin(LED_Yellow_GPIO_Port, LED_Yellow_Pin, GPIO_PIN_RESET);
+	  HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_SET);
 	}
     }
+  else if(bit_count < 17)
+    {
+      if(tick_count % 4 == 0)
+  	{
+  	  pulsePosition = tick_count / 4;
+  	  if(pulsePosition % 2 == 0)
+  	    {
+  	      if(dali_master_array_cmd[bit_count] == 0)
+  		{
+  		  HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_SET);
+  		}
+  	      else
+  		{
+  		  HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_RESET);
+  		}
+  	    }
+  	  else
+  	    {
+  	      if(dali_master_array_cmd[bit_count] == 0)
+  		{
+  		  HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_RESET);
+  		}
+  	      else
+  		{
+  		  HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_SET);
+  		}
+  	    }
+  	}
+    }
+  // increment tick_count
+  tick_count++;
 
-  if(slave_addr_byte_received == 0xD4)
+  if(tick_count % 8 == 0)
     {
-      HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
+      bit_count++;
     }
-  else
+
+  if(bit_count > 16)
     {
-      HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
+      HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_SET);
+      if(HAL_TIM_Base_Stop_IT(&htim2) != HAL_OK)
+  	{
+  	  _Error_Handler(__FILE__, __LINE__);
+  	}
     }
-	 
-  
-  
 }
 /* USER CODE END 4 */
 
@@ -336,10 +349,10 @@ void Forward_Frame_Received(void)
 void _Error_Handler(char * file, int line)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-
-  /* Turn LED_Yellow ON */
-  HAL_GPIO_WritePin(LED_Yellow_GPIO_Port, LED_Yellow_Pin, GPIO_PIN_SET);
   
+  /* Turn LED Yellow on */
+  HAL_GPIO_WritePin(LED_Yellow_GPIO_Port, LED_Yellow_Pin, GPIO_PIN_SET);
+
   /* User can add his own implementation to report the HAL error return state */
   while(1) 
   {
@@ -361,6 +374,7 @@ void assert_failed(uint8_t* file, uint32_t line)
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  _Error_Handler(__FILE__, __LINE__);
   /* USER CODE END 6 */
 
 }
