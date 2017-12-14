@@ -54,7 +54,7 @@ TIM_HandleTypeDef htim2;
 /* static uint32_t T = 416; */
 
 /* This array represents the forward frame with address and cmd bytes */
-static unsigned char dali_master_array_cmd[17] = {1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0};
+static unsigned char dali_master_array_cmd[17] = {1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1};
 
 /* /\* This array represents the received response from slave *\/ */
 /* volatile unsigned char dali_master_array_receive_buffer[9] = {}; */
@@ -117,10 +117,13 @@ int main(void)
   MX_TIM2_Init();
 
   /* USER CODE BEGIN 2 */
+  HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_SET);
+  /* HAL_Delay(1); */
   if(HAL_TIM_Base_Start_IT(&htim2) != HAL_OK)
     {
       _Error_Handler(__FILE__, __LINE__);
     }
+  
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -200,9 +203,9 @@ static void MX_TIM2_Init(void)
   TIM_MasterConfigTypeDef sMasterConfig;
 
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 8300;
+  htim2.Init.Prescaler = 83;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 10300;
+  htim2.Init.Period = 103;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
   {
@@ -284,8 +287,7 @@ void DALI_Master_Sending_Data(void)
     {
       if(tick_count < 4)
 	{
-	  HAL_GPIO_WritePin(LED_Yellow_GPIO_Port, LED_Yellow_Pin, GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_RESET);
+          HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_RESET);
 	}
       else
 	{
@@ -339,6 +341,7 @@ void DALI_Master_Sending_Data(void)
   	}
     }
 }
+
 /* USER CODE END 4 */
 
 /**

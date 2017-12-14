@@ -897,15 +897,15 @@ LOAD /home/saicharan/arm/lib/gcc/arm-none-eabi/6.3.0/crtn.o
                 0x0000000008000634       0x14 build/main.o
                 0x0000000008000634                _Error_Handler
  .text.MX_TIM2_Init
-                0x0000000008000648       0x6c build/main.o
+                0x0000000008000648       0x68 build/main.o
  .text.SystemClock_Config
-                0x00000000080006b4       0xbc build/main.o
-                0x00000000080006b4                SystemClock_Config
- .text.main     0x0000000008000770       0x2c build/main.o
-                0x0000000008000770                main
+                0x00000000080006b0       0xbc build/main.o
+                0x00000000080006b0                SystemClock_Config
+ .text.main     0x000000000800076c       0x3c build/main.o
+                0x000000000800076c                main
  .text.DALI_Master_Sending_Data
-                0x000000000800079c       0xec build/main.o
-                0x000000000800079c                DALI_Master_Sending_Data
+                0x00000000080007a8       0xe0 build/main.o
+                0x00000000080007a8                DALI_Master_Sending_Data
  .text.HAL_TIM_PeriodElapsedCallback
                 0x0000000008000888        0x8 build/main.o
                 0x0000000008000888                HAL_TIM_PeriodElapsedCallback
@@ -1334,22 +1334,22 @@ OUTPUT(build/Basic_DALI_Transaction_Loop_Master.elf elf32-littlearm)
  .comment       0x0000000000000011       0x12 /home/saicharan/arm/lib/gcc/arm-none-eabi/6.3.0/libgcc.a(_udivmoddi4.o)
  .comment       0x0000000000000011       0x12 /home/saicharan/arm/lib/gcc/arm-none-eabi/6.3.0/crtend.o
 
-.debug_info     0x0000000000000000    0x12ad4
+.debug_info     0x0000000000000000    0x12adb
  .debug_info    0x0000000000000000     0x10c9 build/stm32f4xx_it.o
- .debug_info    0x00000000000010c9     0x1d73 build/main.o
- .debug_info    0x0000000000002e3c     0x4f41 build/stm32f4xx_hal_tim.o
- .debug_info    0x0000000000007d7d     0x153d build/stm32f4xx_hal_msp.o
- .debug_info    0x00000000000092ba     0x2377 build/stm32f4xx_hal_tim_ex.o
- .debug_info    0x000000000000b631      0xe71 build/system_stm32f4xx.o
- .debug_info    0x000000000000c4a2     0x1ba2 build/stm32f4xx_hal_cortex.o
- .debug_info    0x000000000000e044     0x126c build/stm32f4xx_hal_gpio.o
- .debug_info    0x000000000000f2b0     0x12a7 build/stm32f4xx_hal.o
- .debug_info    0x0000000000010557     0x167f build/stm32f4xx_hal_rcc.o
- .debug_info    0x0000000000011bd6       0xb8 build/startup_stm32f407xx.o
- .debug_info    0x0000000000011c8e      0x10c /home/saicharan/arm/lib/gcc/arm-none-eabi/6.3.0/../../../../arm-none-eabi/lib/libc_s.a(lib_a-init.o)
- .debug_info    0x0000000000011d9a       0x9b /home/saicharan/arm/lib/gcc/arm-none-eabi/6.3.0/libgcc.a(_aeabi_uldivmod.o)
- .debug_info    0x0000000000011e35      0xc00 /home/saicharan/arm/lib/gcc/arm-none-eabi/6.3.0/libgcc.a(_udivmoddi4.o)
- .debug_info    0x0000000000012a35       0x9f /home/saicharan/arm/lib/gcc/arm-none-eabi/6.3.0/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x00000000000010c9     0x1d7a build/main.o
+ .debug_info    0x0000000000002e43     0x4f41 build/stm32f4xx_hal_tim.o
+ .debug_info    0x0000000000007d84     0x153d build/stm32f4xx_hal_msp.o
+ .debug_info    0x00000000000092c1     0x2377 build/stm32f4xx_hal_tim_ex.o
+ .debug_info    0x000000000000b638      0xe71 build/system_stm32f4xx.o
+ .debug_info    0x000000000000c4a9     0x1ba2 build/stm32f4xx_hal_cortex.o
+ .debug_info    0x000000000000e04b     0x126c build/stm32f4xx_hal_gpio.o
+ .debug_info    0x000000000000f2b7     0x12a7 build/stm32f4xx_hal.o
+ .debug_info    0x000000000001055e     0x167f build/stm32f4xx_hal_rcc.o
+ .debug_info    0x0000000000011bdd       0xb8 build/startup_stm32f407xx.o
+ .debug_info    0x0000000000011c95      0x10c /home/saicharan/arm/lib/gcc/arm-none-eabi/6.3.0/../../../../arm-none-eabi/lib/libc_s.a(lib_a-init.o)
+ .debug_info    0x0000000000011da1       0x9b /home/saicharan/arm/lib/gcc/arm-none-eabi/6.3.0/libgcc.a(_aeabi_uldivmod.o)
+ .debug_info    0x0000000000011e3c      0xc00 /home/saicharan/arm/lib/gcc/arm-none-eabi/6.3.0/libgcc.a(_udivmoddi4.o)
+ .debug_info    0x0000000000012a3c       0x9f /home/saicharan/arm/lib/gcc/arm-none-eabi/6.3.0/libgcc.a(_dvmd_tls.o)
 
 .debug_abbrev   0x0000000000000000     0x1e2f
  .debug_abbrev  0x0000000000000000      0x21f build/stm32f4xx_it.o
