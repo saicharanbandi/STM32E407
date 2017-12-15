@@ -41,7 +41,12 @@
 #include "stm32f4xx_hal.h"
 
 /* USER CODE BEGIN Includes */
+//DALI STATES
+#define SENDING_DATA 1
 
+//pin states
+#define DALI_START_BIT_PULSE 0
+#define DALI_END_BIT_PULSE 1
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -53,13 +58,22 @@ TIM_HandleTypeDef htim2;
 /* Half-bit period T value in usec(microsecond)s*/
 /* static uint32_t T = 416; */
 
+//MASTER DATA SENDING VARIABLES
 /* This array represents the forward frame with address and cmd bytes */
-static unsigned char dali_master_array_cmd[17] = {1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1};
+unsigned char dali_master_array_cmd[17] = {};
 
 /* /\* This array represents the received response from slave *\/ */
-/* volatile unsigned char dali_master_array_receive_buffer[9] = {}; */
+volatile unsigned char dali_master_array_receive_buffer[9] = {};
 
+// uncertain
+unsigned char ballastAddr = 0xD5;
+unsigned char cmd = 0x56;
 
+// actual and former value variables
+unsigned char actual_val;
+unsigned char former_val;
+
+unsigned char dali_state;
 
 // MANCHESTER DECODING VARIABLES 
 
@@ -83,6 +97,8 @@ static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
 void DALI_Master_Sending_Data(void);
+void PrepareDataToSend(unsigned char *commandArray, unsigned char *tx_array, unsigned char bytesInCmd);
+void DALI_Send_Cmd(unsigned char ballastAddr, unsigned char cmd);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
@@ -123,7 +139,8 @@ int main(void)
     {
       _Error_Handler(__FILE__, __LINE__);
     }
-  
+  // using DALI_Send_Cmd function modified!! without typeofCmd and followingType variables)
+  DALI_Send_Cmd(ballastAddr, cmd);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -131,7 +148,7 @@ int main(void)
   while (1)
   {
   /* USER CODE END WHILE */
-
+    
   /* USER CODE BEGIN 3 */
 
   }
@@ -268,10 +285,92 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+/* This function is used together with PrepareDatatoSend fucntion to manchester encode the ballastAddr and cmd values */
+void DALI_Send_Cmd(unsigned char ballastAddr, unsigned char cmd)
+{
+  unsigned char data_array[2] = {};
+  /* unsigned char i; */
+
+  // Set Manch_Tx pin as high
+  HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_SET);
+
+  // reset tick_count and bit_count values
+  tick_count = 0;
+  bit_count = 0;
+
+  // fetch ballast address and command
+  data_array[0] = (char)ballastAddr;
+  data_array[1] = (char)cmd;
+  PrepareDataToSend(data_array, dali_master_array_cmd, 2);
+  // set DALI state to send DATA
+  dali_state = SENDING_DATA;
+    
+}
+void PrepareDataToSend(unsigned char *commandArray, unsigned char *tx_array, unsigned char bytesInCmd)
+{
+  // set default value for the mask
+  unsigned char mask = 0x80;
+  // variable which hold one byte value - one element from commandArray
+  unsigned char dummy;
+
+  // number of bytes in command
+  unsigned char bytes_counter;
+  unsigned char i;
+  // number of active bit
+  unsigned char bitCounter = 0;
+
+  for (i = 0; i < 9; i++)
+    {
+      tx_array[0] = 0;
+    }
+
+  // loop through all bytes in commandArray
+  for(bytes_counter = 0; bytes_counter < bytesInCmd; bytes_counter++)
+    {
+      // assign byte for use
+      dummy = commandArray[bytes_counter];
+      // set mask to default value
+      mask = 0x80;
+      // increment number of active bit
+      bitCounter++;
+      // check if active bit is the first one
+      if(bitCounter == 1)
+	{
+	  // Start bit is always 1 - in manchester that is END_BIT_PULSE
+	  tx_array[0] = DALI_END_BIT_PULSE;
+	}
+
+      // 2 byte command
+      for(i = 1; i < 9; i++)
+	{
+	  // check if bit is one
+	  if(dummy & mask)
+	    {
+	      // assign pulse value
+	      tx_array[i + (8 * bytes_counter)] = DALI_END_BIT_PULSE;
+	    }
+	  else
+	    {
+	      tx_array[i + (8 * bytes_counter)] = DALI_START_BIT_PULSE;
+	    }
+	  // check mask value
+	  if(mask == 0x01)
+	    {
+	      mask <<= 7; // shift mask bit to MSB
+	    }
+	  else
+	    {
+	      mask >>= 1; // shift mask bit to 1 right
+	    }
+	}
+    }
+}
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-  DALI_Master_Sending_Data();
-  
+  if(dali_state == SENDING_DATA)
+    {
+      DALI_Master_Sending_Data();
+    }
 }
 
 /* void DALI_Master_Receiving_Data(void) */
@@ -302,7 +401,7 @@ void DALI_Master_Sending_Data(void)
   	  pulsePosition = tick_count / 4;
   	  if(pulsePosition % 2 == 0)
   	    {
-  	      if(dali_master_array_cmd[bit_count] == 0)
+	      if(dali_master_array_cmd[bit_count] == 0)
   		{
   		  HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_SET);
   		}
