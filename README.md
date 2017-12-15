@@ -10,7 +10,6 @@ Essentially I want to divide the prep work for the DALI_Programing into three pa
        b. IWDG           COMPLETED (WORKING)
        c. Flash Program  COMPLETED (WORKING)
     2. Manchester Encoding and Decoding
-       Here essentially I want to use the different GPIO pins of the STM32E407 board to simulate the manchester encoding/decoding data transmission.
        
     3. Basic DALI Transanction Loop
-       Again here I want to use the different GPIO Pins of the STM32E407 board to simulate the Master-Slave environment.
+       
