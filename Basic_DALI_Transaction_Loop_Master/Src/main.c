@@ -288,11 +288,11 @@ static void MX_GPIO_Init(void)
 /* This function is used together with PrepareDatatoSend fucntion to manchester encode the ballastAddr and cmd values */
 void DALI_Send_Cmd(unsigned char ballastAddr, unsigned char cmd)
 {
+
   unsigned char data_array[2] = {};
   /* unsigned char i; */
 
-  // Set Manch_Tx pin as high
-  HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_SET);
+  
 
   // reset tick_count and bit_count values
   tick_count = 0;
@@ -302,6 +302,17 @@ void DALI_Send_Cmd(unsigned char ballastAddr, unsigned char cmd)
   data_array[0] = (char)ballastAddr;
   data_array[1] = (char)cmd;
   PrepareDataToSend(data_array, dali_master_array_cmd, 2);
+
+  /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+  /* Here supposed to be starting the Manch_Tx pin in HIGH state or
+     SETTLING STATE but for now it has been skipped */
+  // Set Manch_Tx pin as high
+  /* HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_SET); */
+
+  /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+  
+  
   // set DALI state to send DATA
   dali_state = SENDING_DATA;
     
@@ -319,6 +330,8 @@ void PrepareDataToSend(unsigned char *commandArray, unsigned char *tx_array, uns
   // number of active bit
   unsigned char bitCounter = 0;
 
+  //????????????????????????????????????????//
+  /* Why does it need to be initialized ?? */
   for (i = 0; i < 9; i++)
     {
       tx_array[0] = 0;
@@ -384,13 +397,23 @@ void DALI_Master_Sending_Data(void)
   unsigned char pulsePosition = 0;
   if(tick_count < 8)
     {
+      /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+      /* This line is added just to give the starting interrupt so
+	 that the timer stars counting ...!! */
+      HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_SET);
+      /* Uncertain about the above text anyway! Has to be changed
+	 accordingly */
+      /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
       if(tick_count < 4)
 	{
-          HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_RESET);
+	  HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_RESET);
 	}
       else
 	{
-	  HAL_GPIO_WritePin(LED_Yellow_GPIO_Port, LED_Yellow_Pin, GPIO_PIN_RESET);
+	  /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+	  /* Check for proper debugging option here */
+	  /* HAL_GPIO_WritePin(LED_Yellow_GPIO_Port, LED_Yellow_Pin, GPIO_PIN_RESET); */
+	  /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 	  HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_SET);
 	}
     }
