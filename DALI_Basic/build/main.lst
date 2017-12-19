@@ -1,0 +1,874 @@
+ARM GAS  /tmp/cc90zinW.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.MX_GPIO_Init,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu fpv4-sp-d16
+  24              	MX_GPIO_Init:
+  25              	.LFB126:
+  26              		.file 1 "Src/main.c"
+   1:Src/main.c    **** /**
+   2:Src/main.c    ****   ******************************************************************************
+   3:Src/main.c    ****   * File Name          : main.c
+   4:Src/main.c    ****   * Description        : Main program body
+   5:Src/main.c    ****   ******************************************************************************
+   6:Src/main.c    ****   ** This notice applies to any and all portions of this file
+   7:Src/main.c    ****   * that are not between comment pairs USER CODE BEGIN and
+   8:Src/main.c    ****   * USER CODE END. Other portions of this file, whether 
+   9:Src/main.c    ****   * inserted by the user or by software development tools
+  10:Src/main.c    ****   * are owned by their respective copyright owners.
+  11:Src/main.c    ****   *
+  12:Src/main.c    ****   * COPYRIGHT(c) 2017 STMicroelectronics
+  13:Src/main.c    ****   *
+  14:Src/main.c    ****   * Redistribution and use in source and binary forms, with or without modification,
+  15:Src/main.c    ****   * are permitted provided that the following conditions are met:
+  16:Src/main.c    ****   *   1. Redistributions of source code must retain the above copyright notice,
+  17:Src/main.c    ****   *      this list of conditions and the following disclaimer.
+  18:Src/main.c    ****   *   2. Redistributions in binary form must reproduce the above copyright notice,
+  19:Src/main.c    ****   *      this list of conditions and the following disclaimer in the documentation
+  20:Src/main.c    ****   *      and/or other materials provided with the distribution.
+  21:Src/main.c    ****   *   3. Neither the name of STMicroelectronics nor the names of its contributors
+  22:Src/main.c    ****   *      may be used to endorse or promote products derived from this software
+  23:Src/main.c    ****   *      without specific prior written permission.
+  24:Src/main.c    ****   *
+  25:Src/main.c    ****   * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  26:Src/main.c    ****   * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  27:Src/main.c    ****   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  28:Src/main.c    ****   * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  29:Src/main.c    ****   * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  30:Src/main.c    ****   * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  31:Src/main.c    ****   * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  32:Src/main.c    ****   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ARM GAS  /tmp/cc90zinW.s 			page 2
+
+
+  33:Src/main.c    ****   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  34:Src/main.c    ****   * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  35:Src/main.c    ****   *
+  36:Src/main.c    ****   ******************************************************************************
+  37:Src/main.c    ****   */
+  38:Src/main.c    **** 
+  39:Src/main.c    **** /* Includes ------------------------------------------------------------------*/
+  40:Src/main.c    **** #include "main.h"
+  41:Src/main.c    **** #include "stm32f4xx_hal.h"
+  42:Src/main.c    **** 
+  43:Src/main.c    **** /* USER CODE BEGIN Includes */
+  44:Src/main.c    **** 
+  45:Src/main.c    **** /* USER CODE END Includes */
+  46:Src/main.c    **** 
+  47:Src/main.c    **** /* Private variables ---------------------------------------------------------*/
+  48:Src/main.c    **** TIM_HandleTypeDef htim2;
+  49:Src/main.c    **** 
+  50:Src/main.c    **** /* USER CODE BEGIN PV */
+  51:Src/main.c    **** /* Private variables ---------------------------------------------------------*/
+  52:Src/main.c    **** 
+  53:Src/main.c    **** /* USER CODE END PV */
+  54:Src/main.c    **** 
+  55:Src/main.c    **** /* Private function prototypes -----------------------------------------------*/
+  56:Src/main.c    **** void SystemClock_Config(void);
+  57:Src/main.c    **** static void MX_GPIO_Init(void);
+  58:Src/main.c    **** static void MX_TIM2_Init(void);
+  59:Src/main.c    **** 
+  60:Src/main.c    **** /* USER CODE BEGIN PFP */
+  61:Src/main.c    **** /* Private function prototypes -----------------------------------------------*/
+  62:Src/main.c    **** 
+  63:Src/main.c    **** /* USER CODE END PFP */
+  64:Src/main.c    **** 
+  65:Src/main.c    **** /* USER CODE BEGIN 0 */
+  66:Src/main.c    **** 
+  67:Src/main.c    **** /* USER CODE END 0 */
+  68:Src/main.c    **** 
+  69:Src/main.c    **** int main(void)
+  70:Src/main.c    **** {
+  71:Src/main.c    **** 
+  72:Src/main.c    ****   /* USER CODE BEGIN 1 */
+  73:Src/main.c    **** 
+  74:Src/main.c    ****   /* USER CODE END 1 */
+  75:Src/main.c    **** 
+  76:Src/main.c    ****   /* MCU Configuration----------------------------------------------------------*/
+  77:Src/main.c    **** 
+  78:Src/main.c    ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  79:Src/main.c    ****   HAL_Init();
+  80:Src/main.c    **** 
+  81:Src/main.c    ****   /* USER CODE BEGIN Init */
+  82:Src/main.c    **** 
+  83:Src/main.c    ****   /* USER CODE END Init */
+  84:Src/main.c    **** 
+  85:Src/main.c    ****   /* Configure the system clock */
+  86:Src/main.c    ****   SystemClock_Config();
+  87:Src/main.c    **** 
+  88:Src/main.c    ****   /* USER CODE BEGIN SysInit */
+  89:Src/main.c    **** 
+ARM GAS  /tmp/cc90zinW.s 			page 3
+
+
+  90:Src/main.c    ****   /* USER CODE END SysInit */
+  91:Src/main.c    **** 
+  92:Src/main.c    ****   /* Initialize all configured peripherals */
+  93:Src/main.c    ****   MX_GPIO_Init();
+  94:Src/main.c    ****   MX_TIM2_Init();
+  95:Src/main.c    **** 
+  96:Src/main.c    ****   /* USER CODE BEGIN 2 */
+  97:Src/main.c    **** 
+  98:Src/main.c    ****   /* USER CODE END 2 */
+  99:Src/main.c    **** 
+ 100:Src/main.c    ****   /* Infinite loop */
+ 101:Src/main.c    ****   /* USER CODE BEGIN WHILE */
+ 102:Src/main.c    ****   while (1)
+ 103:Src/main.c    ****   {
+ 104:Src/main.c    ****   /* USER CODE END WHILE */
+ 105:Src/main.c    **** 
+ 106:Src/main.c    ****   /* USER CODE BEGIN 3 */
+ 107:Src/main.c    **** 
+ 108:Src/main.c    ****   }
+ 109:Src/main.c    ****   /* USER CODE END 3 */
+ 110:Src/main.c    **** 
+ 111:Src/main.c    **** }
+ 112:Src/main.c    **** 
+ 113:Src/main.c    **** /** System Clock Configuration
+ 114:Src/main.c    **** */
+ 115:Src/main.c    **** void SystemClock_Config(void)
+ 116:Src/main.c    **** {
+ 117:Src/main.c    **** 
+ 118:Src/main.c    ****   RCC_OscInitTypeDef RCC_OscInitStruct;
+ 119:Src/main.c    ****   RCC_ClkInitTypeDef RCC_ClkInitStruct;
+ 120:Src/main.c    **** 
+ 121:Src/main.c    ****     /**Configure the main internal regulator output voltage 
+ 122:Src/main.c    ****     */
+ 123:Src/main.c    ****   __HAL_RCC_PWR_CLK_ENABLE();
+ 124:Src/main.c    **** 
+ 125:Src/main.c    ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+ 126:Src/main.c    **** 
+ 127:Src/main.c    ****     /**Initializes the CPU, AHB and APB busses clocks 
+ 128:Src/main.c    ****     */
+ 129:Src/main.c    ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+ 130:Src/main.c    ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 131:Src/main.c    ****   RCC_OscInitStruct.HSICalibrationValue = 16;
+ 132:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+ 133:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+ 134:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLM = 16;
+ 135:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLN = 336;
+ 136:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
+ 137:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLQ = 4;
+ 138:Src/main.c    ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 139:Src/main.c    ****   {
+ 140:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
+ 141:Src/main.c    ****   }
+ 142:Src/main.c    **** 
+ 143:Src/main.c    ****     /**Initializes the CPU, AHB and APB busses clocks 
+ 144:Src/main.c    ****     */
+ 145:Src/main.c    ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+ 146:Src/main.c    ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ARM GAS  /tmp/cc90zinW.s 			page 4
+
+
+ 147:Src/main.c    ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+ 148:Src/main.c    ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 149:Src/main.c    ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+ 150:Src/main.c    ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 151:Src/main.c    **** 
+ 152:Src/main.c    ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+ 153:Src/main.c    ****   {
+ 154:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
+ 155:Src/main.c    ****   }
+ 156:Src/main.c    **** 
+ 157:Src/main.c    ****     /**Configure the Systick interrupt time 
+ 158:Src/main.c    ****     */
+ 159:Src/main.c    ****   HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
+ 160:Src/main.c    **** 
+ 161:Src/main.c    ****     /**Configure the Systick 
+ 162:Src/main.c    ****     */
+ 163:Src/main.c    ****   HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);
+ 164:Src/main.c    **** 
+ 165:Src/main.c    ****   /* SysTick_IRQn interrupt configuration */
+ 166:Src/main.c    ****   HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
+ 167:Src/main.c    **** }
+ 168:Src/main.c    **** 
+ 169:Src/main.c    **** /* TIM2 init function */
+ 170:Src/main.c    **** static void MX_TIM2_Init(void)
+ 171:Src/main.c    **** {
+ 172:Src/main.c    **** 
+ 173:Src/main.c    ****   TIM_ClockConfigTypeDef sClockSourceConfig;
+ 174:Src/main.c    ****   TIM_MasterConfigTypeDef sMasterConfig;
+ 175:Src/main.c    **** 
+ 176:Src/main.c    ****   htim2.Instance = TIM2;
+ 177:Src/main.c    ****   htim2.Init.Prescaler = 83;
+ 178:Src/main.c    ****   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+ 179:Src/main.c    ****   htim2.Init.Period = 103;
+ 180:Src/main.c    ****   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+ 181:Src/main.c    ****   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
+ 182:Src/main.c    ****   {
+ 183:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
+ 184:Src/main.c    ****   }
+ 185:Src/main.c    **** 
+ 186:Src/main.c    ****   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+ 187:Src/main.c    ****   if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)
+ 188:Src/main.c    ****   {
+ 189:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
+ 190:Src/main.c    ****   }
+ 191:Src/main.c    **** 
+ 192:Src/main.c    ****   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+ 193:Src/main.c    ****   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+ 194:Src/main.c    ****   if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+ 195:Src/main.c    ****   {
+ 196:Src/main.c    ****     _Error_Handler(__FILE__, __LINE__);
+ 197:Src/main.c    ****   }
+ 198:Src/main.c    **** 
+ 199:Src/main.c    **** }
+ 200:Src/main.c    **** 
+ 201:Src/main.c    **** /** Configure pins as 
+ 202:Src/main.c    ****         * Analog 
+ 203:Src/main.c    ****         * Input 
+ARM GAS  /tmp/cc90zinW.s 			page 5
+
+
+ 204:Src/main.c    ****         * Output
+ 205:Src/main.c    ****         * EVENT_OUT
+ 206:Src/main.c    ****         * EXTI
+ 207:Src/main.c    **** */
+ 208:Src/main.c    **** static void MX_GPIO_Init(void)
+ 209:Src/main.c    **** {
+  27              		.loc 1 209 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 32
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+  32              	.LCFI0:
+  33              		.cfi_def_cfa_offset 24
+  34              		.cfi_offset 4, -24
+  35              		.cfi_offset 5, -20
+  36              		.cfi_offset 6, -16
+  37              		.cfi_offset 7, -12
+  38              		.cfi_offset 8, -8
+  39              		.cfi_offset 14, -4
+  40 0004 88B0     		sub	sp, sp, #32
+  41              	.LCFI1:
+  42              		.cfi_def_cfa_offset 56
+  43              	.LBB2:
+ 210:Src/main.c    **** 
+ 211:Src/main.c    ****   GPIO_InitTypeDef GPIO_InitStruct;
+ 212:Src/main.c    **** 
+ 213:Src/main.c    ****   /* GPIO Ports Clock Enable */
+ 214:Src/main.c    ****   __HAL_RCC_GPIOF_CLK_ENABLE();
+  44              		.loc 1 214 0
+  45 0006 0024     		movs	r4, #0
+  46 0008 0194     		str	r4, [sp, #4]
+  47 000a 214B     		ldr	r3, .L3
+  48 000c 1A6B     		ldr	r2, [r3, #48]
+  49 000e 42F02002 		orr	r2, r2, #32
+  50 0012 1A63     		str	r2, [r3, #48]
+  51 0014 1A6B     		ldr	r2, [r3, #48]
+  52 0016 02F02002 		and	r2, r2, #32
+  53 001a 0192     		str	r2, [sp, #4]
+  54 001c 019A     		ldr	r2, [sp, #4]
+  55              	.LBE2:
+  56              	.LBB3:
+ 215:Src/main.c    ****   __HAL_RCC_GPIOA_CLK_ENABLE();
+  57              		.loc 1 215 0
+  58 001e 0294     		str	r4, [sp, #8]
+  59 0020 1A6B     		ldr	r2, [r3, #48]
+  60 0022 42F00102 		orr	r2, r2, #1
+  61 0026 1A63     		str	r2, [r3, #48]
+  62 0028 1B6B     		ldr	r3, [r3, #48]
+  63 002a 03F00103 		and	r3, r3, #1
+  64 002e 0293     		str	r3, [sp, #8]
+  65 0030 029B     		ldr	r3, [sp, #8]
+  66              	.LBE3:
+ 216:Src/main.c    **** 
+ 217:Src/main.c    ****   /*Configure GPIO pin Output Level */
+ 218:Src/main.c    ****   HAL_GPIO_WritePin(GPIOF, LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin 
+  67              		.loc 1 218 0
+  68 0032 184F     		ldr	r7, .L3+4
+ARM GAS  /tmp/cc90zinW.s 			page 6
+
+
+  69 0034 2246     		mov	r2, r4
+  70 0036 BC21     		movs	r1, #188
+  71 0038 3846     		mov	r0, r7
+  72 003a FFF7FEFF 		bl	HAL_GPIO_WritePin
+  73              	.LVL0:
+ 219:Src/main.c    ****                           |Manch_Tx_Pin, GPIO_PIN_RESET);
+ 220:Src/main.c    **** 
+ 221:Src/main.c    ****   /*Configure GPIO pins : LED_Green_Pin LED_Blue_Pin LED_Yellow_Pin LED_Red_Pin 
+ 222:Src/main.c    ****                            Manch_Tx_Pin */
+ 223:Src/main.c    ****   GPIO_InitStruct.Pin = LED_Green_Pin|LED_Blue_Pin|LED_Yellow_Pin|LED_Red_Pin 
+  74              		.loc 1 223 0
+  75 003e BC23     		movs	r3, #188
+  76 0040 0393     		str	r3, [sp, #12]
+ 224:Src/main.c    ****                           |Manch_Tx_Pin;
+ 225:Src/main.c    ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  77              		.loc 1 225 0
+  78 0042 0125     		movs	r5, #1
+  79 0044 0495     		str	r5, [sp, #16]
+ 226:Src/main.c    ****   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  80              		.loc 1 226 0
+  81 0046 0226     		movs	r6, #2
+  82 0048 0596     		str	r6, [sp, #20]
+ 227:Src/main.c    ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  83              		.loc 1 227 0
+  84 004a 0694     		str	r4, [sp, #24]
+ 228:Src/main.c    ****   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+  85              		.loc 1 228 0
+  86 004c 03A9     		add	r1, sp, #12
+  87 004e 3846     		mov	r0, r7
+  88 0050 FFF7FEFF 		bl	HAL_GPIO_Init
+  89              	.LVL1:
+ 229:Src/main.c    **** 
+ 230:Src/main.c    ****   /*Configure GPIO pin : Manch_Rx_Pin */
+ 231:Src/main.c    ****   GPIO_InitStruct.Pin = Manch_Rx_Pin;
+  90              		.loc 1 231 0
+  91 0054 4023     		movs	r3, #64
+  92 0056 0393     		str	r3, [sp, #12]
+ 232:Src/main.c    ****   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  93              		.loc 1 232 0
+  94 0058 DFF84080 		ldr	r8, .L3+12
+  95 005c CDF81080 		str	r8, [sp, #16]
+ 233:Src/main.c    ****   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  96              		.loc 1 233 0
+  97 0060 0596     		str	r6, [sp, #20]
+ 234:Src/main.c    ****   HAL_GPIO_Init(Manch_Rx_GPIO_Port, &GPIO_InitStruct);
+  98              		.loc 1 234 0
+  99 0062 03A9     		add	r1, sp, #12
+ 100 0064 3846     		mov	r0, r7
+ 101 0066 FFF7FEFF 		bl	HAL_GPIO_Init
+ 102              	.LVL2:
+ 235:Src/main.c    **** 
+ 236:Src/main.c    ****   /*Configure GPIO pin : WKUP_BUTTON_Pin */
+ 237:Src/main.c    ****   GPIO_InitStruct.Pin = WKUP_BUTTON_Pin;
+ 103              		.loc 1 237 0
+ 104 006a 0395     		str	r5, [sp, #12]
+ 238:Src/main.c    ****   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+ 105              		.loc 1 238 0
+ARM GAS  /tmp/cc90zinW.s 			page 7
+
+
+ 106 006c CDF81080 		str	r8, [sp, #16]
+ 239:Src/main.c    ****   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+ 107              		.loc 1 239 0
+ 108 0070 0596     		str	r6, [sp, #20]
+ 240:Src/main.c    ****   HAL_GPIO_Init(WKUP_BUTTON_GPIO_Port, &GPIO_InitStruct);
+ 109              		.loc 1 240 0
+ 110 0072 03A9     		add	r1, sp, #12
+ 111 0074 0848     		ldr	r0, .L3+8
+ 112 0076 FFF7FEFF 		bl	HAL_GPIO_Init
+ 113              	.LVL3:
+ 241:Src/main.c    **** 
+ 242:Src/main.c    ****   /* EXTI interrupt init*/
+ 243:Src/main.c    ****   HAL_NVIC_SetPriority(EXTI9_5_IRQn, 1, 0);
+ 114              		.loc 1 243 0
+ 115 007a 2246     		mov	r2, r4
+ 116 007c 2946     		mov	r1, r5
+ 117 007e 1720     		movs	r0, #23
+ 118 0080 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 119              	.LVL4:
+ 244:Src/main.c    ****   HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+ 120              		.loc 1 244 0
+ 121 0084 1720     		movs	r0, #23
+ 122 0086 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 123              	.LVL5:
+ 245:Src/main.c    **** 
+ 246:Src/main.c    **** }
+ 124              		.loc 1 246 0
+ 125 008a 08B0     		add	sp, sp, #32
+ 126              	.LCFI2:
+ 127              		.cfi_def_cfa_offset 24
+ 128              		@ sp needed
+ 129 008c BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 130              	.L4:
+ 131              		.align	2
+ 132              	.L3:
+ 133 0090 00380240 		.word	1073887232
+ 134 0094 00140240 		.word	1073878016
+ 135 0098 00000240 		.word	1073872896
+ 136 009c 00001110 		.word	269549568
+ 137              		.cfi_endproc
+ 138              	.LFE126:
+ 140              		.section	.text._Error_Handler,"ax",%progbits
+ 141              		.align	1
+ 142              		.global	_Error_Handler
+ 143              		.syntax unified
+ 144              		.thumb
+ 145              		.thumb_func
+ 146              		.fpu fpv4-sp-d16
+ 148              	_Error_Handler:
+ 149              	.LFB127:
+ 247:Src/main.c    **** 
+ 248:Src/main.c    **** /* USER CODE BEGIN 4 */
+ 249:Src/main.c    **** 
+ 250:Src/main.c    **** /* USER CODE END 4 */
+ 251:Src/main.c    **** 
+ 252:Src/main.c    **** /**
+ 253:Src/main.c    ****   * @brief  This function is executed in case of error occurrence.
+ARM GAS  /tmp/cc90zinW.s 			page 8
+
+
+ 254:Src/main.c    ****   * @param  None
+ 255:Src/main.c    ****   * @retval None
+ 256:Src/main.c    ****   */
+ 257:Src/main.c    **** void _Error_Handler(char * file, int line)
+ 258:Src/main.c    **** {
+ 150              		.loc 1 258 0
+ 151              		.cfi_startproc
+ 152              		@ Volatile: function does not return.
+ 153              		@ args = 0, pretend = 0, frame = 0
+ 154              		@ frame_needed = 0, uses_anonymous_args = 0
+ 155              		@ link register save eliminated.
+ 156              	.LVL6:
+ 157              	.L6:
+ 158 0000 FEE7     		b	.L6
+ 159              		.cfi_endproc
+ 160              	.LFE127:
+ 162              		.section	.text.MX_TIM2_Init,"ax",%progbits
+ 163              		.align	1
+ 164              		.syntax unified
+ 165              		.thumb
+ 166              		.thumb_func
+ 167              		.fpu fpv4-sp-d16
+ 169              	MX_TIM2_Init:
+ 170              	.LFB125:
+ 171:Src/main.c    **** 
+ 171              		.loc 1 171 0
+ 172              		.cfi_startproc
+ 173              		@ args = 0, pretend = 0, frame = 24
+ 174              		@ frame_needed = 0, uses_anonymous_args = 0
+ 171:Src/main.c    **** 
+ 175              		.loc 1 171 0
+ 176 0000 00B5     		push	{lr}
+ 177              	.LCFI3:
+ 178              		.cfi_def_cfa_offset 4
+ 179              		.cfi_offset 14, -4
+ 180 0002 87B0     		sub	sp, sp, #28
+ 181              	.LCFI4:
+ 182              		.cfi_def_cfa_offset 32
+ 176:Src/main.c    ****   htim2.Init.Prescaler = 83;
+ 183              		.loc 1 176 0
+ 184 0004 1648     		ldr	r0, .L15
+ 185 0006 4FF08043 		mov	r3, #1073741824
+ 186 000a 0360     		str	r3, [r0]
+ 177:Src/main.c    ****   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+ 187              		.loc 1 177 0
+ 188 000c 5323     		movs	r3, #83
+ 189 000e 4360     		str	r3, [r0, #4]
+ 178:Src/main.c    ****   htim2.Init.Period = 103;
+ 190              		.loc 1 178 0
+ 191 0010 0023     		movs	r3, #0
+ 192 0012 8360     		str	r3, [r0, #8]
+ 179:Src/main.c    ****   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+ 193              		.loc 1 179 0
+ 194 0014 6722     		movs	r2, #103
+ 195 0016 C260     		str	r2, [r0, #12]
+ 180:Src/main.c    ****   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
+ 196              		.loc 1 180 0
+ARM GAS  /tmp/cc90zinW.s 			page 9
+
+
+ 197 0018 0361     		str	r3, [r0, #16]
+ 181:Src/main.c    ****   {
+ 198              		.loc 1 181 0
+ 199 001a FFF7FEFF 		bl	HAL_TIM_Base_Init
+ 200              	.LVL7:
+ 201 001e 98B9     		cbnz	r0, .L12
+ 186:Src/main.c    ****   if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)
+ 202              		.loc 1 186 0
+ 203 0020 06A9     		add	r1, sp, #24
+ 204 0022 4FF48053 		mov	r3, #4096
+ 205 0026 41F8103D 		str	r3, [r1, #-16]!
+ 187:Src/main.c    ****   {
+ 206              		.loc 1 187 0
+ 207 002a 0D48     		ldr	r0, .L15
+ 208 002c FFF7FEFF 		bl	HAL_TIM_ConfigClockSource
+ 209              	.LVL8:
+ 210 0030 70B9     		cbnz	r0, .L13
+ 192:Src/main.c    ****   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+ 211              		.loc 1 192 0
+ 212 0032 0023     		movs	r3, #0
+ 213 0034 0093     		str	r3, [sp]
+ 193:Src/main.c    ****   if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+ 214              		.loc 1 193 0
+ 215 0036 0193     		str	r3, [sp, #4]
+ 194:Src/main.c    ****   {
+ 216              		.loc 1 194 0
+ 217 0038 6946     		mov	r1, sp
+ 218 003a 0948     		ldr	r0, .L15
+ 219 003c FFF7FEFF 		bl	HAL_TIMEx_MasterConfigSynchronization
+ 220              	.LVL9:
+ 221 0040 50B9     		cbnz	r0, .L14
+ 199:Src/main.c    **** 
+ 222              		.loc 1 199 0
+ 223 0042 07B0     		add	sp, sp, #28
+ 224              	.LCFI5:
+ 225              		.cfi_remember_state
+ 226              		.cfi_def_cfa_offset 4
+ 227              		@ sp needed
+ 228 0044 5DF804FB 		ldr	pc, [sp], #4
+ 229              	.L12:
+ 230              	.LCFI6:
+ 231              		.cfi_restore_state
+ 183:Src/main.c    ****   }
+ 232              		.loc 1 183 0
+ 233 0048 B721     		movs	r1, #183
+ 234 004a 0648     		ldr	r0, .L15+4
+ 235 004c FFF7FEFF 		bl	_Error_Handler
+ 236              	.LVL10:
+ 237              	.L13:
+ 189:Src/main.c    ****   }
+ 238              		.loc 1 189 0
+ 239 0050 BD21     		movs	r1, #189
+ 240 0052 0448     		ldr	r0, .L15+4
+ 241 0054 FFF7FEFF 		bl	_Error_Handler
+ 242              	.LVL11:
+ 243              	.L14:
+ 196:Src/main.c    ****   }
+ARM GAS  /tmp/cc90zinW.s 			page 10
+
+
+ 244              		.loc 1 196 0
+ 245 0058 C421     		movs	r1, #196
+ 246 005a 0248     		ldr	r0, .L15+4
+ 247 005c FFF7FEFF 		bl	_Error_Handler
+ 248              	.LVL12:
+ 249              	.L16:
+ 250              		.align	2
+ 251              	.L15:
+ 252 0060 00000000 		.word	htim2
+ 253 0064 00000000 		.word	.LC0
+ 254              		.cfi_endproc
+ 255              	.LFE125:
+ 257              		.section	.text.SystemClock_Config,"ax",%progbits
+ 258              		.align	1
+ 259              		.global	SystemClock_Config
+ 260              		.syntax unified
+ 261              		.thumb
+ 262              		.thumb_func
+ 263              		.fpu fpv4-sp-d16
+ 265              	SystemClock_Config:
+ 266              	.LFB124:
+ 116:Src/main.c    **** 
+ 267              		.loc 1 116 0
+ 268              		.cfi_startproc
+ 269              		@ args = 0, pretend = 0, frame = 80
+ 270              		@ frame_needed = 0, uses_anonymous_args = 0
+ 271 0000 00B5     		push	{lr}
+ 272              	.LCFI7:
+ 273              		.cfi_def_cfa_offset 4
+ 274              		.cfi_offset 14, -4
+ 275 0002 95B0     		sub	sp, sp, #84
+ 276              	.LCFI8:
+ 277              		.cfi_def_cfa_offset 88
+ 278              	.LBB4:
+ 123:Src/main.c    **** 
+ 279              		.loc 1 123 0
+ 280 0004 0023     		movs	r3, #0
+ 281 0006 0193     		str	r3, [sp, #4]
+ 282 0008 284A     		ldr	r2, .L23
+ 283 000a 116C     		ldr	r1, [r2, #64]
+ 284 000c 41F08051 		orr	r1, r1, #268435456
+ 285 0010 1164     		str	r1, [r2, #64]
+ 286 0012 126C     		ldr	r2, [r2, #64]
+ 287 0014 02F08052 		and	r2, r2, #268435456
+ 288 0018 0192     		str	r2, [sp, #4]
+ 289 001a 019A     		ldr	r2, [sp, #4]
+ 290              	.LBE4:
+ 291              	.LBB5:
+ 125:Src/main.c    **** 
+ 292              		.loc 1 125 0
+ 293 001c 0293     		str	r3, [sp, #8]
+ 294 001e 244A     		ldr	r2, .L23+4
+ 295 0020 1168     		ldr	r1, [r2]
+ 296 0022 41F48041 		orr	r1, r1, #16384
+ 297 0026 1160     		str	r1, [r2]
+ 298 0028 1268     		ldr	r2, [r2]
+ 299 002a 02F48042 		and	r2, r2, #16384
+ARM GAS  /tmp/cc90zinW.s 			page 11
+
+
+ 300 002e 0292     		str	r2, [sp, #8]
+ 301 0030 029A     		ldr	r2, [sp, #8]
+ 302              	.LBE5:
+ 129:Src/main.c    ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 303              		.loc 1 129 0
+ 304 0032 0221     		movs	r1, #2
+ 305 0034 0891     		str	r1, [sp, #32]
+ 130:Src/main.c    ****   RCC_OscInitStruct.HSICalibrationValue = 16;
+ 306              		.loc 1 130 0
+ 307 0036 0122     		movs	r2, #1
+ 308 0038 0B92     		str	r2, [sp, #44]
+ 131:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+ 309              		.loc 1 131 0
+ 310 003a 1022     		movs	r2, #16
+ 311 003c 0C92     		str	r2, [sp, #48]
+ 132:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+ 312              		.loc 1 132 0
+ 313 003e 0E91     		str	r1, [sp, #56]
+ 133:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLM = 16;
+ 314              		.loc 1 133 0
+ 315 0040 0F93     		str	r3, [sp, #60]
+ 134:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLN = 336;
+ 316              		.loc 1 134 0
+ 317 0042 1092     		str	r2, [sp, #64]
+ 135:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
+ 318              		.loc 1 135 0
+ 319 0044 4FF4A873 		mov	r3, #336
+ 320 0048 1193     		str	r3, [sp, #68]
+ 136:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLQ = 4;
+ 321              		.loc 1 136 0
+ 322 004a 0423     		movs	r3, #4
+ 323 004c 1293     		str	r3, [sp, #72]
+ 137:Src/main.c    ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 324              		.loc 1 137 0
+ 325 004e 1393     		str	r3, [sp, #76]
+ 138:Src/main.c    ****   {
+ 326              		.loc 1 138 0
+ 327 0050 08A8     		add	r0, sp, #32
+ 328 0052 FFF7FEFF 		bl	HAL_RCC_OscConfig
+ 329              	.LVL13:
+ 330 0056 08BB     		cbnz	r0, .L21
+ 145:Src/main.c    ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 331              		.loc 1 145 0
+ 332 0058 0F23     		movs	r3, #15
+ 333 005a 0393     		str	r3, [sp, #12]
+ 147:Src/main.c    ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 334              		.loc 1 147 0
+ 335 005c 0221     		movs	r1, #2
+ 336 005e 0491     		str	r1, [sp, #16]
+ 148:Src/main.c    ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+ 337              		.loc 1 148 0
+ 338 0060 0023     		movs	r3, #0
+ 339 0062 0593     		str	r3, [sp, #20]
+ 149:Src/main.c    ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 340              		.loc 1 149 0
+ 341 0064 4FF48052 		mov	r2, #4096
+ 342 0068 0692     		str	r2, [sp, #24]
+ARM GAS  /tmp/cc90zinW.s 			page 12
+
+
+ 150:Src/main.c    **** 
+ 343              		.loc 1 150 0
+ 344 006a 0793     		str	r3, [sp, #28]
+ 152:Src/main.c    ****   {
+ 345              		.loc 1 152 0
+ 346 006c 03A8     		add	r0, sp, #12
+ 347 006e FFF7FEFF 		bl	HAL_RCC_ClockConfig
+ 348              	.LVL14:
+ 349 0072 B8B9     		cbnz	r0, .L22
+ 159:Src/main.c    **** 
+ 350              		.loc 1 159 0
+ 351 0074 FFF7FEFF 		bl	HAL_RCC_GetHCLKFreq
+ 352              	.LVL15:
+ 353 0078 0E4B     		ldr	r3, .L23+8
+ 354 007a A3FB0030 		umull	r3, r0, r3, r0
+ 355 007e 8009     		lsrs	r0, r0, #6
+ 356 0080 FFF7FEFF 		bl	HAL_SYSTICK_Config
+ 357              	.LVL16:
+ 163:Src/main.c    **** 
+ 358              		.loc 1 163 0
+ 359 0084 0420     		movs	r0, #4
+ 360 0086 FFF7FEFF 		bl	HAL_SYSTICK_CLKSourceConfig
+ 361              	.LVL17:
+ 166:Src/main.c    **** }
+ 362              		.loc 1 166 0
+ 363 008a 0022     		movs	r2, #0
+ 364 008c 1146     		mov	r1, r2
+ 365 008e 4FF0FF30 		mov	r0, #-1
+ 366 0092 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 367              	.LVL18:
+ 167:Src/main.c    **** 
+ 368              		.loc 1 167 0
+ 369 0096 15B0     		add	sp, sp, #84
+ 370              	.LCFI9:
+ 371              		.cfi_remember_state
+ 372              		.cfi_def_cfa_offset 4
+ 373              		@ sp needed
+ 374 0098 5DF804FB 		ldr	pc, [sp], #4
+ 375              	.L21:
+ 376              	.LCFI10:
+ 377              		.cfi_restore_state
+ 140:Src/main.c    ****   }
+ 378              		.loc 1 140 0
+ 379 009c 8C21     		movs	r1, #140
+ 380 009e 0648     		ldr	r0, .L23+12
+ 381 00a0 FFF7FEFF 		bl	_Error_Handler
+ 382              	.LVL19:
+ 383              	.L22:
+ 154:Src/main.c    ****   }
+ 384              		.loc 1 154 0
+ 385 00a4 9A21     		movs	r1, #154
+ 386 00a6 0448     		ldr	r0, .L23+12
+ 387 00a8 FFF7FEFF 		bl	_Error_Handler
+ 388              	.LVL20:
+ 389              	.L24:
+ 390              		.align	2
+ 391              	.L23:
+ARM GAS  /tmp/cc90zinW.s 			page 13
+
+
+ 392 00ac 00380240 		.word	1073887232
+ 393 00b0 00700040 		.word	1073770496
+ 394 00b4 D34D6210 		.word	274877907
+ 395 00b8 00000000 		.word	.LC0
+ 396              		.cfi_endproc
+ 397              	.LFE124:
+ 399              		.section	.text.main,"ax",%progbits
+ 400              		.align	1
+ 401              		.global	main
+ 402              		.syntax unified
+ 403              		.thumb
+ 404              		.thumb_func
+ 405              		.fpu fpv4-sp-d16
+ 407              	main:
+ 408              	.LFB123:
+  70:Src/main.c    **** 
+ 409              		.loc 1 70 0
+ 410              		.cfi_startproc
+ 411              		@ Volatile: function does not return.
+ 412              		@ args = 0, pretend = 0, frame = 0
+ 413              		@ frame_needed = 0, uses_anonymous_args = 0
+ 414 0000 08B5     		push	{r3, lr}
+ 415              	.LCFI11:
+ 416              		.cfi_def_cfa_offset 8
+ 417              		.cfi_offset 3, -8
+ 418              		.cfi_offset 14, -4
+  79:Src/main.c    **** 
+ 419              		.loc 1 79 0
+ 420 0002 FFF7FEFF 		bl	HAL_Init
+ 421              	.LVL21:
+  86:Src/main.c    **** 
+ 422              		.loc 1 86 0
+ 423 0006 FFF7FEFF 		bl	SystemClock_Config
+ 424              	.LVL22:
+  93:Src/main.c    ****   MX_TIM2_Init();
+ 425              		.loc 1 93 0
+ 426 000a FFF7FEFF 		bl	MX_GPIO_Init
+ 427              	.LVL23:
+  94:Src/main.c    **** 
+ 428              		.loc 1 94 0
+ 429 000e FFF7FEFF 		bl	MX_TIM2_Init
+ 430              	.LVL24:
+ 431              	.L26:
+ 432 0012 FEE7     		b	.L26
+ 433              		.cfi_endproc
+ 434              	.LFE123:
+ 436              		.section	.text.assert_failed,"ax",%progbits
+ 437              		.align	1
+ 438              		.global	assert_failed
+ 439              		.syntax unified
+ 440              		.thumb
+ 441              		.thumb_func
+ 442              		.fpu fpv4-sp-d16
+ 444              	assert_failed:
+ 445              	.LFB128:
+ 259:Src/main.c    ****   /* USER CODE BEGIN Error_Handler_Debug */
+ 260:Src/main.c    ****   /* User can add his own implementation to report the HAL error return state */
+ARM GAS  /tmp/cc90zinW.s 			page 14
+
+
+ 261:Src/main.c    ****   while(1) 
+ 262:Src/main.c    ****   {
+ 263:Src/main.c    ****   }
+ 264:Src/main.c    ****   /* USER CODE END Error_Handler_Debug */ 
+ 265:Src/main.c    **** }
+ 266:Src/main.c    **** 
+ 267:Src/main.c    **** #ifdef USE_FULL_ASSERT
+ 268:Src/main.c    **** 
+ 269:Src/main.c    **** /**
+ 270:Src/main.c    ****    * @brief Reports the name of the source file and the source line number
+ 271:Src/main.c    ****    * where the assert_param error has occurred.
+ 272:Src/main.c    ****    * @param file: pointer to the source file name
+ 273:Src/main.c    ****    * @param line: assert_param error line source number
+ 274:Src/main.c    ****    * @retval None
+ 275:Src/main.c    ****    */
+ 276:Src/main.c    **** void assert_failed(uint8_t* file, uint32_t line)
+ 277:Src/main.c    **** {
+ 446              		.loc 1 277 0
+ 447              		.cfi_startproc
+ 448              		@ args = 0, pretend = 0, frame = 0
+ 449              		@ frame_needed = 0, uses_anonymous_args = 0
+ 450              		@ link register save eliminated.
+ 451              	.LVL25:
+ 452 0000 7047     		bx	lr
+ 453              		.cfi_endproc
+ 454              	.LFE128:
+ 456              		.comm	htim2,60,4
+ 457              		.section	.rodata.MX_TIM2_Init.str1.4,"aMS",%progbits,1
+ 458              		.align	2
+ 459              	.LC0:
+ 460 0000 5372632F 		.ascii	"Src/main.c\000"
+ 460      6D61696E 
+ 460      2E6300
+ 461              		.text
+ 462              	.Letext0:
+ 463              		.file 2 "/home/saicharan/arm/arm-none-eabi/include/machine/_default_types.h"
+ 464              		.file 3 "/home/saicharan/arm/arm-none-eabi/include/stdint.h"
+ 465              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 466              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 467              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 468              		.file 7 "/home/saicharan/arm/arm-none-eabi/include/sys/lock.h"
+ 469              		.file 8 "/home/saicharan/arm/arm-none-eabi/include/sys/_types.h"
+ 470              		.file 9 "/home/saicharan/arm/lib/gcc/arm-none-eabi/6.3.0/include/stddef.h"
+ 471              		.file 10 "/home/saicharan/arm/arm-none-eabi/include/sys/reent.h"
+ 472              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 473              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
+ 474              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
+ 475              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 476              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 477              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 478              		.file 17 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h"
+ 479              		.file 18 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
+ 480              		.file 19 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ARM GAS  /tmp/cc90zinW.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.c
+     /tmp/cc90zinW.s:18     .text.MX_GPIO_Init:0000000000000000 $t
+     /tmp/cc90zinW.s:24     .text.MX_GPIO_Init:0000000000000000 MX_GPIO_Init
+     /tmp/cc90zinW.s:133    .text.MX_GPIO_Init:0000000000000090 $d
+     /tmp/cc90zinW.s:141    .text._Error_Handler:0000000000000000 $t
+     /tmp/cc90zinW.s:148    .text._Error_Handler:0000000000000000 _Error_Handler
+     /tmp/cc90zinW.s:163    .text.MX_TIM2_Init:0000000000000000 $t
+     /tmp/cc90zinW.s:169    .text.MX_TIM2_Init:0000000000000000 MX_TIM2_Init
+     /tmp/cc90zinW.s:252    .text.MX_TIM2_Init:0000000000000060 $d
+                            *COM*:000000000000003c htim2
+     /tmp/cc90zinW.s:258    .text.SystemClock_Config:0000000000000000 $t
+     /tmp/cc90zinW.s:265    .text.SystemClock_Config:0000000000000000 SystemClock_Config
+     /tmp/cc90zinW.s:392    .text.SystemClock_Config:00000000000000ac $d
+     /tmp/cc90zinW.s:400    .text.main:0000000000000000 $t
+     /tmp/cc90zinW.s:407    .text.main:0000000000000000 main
+     /tmp/cc90zinW.s:437    .text.assert_failed:0000000000000000 $t
+     /tmp/cc90zinW.s:444    .text.assert_failed:0000000000000000 assert_failed
+     /tmp/cc90zinW.s:458    .rodata.MX_TIM2_Init.str1.4:0000000000000000 $d
+                     .debug_frame:0000000000000010 $d
+
+UNDEFINED SYMBOLS
+HAL_GPIO_WritePin
+HAL_GPIO_Init
+HAL_NVIC_SetPriority
+HAL_NVIC_EnableIRQ
+HAL_TIM_Base_Init
+HAL_TIM_ConfigClockSource
+HAL_TIMEx_MasterConfigSynchronization
+HAL_RCC_OscConfig
+HAL_RCC_ClockConfig
+HAL_RCC_GetHCLKFreq
+HAL_SYSTICK_Config
+HAL_SYSTICK_CLKSourceConfig
+HAL_Init

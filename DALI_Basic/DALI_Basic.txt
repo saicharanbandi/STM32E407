@@ -1,0 +1,49 @@
+Configuration	DALI_Basic
+STM32CubeMX 	4.23.0
+Date	12/19/2017
+MCU	STM32F407ZGTx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+TIM2	Internal Clock	TIM2_VS_ClockSourceINT	VP_TIM2_VS_ClockSourceINT
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+12	PF2	GPIO_Output	LED_Green
+13	PF3	GPIO_Output	LED_Blue
+14	PF4	GPIO_Output	LED_Yellow
+15	PF5	GPIO_Output	LED_Red
+18	PF6	GPIO_EXTI6	Manch_Rx
+19	PF7	GPIO_Output	Manch_Tx
+34	PA0-WKUP	GPIO_EXTI0	WKUP_BUTTON
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : DALI_Basic
+Project Folder : /home/saicharan/Dropbox/arbeit/lichtsteuer-modul/DALI_programming/stm32/trial_code/STM32E407/DALI_Basic
+Toolchain / IDE : Makefile
+Firmware Package Name and Version : STM32Cube FW_F4 V1.18.0
+
+
+Code Generation Settings : 
+STM32Cube Firmware Library Package : Copy only the necessary library files
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : No
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : Balanced Size/Speed
+
+
+
+
+
+
