@@ -292,7 +292,14 @@ void DALI_Send_Cmd(unsigned char ballastAddr, unsigned char cmd)
   unsigned char data_array[2] = {};
   /* unsigned char i; */
 
-  
+  /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+  /* Here supposed to be starting the Manch_Tx pin in HIGH state or
+     SETTLING STATE but for now it has been skipped */
+  // Set Manch_Tx pin as high
+  /* HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_SET); */
+
+  /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
   // reset tick_count and bit_count values
   tick_count = 0;
@@ -303,14 +310,7 @@ void DALI_Send_Cmd(unsigned char ballastAddr, unsigned char cmd)
   data_array[1] = (char)cmd;
   PrepareDataToSend(data_array, dali_master_array_cmd, 2);
 
-  /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-  /* Here supposed to be starting the Manch_Tx pin in HIGH state or
-     SETTLING STATE but for now it has been skipped */
-  // Set Manch_Tx pin as high
-  /* HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_SET); */
-
-  /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
   
   
   // set DALI state to send DATA
