@@ -1,0 +1,46 @@
+#ifndef DALI_H
+#define DALI_H
+
+/* ++++++++++++++ DEFINEs ++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/* ZERO and ONE variables: 
+   These are respectively DALI_START_BIT_PULSE and DALI_END_BIT_PULSE*/
+#define ZERO                                 0
+#define ONE                                  1
+
+/* TRUE and FALSE variables */
+#define FALSE                                0
+#define TRUE                                 1
+
+/* DALI_STATES */
+#define NO_ACTION                            0
+#define SENDING_DATA                         1
+#define RECEIVING_DATA                       2
+#define ERR                                  3
+#define SETTLING_FF_TO_BF                    4
+#define SETTLING_FF_TO_FF                    5
+#define BACKWARD_FRAME_RECEIVED              6
+#define FORWARD_FRAME_SENT                   7
+#define SETTLING_FF_TO_BF_FINISHED           8
+#define SETTLING_FF_TO_FF_FINISHED           9
+#define WAIT_FOR_BACKCHANNEL_TO_RECEIVE      10
+#define BACKWARD_FRAME_SENT                  11
+#define FORWARD_FRAME_RECEIVED               12
+
+/* ++++++++++++++++++++++++ VARIABLES ++++++++++++++++++++++++++++++++++++*/
+
+/* dali_state variable */
+extern unsigned char dali_state;
+
+/* encoded dali cmd data which is ready to send */
+extern volatile unsigned char dali_array_cmd[17];
+extern volatile unsigned char dali_array_receive_buffer[9];
+
+/* actual value and former value variables */
+extern volatile unsigned char actual_val;
+extern volatile unsigned char former_val;
+
+
+/* +++++++++++++++++++++ FUNCTION PROTOTYPES +++++++++++++++++++++++++++++*/
+
+

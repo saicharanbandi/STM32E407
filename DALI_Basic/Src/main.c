@@ -41,7 +41,9 @@
 #include "stm32f4xx_hal.h"
 
 /* USER CODE BEGIN Includes */
-
+#include "DALI_Master_ll.h"
+#include "DALI_Master_defs.h"
+#include "DALI_defs.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
