@@ -1,3 +1,4 @@
+#+BEGIN_SRC C
 #ifndef DALI_H
 #define DALI_H
 
@@ -128,8 +129,8 @@
 extern unsigned char dali_state;
 
 /* encoded dali cmd data which is ready to send */
-extern volatile unsigned char dali_master_array_cmd[17];
-extern volatile unsigned char dali_master_array_receive_buffer[9];
+extern volatile unsigned char dali_array_cmd[17];
+extern volatile unsigned char dali_array_receive_buffer[9];
 
 /* actual value and former value variables */
 extern volatile unsigned char actual_val;
@@ -175,3 +176,6 @@ unsigned char DALI_Master_Status(void);
 
 
 
+
+
+#+END_SRC

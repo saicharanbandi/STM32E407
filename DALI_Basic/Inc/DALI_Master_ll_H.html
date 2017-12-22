@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-12-22 Fr 09:11 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Foo X. Bar" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #b218b2;">#if</span><span style="color: #b218b2;">n</span><span style="color: #b218b2;">def</span> DALI_H
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">DALI_H</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">++++++++++++++ DEFINEs ++++++++++++++++++++++++++++++++++++++++++++++++</span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">ZERO and ONE variables: </span>
+<span style="color: #b2b2b2; font-style: italic;">   These are respectively DALI_START_BIT_PULSE and DALI_END_BIT_PULSE</span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">ZERO</span>                                 0
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">ONE</span>                                  1
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">TRUE and FALSE variables </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">FALSE</span>                                0
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">TRUE</span>                                 1
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">DALI_STATES </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">NO_ACTION</span>                            0
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">SENDING_DATA</span>                         1
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">RECEIVING_DATA</span>                       2
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">ERR</span>                                  3
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">SETTLING_FF_TO_BF</span>                    4
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">SETTLING_FF_TO_FF</span>                    5
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">BACKWARD_FRAME_RECEIVED</span>              6
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">FORWARD_FRAME_SENT</span>                   7
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">SETTLING_FF_TO_BF_FINISHED</span>           8
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">SETTLING_FF_TO_FF_FINISHED</span>           9
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">WAIT_FOR_BACKCHANNEL_TO_RECEIVE</span>      10
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">BACKWARD_FRAME_SENT</span>                  11
+<span style="color: #b218b2;">#define</span> <span style="color: #ff8700;">FORWARD_FRAME_RECEIVED</span>               12
+
+<span style="color: #b2b2b2; font-style: italic;">/*</span><span style="color: #b2b2b2; font-style: italic;">+++++++++++++++++++++++ Yet to add stuff ++++++++++++++++++++++++++++++</span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/*</span><span style="color: #b2b2b2; font-style: italic;">++++ While adding also comment appropriately for each definition ++++++</span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">/\* 2 seconds to go to sleep/halt *\/ </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define LOW_POWER_TIMEOUT                    2000 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">/\* Constants for dali_state *\/ </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define DALI_IDLE                            0 //DALI sender : idle mode  </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define DALI_SEND_START                      1 //DALI sender:send start condition </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define DALI_SEND_ADDRESS                    2 //Send address bits </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define DALI_SEND_DATA                       3 //Send data bits </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define DALI_SEND_STOP                       4 //Send stop bits </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define DALI_SEND_SETTLING                   5 //Wait settling time </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define DALI_SEND_WAIT                       6 //Waiting for answer frame </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">/\* constants for dali_receive_status *\/ </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define DALI_READY_TO_RECEIVE                0 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define DALI_NEW_FRAME_RECEIVED              1 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define DALI_RECEIVE_OVERFLOW                2 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">/\* Constants for dali_error *\/ </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define DALI_NO_ERROR                        0 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define DALI_INTERFACE_FAILURE_ERROR         1 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define ADDR_BALLASR_MEM                     0X20004000 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">//for ballast memory - offsets </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SHORT_ADDRESS            0x00 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_ACTUAL_DIM_LEVEL         0x01 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_POWER_ON_LEVEL           0x02 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SYSTEM_FAILURE_LEVEL     0x03 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_MIN_LEVEL                0x04 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_MAX_LEVEL                0x05 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_FADE_RATE                0x06 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_FADE_TIME                0x07 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SEARCH_ADDRESS_H         0x08 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SEARCH_ADDRESS_M         0x09 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SEARCH_ADDRESS_L         0x0A </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_RANDOM_ADDRESS_H         0x0B </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_RANDOM_ADDRESS_M         0x0C </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_RANDOM_ADDRESS_L         0x0D </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_GROUP_0_7                0x0E </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_GROUP_8_15               0x0F </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SCENE_01                 0x10 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SCENE_02                 0x11 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SCENE_03                 0x12 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SCENE_04                 0x13 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SCENE_05                 0x14 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SCENE_06                 0x15 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SCENE_07                 0x16 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SCENE_08                 0x17 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SCENE_09                 0x18 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SCENE_10                 0x19 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SCENE_11                 0x1A </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SCENE_12                 0x1B </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SCENE_13                 0x1C </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SCENE_14                 0x1D </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SCENE_15                 0x1E </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SCENE_16                 0x1F </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_STATUS_INFORMATION       0x20 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_VERSION_NUMBER           0x21 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_PHYSICAL_MIN_LEVEL       0x22 </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">#define BALLAST_SLAVE_OFFSET             0x23 //every 35 places </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">typedef struct LightObject </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">{ </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/*   </span><span style="color: #b2b2b2; font-style: italic;">unsigned char _address; </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/*   </span><span style="color: #b2b2b2; font-style: italic;">unsigned char _on; </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/*   </span><span style="color: #b2b2b2; font-style: italic;">unsigned char _arcLevel; </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/*   </span><span style="color: #b2b2b2; font-style: italic;">unsigned char _group0_7; </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/*   </span><span style="color: #b2b2b2; font-style: italic;">unsigned char _group8_15; </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/*   </span><span style="color: #b2b2b2; font-style: italic;">unsigned char _to_fade; </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">} </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">LightObjectType; </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">typedef struct LightCommandStruct </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">{ </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/*   </span><span style="color: #b2b2b2; font-style: italic;">unsigned char _ballastAddress; </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/*   </span><span style="color: #b2b2b2; font-style: italic;">unsigned char _command; </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/*   </span><span style="color: #b2b2b2; font-style: italic;">unsigned char _typeOfCommand; </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/*   </span><span style="color: #b2b2b2; font-style: italic;">unsigned char _followingType; </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">} </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">LightCommandType; </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">//set settling flag status </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">//extern volatile unsigned char settling_state; </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">extern volatile unsigned char expect_backchannel; </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">//slave device </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">extern volatile unsigned char expected_response; </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">extern volatile unsigned char wait_for_second_cmd;      //used when slave device needs to wait for the second same command to arrive </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">///// </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">++++++++++++++++++++++++ VARIABLES ++++++++++++++++++++++++++++++++++++</span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">dali_state variable </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #00af00;">extern</span> <span style="color: #18b2b2;">unsigned</span> <span style="color: #18b2b2;">char</span> <span style="color: #ff8700;">dali_state</span>;
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">encoded dali cmd data which is ready to send </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #00af00;">extern</span> <span style="color: #00af00;">volatile</span> <span style="color: #18b2b2;">unsigned</span> <span style="color: #18b2b2;">char</span> <span style="color: #ff8700;">dali_array_cmd</span>[17];
+<span style="color: #00af00;">extern</span> <span style="color: #00af00;">volatile</span> <span style="color: #18b2b2;">unsigned</span> <span style="color: #18b2b2;">char</span> <span style="color: #ff8700;">dali_array_receive_buffer</span>[9];
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">actual value and former value variables </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #00af00;">extern</span> <span style="color: #00af00;">volatile</span> <span style="color: #18b2b2;">unsigned</span> <span style="color: #18b2b2;">char</span> <span style="color: #ff8700;">actual_val</span>;
+<span style="color: #00af00;">extern</span> <span style="color: #00af00;">volatile</span> <span style="color: #18b2b2;">unsigned</span> <span style="color: #18b2b2;">char</span> <span style="color: #ff8700;">former_val</span>;
+
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">+++++++++++++++++++++ FUNCTION PROTOTYPES +++++++++++++++++++++++++++++</span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">Initialize DALI </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #18b2b2;">void</span> <span style="color: #ef2929;">DALI_Master_Init</span>();
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">DALI send functions </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #18b2b2;">unsigned</span> <span style="color: #18b2b2;">char</span> <span style="color: #ef2929;">DALI_Master_Send_Cmd</span>(<span style="color: #18b2b2;">unsigned</span> <span style="color: #18b2b2;">char</span> <span style="color: #ff8700;">ballastAddr</span>, <span style="color: #18b2b2;">unsigned</span> <span style="color: #18b2b2;">char</span> <span style="color: #ff8700;">cmd</span>, <span style="color: #18b2b2;">unsigned</span> <span style="color: #18b2b2;">char</span> <span style="color: #ff8700;">typeOfCmd</span>, <span style="color: #18b2b2;">unsigned</span> <span style="color: #18b2b2;">char</span> <span style="color: #ff8700;">followingType</span>);
+
+<span style="color: #18b2b2;">void</span> <span style="color: #ef2929;">DALI_Master_Sending_Data</span>(<span style="color: #18b2b2;">void</span>);
+
+<span style="color: #18b2b2;">void</span> <span style="color: #ef2929;">PrepareDataToSend_Master</span>(<span style="color: #18b2b2;">unsigned</span> <span style="color: #18b2b2;">char</span> *<span style="color: #ff8700;">commandArray</span>, <span style="color: #18b2b2;">unsigned</span> <span style="color: #18b2b2;">char</span> *<span style="color: #ff8700;">tx_array</span>, <span style="color: #18b2b2;">unsigned</span> <span style="color: #18b2b2;">char</span> <span style="color: #ff8700;">bytesInCmd</span>);
+
+<span style="color: #18b2b2;">void</span> <span style="color: #ef2929;">PrepareAddressByte_Master</span>(<span style="color: #18b2b2;">unsigned</span> <span style="color: #18b2b2;">char</span> *<span style="color: #ff8700;">commandArray</span>, <span style="color: #18b2b2;">unsigned</span> <span style="color: #18b2b2;">char</span> <span style="color: #ff8700;">addressType</span>, <span style="color: #18b2b2;">unsigned</span> <span style="color: #18b2b2;">char</span> <span style="color: #ff8700;">byteAddressPosition</span>, <span style="color: #18b2b2;">unsigned</span> <span style="color: #18b2b2;">char</span> <span style="color: #ff8700;">followingType</span>);
+
+<span style="color: #18b2b2;">unsigned</span> <span style="color: #18b2b2;">char</span> <span style="color: #ef2929;">DALI_Master_Status</span>(<span style="color: #18b2b2;">void</span>);
+
+<span style="color: #b2b2b2; font-style: italic;">/*</span><span style="color: #b2b2b2; font-style: italic;">+++++++++++++++++++++++ Yet to add stuff +++++++++++++++++++++++++++++++</span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">/\* Initialize memory space *\/ </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">void DALI_Mem_Init(void); </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">/\* read from memory *\/ </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">unsigned char DALI_Read(unsigned char addrToRead); </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">/\* Write to memory *\/ </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">void DALI_Write(unsigned char addrToWrite, unsigned char dataToWrite); </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">/\* DALI Send functions *\/ </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">unsigned char DALI_Send_Cmd_New(unsigned char ballastAddr, unsigned char cmd, unsigned char followingCmd); </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+<span style="color: #b2b2b2; font-style: italic;">/* </span><span style="color: #b2b2b2; font-style: italic;">unsigned char DALI_Check_Special_Cmd(unsigned char addrByte); </span><span style="color: #b2b2b2; font-style: italic;">*/</span>
+
+
+
+
+
+<span style="color: #b218b2;">#endif</span>
+
+
+
+
+
+
+</pre>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Foo X. Bar</p>
+<p class="date">Created: 2017-12-22 Fr 09:11</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -94,9 +94,11 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM2_Init();
+  
 
   /* USER CODE BEGIN 2 */
-
+  /* Initialize DALI network - master device*/
+  DALI_Master_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -106,7 +108,16 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
+    /* Here the code to display the response received from DALI_Slave should be there*/
+    /* Sth like if the dali_state == BACKWARD_FRAME_RECEIVED, execute
+  code to display the dali_master_array_receive_buffer through Serial
+  Com on laptop or proper GUI display */
 
+    /* get DALI status - master */
+    /* Also this calls for the DALI_Master_Status() function in
+    DALI_Master_ll.c, which continuously check for dali_status and
+    executes appropriate code */
+    dali_state = DALI_Master_Status();
   }
   /* USER CODE END 3 */
 

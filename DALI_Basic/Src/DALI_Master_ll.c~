@@ -1,0 +1,31 @@
+/*++++++++++++++ INCLUDES +++++++++++++++++++++++++++++++++++++++++++++++*/
+#include <DALI_Master_ll.h>
+#include <Timer.h>
+#include <DALI_defs.h>
+
+/*++++++++++++++ Variables +++++++++++++++++++++++++++++++++++++++++++++++*/
+unsigned char dali_state;
+
+volatile unsigned char dali_master_array_cmd[17];
+volatile unsigned char dali_master_array_receive_buffer[9];
+
+unsigned char actual_val;
+unsigned char former_val;
+
+/*++++++++++++++ Yet to add +++++++++++++++++++++++++++++++++++++++++++++*/
+/* unsigned char *ptrAddr; */
+/* volatile LightObjectType lightLeds[10]; */
+
+/*++++++++++++++ Not sure +++++++++++++++++++++++++++++++++++++++++++++++*/
+volatile unsigned char tmpg;
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Function : DALI_Master_Init 
+Description : Initialize DALI network
+
+Note: Main function used for DALI initialization
+      called in main.c
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+void DALI_Master_Init()
+{
