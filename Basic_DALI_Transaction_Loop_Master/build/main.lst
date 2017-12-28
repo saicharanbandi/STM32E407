@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccArFo6S.s 			page 1
+ARM GAS  /tmp/cckMGtEN.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
   30:Src/main.c    ****   * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
   31:Src/main.c    ****   * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
   32:Src/main.c    ****   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-ARM GAS  /tmp/ccArFo6S.s 			page 2
+ARM GAS  /tmp/cckMGtEN.s 			page 2
 
 
   33:Src/main.c    ****   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
   87:Src/main.c    **** 
   88:Src/main.c    **** 
   89:Src/main.c    **** 
-ARM GAS  /tmp/ccArFo6S.s 			page 3
+ARM GAS  /tmp/cckMGtEN.s 			page 3
 
 
   90:Src/main.c    **** /* USER CODE END PV */
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  144:Src/main.c    ****   /* USER CODE END 2 */
  145:Src/main.c    **** 
  146:Src/main.c    ****   /* Infinite loop */
-ARM GAS  /tmp/ccArFo6S.s 			page 4
+ARM GAS  /tmp/cckMGtEN.s 			page 4
 
 
  147:Src/main.c    ****   /* USER CODE BEGIN WHILE */
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  201:Src/main.c    ****   }
  202:Src/main.c    **** 
  203:Src/main.c    ****     /**Configure the Systick interrupt time 
-ARM GAS  /tmp/ccArFo6S.s 			page 5
+ARM GAS  /tmp/cckMGtEN.s 			page 5
 
 
  204:Src/main.c    ****     */
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
   29              		@ args = 0, pretend = 0, frame = 24
   30              		@ frame_needed = 0, uses_anonymous_args = 0
   31 0000 F0B5     		push	{r4, r5, r6, r7, lr}
-ARM GAS  /tmp/ccArFo6S.s 			page 6
+ARM GAS  /tmp/cckMGtEN.s 			page 6
 
 
   32              	.LCFI0:
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
   70 0032 0397     		str	r7, [sp, #12]
  272:Src/main.c    ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   71              		.loc 1 272 0
-ARM GAS  /tmp/ccArFo6S.s 			page 7
+ARM GAS  /tmp/cckMGtEN.s 			page 7
 
 
   72 0034 0494     		str	r4, [sp, #16]
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  113              		.cfi_endproc
  114              	.LFE126:
  116              		.section	.text.PrepareDataToSend,"ax",%progbits
-ARM GAS  /tmp/ccArFo6S.s 			page 8
+ARM GAS  /tmp/cckMGtEN.s 			page 8
 
 
  117              		.align	1
@@ -438,25 +438,25 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  292:Src/main.c    ****   unsigned char data_array[2] = {};
  293:Src/main.c    ****   /* unsigned char i; */
  294:Src/main.c    **** 
- 295:Src/main.c    ****   
+ 295:Src/main.c    ****   /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
  296:Src/main.c    **** 
- 297:Src/main.c    ****   // reset tick_count and bit_count values
- 298:Src/main.c    ****   tick_count = 0;
- 299:Src/main.c    ****   bit_count = 0;
- 300:Src/main.c    **** 
- 301:Src/main.c    ****   // fetch ballast address and command
- 302:Src/main.c    ****   data_array[0] = (char)ballastAddr;
- 303:Src/main.c    ****   data_array[1] = (char)cmd;
- 304:Src/main.c    ****   PrepareDataToSend(data_array, dali_master_array_cmd, 2);
- 305:Src/main.c    **** 
- 306:Src/main.c    ****   /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+ 297:Src/main.c    ****   /* Here supposed to be starting the Manch_Tx pin in HIGH state or
+ 298:Src/main.c    ****      SETTLING STATE but for now it has been skipped */
+ 299:Src/main.c    ****   // Set Manch_Tx pin as high
+ 300:Src/main.c    ****   /* HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_SET); */
+ 301:Src/main.c    **** 
+ 302:Src/main.c    ****   /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+ 303:Src/main.c    **** 
+ 304:Src/main.c    ****   // reset tick_count and bit_count values
+ 305:Src/main.c    ****   tick_count = 0;
+ 306:Src/main.c    ****   bit_count = 0;
  307:Src/main.c    **** 
- 308:Src/main.c    ****   /* Here supposed to be starting the Manch_Tx pin in HIGH state or
- 309:Src/main.c    ****      SETTLING STATE but for now it has been skipped */
- 310:Src/main.c    ****   // Set Manch_Tx pin as high
- 311:Src/main.c    ****   /* HAL_GPIO_WritePin(Manch_Tx_GPIO_Port, Manch_Tx_Pin, GPIO_PIN_SET); */
+ 308:Src/main.c    ****   // fetch ballast address and command
+ 309:Src/main.c    ****   data_array[0] = (char)ballastAddr;
+ 310:Src/main.c    ****   data_array[1] = (char)cmd;
+ 311:Src/main.c    ****   PrepareDataToSend(data_array, dali_master_array_cmd, 2);
  312:Src/main.c    **** 
- 313:Src/main.c    ****   /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+ 313:Src/main.c    **** 
  314:Src/main.c    ****   
  315:Src/main.c    ****   
  316:Src/main.c    ****   // set DALI state to send DATA
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  136              		.cfi_offset 6, -12
  137              		.cfi_offset 7, -8
  138              		.cfi_offset 14, -4
-ARM GAS  /tmp/ccArFo6S.s 			page 9
+ARM GAS  /tmp/cckMGtEN.s 			page 9
 
 
  139              	.LVL6:
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  352:Src/main.c    **** 	  // Start bit is always 1 - in manchester that is END_BIT_PULSE
  353:Src/main.c    **** 	  tx_array[0] = DALI_END_BIT_PULSE;
  161              		.loc 1 353 0 is_stmt 1
-ARM GAS  /tmp/ccArFo6S.s 			page 10
+ARM GAS  /tmp/cckMGtEN.s 			page 10
 
 
  162 0016 0123     		movs	r3, #1
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  190 0036 3C42     		tst	r4, r7
  191 0038 F0D0     		beq	.L11
  363:Src/main.c    **** 	    }
-ARM GAS  /tmp/ccArFo6S.s 			page 11
+ARM GAS  /tmp/cckMGtEN.s 			page 11
 
 
  192              		.loc 1 363 0
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  236              		.align	1
  237              		.global	DALI_Send_Cmd
  238              		.syntax unified
-ARM GAS  /tmp/ccArFo6S.s 			page 12
+ARM GAS  /tmp/cckMGtEN.s 			page 12
 
 
  239              		.thumb
@@ -682,22 +682,22 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  292:Src/main.c    ****   /* unsigned char i; */
  257              		.loc 1 292 0
  258 0004 0023     		movs	r3, #0
- 298:Src/main.c    ****   bit_count = 0;
- 259              		.loc 1 298 0
+ 305:Src/main.c    ****   bit_count = 0;
+ 259              		.loc 1 305 0
  260 0006 094A     		ldr	r2, .L24
  261 0008 1360     		str	r3, [r2]
- 299:Src/main.c    **** 
- 262              		.loc 1 299 0
+ 306:Src/main.c    **** 
+ 262              		.loc 1 306 0
  263 000a 094A     		ldr	r2, .L24+4
  264 000c 1370     		strb	r3, [r2]
- 302:Src/main.c    ****   data_array[1] = (char)cmd;
- 265              		.loc 1 302 0
+ 309:Src/main.c    ****   data_array[1] = (char)cmd;
+ 265              		.loc 1 309 0
  266 000e 8DF80400 		strb	r0, [sp, #4]
- 303:Src/main.c    ****   PrepareDataToSend(data_array, dali_master_array_cmd, 2);
- 267              		.loc 1 303 0
+ 310:Src/main.c    ****   PrepareDataToSend(data_array, dali_master_array_cmd, 2);
+ 267              		.loc 1 310 0
  268 0012 8DF80510 		strb	r1, [sp, #5]
- 304:Src/main.c    **** 
- 269              		.loc 1 304 0
+ 311:Src/main.c    **** 
+ 269              		.loc 1 311 0
  270 0016 0222     		movs	r2, #2
  271 0018 0649     		ldr	r1, .L24+8
  272              	.LVL24:
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  285              		@ sp needed
  286 0028 5DF804FB 		ldr	pc, [sp], #4
  287              	.L25:
-ARM GAS  /tmp/ccArFo6S.s 			page 13
+ARM GAS  /tmp/cckMGtEN.s 			page 13
 
 
  288              		.align	2
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  418:Src/main.c    **** 	}
  419:Src/main.c    ****     }
  420:Src/main.c    ****   else if(bit_count < 17)
-ARM GAS  /tmp/ccArFo6S.s 			page 14
+ARM GAS  /tmp/cckMGtEN.s 			page 14
 
 
  421:Src/main.c    ****     {
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  475:Src/main.c    **** {
  307              		.loc 1 475 0
  308              		.cfi_startproc
-ARM GAS  /tmp/ccArFo6S.s 			page 15
+ARM GAS  /tmp/cckMGtEN.s 			page 15
 
 
  309              		@ Volatile: function does not return.
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  223:Src/main.c    ****   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
  359              		.loc 1 223 0
  360 000c 5323     		movs	r3, #83
-ARM GAS  /tmp/ccArFo6S.s 			page 16
+ARM GAS  /tmp/cckMGtEN.s 			page 16
 
 
  361 000e 4360     		str	r3, [r0, #4]
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  404              		.loc 1 229 0
  405 0048 E521     		movs	r1, #229
  406 004a 0648     		ldr	r0, .L39+4
-ARM GAS  /tmp/ccArFo6S.s 			page 17
+ARM GAS  /tmp/cckMGtEN.s 			page 17
 
 
  407 004c FFF7FEFF 		bl	_Error_Handler
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  459 0014 02F08052 		and	r2, r2, #268435456
  460 0018 0192     		str	r2, [sp, #4]
  461 001a 019A     		ldr	r2, [sp, #4]
-ARM GAS  /tmp/ccArFo6S.s 			page 18
+ARM GAS  /tmp/cckMGtEN.s 			page 18
 
 
  462              	.LBE3:
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  504 0058 0F23     		movs	r3, #15
  505 005a 0393     		str	r3, [sp, #12]
  193:Src/main.c    ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-ARM GAS  /tmp/ccArFo6S.s 			page 19
+ARM GAS  /tmp/cckMGtEN.s 			page 19
 
 
  506              		.loc 1 193 0
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  551 009c BA21     		movs	r1, #186
  552 009e 0648     		ldr	r0, .L47+12
  553 00a0 FFF7FEFF 		bl	_Error_Handler
-ARM GAS  /tmp/ccArFo6S.s 			page 20
+ARM GAS  /tmp/cckMGtEN.s 			page 20
 
 
  554              	.LVL43:
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  603              		.loc 1 136 0
  604 0012 0122     		movs	r2, #1
  605 0014 8021     		movs	r1, #128
-ARM GAS  /tmp/ccArFo6S.s 			page 21
+ARM GAS  /tmp/cckMGtEN.s 			page 21
 
 
  606 0016 0948     		ldr	r0, .L53
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  658              		.cfi_offset 14, -4
  659              	.LVL53:
  398:Src/main.c    ****     {
-ARM GAS  /tmp/ccArFo6S.s 			page 22
+ARM GAS  /tmp/cckMGtEN.s 			page 22
 
 
  660              		.loc 1 398 0
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  706 0046 14DC     		bgt	.L57
  409:Src/main.c    **** 	}
  707              		.loc 1 409 0
-ARM GAS  /tmp/ccArFo6S.s 			page 23
+ARM GAS  /tmp/cckMGtEN.s 			page 23
 
 
  708 0048 0022     		movs	r2, #0
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  755 0088 FFF7FEFF 		bl	HAL_GPIO_WritePin
  756              	.LVL64:
  757 008c E1E7     		b	.L58
-ARM GAS  /tmp/ccArFo6S.s 			page 24
+ARM GAS  /tmp/cckMGtEN.s 			page 24
 
 
  758              	.LVL65:
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  806 00d8 00140240 		.word	1073878016
  807 00dc 00000000 		.word	htim2
  808 00e0 00000000 		.word	.LC0
-ARM GAS  /tmp/ccArFo6S.s 			page 25
+ARM GAS  /tmp/cckMGtEN.s 			page 25
 
 
  809              		.cfi_endproc
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  863              	.LFB132:
  480:Src/main.c    **** 
  481:Src/main.c    ****   /* User can add his own implementation to report the HAL error return state */
-ARM GAS  /tmp/ccArFo6S.s 			page 26
+ARM GAS  /tmp/cckMGtEN.s 			page 26
 
 
  482:Src/main.c    ****   while(1) 
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  898              		.global	dali_master_array_cmd
  899              		.comm	htim2,60,4
  900              		.section	.bss.bit_count,"aw",%nobits
-ARM GAS  /tmp/ccArFo6S.s 			page 27
+ARM GAS  /tmp/cckMGtEN.s 			page 27
 
 
  901              		.set	.LANCHOR1,. + 0
@@ -1618,63 +1618,63 @@ ARM GAS  /tmp/ccArFo6S.s 			page 1
  961              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
  962              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
  963              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
-ARM GAS  /tmp/ccArFo6S.s 			page 28
+ARM GAS  /tmp/cckMGtEN.s 			page 28
 
 
  964              		.file 17 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h"
  965              		.file 18 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
  966              		.file 19 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-ARM GAS  /tmp/ccArFo6S.s 			page 29
+ARM GAS  /tmp/cckMGtEN.s 			page 29
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 main.c
-     /tmp/ccArFo6S.s:18     .text.MX_GPIO_Init:0000000000000000 $t
-     /tmp/ccArFo6S.s:24     .text.MX_GPIO_Init:0000000000000000 MX_GPIO_Init
-     /tmp/ccArFo6S.s:110    .text.MX_GPIO_Init:0000000000000064 $d
-     /tmp/ccArFo6S.s:117    .text.PrepareDataToSend:0000000000000000 $t
-     /tmp/ccArFo6S.s:124    .text.PrepareDataToSend:0000000000000000 PrepareDataToSend
-     /tmp/ccArFo6S.s:236    .text.DALI_Send_Cmd:0000000000000000 $t
-     /tmp/ccArFo6S.s:243    .text.DALI_Send_Cmd:0000000000000000 DALI_Send_Cmd
-     /tmp/ccArFo6S.s:290    .text.DALI_Send_Cmd:000000000000002c $d
+     /tmp/cckMGtEN.s:18     .text.MX_GPIO_Init:0000000000000000 $t
+     /tmp/cckMGtEN.s:24     .text.MX_GPIO_Init:0000000000000000 MX_GPIO_Init
+     /tmp/cckMGtEN.s:110    .text.MX_GPIO_Init:0000000000000064 $d
+     /tmp/cckMGtEN.s:117    .text.PrepareDataToSend:0000000000000000 $t
+     /tmp/cckMGtEN.s:124    .text.PrepareDataToSend:0000000000000000 PrepareDataToSend
+     /tmp/cckMGtEN.s:236    .text.DALI_Send_Cmd:0000000000000000 $t
+     /tmp/cckMGtEN.s:243    .text.DALI_Send_Cmd:0000000000000000 DALI_Send_Cmd
+     /tmp/cckMGtEN.s:290    .text.DALI_Send_Cmd:000000000000002c $d
                             *COM*:0000000000000001 dali_state
-     /tmp/ccArFo6S.s:298    .text._Error_Handler:0000000000000000 $t
-     /tmp/ccArFo6S.s:305    .text._Error_Handler:0000000000000000 _Error_Handler
-     /tmp/ccArFo6S.s:331    .text._Error_Handler:0000000000000010 $d
-     /tmp/ccArFo6S.s:336    .text.MX_TIM2_Init:0000000000000000 $t
-     /tmp/ccArFo6S.s:342    .text.MX_TIM2_Init:0000000000000000 MX_TIM2_Init
-     /tmp/ccArFo6S.s:424    .text.MX_TIM2_Init:0000000000000060 $d
+     /tmp/cckMGtEN.s:298    .text._Error_Handler:0000000000000000 $t
+     /tmp/cckMGtEN.s:305    .text._Error_Handler:0000000000000000 _Error_Handler
+     /tmp/cckMGtEN.s:331    .text._Error_Handler:0000000000000010 $d
+     /tmp/cckMGtEN.s:336    .text.MX_TIM2_Init:0000000000000000 $t
+     /tmp/cckMGtEN.s:342    .text.MX_TIM2_Init:0000000000000000 MX_TIM2_Init
+     /tmp/cckMGtEN.s:424    .text.MX_TIM2_Init:0000000000000060 $d
                             *COM*:000000000000003c htim2
-     /tmp/ccArFo6S.s:430    .text.SystemClock_Config:0000000000000000 $t
-     /tmp/ccArFo6S.s:437    .text.SystemClock_Config:0000000000000000 SystemClock_Config
-     /tmp/ccArFo6S.s:564    .text.SystemClock_Config:00000000000000ac $d
-     /tmp/ccArFo6S.s:572    .text.main:0000000000000000 $t
-     /tmp/ccArFo6S.s:579    .text.main:0000000000000000 main
-     /tmp/ccArFo6S.s:632    .text.main:000000000000003c $d
-     /tmp/ccArFo6S.s:641    .text.DALI_Master_Sending_Data:0000000000000000 $t
-     /tmp/ccArFo6S.s:648    .text.DALI_Master_Sending_Data:0000000000000000 DALI_Master_Sending_Data
-     /tmp/ccArFo6S.s:803    .text.DALI_Master_Sending_Data:00000000000000cc $d
-     /tmp/ccArFo6S.s:813    .text.HAL_TIM_PeriodElapsedCallback:0000000000000000 $t
-     /tmp/ccArFo6S.s:820    .text.HAL_TIM_PeriodElapsedCallback:0000000000000000 HAL_TIM_PeriodElapsedCallback
-     /tmp/ccArFo6S.s:850    .text.HAL_TIM_PeriodElapsedCallback:0000000000000014 $d
-     /tmp/ccArFo6S.s:855    .text.assert_failed:0000000000000000 $t
-     /tmp/ccArFo6S.s:862    .text.assert_failed:0000000000000000 assert_failed
-     /tmp/ccArFo6S.s:885    .text.assert_failed:000000000000000c $d
-     /tmp/ccArFo6S.s:904    .bss.bit_count:0000000000000000 bit_count
-     /tmp/ccArFo6S.s:929    .bss.tick_count:0000000000000000 tick_count
-     /tmp/ccArFo6S.s:922    .bss.start_timer:0000000000000000 start_timer
+     /tmp/cckMGtEN.s:430    .text.SystemClock_Config:0000000000000000 $t
+     /tmp/cckMGtEN.s:437    .text.SystemClock_Config:0000000000000000 SystemClock_Config
+     /tmp/cckMGtEN.s:564    .text.SystemClock_Config:00000000000000ac $d
+     /tmp/cckMGtEN.s:572    .text.main:0000000000000000 $t
+     /tmp/cckMGtEN.s:579    .text.main:0000000000000000 main
+     /tmp/cckMGtEN.s:632    .text.main:000000000000003c $d
+     /tmp/cckMGtEN.s:641    .text.DALI_Master_Sending_Data:0000000000000000 $t
+     /tmp/cckMGtEN.s:648    .text.DALI_Master_Sending_Data:0000000000000000 DALI_Master_Sending_Data
+     /tmp/cckMGtEN.s:803    .text.DALI_Master_Sending_Data:00000000000000cc $d
+     /tmp/cckMGtEN.s:813    .text.HAL_TIM_PeriodElapsedCallback:0000000000000000 $t
+     /tmp/cckMGtEN.s:820    .text.HAL_TIM_PeriodElapsedCallback:0000000000000000 HAL_TIM_PeriodElapsedCallback
+     /tmp/cckMGtEN.s:850    .text.HAL_TIM_PeriodElapsedCallback:0000000000000014 $d
+     /tmp/cckMGtEN.s:855    .text.assert_failed:0000000000000000 $t
+     /tmp/cckMGtEN.s:862    .text.assert_failed:0000000000000000 assert_failed
+     /tmp/cckMGtEN.s:885    .text.assert_failed:000000000000000c $d
+     /tmp/cckMGtEN.s:904    .bss.bit_count:0000000000000000 bit_count
+     /tmp/cckMGtEN.s:929    .bss.tick_count:0000000000000000 tick_count
+     /tmp/cckMGtEN.s:922    .bss.start_timer:0000000000000000 start_timer
                             *COM*:0000000000000001 former_val
                             *COM*:0000000000000001 actual_val
-     /tmp/ccArFo6S.s:941    .data.cmd:0000000000000000 cmd
-     /tmp/ccArFo6S.s:935    .data.ballastAddr:0000000000000000 ballastAddr
-     /tmp/ccArFo6S.s:917    .bss.dali_master_array_receive_buffer:0000000000000000 dali_master_array_receive_buffer
-     /tmp/ccArFo6S.s:911    .bss.dali_master_array_cmd:0000000000000000 dali_master_array_cmd
-     /tmp/ccArFo6S.s:905    .bss.bit_count:0000000000000000 $d
-     /tmp/ccArFo6S.s:907    .bss.dali_master_array_cmd:0000000000000000 $d
-     /tmp/ccArFo6S.s:914    .bss.dali_master_array_receive_buffer:0000000000000000 $d
-     /tmp/ccArFo6S.s:923    .bss.start_timer:0000000000000000 $d
-     /tmp/ccArFo6S.s:925    .bss.tick_count:0000000000000000 $d
-     /tmp/ccArFo6S.s:944    .rodata.MX_TIM2_Init.str1.4:0000000000000000 $d
+     /tmp/cckMGtEN.s:941    .data.cmd:0000000000000000 cmd
+     /tmp/cckMGtEN.s:935    .data.ballastAddr:0000000000000000 ballastAddr
+     /tmp/cckMGtEN.s:917    .bss.dali_master_array_receive_buffer:0000000000000000 dali_master_array_receive_buffer
+     /tmp/cckMGtEN.s:911    .bss.dali_master_array_cmd:0000000000000000 dali_master_array_cmd
+     /tmp/cckMGtEN.s:905    .bss.bit_count:0000000000000000 $d
+     /tmp/cckMGtEN.s:907    .bss.dali_master_array_cmd:0000000000000000 $d
+     /tmp/cckMGtEN.s:914    .bss.dali_master_array_receive_buffer:0000000000000000 $d
+     /tmp/cckMGtEN.s:923    .bss.start_timer:0000000000000000 $d
+     /tmp/cckMGtEN.s:925    .bss.tick_count:0000000000000000 $d
+     /tmp/cckMGtEN.s:944    .rodata.MX_TIM2_Init.str1.4:0000000000000000 $d
                      .debug_frame:0000000000000010 $d
 
 UNDEFINED SYMBOLS
@@ -1684,7 +1684,7 @@ HAL_NVIC_SetPriority
 HAL_NVIC_EnableIRQ
 HAL_TIM_Base_Init
 HAL_TIM_ConfigClockSource
-ARM GAS  /tmp/ccArFo6S.s 			page 30
+ARM GAS  /tmp/cckMGtEN.s 			page 30
 
 
 HAL_TIMEx_MasterConfigSynchronization
